@@ -1,0 +1,18 @@
+{
+  "entrypoint": "example/index.html",
+  "shell": "example/app.js",
+  "builds": [{
+    "name": "lit-redux-router",
+    "preset": "es5-unbundled"
+  }],
+  "moduleResolution": "node",
+  "npm": true,
+  "lint": {
+    "rules": [
+      "polymer-3"
+    ],
+    "filesToIgnore": [
+      "lib/*"
+    ]
+  }
+}
