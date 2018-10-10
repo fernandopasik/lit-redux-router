@@ -23,12 +23,21 @@ export default class MyApp extends LitElement {
           text-decoration: underline;
         }
 
+        h1 {
+          margin-top: 0;
+          margin-bottom: 16px;
+        }
+
         .app-bar {
           color: white;
           background-color: #2196f3;
           font-size: 20px;
-          padding: 20px;
+          padding: 16px;
           text-align: center;
+        }
+
+        .app-content {
+          padding: 16px;
         }
 
         .nav-bar {
@@ -38,7 +47,7 @@ export default class MyApp extends LitElement {
 
         .nav-bar a {
           display: inline-block;
-          padding: 20px;
+          padding: 16px;
         }
       </style>
       <div class="app-bar">Example App</div>
@@ -49,7 +58,8 @@ export default class MyApp extends LitElement {
         <a href="/view-3">view 3</a>
       </nav>
 
-      <lit-router>
+      <div class="app-content">
+        <lit-router>
           <lit-route path="/">
             <h1>Home</h1>
           </lit-route>
@@ -63,6 +73,7 @@ export default class MyApp extends LitElement {
             <h1>View 3</h1>
           </lit-route>
         </lit-router>
+      </div>
     `;
   }
 }
