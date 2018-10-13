@@ -21,3 +21,9 @@ export default (store: Store & LazyStore) => {
 
   customElements.define('lit-router', Router);
 };
+
+declare global {
+  interface Window {
+    decodeURIComponent: (encodedURIComponent: string) => string;
+  }
+}
