@@ -1,4 +1,4 @@
-import { navigate } from '../actions';
+import { addRoute, navigate } from '../actions';
 
 describe('Router Actions', () => {
   describe('Navigate', () => {
@@ -13,6 +13,17 @@ describe('Router Actions', () => {
 
     test('to a default path', () => {
       expect(navigate()).toHaveProperty('path', '/');
+    });
+  });
+
+  describe('Navigate', () => {
+    test('has a type', () => {
+      expect(addRoute('/')).toHaveProperty('type', 'ADD_ROUTE');
+    });
+
+    test('adds a path', () => {
+      const path = '/about';
+      expect(addRoute(path)).toHaveProperty('path', path);
     });
   });
 });

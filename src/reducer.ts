@@ -1,7 +1,10 @@
-import { NAVIGATE } from './constants';
+import { ADD_ROUTE, NAVIGATE } from './constants';
 
 export interface State {
   activeRoute: string,
+  routes: {
+    [path: string]: {},
+  },
 }
 
 interface Action {
@@ -11,6 +14,7 @@ interface Action {
 
 const initialState = {
   activeRoute: '/',
+  routes: {},
 };
 
 const reducer = (
@@ -22,6 +26,14 @@ const reducer = (
       return {
         ...state,
         activeRoute: path,
+      };
+    case ADD_ROUTE:
+      return {
+        ...state,
+        routes: {
+          ...state.routes,
+          [path]: {},
+        },
       };
     default:
       return state;
