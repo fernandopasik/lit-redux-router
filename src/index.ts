@@ -4,7 +4,11 @@ import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import Router from './router';
 import Route from './route';
 
-export const connectRouter = (store: Store & LazyStore) => {
+import reducer, { State } from './reducer';
+
+export const connectRouter = (store: Store<State> & LazyStore) => {
+  store.addReducers({ router: reducer });
+
   Router(store);
   Route(store);
 };
