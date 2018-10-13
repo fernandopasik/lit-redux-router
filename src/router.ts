@@ -3,9 +3,9 @@ import { installRouter } from 'pwa-helpers/router.js';
 
 import { Store } from 'redux';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
+import { navigate } from './actions';
 
 export default (store: Store & LazyStore) => {
-import { navigate } from './router-actions';
   class Router extends LitElement {
     firstUpdated() {
       installRouter((location) => {
