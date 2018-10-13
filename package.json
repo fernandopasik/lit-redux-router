@@ -22,7 +22,7 @@
   "scripts": {
     "start": "polymer serve",
     "test": "jest",
-    "build": "tsc",
+    "build": "del lib && tsc",
     "prebuild": "yarn lint && yarn del lib",
     "lint": "eslint . --ext ts",
     "preversion": "yarn build"
