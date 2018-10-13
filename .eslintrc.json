@@ -12,6 +12,16 @@
       }
     }
   },
+  "overrides": [{
+    "files": [
+      "src/**/__tests__/*.js",
+      "src/**/__mocks__/*.js"
+    ],
+    "env": {
+      "browser": true,
+      "jest": true
+    }
+  }],
   "rules": {
     "class-methods-use-this": "off",
     "no-undef": "off",

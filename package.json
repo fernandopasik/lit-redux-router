@@ -21,6 +21,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "polymer serve",
+    "test": "jest",
     "build": "tsc",
     "prebuild": "yarn lint && yarn del lib",
     "lint": "eslint . --ext ts",
@@ -39,6 +40,7 @@
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
     "@polymer/lit-element": "^0.6.2",
+    "@types/jest": "^23.3.5",
     "@webcomponents/webcomponentsjs": "^2.1.3",
     "del-cli": "^1.1.0",
     "eslint": "^5.6.1",
@@ -46,11 +48,13 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-typescript": "^0.12.0",
     "husky": "^1.1.2",
+    "jest": "^23.6.0",
     "lit-html": "^0.12.0",
     "npm-run-all": "^4.1.3",
     "polymer-cli": "^1.8.0",
     "pwa-helpers": "^0.9.0",
     "redux": "^4.0.0",
+    "ts-jest": "^23.10.4",
     "typescript": "^3.1.2",
     "typescript-eslint-parser": "^20.0.0"
   }
