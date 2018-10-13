@@ -5,7 +5,9 @@ import { Store } from 'redux';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import { navigate } from './actions';
 
-export default (store: Store & LazyStore) => {
+import { State } from './reducer';
+
+export default (store: Store<State> & LazyStore) => {
   class Router extends LitElement {
     firstUpdated() {
       installRouter((location) => {
