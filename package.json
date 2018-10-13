@@ -22,11 +22,9 @@
   "scripts": {
     "start": "polymer serve",
     "test": "jest",
-    "clean": "del lib",
     "lint": "eslint . --ext ts",
-    "build": "tsc",
-    "prebuild": "yarn lint && yarn test && yarn clean",
-    "preversion": "yarn build"
+    "build": "del lib && tsc",
+    "preversion": "yarn lint && yarn test && yarn build"
   },
   "dependencies": {
     "regexparam": "^1.0.1"
