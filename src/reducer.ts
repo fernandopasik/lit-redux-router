@@ -3,7 +3,9 @@ import { ADD_ROUTE, NAVIGATE } from './constants';
 export interface State {
   activeRoute: string,
   routes: {
-    [path: string]: {},
+    [path: string]: {
+      active: boolean,
+    }
   },
 }
 
@@ -26,13 +28,21 @@ const reducer = (
       return {
         ...state,
         activeRoute: path,
+        routes: Object.keys(state.routes).reduce((routes, route) => ({
+          ...routes,
+          [route]: {
+            active: route === path
+          }
+        }), {}),
       };
     case ADD_ROUTE:
       return {
         ...state,
         routes: {
           ...state.routes,
-          [path]: {},
+          [path]: {
+            active: state.activeRoute === path,
+          },
         },
       };
     default:

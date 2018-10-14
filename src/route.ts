@@ -9,6 +9,9 @@ import { State } from './reducer';
 
 export default (store: Store<State> & LazyStore) => {
   class Route extends connect(store)(LitElement) {
+    @property({ type: Boolean })
+    active = false;
+
     @property({ type: String })
     path;
 
@@ -16,7 +19,15 @@ export default (store: Store<State> & LazyStore) => {
       store.dispatch(addRoute(this.path));
     }
 
+    stateChanged(state) {
+      this.active = state.router.routes[this.path] && state.router.routes[this.path].active;
+    }
+
     render() {
+      if (!this.active) {
+        return html``;
+      }
+
       return html`<slot></slot>`;
     }
   }
