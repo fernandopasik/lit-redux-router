@@ -2,6 +2,7 @@ import { LitElement, html } from '@polymer/lit-element';
 
 import { connectRouter } from '../lib/index.js';
 import store from './store.js';
+import './products.js';
 
 connectRouter(store);
 
@@ -63,9 +64,7 @@ export default class MyApp extends LitElement {
           <lit-route path="/">
             <h1>Home</h1>
           </lit-route>
-          <lit-route path="/products">
-            <h1>Product</h1>
-          </lit-route>
+          <lit-route path="/products" component="my-product"></lit-route>
           <lit-route path="/about">
             <h1>About</h1>
           </lit-route>
