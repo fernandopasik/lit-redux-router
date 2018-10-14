@@ -26,6 +26,8 @@ export default (store: Store<State> & LazyStore) => {
 
     stateChanged(state) {
       this.active = state.router.routes[this.path] && state.router.routes[this.path].active;
+    }
+
     getComponentTemplate() {
       const tagName = filterComponentTag(this.component);
       const template = `<${tagName}></${tagName}>`;

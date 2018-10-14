@@ -31,8 +31,8 @@ const reducer = (
         routes: Object.keys(state.routes).reduce((routes, route) => ({
           ...routes,
           [route]: {
-            active: route === path
-          }
+            active: route === path,
+          },
         }), {}),
       };
     case ADD_ROUTE:

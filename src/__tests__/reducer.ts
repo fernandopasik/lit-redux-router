@@ -23,6 +23,6 @@ describe('Router Reducer', () => {
   test('can add a path', () => {
     const path = '/contact';
     const action = { type: 'ADD_ROUTE', path };
-    expect(reducer(undefined, action)).toHaveProperty('routes', { [path]: {} });
+    expect(reducer(undefined, action).routes).toHaveProperty(path);
   });
 });
