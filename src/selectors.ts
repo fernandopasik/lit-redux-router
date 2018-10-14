@@ -7,4 +7,4 @@ interface State {
 export const isActive = (
   { router: { routes } }: State,
   route,
-): boolean => routes[route].active;
+): boolean => !!routes[route] && routes[route].active;
