@@ -17,12 +17,26 @@ describe('Router Reducer', () => {
   test('can navigate to another path', () => {
     const path = '/contact';
     const action = { type: 'NAVIGATE', path };
-    expect(reducer(undefined, action)).toHaveProperty('activeRoute', path);
+    const newState = reducer(undefined, action);
+    expect(newState).toHaveProperty('activeRoute', path);
+  });
+
+  test('when navigate to path checks for active path', () => {
+    const path = '/contact';
+    const routes = {
+      '/home': { active: false },
+      '/contact': { active: false },
+      '/about': { active: false },
+    }
+    const action = { type: 'NAVIGATE', path };
+    const newState = reducer({ activeRoute: '/', routes }, action);
+    expect(newState.routes[path]).toHaveProperty('active', true);
   });
 
   test('can add a path', () => {
     const path = '/contact';
     const action = { type: 'ADD_ROUTE', path };
-    expect(reducer(undefined, action).routes).toHaveProperty(path);
+    const newState = reducer(undefined, action);
+    expect(newState.routes).toHaveProperty(path);
   });
 });
