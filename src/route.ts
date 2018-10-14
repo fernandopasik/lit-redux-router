@@ -7,6 +7,7 @@ import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 
 import { addRoute } from './actions';
 import { State } from './reducer';
+import { isActive } from './selectors';
 import { filterComponentTag } from './service';
 
 export default (store: Store<State> & LazyStore) => {
@@ -25,7 +26,7 @@ export default (store: Store<State> & LazyStore) => {
     }
 
     stateChanged(state) {
-      this.active = state.router.routes[this.path] && state.router.routes[this.path].active;
+      this.active = isActive(state, this.path);
     }
 
     getComponentTemplate() {
