@@ -27,7 +27,7 @@ describe('Router Reducer', () => {
       '/home': { active: false },
       '/contact': { active: false },
       '/about': { active: false },
-    }
+    };
     const action = { type: 'NAVIGATE', path };
     const newState = reducer({ activeRoute: '/', routes }, action);
     expect(newState.routes[path]).toHaveProperty('active', true);

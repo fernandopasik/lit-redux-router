@@ -1,5 +1,5 @@
+import configureStore from 'redux-mock-store';
 import { connectRouter } from '../index';
-import configureStore from 'redux-mock-store'
 
 import Router from '../router';
 import Route from '../route';
