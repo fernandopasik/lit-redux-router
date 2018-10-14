@@ -53,9 +53,9 @@ export default class MyApp extends LitElement {
       <div class="app-bar">Example App</div>
       <nav class="nav-bar">
         <a href="/">home</a>
-        <a href="/view-1">view 1</a>
-        <a href="/view-2">view 2</a>
-        <a href="/view-3">view 3</a>
+        <a href="/products">products</a>
+        <a href="/about">about</a>
+        <a href="/contact">contact</a>
       </nav>
 
       <div class="app-content">
@@ -63,14 +63,14 @@ export default class MyApp extends LitElement {
           <lit-route path="/">
             <h1>Home</h1>
           </lit-route>
-          <lit-route path="/view-1">
-            <h1>View 1</h1>
+          <lit-route path="/products">
+            <h1>Product</h1>
           </lit-route>
-          <lit-route path="/view-2">
-            <h1>View 2</h1>
+          <lit-route path="/about">
+            <h1>About</h1>
           </lit-route>
-          <lit-route path="/view-3">
-            <h1>View 3</h1>
+          <lit-route path="/contact">
+            <h1>Contact</h1>
           </lit-route>
         </lit-router>
       </div>
