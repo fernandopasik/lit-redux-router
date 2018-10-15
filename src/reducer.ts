@@ -40,9 +40,7 @@ const reducer = (
         ...state,
         routes: {
           ...state.routes,
-          [path]: {
-            active: state.activeRoute === path,
-          },
+          [path]: {},
         },
       };
     default:
