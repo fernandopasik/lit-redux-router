@@ -1,4 +1,4 @@
-import { isActive } from '../selectors';
+import { isRouteActive } from '../selectors';
 
 describe('Router Selectors', () => {
   describe('is active', () => {
@@ -10,11 +10,12 @@ describe('Router Selectors', () => {
           routes: {
             [path]: {
               active: true,
+              params: {},
             },
           },
         },
       };
-      expect(isActive(state, path)).toBe(true);
+      expect(isRouteActive(state, path)).toBe(true);
     });
 
     test('can be false', () => {
@@ -25,11 +26,12 @@ describe('Router Selectors', () => {
           routes: {
             [path]: {
               active: false,
+              params: {},
             },
           },
         },
       };
-      expect(isActive(state, path)).toBe(false);
+      expect(isRouteActive(state, path)).toBe(false);
     });
 
     test('is false if route not present', () => {
@@ -40,7 +42,7 @@ describe('Router Selectors', () => {
           routes: {},
         },
       };
-      expect(isActive(state, path)).toBe(false);
+      expect(isRouteActive(state, path)).toBe(false);
     });
   });
 });
