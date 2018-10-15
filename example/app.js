@@ -54,7 +54,7 @@ export default class MyApp extends LitElement {
       <div class="app-bar">Example App</div>
       <nav class="nav-bar">
         <a href="/">home</a>
-        <a href="/products">products</a>
+        <a href="/products/1/shirt">products</a>
         <a href="/about">about</a>
         <a href="/contact">contact</a>
       </nav>
@@ -64,7 +64,7 @@ export default class MyApp extends LitElement {
           <lit-route path="/">
             <h1>Home</h1>
           </lit-route>
-          <lit-route path="/products" component="my-product"></lit-route>
+          <lit-route path="/products/:id?/:name?" component="my-product"></lit-route>
           <lit-route path="/about">
             <h1>About</h1>
           </lit-route>
