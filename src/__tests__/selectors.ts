@@ -10,7 +10,6 @@ describe('Router Selectors', () => {
           routes: {
             [path]: {
               active: true,
-              params: {},
             },
           },
         },
@@ -26,7 +25,6 @@ describe('Router Selectors', () => {
           routes: {
             [path]: {
               active: false,
-              params: {},
             },
           },
         },

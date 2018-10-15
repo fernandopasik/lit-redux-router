@@ -1,7 +1,7 @@
 import { ADD_ROUTE, NAVIGATE } from './constants';
 
 export interface Route {
-  active: boolean,
+  active?: boolean,
 }
 
 export interface State {
