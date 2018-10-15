@@ -7,7 +7,7 @@ import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 
 import { addRoute } from './actions';
 import { State } from './reducer';
-import { isRouteActive } from './selectors';
+import { getRouteParams, isRouteActive } from './selectors';
 
 export default (store: Store<State> & LazyStore) => {
   class Route extends connect(store)(LitElement) {
@@ -16,6 +16,9 @@ export default (store: Store<State> & LazyStore) => {
 
     @property({ type: String })
     component;
+
+    @property({ type: Object })
+    params = {};
 
     @property({ type: String })
     path;
@@ -26,11 +29,16 @@ export default (store: Store<State> & LazyStore) => {
 
     stateChanged(state) {
       this.active = isRouteActive(state, this.path);
+      this.params = getRouteParams(state, this.path);
     }
 
     getComponentTemplate() {
       const tagName = this.component.replace(/[^A-Za-z-]/, '');
-      const template = `<${tagName}></${tagName}>`;
+      const attributes = Object
+        .keys(this.params)
+        .map(param => ` ${param}="${this.params[param]}"`)
+        .join('');
+      const template = `<${tagName}${attributes}></${tagName}>`;
 
       return html`${unsafeHTML(template)}`;
     }
