@@ -1,6 +1,32 @@
-import { isRouteActive } from '../selectors';
+import { getRoute, isRouteActive } from '../selectors';
 
 describe('Router Selectors', () => {
+  describe('get route', () => {
+    test('return empty object when not present', () => {
+      const path = '/about';
+      const route = { active: true, params: { id: '1' } };
+      const state = {
+        router: {
+          activeRoute: '/',
+          routes: {
+            [path]: route,
+          },
+        },
+      };
+      expect(getRoute(state, path)).toEqual(route);
+    });
+
+    test('return route object', () => {
+      const state = {
+        router: {
+          activeRoute: '/',
+          routes: {},
+        },
+      };
+      expect(getRoute(state, '/about')).toEqual({});
+    });
+  });
+
   describe('is active', () => {
     test('can be true', () => {
       const path = '/about';
