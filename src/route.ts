@@ -8,7 +8,6 @@ import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import { addRoute } from './actions';
 import { State } from './reducer';
 import { isActive } from './selectors';
-import { filterComponentTag } from './service';
 
 export default (store: Store<State> & LazyStore) => {
   class Route extends connect(store)(LitElement) {
@@ -30,7 +29,7 @@ export default (store: Store<State> & LazyStore) => {
     }
 
     getComponentTemplate() {
-      const tagName = filterComponentTag(this.component);
+      const tagName = this.component.replace(/[^A-Za-z-]/, '');
       const template = `<${tagName}></${tagName}>`;
 
       return html`${unsafeHTML(template)}`;
