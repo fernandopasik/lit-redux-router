@@ -24,9 +24,9 @@ describe('Router Reducer', () => {
   test('when navigate to path checks for active path', () => {
     const path = '/contact';
     const routes = {
-      '/home': { active: false },
-      '/contact': { active: false },
-      '/about': { active: false },
+      '/home': { active: false, params: {} },
+      '/contact': { active: false, params: {} },
+      '/about': { active: false, params: {} },
     };
     const action = { type: 'NAVIGATE', path };
     const newState = reducer({ activeRoute: '/', routes }, action);
