@@ -1,11 +1,13 @@
 import { ADD_ROUTE, NAVIGATE } from './constants';
 
+export interface Route {
+  active: boolean,
+}
+
 export interface State {
   activeRoute: string,
   routes: {
-    [path: string]: {
-      active: boolean,
-    }
+    [path: string]: Route
   },
 }
 
