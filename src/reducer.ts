@@ -1,3 +1,4 @@
+import regexparam from 'regexparam';
 import { ADD_ROUTE, NAVIGATE } from './constants';
 
 export interface RouteParams {
@@ -26,6 +27,19 @@ const initialState = {
   routes: {},
 };
 
+const refreshRoute = (path, activePath) => {
+  const { pattern, keys } = regexparam(path);
+  const match = pattern.exec(activePath);
+
+  return {
+    active: pattern.test(activePath),
+    params: keys.reduce((list, item, index) => ({
+      ...list,
+      [item]: (match && match[index + 1]) || '',
+    }), {}),
+  };
+};
+
 const reducer = (
   state: State = initialState,
   { type = '', path = '' }: Action = {},
@@ -37,9 +51,7 @@ const reducer = (
         activeRoute: path,
         routes: Object.keys(state.routes).reduce((routes, route) => ({
           ...routes,
-          [route]: {
-            active: route === path,
-          },
+          [route]: refreshRoute(route, path),
         }), {}),
       };
     case ADD_ROUTE:

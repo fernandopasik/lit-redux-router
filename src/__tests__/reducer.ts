@@ -33,6 +33,32 @@ describe('Router Reducer', () => {
     expect(newState.routes[path]).toHaveProperty('active', true);
   });
 
+  test('when navigate to path checks for active parameters', () => {
+    const activePath = '/products/shirt';
+    const path = '/products/:id';
+    const routes = {
+      '/products/:id': {},
+      '/about': {},
+    };
+    const action = { type: 'NAVIGATE', path: activePath };
+    const newState = reducer({ activeRoute: '/', routes }, action);
+    expect(newState.routes[path]).toHaveProperty('active', true);
+    expect(newState.routes[path]).toHaveProperty('params', { id: 'shirt' });
+  });
+
+  test('when navigate to another path parameters are empty', () => {
+    const activePath = '/about';
+    const path = '/products/:id';
+    const routes = {
+      '/products/:id': {},
+      '/about': {},
+    };
+    const action = { type: 'NAVIGATE', path: activePath };
+    const newState = reducer({ activeRoute: '/', routes }, action);
+    expect(newState.routes[path]).toHaveProperty('active', false);
+    expect(newState.routes[path]).toHaveProperty('params', { id: '' });
+  });
+
   test('can add a path', () => {
     const path = '/contact';
     const action = { type: 'ADD_ROUTE', path };
