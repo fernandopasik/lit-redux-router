@@ -65,4 +65,11 @@ describe('Router Reducer', () => {
     const newState = reducer(undefined, action);
     expect(newState.routes).toHaveProperty(path);
   });
+
+  test('when adding a path the route can be active', () => {
+    const path = '/contact';
+    const action = { type: 'ADD_ROUTE', path };
+    const newState = reducer({ activeRoute: path, routes: {} }, action);
+    expect(newState.routes[path]).toHaveProperty('active', true);
+  });
 });

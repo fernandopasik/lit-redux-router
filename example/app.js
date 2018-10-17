@@ -60,18 +60,16 @@ export default class MyApp extends LitElement {
       </nav>
 
       <div class="app-content">
-        <lit-router>
-          <lit-route path="/">
-            <h1>Home</h1>
-          </lit-route>
-          <lit-route path="/products/:id?/:name?" component="my-product"></lit-route>
-          <lit-route path="/about">
-            <h1>About</h1>
-          </lit-route>
-          <lit-route path="/contact">
-            <h1>Contact</h1>
-          </lit-route>
-        </lit-router>
+        <lit-route path="/">
+          <h1>Home</h1>
+        </lit-route>
+        <lit-route path="/products/:id?/:name?" component="my-product"></lit-route>
+        <lit-route path="/about">
+          <h1>About</h1>
+        </lit-route>
+        <lit-route path="/contact">
+          <h1>Contact</h1>
+        </lit-route>
       </div>
     `;
   }

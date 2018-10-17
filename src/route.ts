@@ -1,13 +1,16 @@
 import { LitElement, html, property } from '@polymer/lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
+import { installRouter } from 'pwa-helpers/router.js';
 
 import { Store } from 'redux';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 
-import { addRoute } from './actions';
+import { addRoute, navigate } from './actions';
 import { State } from './reducer';
 import { getRouteParams, isRouteActive } from './selectors';
+
+let routerInstalled = false;
 
 export default (store: Store<State> & LazyStore) => {
   class Route extends connect(store)(LitElement) {
@@ -24,6 +27,14 @@ export default (store: Store<State> & LazyStore) => {
     path;
 
     firstUpdated() {
+      if (!routerInstalled) {
+        installRouter((location) => {
+          const path = window.decodeURIComponent(location.pathname);
+          return store.dispatch(navigate(path));
+        });
+        routerInstalled = true;
+      }
+
       store.dispatch(addRoute(this.path));
     }
 
@@ -56,3 +67,9 @@ export default (store: Store<State> & LazyStore) => {
 
   customElements.define('lit-route', Route);
 };
+
+declare global {
+  interface Window {
+    decodeURIComponent: (encodedURIComponent: string) => string;
+  }
+}

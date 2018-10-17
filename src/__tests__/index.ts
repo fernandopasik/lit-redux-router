@@ -1,11 +1,9 @@
 import configureStore from 'redux-mock-store';
 import { connectRouter } from '../index';
 
-import Router from '../router';
 import Route from '../route';
 import reducer from '../reducer';
 
-jest.mock('../router', () => jest.fn());
 jest.mock('../route', () => jest.fn());
 jest.mock('../reducer', () => jest.fn());
 
@@ -16,7 +14,6 @@ describe('Connect Router', () => {
     const store = mockStore({});
     store.addReducers = jest.fn();
     connectRouter(store);
-    expect(Router).toHaveBeenCalledWith(store);
     expect(Route).toHaveBeenCalledWith(store);
   });
 

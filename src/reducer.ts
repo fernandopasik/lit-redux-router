@@ -59,7 +59,7 @@ const reducer = (
         ...state,
         routes: {
           ...state.routes,
-          [path]: {},
+          [path]: refreshRoute(path, state.activeRoute),
         },
       };
     default:
