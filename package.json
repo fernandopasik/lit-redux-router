@@ -1,13 +1,12 @@
 {
   "name": "lit-redux-router",
   "version": "0.0.0",
-  "description": "Application router based on pwa-helpers using redux and lit-element",
+  "description": "Declarative way of routing for lit-html powered by pwa-helpers, redux and lit-element",
   "keywords": [
-    "react",
-    "reactjs",
-    "children",
-    "utils",
-    "utilities"
+    "router",
+    "lit-html",
+    "lit-element",
+    "redux"
   ],
   "homepage": "https://github.com/fernandopasik/lit-redux-router",
   "bugs": "https://github.com/fernandopasik/lit-redux-router/issues",
