@@ -21,6 +21,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "polymer serve",
+    "watch": "npm-run-all -p 'build --watch' 'start'",
     "test": "jest",
     "lint": "eslint . --ext ts",
     "build": "del lib && tsc",
