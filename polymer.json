@@ -12,7 +12,7 @@
       "polymer-3"
     ],
     "filesToIgnore": [
-      "lib/*"
+      "dist/*"
     ]
   }
 }

@@ -19,4 +19,4 @@ yarn-error.log
 coverage
 
 # build and temp folders
-lib
+dist

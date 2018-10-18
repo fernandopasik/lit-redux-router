@@ -17,13 +17,13 @@
     "type": "git",
     "url": "https://github.com/fernandopasik/lit-redux-router.git"
   },
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "polymer serve",
     "watch": "npm-run-all -p 'build --watch' 'start'",
     "test": "jest",
     "lint": "eslint . --ext ts",
-    "build": "del lib && tsc",
+    "build": "del dist && tsc",
     "preversion": "yarn lint && yarn test && yarn build"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 import { LitElement, html } from '@polymer/lit-element';
 
-import { connectRouter } from '../lib/index.js';
+import { connectRouter } from '../dist/index.js';
 import store from './store.js';
 import './products.js';
 
