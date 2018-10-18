@@ -1,4 +1,13 @@
-# Lit-redux-router
+# lit-redux-router
+
+[![npm version][img-npm]][url-npm]
+[![Build Status][img-circleci]][url-circleci]
+
+[img-npm]: https://img.shields.io/npm/v/lit-redux-router.svg
+[img-circleci]: https://circleci.com/gh/fernandopasik/lit-redux-router.svg?style=svg
+
+[url-npm]: https://www.npmjs.com/package/lit-redux-router "npm version"
+[url-circleci]: https://circleci.com/gh/fernandopasik/lit-redux-router "Build Status"
 
 Declarative way of routing for [lit-html](https://github.com/Polymer/lit-html) powered by [pwa-helpers](https://github.com/Polymer/pwa-helpers), [redux](https://redux.js.org/) and [lit-element](https://github.com/Polymer/lit-element).
 
