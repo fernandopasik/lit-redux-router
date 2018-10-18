@@ -10,7 +10,7 @@ yarn add lit-redux-router lit-html @polymer/lit-element pwa-helpers redux
 
 ## Minimal Example
 
-```
+```js
 // app.js
 import { LitElement, html } from '@polymer/lit-element';
 import { connectRouter } from 'lit-redux-router';
