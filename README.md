@@ -1,6 +1,8 @@
 # Lit-redux-router
 
-Declarative way of routing for lit-html powered by pwa-helpers, redux and lit-element
+Declarative way of routing for lit-html powered by pwa-helpers, redux and lit-element.
+
+Based on the routing approach taken by pwa-starter-kit. https://polymer.github.io/pwa-starter-kit/configuring-and-personalizing/#routing
 
 ## Install
 
