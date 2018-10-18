@@ -30,6 +30,10 @@ jobs:
           name: Build
           command: yarn build
           when: always
+      - run:
+          name: Check filesize
+          command: yarn size
+          when: always
 experimental:
   notify:
     branches:
