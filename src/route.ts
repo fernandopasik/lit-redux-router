@@ -1,7 +1,6 @@
 import { LitElement, html, property } from '@polymer/lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
-import { connect } from 'pwa-helpers/connect-mixin.js';
-import { installRouter } from 'pwa-helpers/router.js';
+import { connect, installRouter } from 'pwa-helpers';
 
 import { Store } from 'redux';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
