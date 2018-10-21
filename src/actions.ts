@@ -1,6 +1,6 @@
 import { ADD_ROUTE, NAVIGATE } from './constants';
 
-export const navigate = (path: string = '/') => ({
+export const navigate = (path: string) => ({
   type: NAVIGATE,
   path,
 });
