@@ -10,6 +10,7 @@ import { State } from './reducer';
 import { getRouteParams, isRouteActive } from './selectors';
 
 let routerInstalled = false;
+export let RouteClass;
 
 export default (store: Store<State> & LazyStore) => {
   class Route extends connect(store)(LitElement) {
@@ -64,7 +65,8 @@ export default (store: Store<State> & LazyStore) => {
     }
   }
 
-  customElements.define('lit-route', Route);
+  RouteClass = Route;
+  window.customElements.define('lit-route', Route);
 };
 
 declare global {
