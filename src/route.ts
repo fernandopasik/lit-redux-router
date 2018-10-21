@@ -10,6 +10,7 @@ import { State } from './reducer';
 import { getRouteParams, isRouteActive } from './selectors';
 
 let routerInstalled = false;
+// eslint-disable-next-line import/no-mutable-exports
 export let RouteClass;
 
 export default (store: Store<State> & LazyStore) => {
