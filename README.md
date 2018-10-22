@@ -1,4 +1,4 @@
-# lit-redux-router
+# Lit Redux Router
 
 [![npm version][img-npm]][url-npm]
 [![Build Status][img-circleci]][url-circleci]
@@ -58,3 +58,7 @@ yarn test
 yarn lint
 yarn build
 ```
+
+## License
+
+MIT (c) 2018 [Fernando Pasik](https://fernandopasik.com)
