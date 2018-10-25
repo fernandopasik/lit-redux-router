@@ -72,7 +72,7 @@ describe('Route element', () => {
       expect(pwaHelpers.installRouter).toHaveBeenCalledTimes(1);
     });
 
-    test('registers the route', () => {
+    test('registers the route if path present', () => {
       connectRouter(mockStore({}));
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
@@ -82,6 +82,20 @@ describe('Route element', () => {
       route.firstUpdated();
 
       expect(spy).toHaveBeenCalledWith(path);
+
+      spy.mockRestore();
+    });
+
+    test('does not register the route if path not present', () => {
+      connectRouter(mockStore({}));
+      const spy = jest.spyOn(actions, 'addRoute');
+      const route = new Route();
+
+      route.firstUpdated();
+
+      expect(spy).not.toHaveBeenCalled();
+
+      spy.mockRestore();
     });
 
     test('can navigate to a route', () => {

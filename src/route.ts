@@ -36,7 +36,9 @@ export default (store: Store<State> & LazyStore) => {
         routerInstalled = true;
       }
 
-      store.dispatch(addRoute(this.path));
+      if (this.path) {
+        store.dispatch(addRoute(this.path));
+      }
     }
 
     stateChanged(state) {
