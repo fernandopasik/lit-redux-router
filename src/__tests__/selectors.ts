@@ -1,4 +1,9 @@
-import { getRouteParams, getRoute, isRouteActive } from '../selectors';
+import {
+  getRouteParams,
+  getRoute,
+  isRouteActive,
+  noRouteActive,
+} from '../selectors';
 
 describe('Router Selectors', () => {
   describe('get route', () => {
@@ -27,6 +32,44 @@ describe('Router Selectors', () => {
     });
   });
 
+  describe('no route active', () => {
+    test('when no routes present', () => {
+      const state = {
+        router: {
+          activeRoute: '/',
+          routes: {},
+        },
+      };
+      expect(noRouteActive(state)).toEqual(true);
+    });
+
+    test('when no route active present', () => {
+      const state = {
+        router: {
+          activeRoute: '/',
+          routes: {
+            '/contact': { active: false },
+            '/about': { active: false },
+          },
+        },
+      };
+      expect(noRouteActive(state)).toEqual(true);
+    });
+
+    test('when route active present', () => {
+      const state = {
+        router: {
+          activeRoute: '/',
+          routes: {
+            '/': { active: true },
+            '/about': { active: false },
+          },
+        },
+      };
+      expect(noRouteActive(state)).toEqual(false);
+    });
+  });
+
   describe('is active', () => {
     test('can be true', () => {
       const path = '/about';
@@ -41,6 +84,19 @@ describe('Router Selectors', () => {
         },
       };
       expect(isRouteActive(state, path)).toBe(true);
+    });
+
+    test('can be true if called with empty path and no route is active', () => {
+      const state = {
+        router: {
+          activeRoute: '/',
+          routes: {
+            '/contact': { active: false },
+            '/about': { active: false },
+          },
+        },
+      };
+      expect(isRouteActive(state)).toEqual(true);
     });
 
     test('can be false', () => {

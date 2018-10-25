@@ -57,9 +57,11 @@ export default class MyApp extends LitElement {
         <a href="/products/1/shirt">products</a>
         <a href="/about">about</a>
         <a href="/contact">contact</a>
+        <a href="/not-exist">not exist</a>
       </nav>
 
       <div class="app-content">
+        <lit-route><h1>404</h1></lit-route>
         <lit-route path="/">
           <h1>Home</h1>
         </lit-route>
