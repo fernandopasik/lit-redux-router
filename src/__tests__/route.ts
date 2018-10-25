@@ -111,6 +111,9 @@ describe('Route element', () => {
       cb({ pathname });
 
       expect(spy2).toHaveBeenCalledWith(pathname);
+
+      spy1.mockRestore();
+      spy2.mockRestore();
     });
   });
 
@@ -127,6 +130,8 @@ describe('Route element', () => {
 
       expect(spy).toHaveBeenCalledWith(state, path);
       expect(route.active).toBe(true);
+
+      spy.mockRestore();
     });
 
     test('can get params', () => {
@@ -142,6 +147,8 @@ describe('Route element', () => {
 
       expect(spy).toHaveBeenCalledWith(state, path);
       expect(route.params).toEqual(params);
+
+      spy.mockRestore();
     });
   });
 
