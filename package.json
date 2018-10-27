@@ -26,14 +26,12 @@
     "build": "tsc",
     "prebuild": "del dist",
     "size": "rollup -c && bundlesize && del bundle.js",
-    "preversion": "yarn lint && yarn test && yarn build"
+    "preversion": "yarn lint && yarn test && yarn build && yarn size"
   },
-  "bundlesize": [
-    {
-      "path": "bundle.js",
-      "maxSize": "1.5 kB"
-    }
-  ],
+  "bundlesize": [{
+    "path": "bundle.js",
+    "maxSize": "1.5 kB"
+  }],
   "dependencies": {
     "regexparam": "^1.0.1"
   },
