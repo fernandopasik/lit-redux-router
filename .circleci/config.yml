@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest-browsers
+    branches:
+      ignore:
+        - gh-pages
     steps:
       - checkout
       - run:
