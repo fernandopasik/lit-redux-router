@@ -23,7 +23,8 @@
     "watch": "npm-run-all -p 'build --watch' 'start'",
     "test": "jest",
     "lint": "eslint . --ext ts",
-    "build": "del dist && tsc",
+    "build": "tsc",
+    "prebuild": "del dist",
     "size": "rollup -c && bundlesize && del bundle.js",
     "preversion": "yarn lint && yarn test && yarn build"
   },
