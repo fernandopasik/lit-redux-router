@@ -11,7 +11,7 @@ What existing problem does the pull request solve?
 Add screenshots or logs that help understand the description.
 -->
 
-<!-- Make sure tests pass on Circle CI. -->
+<!-- Make sure tests pass on Circle CI, CodeCov and BundleSize. -->
 
 **Closing issues**
 <!-- Mention which issue is being closed with this pull request. -->
