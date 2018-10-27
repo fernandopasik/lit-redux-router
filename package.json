@@ -19,8 +19,8 @@
   },
   "main": "dist/index.js",
   "scripts": {
-    "start": "polymer serve",
-    "watch": "npm-run-all -p 'build --watch' 'start'",
+    "start": "npm-run-all -p 'build --watch' 'serve'",
+    "serve": "polyserve --npm --root example --module-resolution node",
     "test": "jest",
     "lint": "eslint . --ext ts",
     "build": "tsc",
@@ -28,10 +28,12 @@
     "size": "rollup -c && bundlesize && del bundle.js",
     "preversion": "yarn lint && yarn test && yarn build && yarn size"
   },
-  "bundlesize": [{
-    "path": "bundle.js",
-    "maxSize": "1.5 kB"
-  }],
+  "bundlesize": [
+    {
+      "path": "bundle.js",
+      "maxSize": "1.5 kB"
+    }
+  ],
   "dependencies": {
     "regexparam": "^1.0.1"
   },
@@ -59,7 +61,7 @@
     "jest-junit": "^5.2.0",
     "lit-html": "^0.12.0",
     "npm-run-all": "^4.1.3",
-    "polymer-cli": "^1.8.1",
+    "polyserve": "^0.27.13",
     "pwa-helpers": "^0.9.0",
     "redux": "^4.0.1",
     "redux-mock-store": "^1.5.3",
