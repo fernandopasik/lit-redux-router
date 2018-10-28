@@ -1,26 +1,26 @@
 # Lit Redux Router
 
-[![Build Status][badge-1]][url-1]
-[![Coverage Status][badge-2]][url-2]
+[![Build Status][badge-ci]][url-ci]
+[![Coverage Status][badge-cov]][url-cov]
 
-[![npm version][badge-3]][url-3]
-[![Dependency Status][badge-4]][url-4]
-[![peerDependency Status][badge-5]][url-5]
-[![devDependency Status][badge-6]][url-6]
+[![npm version][badge-version]][url-version]
+[![Dependency Status][badge-deps]][url-deps]
+[![peerDependency Status][badge-deps-peer]][url-deps-peer]
+[![devDependency Status][badge-deps-dev]][url-deps-dev]
 
-[badge-1]: https://circleci.com/gh/fernandopasik/lit-redux-router.svg?style=svg
-[badge-2]: https://codecov.io/gh/fernandopasik/lit-redux-router/branch/master/graph/badge.svg
-[badge-3]: https://img.shields.io/npm/v/lit-redux-router.svg
-[badge-4]: https://david-dm.org/fernandopasik/lit-redux-router/status.svg
-[badge-5]: https://david-dm.org/fernandopasik/lit-redux-router/peer-status.svg
-[badge-6]: https://david-dm.org/fernandopasik/lit-redux-router/dev-status.svg
+[badge-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router.svg?style=svg
+[badge-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router/branch/master/graph/badge.svg
+[badge-version]: https://img.shields.io/npm/v/lit-redux-router.svg
+[badge-deps]: https://david-dm.org/fernandopasik/lit-redux-router/status.svg
+[badge-deps-peer]: https://david-dm.org/fernandopasik/lit-redux-router/peer-status.svg
+[badge-deps-dev]: https://david-dm.org/fernandopasik/lit-redux-router/dev-status.svg
 
-[url-1]: https://circleci.com/gh/fernandopasik/lit-redux-router "Build Status"
-[url-2]: https://codecov.io/gh/fernandopasik/lit-redux-router "Coverage Status"
-[url-3]: https://www.npmjs.com/package/lit-redux-router "npm version"
-[url-4]: https://david-dm.org/fernandopasik/lit-redux-router "Dependency Status"
-[url-5]: https://david-dm.org/fernandopasik/lit-redux-router?type=peer "Peer Dependency Status"
-[url-6]: https://david-dm.org/fernandopasik/lit-redux-router?type=dev "Dev Dependency Status"
+[url-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router "Build Status"
+[url-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router "Coverage Status"
+[url-version]: https://www.npmjs.com/package/lit-redux-router "npm version"
+[url-deps]: https://david-dm.org/fernandopasik/lit-redux-router "Dependency Status"
+[url-deps-peer]: https://david-dm.org/fernandopasik/lit-redux-router?type=peer "Peer Dependency Status"
+[url-deps-dev]: https://david-dm.org/fernandopasik/lit-redux-router?type=dev "Dev Dependency Status"
 
 Declarative way of routing for [lit-html](https://github.com/Polymer/lit-html) powered by [pwa-helpers](https://github.com/Polymer/pwa-helpers), [redux](https://redux.js.org/) and [lit-element](https://github.com/Polymer/lit-element).
 
