@@ -816,10 +816,10 @@
   resolved "https://registry.yarnpkg.com/@types/is-windows/-/is-windows-0.2.0.tgz#6f24ee48731d31168ea510610d6dd15e5fc9c6ff"
   integrity sha1-byTuSHMdMRaOpRBhDW3RXl/Jxv8=
 
-"@types/jest@^23.3.8":
-  version "23.3.8"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.8.tgz#56b07c0c3d7c8a6c47abb4f785cab648c6eafd01"
-  integrity sha512-OKDxB/7woaQfUKkj+7+Zo3PmAxAYAy+SNwOwFhnYAc8JTaPhGOv8SC6QQg5D9+Giprhx/DzoKbJIpV9799VV0g==
+"@types/jest@^23.3.9":
+  version "23.3.9"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.9.tgz#c16b55186ee73ae65e001fbee69d392c51337ad1"
+  integrity sha512-wNMwXSUcwyYajtbayfPp55tSayuDVU6PfY5gzvRSj80UvxdXEJOVPnUVajaOp7NgXLm+1e2ZDLULmpsU9vDvQw==
 
 "@types/mime@*", "@types/mime@^2.0.0":
   version "2.0.0"
@@ -847,9 +847,9 @@
     "@types/node" "*"
 
 "@types/node@*":
-  version "10.12.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.0.tgz#ea6dcbddbc5b584c83f06c60e82736d8fbb0c235"
-  integrity sha512-3TUHC3jsBAB7qVRGxT6lWyYo2v96BMmD2PTcl47H25Lu7UXtFH/2qqmKiVrnel6Ne//0TFYf6uvNX+HW2FRkLQ==
+  version "10.12.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.1.tgz#da61b64a2930a80fa708e57c45cd5441eb379d5b"
+  integrity sha512-i1sl+WCX2OCHeUi9oi7PiCNUtYFrpWhpcx878vpeq/tlZTKzcFdHePlyFHVbWqeuKN0SRPl/9ZFDSTsfv9h7VQ==
 
 "@types/node@^4.0.30", "@types/node@^4.2.3":
   version "4.9.0"
@@ -7553,9 +7553,9 @@ sprintf-js@~1.0.2:
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
 sshpk@^1.7.0:
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.15.1.tgz#b79a089a732e346c6e0714830f36285cd38191a2"
-  integrity sha512-mSdgNUaidk+dRU5MhYtN9zebdzF2iG0cNPWy8HG+W8y+fT1JnSkh0fzzpjOa0L7P8i1Rscz38t0h4gPcKz43xA==
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.15.2.tgz#c946d6bd9b1a39d0e8635763f5242d6ed6dcb629"
+  integrity sha512-Ra/OXQtuh0/enyl4ETZAfTaeksa6BXks5ZcjpSUNrjBr0DvrJKX+1fsKDPpT9TBXgHAFsa4510aNVgI8g/+SzA==
   dependencies:
     asn1 "~0.2.3"
     assert-plus "^1.0.0"
@@ -7883,9 +7883,9 @@ ternary-stream@^2.0.1:
     through2 "^2.0.1"
 
 terser@^3.8.2:
-  version "3.10.4"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-3.10.4.tgz#63ed0b5266d39cbdcb9c2bf6506f6444b70184a3"
-  integrity sha512-Gobjr6j9ZbA0oAFW+foiqp8LUZjBkd5UHxCVL0cPOlHO7wKKa3FwHW/j9p7d1/ypPl6m9Bf0LAFbbHf3k97asA==
+  version "3.10.7"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-3.10.7.tgz#8b48f25f959eeef7ae48407c1b21149052535973"
+  integrity sha512-6iazZDyDBQ5EgAQo+CgswXdWV8gDzJADFIWtIZlI7wPtmGL84JzDFtkOR8m/Mjsp2blzOK3+uQG2rex2+E6Z7A==
   dependencies:
     commander "~2.17.1"
     source-map "~0.6.1"
@@ -8144,10 +8144,10 @@ typescript-estree@2.1.0:
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-typescript@^3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.1.3.tgz#01b70247a6d3c2467f70c45795ef5ea18ce191d5"
-  integrity sha512-+81MUSyX+BaSo+u2RbozuQk/UWx6hfG0a5gHu4ANEM4sU96XbuIyAB+rWBW1u70c6a5QuZfuYICn3s2UjuHUpA==
+typescript@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.1.4.tgz#c74ef7b3c2da65beff548b903022cb8c3cd997ed"
+  integrity sha512-JZHJtA6ZL15+Q3Dqkbh8iCUmvxD3iJ7ujXS+fVkKnwIVAdHc5BJTDNM0aTrnr2luKulFjU7W+SRhDZvi66Ru7Q==
 
 typical@^2.6.1:
   version "2.6.1"
