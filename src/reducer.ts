@@ -1,5 +1,5 @@
-import regexparam from 'regexparam';
 import { ADD_ROUTE, NAVIGATE } from './constants';
+import { refreshRoute } from './service';
 
 export interface RouteParams {
   [param: string]: string
@@ -25,19 +25,6 @@ interface Action {
 const initialState = {
   activeRoute: '/',
   routes: {},
-};
-
-const refreshRoute = (path, activePath) => {
-  const { pattern, keys } = regexparam(path);
-  const match = pattern.exec(activePath);
-
-  return {
-    active: pattern.test(activePath),
-    params: keys.reduce((list, item, index) => ({
-      ...list,
-      [item]: (match && match[index + 1]) || '',
-    }), {}),
-  };
 };
 
 const reducer = (
