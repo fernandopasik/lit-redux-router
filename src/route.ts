@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { LitElement, html, property } from '@polymer/lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
