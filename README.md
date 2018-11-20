@@ -65,11 +65,29 @@ Check a more complete example in https://github.com/fernandopasik/lit-redux-rout
 
 ## Development
 
+Start server with example and watch mode for building the library
+
 ```
-yarn watch
+yarn start
+```
+
+Run lint and test tasks
+
+```
 yarn test
 yarn lint
+```
+
+Build the library
+
+```
 yarn build
+```
+
+Check the full size of the library
+
+```
+yarn size
 ```
 
 ## Built with
