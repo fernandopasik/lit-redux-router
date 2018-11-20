@@ -37,31 +37,109 @@ yarn add lit-redux-router
 yarn add lit-html @polymer/lit-element pwa-helpers redux
 ```
 
-## Basic Example
+## Usage
+
+First the router needs to **connect to a redux store**.
 
 ```js
-// app.js
 import { LitElement, html } from '@polymer/lit-element';
 import { connectRouter } from 'lit-redux-router';
 import store from './store.js';
 
 connectRouter(store);
+```
 
-export default class MyApp extends LitElement {
+`lit-route` component can render the components when the **path attribute** matches.
+
+```js
+class MyApp extends LitElement {
   render() {
     return html`
-      <div class="app-bar">Example App</div>
-
       <div class="app-content">
         <lit-route path="/"><h1>Home</h1></lit-route>
-        <lit-route path="/products/:id?/:name?" component="my-product"></lit-route>
+        <lit-route path="/about"><h1>About</h1></lit-route>
       </div>
     `;
   }
 }
+customElements.define('my-app', MyApp);
 ```
 
-Check a more complete example in https://github.com/fernandopasik/lit-redux-router/blob/master/example/app.js
+Ideally all content would be in a component and can be passed to `lit-route` in a **component attribute**.
+
+```js
+class AppHome extends LitElement {
+  render() {
+    return html`<h1>Home</h1>`;
+  }
+}
+customElements.define('app-home', AppHome);
+
+class AppAbout extends LitElement {
+  render() {
+    return html`<h1>About</h1>`;
+  }
+}
+customElements.define('app-about', AppAbout);
+
+class MyApp extends LitElement {
+  render() {
+    return html`
+      <div class="app-content">
+        <lit-route path="/" component="app-home"></lit-route>
+        <lit-route path="/about" component="app-about"></lit-route>
+      </div>
+    `;
+  }
+}
+customElements.define('my-app', MyApp);
+```
+
+`lit-route` can **map path variables** and inject them in the provided component.
+
+```js
+class AppProduct extends LitElement {
+  static get properties() {
+    return {
+      id: String,
+    };
+  }
+
+  render() {
+    return html`<h1>Product with id: ${this.id}</h1>`;
+  }
+}
+customElements.define('app-product', AppProduct);
+
+class MyApp extends LitElement {
+  render() {
+    return html`
+      <div class="app-content">
+        <lit-route path="/products/:id" component="app-product"></lit-route>
+      </div>
+    `;
+  }
+}
+customElements.define('my-app', MyApp);
+```
+
+When no path attribute is provided to `lit-route`, it will render when no route matches (404)
+
+```js
+class MyApp extends LitElement {
+  render() {
+    return html`
+      <div class="app-content">
+        <lit-route path="/"><h1>Home</h1></lit-route>
+        <lit-route><h1>404 Not found</h1></lit-route>
+      </div>
+    `;
+  }
+}
+customElements.define('my-app', MyApp);
+```
+
+Check a more comprehensive example in https://github.com/fernandopasik/lit-redux-router/blob/master/example/
 
 ## Development
 
