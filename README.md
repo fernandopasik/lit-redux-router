@@ -33,7 +33,8 @@ More info here: https://polymer.github.io/pwa-starter-kit/configuring-and-person
 ## Install
 
 ```
-yarn add lit-redux-router lit-html @polymer/lit-element pwa-helpers redux
+yarn add lit-redux-router
+yarn add lit-html @polymer/lit-element pwa-helpers redux
 ```
 
 ## Basic Example
