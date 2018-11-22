@@ -76,4 +76,51 @@ describe('Router Reducer', () => {
       expect(newState.routes[path]).toHaveProperty('params', { id: '' });
     });
   });
+
+  describe('navigate to route', () => {
+    test('can set another route', () => {
+      const path = '/contact';
+      const action = { type: 'NAVIGATE', path };
+      const newState = reducer(undefined, action);
+      expect(newState).toHaveProperty('activeRoute', path);
+    });
+
+    test('checks for active path', () => {
+      const path = '/contact';
+      const routes = {
+        '/home': {},
+        '/contact': {},
+        '/about': {},
+      };
+      const action = { type: 'NAVIGATE', path };
+      const newState = reducer({ activeRoute: '/', routes }, action);
+      expect(newState.routes[path]).toHaveProperty('active', true);
+    });
+
+    test('checks for active parameters', () => {
+      const activePath = '/products/shirt';
+      const path = '/products/:id';
+      const routes = {
+        '/products/:id': {},
+        '/about': {},
+      };
+      const action = { type: 'NAVIGATE', path: activePath };
+      const newState = reducer({ activeRoute: '/', routes }, action);
+      expect(newState.routes[path]).toHaveProperty('active', true);
+      expect(newState.routes[path]).toHaveProperty('params', { id: 'shirt' });
+    });
+
+    test('parameters can be empty', () => {
+      const activePath = '/about';
+      const path = '/products/:id';
+      const routes = {
+        '/products/:id': {},
+        '/about': {},
+      };
+      const action = { type: 'NAVIGATE', path: activePath };
+      const newState = reducer({ activeRoute: '/', routes }, action);
+      expect(newState.routes[path]).toHaveProperty('active', false);
+      expect(newState.routes[path]).toHaveProperty('params', { id: '' });
+    });
+  });
 });

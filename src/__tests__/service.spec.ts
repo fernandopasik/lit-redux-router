@@ -1,6 +1,16 @@
-import { refreshRoute } from '../service';
+import { checkNavigation, refreshRoute } from '../service';
 
 describe('Router Service', () => {
+  beforeAll(() => {
+    Object.defineProperty(global, 'window', {
+      value: {
+        history: {
+          pushState: jest.fn(),
+        },
+      },
+    });
+  });
+
   test('match static route', () => {
     const route = '/contact';
     const activeRoute = '/contact';
@@ -98,5 +108,13 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
+  });
+
+  test('check navigation pushes route to history', () => {
+    const route = '/about';
+
+    checkNavigation(route);
+
+    expect(window.history.pushState).toHaveBeenCalledWith({}, '', route);
   });
 });
