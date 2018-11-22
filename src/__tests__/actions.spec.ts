@@ -12,7 +12,7 @@ describe('Router Actions', () => {
     });
   });
 
-  describe('Navigate', () => {
+  describe('Add Route', () => {
     test('has a type', () => {
       expect(addRoute('/')).toHaveProperty('type', 'ADD_ROUTE');
     });
