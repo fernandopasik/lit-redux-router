@@ -6,7 +6,7 @@ import { connect, installRouter } from 'pwa-helpers';
 import { Store } from 'redux';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 
-import { addRoute, navigate } from './actions';
+import { addRoute, setActiveRoute } from './actions';
 import { State } from './reducer';
 import { getRouteParams, isRouteActive } from './selectors';
 
@@ -32,7 +32,7 @@ export default (store: Store<State> & LazyStore) => {
       if (!routerInstalled) {
         installRouter((location) => {
           const path = window.decodeURIComponent(location.pathname);
-          return store.dispatch(navigate(path));
+          return store.dispatch(setActiveRoute(path));
         });
         routerInstalled = true;
       }

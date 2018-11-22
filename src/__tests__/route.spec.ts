@@ -22,7 +22,7 @@ jest.mock('pwa-helpers', () => ({
 }));
 
 jest.mock('../actions', () => ({
-  navigate: jest.fn(() => ({ type: '' })),
+  setActiveRoute: jest.fn(() => ({ type: '' })),
   addRoute: jest.fn(() => ({ type: '' })),
 }));
 
@@ -98,11 +98,11 @@ describe('Route element', () => {
       spy.mockRestore();
     });
 
-    test('can navigate to a route', () => {
+    test('can set active route', () => {
       connectRouter(mockStore({}));
       const route = new Route();
       const spy1 = jest.spyOn(pwaHelpers, 'installRouter');
-      const spy2 = jest.spyOn(actions, 'navigate');
+      const spy2 = jest.spyOn(actions, 'setActiveRoute');
       const pathname = '/example';
 
       route.firstUpdated();

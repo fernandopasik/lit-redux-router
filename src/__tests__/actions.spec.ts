@@ -1,14 +1,14 @@
-import { addRoute, navigate } from '../actions';
+import { addRoute, setActiveRoute } from '../actions';
 
 describe('Router Actions', () => {
-  describe('Navigate', () => {
+  describe('Set Active Route', () => {
     test('has a type', () => {
-      expect(navigate('')).toHaveProperty('type', 'NAVIGATE');
+      expect(setActiveRoute('')).toHaveProperty('type', 'SET_ACTIVE_ROUTE');
     });
 
     test('to a path', () => {
       const path = '/about';
-      expect(navigate(path)).toHaveProperty('path', path);
+      expect(setActiveRoute(path)).toHaveProperty('path', path);
     });
   });
 

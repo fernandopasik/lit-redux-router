@@ -1,4 +1,4 @@
-import { ADD_ROUTE, NAVIGATE } from './constants';
+import { ADD_ROUTE, SET_ACTIVE_ROUTE } from './constants';
 import { refreshRoute } from './service';
 
 export interface RouteParams {
@@ -32,7 +32,7 @@ const reducer = (
   { type = '', path = '' }: Action = {},
 ) => {
   switch (type) {
-    case NAVIGATE:
+    case SET_ACTIVE_ROUTE:
       return {
         ...state,
         activeRoute: path,
