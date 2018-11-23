@@ -10,3 +10,5 @@ export const connectRouter = (store: Store<State> & LazyStore) => {
 
   Route(store);
 };
+
+export { navigate } from './actions';
