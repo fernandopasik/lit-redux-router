@@ -1,12 +1,16 @@
 import { LitElement, html } from '@polymer/lit-element';
 
-import { connectRouter } from '../dist/index.js';
+import { connectRouter, navigate } from '../dist/index.js';
 import store from './store.js';
 import './products.js';
 
 connectRouter(store);
 
 export default class MyApp extends LitElement {
+  goTo(path) {
+    store.dispatch(navigate(path));
+  }
+
   render() {
     return html`
       <style>
@@ -71,6 +75,7 @@ export default class MyApp extends LitElement {
         </lit-route>
         <lit-route path="/contact">
           <h1>Contact</h1>
+          <button @click="${() => this.goTo('/about')}">learn more about us</button>
         </lit-route>
       </div>
     `;

@@ -139,6 +139,28 @@ class MyApp extends LitElement {
 customElements.define('my-app', MyApp);
 ```
 
+To trigger navigation without using a link element, the action `navigate` can be imported and triggered with the wanted path
+
+```js
+import { navigate } from 'lit-redux-router';
+import store from './store.js';
+
+class MyApp extends LitElement {
+  goTo(path) {
+    store.dispatch(navigate(path));
+  }
+
+  render() {
+    return html`
+      <div class="app-content">
+        <button @click="${() => this.goTo('/about')}">learn more about us</button>
+      </div>
+    `;
+  }
+}
+customElements.define('my-app', MyApp);
+```
+
 Check a more comprehensive example in https://github.com/fernandopasik/lit-redux-router/blob/master/example/
 
 ## Development
