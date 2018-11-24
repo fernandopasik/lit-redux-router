@@ -27,7 +27,7 @@
 
 Declarative way of routing for [lit-html](https://github.com/Polymer/lit-html) powered by [pwa-helpers](https://github.com/Polymer/pwa-helpers), [redux](https://redux.js.org/) and [lit-element](https://github.com/Polymer/lit-element).
 
-A minimal router solution (~1.25 kb Gzipped) based on the routing approach taken by [PWA Starter Kit](https://github.com/polymer/pwa-starter-kit).
+A minimal router solution (~1.31 kb Gzipped) based on the routing approach taken by [PWA Starter Kit](https://github.com/polymer/pwa-starter-kit).
 More info here: https://polymer.github.io/pwa-starter-kit/configuring-and-personalizing/#routing
 
 ## Install
