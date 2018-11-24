@@ -15,4 +15,4 @@ export const refreshRoute = (route, activeRoute) => {
 
 export const checkNavigation = (route) => {
   window.history.pushState({}, '', route);
-}
+};
