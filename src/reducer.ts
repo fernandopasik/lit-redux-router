@@ -1,5 +1,6 @@
 import { ADD_ROUTE, NAVIGATE, SET_ACTIVE_ROUTE } from './constants';
 import { refreshRoute } from './service';
+import { Actions } from './actions';
 
 export interface RouteParams {
   [param: string]: string
@@ -29,7 +30,7 @@ const initialState = {
 
 const reducer = (
   state: State = initialState,
-  { type = '', path = '' }: Action = {},
+  { type = '', path = '' }: Action | Actions = {},
 ) => {
   switch (type) {
     case NAVIGATE:
