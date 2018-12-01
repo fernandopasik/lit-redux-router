@@ -33,7 +33,7 @@
     "typescript/no-array-constructor": "error",
     "typescript/no-empty-interface": "error",
     "typescript/no-explicit-any": "error",
-    "typescript/no-inferrable-types": "off",
+    "typescript/no-inferrable-types": "error",
     "typescript/no-namespace": "off",
     "typescript/class-name-casing": "error",
     "typescript/no-non-null-assertion": "error",
