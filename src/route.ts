@@ -7,7 +7,7 @@ import { Store } from 'redux';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 
 import { addRoute, setActiveRoute } from './actions';
-import { State } from './reducer';
+import { RouteParams, State } from './reducer';
 import { getRouteParams, isRouteActive } from './selectors';
 
 let routerInstalled = false;
@@ -20,13 +20,13 @@ export default (store: Store<State> & LazyStore) => {
     active = false;
 
     @property({ type: String })
-    component;
+    component?: string;
 
     @property({ type: Object })
-    params = {};
+    params: RouteParams = {};
 
     @property({ type: String })
-    path;
+    path?: string;
 
     firstUpdated() {
       if (!routerInstalled) {
