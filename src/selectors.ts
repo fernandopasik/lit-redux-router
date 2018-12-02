@@ -1,13 +1,13 @@
 import { State as RouterState, Route, RouteParams } from './reducer';
 
-interface State {
+export interface State {
   router: RouterState
 }
 
 export const getRoute = (
   { router: { routes } }: State,
-  route: string,
-): Route => routes[route] || {};
+  route?: string,
+): Route => (routes && route && routes[route]) || {};
 
 export const noRouteActive = (
   { router: { routes } }: State,
@@ -31,5 +31,5 @@ export const isRouteActive = (
 
 export const getRouteParams = (
   state: State,
-  route: string,
+  route?: string,
 ): RouteParams => getRoute(state, route).params || {};

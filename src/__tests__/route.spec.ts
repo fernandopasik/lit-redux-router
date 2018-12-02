@@ -8,7 +8,7 @@ import * as selectors from '../selectors';
 jest.mock('@polymer/lit-element', () => ({
   LitElement: class LitElement {},
   html: jest.fn((strings, ...values) => strings
-    .map((string, index) => string + (values[index] || '')).join('')),
+    .map((string: string, index: number) => string + (values[index] || '')).join('')),
   property: jest.fn(),
 }));
 
