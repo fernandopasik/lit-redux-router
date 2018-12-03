@@ -1,5 +1,6 @@
 # Lit Redux Router
 
+[![Published on webcomponents.org][badge-wc]][url-wc]
 [![Build Status][badge-ci]][url-ci]
 [![Coverage Status][badge-cov]][url-cov]
 [![Known Vulnerabilities][badge-sec]][url-sec]
@@ -9,6 +10,7 @@
 [![peerDependency Status][badge-deps-peer]][url-deps-peer]
 [![devDependency Status][badge-deps-dev]][url-deps-dev]
 
+[badge-wc]: https://img.shields.io/badge/webcomponents.org-published-blue.svg
 [badge-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router.svg?style=svg
 [badge-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router/branch/master/graph/badge.svg
 [badge-sec]: https://snyk.io/test/github/fernandopasik/lit-redux-router/badge.svg?targetFile=package.json
@@ -17,6 +19,7 @@
 [badge-deps-peer]: https://david-dm.org/fernandopasik/lit-redux-router/peer-status.svg
 [badge-deps-dev]: https://david-dm.org/fernandopasik/lit-redux-router/dev-status.svg
 
+[url-wc]: https://webcomponents.org/element/lit-redux-router
 [url-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router "Build Status"
 [url-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router "Coverage Status"
 [url-sec]: https://snyk.io/test/github/fernandopasik/lit-redux-router?targetFile=package.json "Known Vulnerabilities"
