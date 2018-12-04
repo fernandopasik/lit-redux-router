@@ -7,8 +7,8 @@ import { Store } from 'redux';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 
 import { addRoute, setActiveRoute } from './actions';
-import { RouteParams, State } from './reducer';
-import { getRouteParams, isRouteActive } from './selectors';
+import { RouteParams } from './reducer';
+import { getRouteParams, isRouteActive, State } from './selectors';
 
 let routerInstalled = false;
 // eslint-disable-next-line import/no-mutable-exports
@@ -42,7 +42,7 @@ export default (store: Store<State> & LazyStore) => {
       }
     }
 
-    stateChanged(state) {
+    stateChanged(state: State) {
       this.active = isRouteActive(state, this.path);
       this.params = getRouteParams(state, this.path);
     }

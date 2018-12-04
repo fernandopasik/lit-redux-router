@@ -11,7 +11,7 @@ export interface Route {
   params?: RouteParams
 }
 
-export interface State {
+export interface RouterState {
   activeRoute: string,
   routes: {
     [path: string]: Route
@@ -29,7 +29,7 @@ const initialState = {
 };
 
 const reducer = (
-  state: State = initialState,
+  state: RouterState = initialState,
   { type = '', path = '' }: Action | Actions = {},
 ) => {
   switch (type) {
