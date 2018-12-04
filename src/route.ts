@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { LitElement, html, property } from '@polymer/lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
@@ -11,8 +10,9 @@ import { RouteParams } from './reducer';
 import { getRouteParams, isRouteActive, State } from './selectors';
 
 let routerInstalled = false;
-// eslint-disable-next-line import/no-mutable-exports
-export let RouteClass;
+
+// eslint-disable-next-line import/no-mutable-exports, typescript/no-explicit-any
+export let RouteClass: any;
 
 export default (store: Store<State> & LazyStore) => {
   class Route extends connect(store)(LitElement) {
