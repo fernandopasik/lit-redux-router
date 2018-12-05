@@ -1,6 +1,5 @@
 {
-  "entrypoint": "example/index.html",
-  "shell": "example/app.js",
+  "entrypoint": "demo/index.html",
   "builds": [{
     "name": "lit-redux-router",
     "preset": "es5-unbundled"

@@ -1,5 +1,5 @@
 node_modules
 dist/**
 coverage/**
-example/dist/**
+demo/dist/**
 bundle.js

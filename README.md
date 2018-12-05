@@ -164,7 +164,7 @@ class MyApp extends LitElement {
 customElements.define('my-app', MyApp);
 ```
 
-Check a more comprehensive example in https://github.com/fernandopasik/lit-redux-router/blob/master/example/
+Check a more comprehensive example in https://github.com/fernandopasik/lit-redux-router/blob/master/demo/
 
 ## Development
 

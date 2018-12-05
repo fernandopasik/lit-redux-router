@@ -22,4 +22,4 @@ coverage
 dist
 bundle.js
 
-!example/**
+!demo/**

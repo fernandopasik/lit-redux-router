@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+		<title>Lit Redux Router</title>
+		<meta name="description" content="Declarative routing elements made with lit-html enabled by pwa-helpers and redux">
+
+		<style>
+			body {
+				background-color: #e0e0e0;
+				margin: 0;
+			}
+		</style>
+		<script>
+			window.process = { env: { NODE_ENV: 'production' } };
+		</script>
+	</head>
+	<body>
+		<my-app></my-app>
+
+		<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.1/webcomponents-loader.js"></script>
+
+		<script type="module">
+			import { LitElement, html } from '@polymer/lit-element';
+
+			import { connectRouter, navigate } from '../dist/index.js';
+			import {
+				createStore,
+				compose as origCompose,
+				combineReducers,
+			} from 'redux';
+			import { lazyReducerEnhancer } from 'pwa-helpers/lazy-reducer-enhancer.js';
+
+			const compose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || origCompose;
+
+			const store = createStore(
+				(state, action) => state,
+				compose(lazyReducerEnhancer(combineReducers)),
+			);
+
+			connectRouter(store);
+
+			class MyApp extends LitElement {
+				goTo(path) {
+					store.dispatch(navigate(path));
+				}
+
+				render() {
+					return html`
+						<style>
+							:host {
+								font-family: sans-serif;
+								font-weight: 300;
+							}
+
+							a {
+								text-decoration: none;
+								color: inherit;
+							}
+
+							a:hover {
+								text-decoration: underline;
+							}
+
+							h1 {
+								margin-top: 0;
+								margin-bottom: 16px;
+							}
+
+							.app-bar {
+								color: white;
+								background-color: #2196f3;
+								font-size: 20px;
+								padding: 16px;
+								text-align: center;
+							}
+
+							.app-content {
+								padding: 16px;
+							}
+
+							.nav-bar {
+								background-color: white;
+								text-align: center;
+							}
+
+							.nav-bar a {
+								display: inline-block;
+								padding: 16px;
+							}
+						</style>
+						<div class="app-bar">Example App</div>
+						<nav class="nav-bar">
+							<a href="/">home</a>
+							<a href="/products/1/shirt">products</a>
+							<a href="/about">about</a>
+							<a href="/contact">contact</a>
+							<a href="/not-exist">not exist</a>
+						</nav>
+
+						<div class="app-content">
+							<lit-route><h1>404</h1></lit-route>
+							<lit-route path="/">
+								<h1>Home</h1>
+							</lit-route>
+							<lit-route path="/products/:id?/:name?" component="my-product"></lit-route>
+							<lit-route path="/about">
+								<h1>About</h1>
+							</lit-route>
+							<lit-route path="/contact">
+								<h1>Contact</h1>
+								<button @click="${() => this.goTo('/about')}">learn more about us</button>
+							</lit-route>
+						</div>
+					`;
+				}
+			}
+
+			customElements.define('my-app', MyApp);
+
+			class MyProduct extends LitElement {
+				static get properties() {
+					return {
+						id: String,
+						name: String,
+					};
+				}
+
+				render() {
+					return html`
+						<style>
+							h1 {
+								margin-top: 0;
+								margin-bottom: 16px;
+							}
+						</style>
+						<h1>Product ${this.id} ${this.name}</h1>
+					`;
+				}
+			}
+
+			customElements.define('my-product', MyProduct);
+
+		</script>
+	</body>
+</html>
