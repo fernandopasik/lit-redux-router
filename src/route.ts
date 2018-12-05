@@ -15,6 +15,12 @@ let routerInstalled = false;
 export let RouteClass: any;
 
 export default (store: Store<State> & LazyStore) => {
+  /**
+   * `<lit-route>` is an element that when browser route matches it
+   * the content or the component associated is diplayed
+   * @element lit-route
+   * @demo ../demo/index.html
+   */
   class Route extends connect(store)(LitElement) {
     @property({ type: Boolean })
     active = false;
