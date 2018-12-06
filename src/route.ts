@@ -22,7 +22,7 @@ export default (store: Store<State> & LazyStore) => {
    * @demo ../demo/index.html
    */
   class Route extends connect(store)(LitElement) {
-    @property({ type: Boolean })
+    @property({ type: Boolean, reflect: true })
     active = false;
 
     @property({ type: String })
