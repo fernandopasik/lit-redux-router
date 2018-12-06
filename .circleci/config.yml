@@ -3,9 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest-browsers
-    branches:
-      ignore:
-        - gh-pages
     steps:
       - checkout
       - run:
@@ -37,8 +34,3 @@ jobs:
           name: Check filesize
           command: yarn size
           when: always
-experimental:
-  notify:
-    branches:
-      only:
-        - master
