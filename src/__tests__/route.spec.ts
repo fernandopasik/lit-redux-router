@@ -1,5 +1,6 @@
 import configureStore from 'redux-mock-store';
 import * as pwaHelpers from 'pwa-helpers';
+import { customElement } from '@polymer/lit-element';
 import connectRouter, { RouteClass as Route } from '../route';
 
 import * as actions from '../actions';
@@ -9,6 +10,7 @@ jest.mock('@polymer/lit-element', () => ({
   LitElement: class LitElement {},
   html: jest.fn((strings, ...values) => strings
     .map((string: string, index: number) => string + (values[index] || '')).join('')),
+  customElement: jest.fn(),
   property: jest.fn(),
 }));
 
@@ -48,7 +50,7 @@ describe('Route element', () => {
   test('defines the custom element', () => {
     connectRouter(mockStore({}));
 
-    expect(window.customElements.define).toHaveBeenCalledWith('lit-route', Route);
+    expect(customElement).toHaveBeenCalledWith('lit-route');
   });
 
   describe('first updated', () => {
