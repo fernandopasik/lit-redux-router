@@ -1,4 +1,9 @@
-import { LitElement, html, property } from '@polymer/lit-element';
+import {
+  LitElement,
+  html,
+  property,
+  customElement,
+} from '@polymer/lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
 
@@ -21,6 +26,8 @@ export default (store: Store<State> & LazyStore) => {
    * @element lit-route
    * @demo ../demo/index.html
    */
+  // eslint-disable-next-line typescript/no-explicit-any
+  @customElement('lit-route' as any)
   class Route extends connect(store)(LitElement) {
     @property({ type: Boolean, reflect: true })
     active = false;
@@ -74,7 +81,6 @@ export default (store: Store<State> & LazyStore) => {
   }
 
   RouteClass = Route;
-  window.customElements.define('lit-route', Route);
 };
 
 declare global {
