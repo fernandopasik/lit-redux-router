@@ -65,7 +65,7 @@ describe('Router Service', () => {
     expect(SUT.active).toBe(true);
   });
 
-  test('match an optional parameter', () => {
+  test('match an optional parameter without value', () => {
     const route = '/product/:id?';
     const activeRoute = '/product';
 
@@ -74,7 +74,7 @@ describe('Router Service', () => {
     expect(SUT.active).toBe(true);
   });
 
-  test('match an optional parameter with matching', () => {
+  test('match an optional parameter with value', () => {
     const route = '/product/:id?';
     const activeRoute = '/product/1';
 
@@ -83,7 +83,7 @@ describe('Router Service', () => {
     expect(SUT.active).toBe(true);
   });
 
-  test('match more than one optional parameter', () => {
+  test('match more than one optional parameter without values', () => {
     const route = '/product/:id?/:time?';
     const activeRoute = '/product';
 
@@ -92,7 +92,7 @@ describe('Router Service', () => {
     expect(SUT.active).toBe(true);
   });
 
-  test('match more than one optional parameter with one matching', () => {
+  test('match more than one optional parameter with one value', () => {
     const route = '/product/:id?/:time?';
     const activeRoute = '/product/1';
 
@@ -101,7 +101,7 @@ describe('Router Service', () => {
     expect(SUT.active).toBe(true);
   });
 
-  test('match more than one optional parameter with all matching', () => {
+  test('match more than one optional parameter with all values', () => {
     const route = '/product/:id?/:time?';
     const activeRoute = '/product/1/nov2017';
 
