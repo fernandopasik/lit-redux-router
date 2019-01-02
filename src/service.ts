@@ -3,8 +3,9 @@ import { RouteParams } from './reducer';
 
 export const refreshRoute = (route: string, activeRoute: string) => {
   const { pattern, keys } = regexparam(route);
-  const match = pattern.exec(activeRoute);
-  const active = pattern.test(activeRoute);
+  const noQueryRoute = activeRoute.replace(/\?.*/, '');
+  const match = pattern.exec(noQueryRoute);
+  const active = pattern.test(noQueryRoute);
 
   return {
     active,

@@ -137,4 +137,14 @@ describe('Router Service', () => {
 
     expect(window.history.pushState).toHaveBeenCalledWith({}, '', route);
   });
+
+  test('match routes with query string', () => {
+    const route = '/product/:id';
+    const activeRoute = '/product/1?asdf=123';
+
+    const SUT = refreshRoute(route, activeRoute);
+
+    expect(SUT.active).toBe(true);
+    expect(SUT.params).toEqual({ id: '1' });
+  });
 });
