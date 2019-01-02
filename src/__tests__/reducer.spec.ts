@@ -73,7 +73,7 @@ describe('Router Reducer', () => {
       const action = { type: 'SET_ACTIVE_ROUTE', path: activePath };
       const newState = reducer({ activeRoute: '/', routes }, action);
       expect(newState.routes[path]).toHaveProperty('active', false);
-      expect(newState.routes[path]).toHaveProperty('params', { id: '' });
+      expect(newState.routes[path]).toHaveProperty('params', {});
     });
   });
 
@@ -120,7 +120,7 @@ describe('Router Reducer', () => {
       const action = { type: 'NAVIGATE', path: activePath };
       const newState = reducer({ activeRoute: '/', routes }, action);
       expect(newState.routes[path]).toHaveProperty('active', false);
-      expect(newState.routes[path]).toHaveProperty('params', { id: '' });
+      expect(newState.routes[path]).toHaveProperty('params', {});
     });
   });
 });

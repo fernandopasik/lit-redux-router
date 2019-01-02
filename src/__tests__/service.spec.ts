@@ -30,6 +30,16 @@ describe('Router Service', () => {
     expect(SUT.params).toEqual({ id: '1' });
   });
 
+  test('do not match a parameter if route not active', () => {
+    const route = '/product/:id';
+    const activeRoute = '/other/1';
+
+    const SUT = refreshRoute(route, activeRoute);
+
+    expect(SUT.active).toBe(false);
+    expect(SUT.params).toEqual({});
+  });
+
   test('match a parameter and not after text', () => {
     const route = '/product/:id';
     const activeRoute = '/product/1/edit';
