@@ -87,7 +87,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: ''});
+    expect(SUT.params).toEqual({ id: '' });
   });
 
   test('match an optional parameter with value', () => {
