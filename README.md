@@ -53,14 +53,14 @@ import store from './store.js';
 connectRouter(store);
 ```
 
-`lit-route` component can render the components when the **path attribute** matches.
+`lit-route` component can render the components when the **path attribute** matches. The corresponding active `lit-route` element will reflect the **active attribute**.
 
 ```js
 class MyApp extends LitElement {
   render() {
     return html`
       <div class="app-content">
-        <lit-route path="/"><h1>Home</h1></lit-route>
+        <lit-route path="/" active><h1>Home</h1></lit-route>
         <lit-route path="/about"><h1>About</h1></lit-route>
       </div>
     `;
