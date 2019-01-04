@@ -69,7 +69,7 @@ class MyApp extends LitElement {
 customElements.define('my-app', MyApp);
 ```
 
-Ideally all content would be in a component and can be passed to `lit-route` in a **component attribute**.
+Ideally all content would be in a component and can be passed to `lit-route` through a **component attribute**.
 
 ```js
 class AppHome extends LitElement {
