@@ -5,7 +5,7 @@ import connectRouter, { RouteClass as Route } from '../route';
 import * as actions from '../actions';
 import * as selectors from '../selectors';
 
-jest.mock('@polymer/lit-element', () => ({
+jest.mock('lit-element', () => ({
   LitElement: class LitElement {},
   html: jest.fn((strings, ...values) => strings
     .map((string: string, index: number) => string + (values[index] || '')).join('')),

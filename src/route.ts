@@ -1,4 +1,4 @@
-import { LitElement, html, property } from '@polymer/lit-element';
+import { LitElement, html, property } from 'lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
 
