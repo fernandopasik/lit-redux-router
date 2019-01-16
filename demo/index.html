@@ -24,9 +24,9 @@
 		<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.1/webcomponents-loader.js"></script>
 
 		<script type="module">
-			import { LitElement, html } from '@polymer/lit-element';
+			import { LitElement, html } from '/node_modules/@polymer/lit-element/lit-element.js';
 
-			import { connectRouter, navigate } from '../dist/index.js';
+			import { connectRouter, navigate } from '/dist/index.js';
 			import {
 				createStore,
 				compose as origCompose,
