@@ -6,7 +6,7 @@ import Route from './route';
 import reducer from './reducer';
 import { State } from './selectors';
 
-export const connectRouter = (store: Store<State> & LazyStore) => {
+export const connectRouter = (store: Store<State> & LazyStore): void => {
   store.addReducers({ router: reducer });
 
   Route(store);

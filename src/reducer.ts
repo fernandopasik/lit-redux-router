@@ -31,7 +31,7 @@ const initialState = {
 const reducer = (
   state: RouterState = initialState,
   { type = '', path = '' }: Action | Actions = {},
-) => {
+): RouterState => {
   switch (type) {
     case NAVIGATE:
     case SET_ACTIVE_ROUTE:

@@ -1,7 +1,7 @@
 import regexparam from 'regexparam';
-import { RouteParams } from './reducer';
+import { Route, RouteParams } from './reducer';
 
-export const refreshRoute = (route: string, activeRoute: string) => {
+export const refreshRoute = (route: string, activeRoute: string): Route => {
   const { pattern, keys } = regexparam(route);
   const noQueryRoute = activeRoute.replace(/\?.*/, '');
   const match = pattern.exec(noQueryRoute);
@@ -16,6 +16,6 @@ export const refreshRoute = (route: string, activeRoute: string) => {
   };
 };
 
-export const checkNavigation = (route: string) => {
+export const checkNavigation = (route: string): void => {
   window.history.pushState({}, '', route);
 };

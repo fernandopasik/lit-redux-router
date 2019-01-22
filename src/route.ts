@@ -3,6 +3,7 @@ import {
   html,
   property,
   customElement,
+  TemplateResult,
 } from '@polymer/lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
@@ -30,18 +31,18 @@ export default (store: Store<State> & LazyStore) => {
   @customElement('lit-route' as any)
   class Route extends connect(store)(LitElement) {
     @property({ type: Boolean, reflect: true })
-    active = false;
+    private active = false;
 
     @property({ type: String })
-    component?: string;
+    private component?: string;
 
     @property({ type: Object })
-    params: RouteParams = {};
+    private params: RouteParams = {};
 
     @property({ type: String })
-    path?: string;
+    private path?: string;
 
-    firstUpdated() {
+    public firstUpdated(): void {
       if (!routerInstalled) {
         installRouter((location) => {
           const path = window.decodeURIComponent(location.pathname);
@@ -55,12 +56,12 @@ export default (store: Store<State> & LazyStore) => {
       }
     }
 
-    stateChanged(state: State) {
+    public stateChanged(state: State): void {
       this.active = isRouteActive(state, this.path);
       this.params = getRouteParams(state, this.path);
     }
 
-    render() {
+    public render(): TemplateResult {
       if (!this.active) {
         return html``;
       }
