@@ -1,7 +1,7 @@
 import { RouterState, Route, RouteParams } from './reducer';
 
 export interface State {
-  router: RouterState
+  router: RouterState;
 }
 
 export const getRoute = (

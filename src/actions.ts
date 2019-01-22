@@ -2,8 +2,8 @@ import { ADD_ROUTE, NAVIGATE, SET_ACTIVE_ROUTE } from './constants';
 import { checkNavigation } from './service';
 
 export interface Actions {
-  readonly type: string,
-  path: string,
+  readonly type: string;
+  path: string;
 }
 
 export const addRoute = (path: string): Actions => ({

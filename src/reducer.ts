@@ -3,24 +3,24 @@ import { refreshRoute } from './service';
 import { Actions } from './actions';
 
 export interface RouteParams {
-  [param: string]: string
+  [param: string]: string;
 }
 
 export interface Route {
-  active?: boolean,
-  params?: RouteParams
+  active?: boolean;
+  params?: RouteParams;
 }
 
 export interface RouterState {
-  activeRoute: string,
+  activeRoute: string;
   routes: {
-    [path: string]: Route
-  },
+    [path: string]: Route;
+  };
 }
 
 interface Action {
-  type?: string,
-  path?: string,
+  type?: string;
+  path?: string;
 }
 
 const initialState = {
