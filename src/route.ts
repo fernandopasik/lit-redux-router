@@ -17,7 +17,7 @@ import { getRouteParams, isRouteActive, State } from './selectors';
 
 let routerInstalled = false;
 
-// eslint-disable-next-line import/no-mutable-exports, typescript/no-explicit-any
+// eslint-disable-next-line import/no-mutable-exports, @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
 export default (store: Store<State> & LazyStore) => {
@@ -27,7 +27,7 @@ export default (store: Store<State> & LazyStore) => {
    * @element lit-route
    * @demo ../demo/index.html
    */
-  // eslint-disable-next-line typescript/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   @customElement('lit-route' as any)
   class Route extends connect(store)(LitElement) {
     @property({ type: Boolean, reflect: true })
