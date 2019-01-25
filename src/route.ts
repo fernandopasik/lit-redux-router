@@ -22,8 +22,8 @@ export let RouteClass: any;
 
 export default (store: Store<State> & LazyStore) => {
   /**
-   * `<lit-route>` is an element that when browser route matches it
-   * the content or the component associated is diplayed
+   * Element that renders its content or a component
+   * when browser route matches
    * @element lit-route
    * @demo ../demo/index.html
    */
