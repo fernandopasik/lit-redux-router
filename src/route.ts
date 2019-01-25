@@ -27,8 +27,7 @@ export default (store: Store<State> & LazyStore) => {
    * @element lit-route
    * @demo ../demo/index.html
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  @customElement('lit-route' as any)
+  @customElement('lit-route')
   class Route extends connect(store)(LitElement) {
     @property({ type: Boolean, reflect: true })
     private active = false;
