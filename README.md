@@ -36,6 +36,8 @@ The routing approach is based on the [PWA Starter Kit](https://github.com/polyme
 
 ## Install
 
+Install this library and its peer dependencies
+
 ```
 yarn add lit-redux-router
 yarn add lit-html lit-element pwa-helpers redux
