@@ -1,12 +1,12 @@
 import configureStore from 'redux-mock-store';
 import * as pwaHelpers from 'pwa-helpers';
-import { customElement } from '@polymer/lit-element';
+import { customElement } from 'lit-element';
 import connectRouter, { RouteClass as Route } from '../route';
 
 import * as actions from '../actions';
 import * as selectors from '../selectors';
 
-jest.mock('@polymer/lit-element', () => ({
+jest.mock('lit-element', () => ({
   LitElement: class LitElement {},
   html: jest.fn((strings, ...values) => strings
     .map((string: string, index: number) => string + (values[index] || '')).join('')),

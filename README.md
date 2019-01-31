@@ -38,7 +38,7 @@ The routing approach is based on the [PWA Starter Kit](https://github.com/polyme
 
 ```
 yarn add lit-redux-router
-yarn add lit-html @polymer/lit-element pwa-helpers redux
+yarn add lit-html lit-element pwa-helpers redux
 ```
 
 ## Usage
@@ -46,7 +46,7 @@ yarn add lit-html @polymer/lit-element pwa-helpers redux
 First the router needs to **connect to a redux store**.
 
 ```js
-import { LitElement, html } from '@polymer/lit-element';
+import { LitElement, html } from 'lit-element';
 import { connectRouter } from 'lit-redux-router';
 import store from './store.js';
 

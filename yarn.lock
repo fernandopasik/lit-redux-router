@@ -650,13 +650,6 @@
   resolved "https://registry.yarnpkg.com/@polymer/esm-amd-loader/-/esm-amd-loader-1.0.4.tgz#4e77f2f59b29b01e0ad02aa83d33716cddc5f9f9"
   integrity sha512-h+hqYkL+tQV/y2ESD5gFXMl5z4cC+XY1jTlBeGSBaTcj3VbB5OBEScbvRXm63NcEbBneQQYbHfBAXAkF9i9wIA==
 
-"@polymer/lit-element@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@polymer/lit-element/-/lit-element-0.7.1.tgz#cded2d11ff4308f9ce3e4001d893198dabced639"
-  integrity sha512-aYSzVhC19l7xSm73aHI06VPcD/H+GxpFNZrhbJ+zVIpgAveOgGp5Ga7UtTBHQCdHlJbZ0dMlaBXMZ3twgXCokg==
-  dependencies:
-    lit-html "^1.0.0-rc.2"
-
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -5176,6 +5169,13 @@ listr@^0.14.2:
     listr-verbose-renderer "^0.5.0"
     p-map "^2.0.0"
     rxjs "^6.3.3"
+
+lit-element@^2.0.0-rc.5:
+  version "2.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.0.0-rc.5.tgz#3e4323c9ace59d49c3a0950551a3f923e0ccf86b"
+  integrity sha512-cMmWNWSFyYfXAd09bnqFhqDr5kuR/5guImD5ZRTk223EiBJaoo7naZnQngSYAMjgDn1CSbTE1LRtzviMS+g0RA==
+  dependencies:
+    lit-html "^1.0.0-rc.2"
 
 lit-html@^1.0.0-rc.2:
   version "1.0.0-rc.2"

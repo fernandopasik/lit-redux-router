@@ -4,7 +4,7 @@ import {
   property,
   customElement,
   TemplateResult,
-} from '@polymer/lit-element';
+} from 'lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
 
