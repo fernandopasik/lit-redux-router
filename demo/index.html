@@ -99,6 +99,7 @@
 							<a href="/about">about</a>
 							<a href="/contact">contact</a>
 							<a href="/not-exist">not exist</a>
+							<a href="/lazy">lazy</a>
 						</nav>
 
 						<div class="app-content">
@@ -112,6 +113,17 @@
 								<h1>About</h1>
 							</lit-route>
 							<lit-route path="/contact" component="my-contact"></lit-route>
+							<lit-route path="/lazy">
+								<h1>Lazy Load</h1>
+								<p>Adjust network throttling to slow to see loading</p>
+								<button @click="${() => this.goTo('/docs')}">Documentation</button>
+							</lit-route>
+							<lit-route
+								path="/docs"
+								component="docs-page"
+								.resolve="${() => import('./docs')}"
+								loading="my-loading"
+							></lit-route>
 						</div>
 					`;
 				}
@@ -198,6 +210,29 @@
 			}
 
 			customElements.define('my-product', MyProduct);
+
+			class MyLoading extends LitElement {
+				static get properties() {
+					return {
+						id: String,
+						name: String,
+					};
+				}
+
+				render() {
+					return html`
+						<style>
+							h1 {
+								margin-top: 0;
+								margin-bottom: 16px;
+							}
+						</style>
+						<h1>Loading...</h1>
+					`;
+				}
+			}
+
+			customElements.define('my-loading', MyLoading);
 
 		</script>
 	</body>

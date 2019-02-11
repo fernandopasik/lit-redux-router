@@ -41,6 +41,15 @@ export default (store: Store<State> & LazyStore) => {
     @property({ type: String })
     private path?: string;
 
+    @property({type: Boolean})
+    private isResolving = false;
+
+    @property({ type: Function })
+    private resolve;
+
+    @property({ type: String })
+    private loading?: string;
+
     public firstUpdated(): void {
       if (!routerInstalled) {
         installRouter((location) => {
@@ -58,6 +67,19 @@ export default (store: Store<State> & LazyStore) => {
     public stateChanged(state: State): void {
       this.active = isRouteActive(state, this.path);
       this.params = getRouteParams(state, this.path);
+
+      if (this.active && this.resolve) {
+        this.isResolving = true;
+        this.resolve()
+          .then(() => {
+            this.isResolving = false;
+            // here potentially fire custom success event
+          })
+          .catch(() => {
+            this.isResolving = false;
+            // here potentially fire custom error event
+          });
+      }
     }
 
     private getTemplate(component: string, attributesObject?: object): TemplateResult {
@@ -77,8 +99,13 @@ export default (store: Store<State> & LazyStore) => {
     }
 
     public render(): TemplateResult {
+
       if (!this.active) {
         return html``;
+      }
+
+      if (this.resolve && this.isResolving) {
+        return !this.loading ? html`` : this.getTemplate(this.loading);
       }
 
       if (!this.component) {
