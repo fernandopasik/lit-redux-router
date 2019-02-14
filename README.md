@@ -167,6 +167,45 @@ class MyApp extends LitElement {
 customElements.define('my-app', MyApp);
 ```
 
+To lazy load a component on route change and optionally show a loading component while waiting for the import to resolve
+
+```js
+import { navigate } from 'lit-redux-router';
+import store from './store.js';
+
+class MyApp extends LitElement {
+  render() {
+    return html`
+      div class="app-content">
+        <lit-route
+          path="/docs"
+          component="my-docs"
+          .resolve="${() => import('./docs.js')}"
+          loading="my-loading"
+        ></lit-route>
+      </div>
+    `;
+  }
+}
+customElements.define('my-app', MyApp);
+
+class MyLoading extends LitElement {
+  render() {
+    return html`
+      <style>
+        h1 {
+          margin-top: 0;
+          margin-bottom: 16px;
+        }
+      </style>
+      <h1>Loading...</h1>
+    `;
+  }
+}
+
+customElements.define('my-loading', MyLoading);
+```
+
 Check a more comprehensive example in https://github.com/fernandopasik/lit-redux-router/blob/master/demo/
 
 ## Development
