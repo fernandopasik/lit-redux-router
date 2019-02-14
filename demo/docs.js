@@ -4,7 +4,7 @@ class DocsComponent extends LitElement {
   render() {
     return html`
       <div>
-          Docs!!
+          Documentation here.
       </div>
     `;
   }
