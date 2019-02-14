@@ -60,6 +60,22 @@ export default (store: Store<State> & LazyStore) => {
       this.params = getRouteParams(state, this.path);
     }
 
+    private getTemplate(component: string, attributesObject?: object): TemplateResult {
+      const tagName = component.replace(/[^A-Za-z-]/, '');
+      let attributes = '';
+
+      if (attributesObject) {
+        attributes = Object
+          .keys(attributesObject)
+          .map(param => ` ${param}="${this.params[param]}"`)
+          .join('');
+      }
+
+      const template = `<${tagName}${attributes}></${tagName}>`;
+
+      return html`${unsafeHTML(template)}`;
+    }
+
     public render(): TemplateResult {
       if (!this.active) {
         return html``;
@@ -69,14 +85,7 @@ export default (store: Store<State> & LazyStore) => {
         return html`<slot></slot>`;
       }
 
-      const tagName = this.component.replace(/[^A-Za-z-]/, '');
-      const attributes = Object
-        .keys(this.params)
-        .map(param => ` ${param}="${this.params[param]}"`)
-        .join('');
-      const template = `<${tagName}${attributes}></${tagName}>`;
-
-      return html`${unsafeHTML(template)}`;
+      return this.getTemplate(this.component, this.params);
     }
   }
 
