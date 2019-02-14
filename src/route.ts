@@ -41,7 +41,7 @@ export default (store: Store<State> & LazyStore) => {
     @property({ type: String })
     private path?: string;
 
-    @property({type: Boolean})
+    @property({ type: Boolean })
     private isResolving = false;
 
     @property({ type: Function })
@@ -99,7 +99,6 @@ export default (store: Store<State> & LazyStore) => {
     }
 
     public render(): TemplateResult {
-
       if (!this.active) {
         return html``;
       }
