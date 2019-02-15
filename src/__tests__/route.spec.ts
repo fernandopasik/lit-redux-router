@@ -155,8 +155,11 @@ describe('Route element', () => {
   });
 
   describe('render', () => {
-    test('if not active returns empty', () => {
+    beforeAll(() => {
       connectRouter(mockStore({}));
+    });
+
+    test('if not active returns empty', () => {
       const route = new Route();
       route.active = false;
 
@@ -166,7 +169,6 @@ describe('Route element', () => {
     });
 
     test('with children elements', () => {
-      connectRouter(mockStore({}));
       const route = new Route();
       route.active = true;
 
@@ -176,7 +178,6 @@ describe('Route element', () => {
     });
 
     test('with components', () => {
-      connectRouter(mockStore({}));
       const route = new Route();
       route.active = true;
       route.component = 'example';
@@ -187,7 +188,6 @@ describe('Route element', () => {
     });
 
     test('with components with parameters', () => {
-      connectRouter(mockStore({}));
       const route = new Route();
       route.active = true;
       route.component = 'example';
@@ -199,6 +199,81 @@ describe('Route element', () => {
       const rendered = route.render();
 
       expect(rendered).toBe('<example one="1" two="2"></example>');
+    });
+
+    describe('with dynamic imported components without loading component', () => {
+      test('before resolve completes', () => {
+        const route = new Route();
+        route.active = true;
+        route.component = 'docs-page';
+        route.resolve = () => import('../../demo/docs.js');
+        route.path = '/';
+        const state = { activeRoute: route.path };
+
+        jest.spyOn(selectors, 'isRouteActive')
+          .mockImplementationOnce(() => true);
+
+        route.stateChanged(state);
+
+        expect(route.isResolving).toBe(true);
+        const rendered = route.render();
+        expect(rendered).toBe('');
+      });
+
+      test('after resolve completes', () => {
+        const route = new Route();
+        route.active = true;
+        route.component = 'docs-page';
+        route.resolve = () => import('../../demo/docs.js');
+        route.path = '/';
+        const state = { activeRoute: route.path };
+        const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
+        route.stateChanged(state);
+
+        expect(spy).toHaveBeenCalled();
+        expect(route.isResolving).toBe(false);
+        const rendered = route.render();
+        expect(rendered).toBe('<docs-page></docs-page>');
+      });
+    });
+    describe('with dynamic imported components with loading component', () => {
+      test('before resolve completes', () => {
+        const route = new Route();
+        route.active = true;
+        route.component = 'docs-page';
+        route.resolve = () => import('../../demo/docs.js');
+        route.loading = 'my-loading';
+        route.path = '/';
+
+        const state = { activeRoute: route.path };
+
+        jest.spyOn(selectors, 'isRouteActive')
+          .mockImplementationOnce(() => true);
+
+        route.stateChanged(state);
+
+        expect(route.isResolving).toBe(true);
+        const rendered = route.render();
+        expect(rendered).toBe('<my-loading></my-loading>');
+      });
+
+      test('after resolve completes', () => {
+        const route = new Route();
+        route.active = true;
+        route.component = 'docs-page';
+        route.resolve = () => import('../../demo/docs.js');
+        route.loading = 'my-loading';
+        route.path = '/';
+
+        const state = { activeRoute: route.path };
+        const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
+        route.stateChanged(state);
+
+        expect(spy).toHaveBeenCalled();
+        expect(route.isResolving).toBe(false);
+        const rendered = route.render();
+        expect(rendered).toBe('<docs-page></docs-page>');
+      });
     });
   });
 });
