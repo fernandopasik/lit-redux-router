@@ -45,7 +45,7 @@ export default (store: Store<State> & LazyStore) => {
     private isResolving = false;
 
     @property({ type: Function })
-    private resolve;
+    private resolve?: () => Promise<{}>;
 
     @property({ type: String })
     private loading?: string;
@@ -73,11 +73,9 @@ export default (store: Store<State> & LazyStore) => {
         this.resolve()
           .then(() => {
             this.isResolving = false;
-            // here potentially fire custom success event
           })
           .catch(() => {
             this.isResolving = false;
-            // here potentially fire custom error event
           });
       }
     }
