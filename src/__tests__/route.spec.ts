@@ -200,5 +200,45 @@ describe('Route element', () => {
 
       expect(rendered).toBe('<example one="1" two="2"></example>');
     });
+
+    test('with dynamic imported components', () => {
+      connectRouter(mockStore({}));
+      const route = new Route();
+      route.active = true;
+      route.component = 'docs-page';
+      route.resolve = () => import('../../demo/docs.js');
+      const path = '/';
+      route.loading = 'my-loading';
+      const state = { activeRoute: '/' };
+      jest.spyOn(selectors, 'isRouteActive')
+        .mockImplementationOnce(() => true);
+      route.path = path;
+
+      const spy2 = jest.spyOn(route, 'stateChanged')
+        .mockImplementationOnce(() => true);
+      route.stateChanged(state);
+
+      expect(spy2).toHaveBeenCalled();
+      const rendered = route.render();
+      expect(rendered).toBe('<docs-page></docs-page>');
+    });
+
+    test('with dynamic imported components and loading components', () => {
+      connectRouter(mockStore({}));
+      const route = new Route();
+      route.active = true;
+      route.component = 'docs-page';
+      route.resolve = () => import('../../demo/docs.js');
+      const path = '/';
+      route.loading = 'my-loading';
+      const state = { activeRoute: '/' };
+      jest.spyOn(selectors, 'isRouteActive')
+        .mockImplementationOnce(() => true);
+      route.path = path;
+
+      route.stateChanged(state);
+      const rendered = route.render();
+      expect(rendered).toBe('<my-loading></my-loading>');
+    });
   });
 });
