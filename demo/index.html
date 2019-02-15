@@ -98,8 +98,8 @@
 							<a href="/products/1/shirt">products</a>
 							<a href="/about">about</a>
 							<a href="/contact">contact</a>
+							<a href="/docs">lazy</a>
 							<a href="/not-exist">not exist</a>
-							<a href="/lazy">lazy</a>
 						</nav>
 
 						<div class="app-content">
@@ -113,11 +113,6 @@
 								<h1>About</h1>
 							</lit-route>
 							<lit-route path="/contact" component="my-contact"></lit-route>
-							<lit-route path="/lazy">
-								<h1>Lazy Load</h1>
-								<p>Adjust network throttling to slow to see loading</p>
-								<button @click="${() => this.goTo('/docs')}">Documentation</button>
-							</lit-route>
 							<lit-route
 								path="/docs"
 								component="docs-page"
