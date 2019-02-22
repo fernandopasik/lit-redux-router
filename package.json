@@ -12,7 +12,9 @@
   "bugs": "https://github.com/fernandopasik/lit-redux-router/issues",
   "license": "MIT",
   "author": "Fernando Pasik <fernando@pasik.com.ar> (https://fernandopasik.com)",
-  "contributors": [],
+  "contributors": [
+    "Grant Hutchinson <grant@hutchdev.ca>"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/fernandopasik/lit-redux-router.git"
