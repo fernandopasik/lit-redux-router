@@ -20,11 +20,6 @@ let routerInstalled = false;
 // eslint-disable-next-line import/no-mutable-exports, @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
-interface ScrollIntoViewOptions { behavior?: string; block?: string; inline?: string }
-type DropScrollIntoViewOptions<T> = Pick<T, Exclude<keyof T, keyof ScrollIntoViewOptions>>;
-export const spreadScrollOpt = <T extends ScrollIntoViewOptions>(obj: T):
-DropScrollIntoViewOptions<T> => obj;
-
 export default (store: Store<State> & LazyStore) => {
   /**
    * Element that renders its content or a component
@@ -56,7 +51,7 @@ export default (store: Store<State> & LazyStore) => {
     private loading?: string;
 
     @property({ type: Object })
-    private scrollOpt?: ScrollIntoViewOptions = {};
+    private scrollOpt? = {};
 
     @property({ type: Boolean })
     private scrollDisable?: boolean = false;
@@ -91,7 +86,7 @@ export default (store: Store<State> & LazyStore) => {
       }
       if (this.active && !this.scrollDisable && this.scrollOpt) {
         if (Object.keys(this.scrollOpt).length !== 0) {
-          this.scrollIntoView(spreadScrollOpt(this.scrollOpt));
+          this.scrollIntoView({ ...this.scrollOpt });
         } else {
           window.scrollTo(0, 0);
         }

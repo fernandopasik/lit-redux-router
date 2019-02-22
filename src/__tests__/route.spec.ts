@@ -1,7 +1,7 @@
 import configureStore from 'redux-mock-store';
 import * as pwaHelpers from 'pwa-helpers';
 import { customElement } from 'lit-element';
-import connectRouter, { RouteClass as Route, spreadScrollOpt } from '../route';
+import connectRouter, { RouteClass as Route } from '../route';
 
 import * as actions from '../actions';
 import * as selectors from '../selectors';
@@ -234,10 +234,7 @@ describe('Route element', () => {
         jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
         route.stateChanged(state);
 
-        const test = spreadScrollOpt(route.scrollOpt);
-
-        expect(test).toEqual({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
-        expect(route.scrollIntoView).toHaveBeenCalledWith(test);
+        expect(route.scrollIntoView).toHaveBeenCalledWith(route.scrollOpt);
       });
     });
 
@@ -296,7 +293,6 @@ describe('Route element', () => {
         expect(route.isResolving).toBe(true);
         const rendered = route.render();
         expect(rendered).toBe('<my-loading></my-loading>');
-        spy.mockClear();
       });
 
       test('after resolve completes', () => {
