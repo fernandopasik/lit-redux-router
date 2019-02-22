@@ -22,7 +22,7 @@ export let RouteClass: any;
 
 interface ScrollIntoViewOptions { behavior?: string; block?: string; inline?: string }
 type DropScrollIntoViewOptions<T> = Pick<T, Exclude<keyof T, keyof ScrollIntoViewOptions>>;
-const spreadScrollOpt = <T extends ScrollIntoViewOptions>(obj: T):
+export const spreadScrollOpt = <T extends ScrollIntoViewOptions>(obj: T):
 DropScrollIntoViewOptions<T> => obj;
 
 export default (store: Store<State> & LazyStore) => {

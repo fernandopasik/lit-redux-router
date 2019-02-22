@@ -1,7 +1,7 @@
 import configureStore from 'redux-mock-store';
 import * as pwaHelpers from 'pwa-helpers';
 import { customElement } from 'lit-element';
-import connectRouter, { RouteClass as Route } from '../route';
+import connectRouter, { RouteClass as Route, spreadScrollOpt } from '../route';
 
 import * as actions from '../actions';
 import * as selectors from '../selectors';
@@ -34,7 +34,6 @@ jest.mock('../selectors', () => ({
 }));
 
 const mockStore = configureStore([]);
-
 
 describe('Route element', () => {
   beforeAll(() => {
@@ -130,12 +129,12 @@ describe('Route element', () => {
       const spy = jest.spyOn(selectors, 'isRouteActive')
         .mockImplementationOnce(() => true);
       route.path = path;
+      route.scrollDisable = true;
       route.stateChanged(state);
 
       expect(spy).toHaveBeenCalledWith(state, path);
-      expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
       expect(route.active).toBe(true);
-
+      expect(window.scrollTo).not.toHaveBeenCalled();
       spy.mockRestore();
     });
 
@@ -145,9 +144,10 @@ describe('Route element', () => {
       const state = {};
       const path = '/1';
       const params = { one: '1' };
+      route.path = path;
       const spy = jest.spyOn(selectors, 'getRouteParams')
         .mockImplementationOnce(() => params);
-      route.path = path;
+
       route.stateChanged(state);
 
       expect(spy).toHaveBeenCalledWith(state, path);
@@ -204,6 +204,43 @@ describe('Route element', () => {
       expect(rendered).toBe('<example one="1" two="2"></example>');
     });
 
+    describe('with component and scrolling', () => {
+      test('disabled', () => {
+        const route = new Route();
+        const state = { activeRoute: '/test2' };
+        route.scrollDisable = true;
+        route.stateChanged(state);
+
+        expect(window.scrollTo).not.toHaveBeenCalled();
+      });
+      test('default', () => {
+        const route = new Route();
+        const state = { activeRoute: '/' };
+        const path = '/';
+        route.path = path;
+        jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
+        route.stateChanged(state);
+
+        expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
+      });
+      test('via scrollOpt', () => {
+        const route = new Route();
+        const state = { activeRoute: '/' };
+        const path = '/';
+        route.scrollIntoView = jest.fn();
+        route.scrollOpt = { behavior: 'smooth', block: 'nearest', inline: 'nearest' };
+        route.path = path;
+
+        jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
+        route.stateChanged(state);
+
+        const test = spreadScrollOpt(route.scrollOpt);
+
+        expect(test).toEqual({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        expect(route.scrollIntoView).toHaveBeenCalledWith(test);
+      });
+    });
+
     describe('with dynamic imported components without loading component', () => {
       test('before resolve completes', () => {
         const route = new Route();
@@ -250,14 +287,16 @@ describe('Route element', () => {
 
         const state = { activeRoute: route.path };
 
-        jest.spyOn(selectors, 'isRouteActive')
+        const spy = jest.spyOn(selectors, 'isRouteActive')
           .mockImplementationOnce(() => true);
 
         route.stateChanged(state);
 
+        expect(spy).toHaveBeenCalled();
         expect(route.isResolving).toBe(true);
         const rendered = route.render();
         expect(rendered).toBe('<my-loading></my-loading>');
+        spy.mockClear();
       });
 
       test('after resolve completes', () => {
