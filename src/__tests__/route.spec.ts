@@ -35,6 +35,7 @@ jest.mock('../selectors', () => ({
 
 const mockStore = configureStore([]);
 
+
 describe('Route element', () => {
   beforeAll(() => {
     Object.defineProperty(global, 'window', {
@@ -43,6 +44,7 @@ describe('Route element', () => {
           define: jest.fn(),
         },
         decodeURIComponent: jest.fn(val => val),
+        scrollTo: jest.fn(),
       },
     });
   });
@@ -131,6 +133,7 @@ describe('Route element', () => {
       route.stateChanged(state);
 
       expect(spy).toHaveBeenCalledWith(state, path);
+      expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
       expect(route.active).toBe(true);
 
       spy.mockRestore();
