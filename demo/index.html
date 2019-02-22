@@ -91,6 +91,17 @@
 								display: inline-block;
 								padding: 16px;
 							}
+							.spacer {
+								height:1600px;
+							}
+
+							.scrollLink {
+								color: blue;
+							}
+
+							.scrollLink:hover {
+								color: red;
+							}
 						</style>
 						<div class="app-bar">Example App</div>
 						<nav class="nav-bar">
@@ -112,13 +123,22 @@
 							<lit-route path="/about">
 								<h1>About</h1>
 							</lit-route>
-							<lit-route path="/contact" component="my-contact"></lit-route>
+							<lit-route
+								path="/contact"
+								component="my-contact"
+								scrollDisable
+							>
+							</lit-route>
 							<lit-route
 								path="/docs"
 								component="docs-page"
 								.resolve="${() => import('./docs')}"
+								.scrollOpt="${{behavior: 'smooth', block:'end', inline:'nearest'}}"
 								loading="my-loading"
 							></lit-route>
+							<div class="spacer"></div>
+							<a href="/contact" class="scrollLink">Scroll disabled</a><br>
+							<a href="/docs" class="scrollLink">Scroll to top smoothly and switch to docs component</a>
 						</div>
 					`;
 				}

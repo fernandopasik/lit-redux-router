@@ -50,6 +50,12 @@ export default (store: Store<State> & LazyStore) => {
     @property({ type: String })
     private loading?: string;
 
+    @property({ type: Object })
+    private scrollOpt? = {};
+
+    @property({ type: Boolean })
+    private scrollDisable?: boolean = false;
+
     public firstUpdated(): void {
       if (!routerInstalled) {
         installRouter((location) => {
@@ -77,6 +83,13 @@ export default (store: Store<State> & LazyStore) => {
           .catch(() => {
             this.isResolving = false;
           });
+      }
+      if (this.active && !this.scrollDisable && this.scrollOpt) {
+        if (Object.keys(this.scrollOpt).length !== 0) {
+          this.scrollIntoView({ ...this.scrollOpt });
+        } else {
+          window.scrollTo(0, 0);
+        }
       }
     }
 

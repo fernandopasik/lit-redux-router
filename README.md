@@ -176,7 +176,7 @@ import store from './store.js';
 class MyApp extends LitElement {
   render() {
     return html`
-      div class="app-content">
+      <div class="app-content">
         <lit-route
           path="/docs"
           component="my-docs"
@@ -204,6 +204,28 @@ class MyLoading extends LitElement {
 }
 
 customElements.define('my-loading', MyLoading);
+```
+
+
+
+The window will scroll to top by default, to disable add the attribute `scrollDisable`
+
+```html
+<lit-route
+  path="/whatever"
+  component="my-whatever"
+  scrollDisable
+></lit-route>
+```
+
+To scroll to the route element on load, you can set the [scrollIntoViewOptions](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Example) object in the attribute `.scrollOpt`
+
+```html
+<lit-route
+  path="/whatever"
+  component="my-whatever"
+  .scrollOpt="${{behavior: 'smooth', block:'end', inline:'nearest'}}"
+></lit-route>
 ```
 
 Check a more comprehensive example in https://github.com/fernandopasik/lit-redux-router/blob/master/demo/
