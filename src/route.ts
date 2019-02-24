@@ -58,8 +58,8 @@ export default (store: Store<State> & LazyStore) => {
 
     public firstUpdated(): void {
       if (!routerInstalled) {
-        installRouter((location) => {
-          const path = window.decodeURIComponent(location.pathname + location.search);
+        installRouter(({ pathname, search, hash }) => {
+          const path = window.decodeURIComponent(pathname + search + hash);
           return store.dispatch(setActiveRoute(path));
         });
         routerInstalled = true;

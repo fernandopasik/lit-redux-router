@@ -108,12 +108,13 @@ describe('Route element', () => {
       const spy2 = jest.spyOn(actions, 'setActiveRoute');
       const pathname = '/example';
       const search = '?test=testing';
+      const hash = '#example';
 
       route.firstUpdated();
       const cb = spy1.mock.results[0].value;
-      cb({ pathname, search });
+      cb({ pathname, search, hash });
 
-      expect(spy2).toHaveBeenCalledWith(pathname + search);
+      expect(spy2).toHaveBeenCalledWith(pathname + search + hash);
 
       spy1.mockRestore();
       spy2.mockRestore();
