@@ -107,13 +107,13 @@ describe('Route element', () => {
       const spy1 = jest.spyOn(pwaHelpers, 'installRouter');
       const spy2 = jest.spyOn(actions, 'setActiveRoute');
       const pathname = '/example';
+      const search = '?test=testing';
 
       route.firstUpdated();
-
       const cb = spy1.mock.results[0].value;
-      cb({ pathname });
+      cb({ pathname, search });
 
-      expect(spy2).toHaveBeenCalledWith(pathname);
+      expect(spy2).toHaveBeenCalledWith(pathname + search);
 
       spy1.mockRestore();
       spy2.mockRestore();
