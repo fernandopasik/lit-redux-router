@@ -17,8 +17,7 @@
   },
   "overrides": [{
     "files": [
-      "src/**/__tests__/*.js",
-      "src/**/__mocks__/*.js"
+      "src/**/__tests__/*.ts"
     ],
     "env": {
       "browser": true,
@@ -28,7 +27,6 @@
   "rules": {
     "@typescript-eslint/indent": ["error", 2],
     "class-methods-use-this": "off",
-    "no-undef": "off",
     "import/extensions": [".js", ".jsx", ".json", ".ts", ".tsx"],
     "import/prefer-default-export": "off",
     "jest/consistent-test-it": ["error", {"fn": "test"}],
