@@ -152,7 +152,7 @@ describe('Route element', () => {
       route.stateChanged(state);
 
       expect(spy).toHaveBeenCalledWith(state, path);
-      expect(route.params).toEqual(params);
+      expect(route.params).toStrictEqual(params);
 
       spy.mockRestore();
     });
@@ -268,7 +268,7 @@ describe('Route element', () => {
         const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
         route.stateChanged(state);
 
-        expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith(state);
         expect(route.isResolving).toBe(false);
         const rendered = route.render();
         expect(rendered).toBe('<docs-page></docs-page>');
@@ -290,7 +290,7 @@ describe('Route element', () => {
 
         route.stateChanged(state);
 
-        expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith(state, route.path);
         expect(route.isResolving).toBe(true);
         const rendered = route.render();
         expect(rendered).toBe('<my-loading></my-loading>');
@@ -308,7 +308,7 @@ describe('Route element', () => {
         const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
         route.stateChanged(state);
 
-        expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith(state);
         expect(route.isResolving).toBe(false);
         const rendered = route.render();
         expect(rendered).toBe('<docs-page></docs-page>');

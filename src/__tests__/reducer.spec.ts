@@ -3,7 +3,7 @@ import reducer from '../reducer';
 describe('Router Reducer', () => {
   test('returns default state', () => {
     const state = { activeRoute: '/about', routes: {} };
-    expect(reducer(state)).toEqual(state);
+    expect(reducer(state)).toStrictEqual(state);
   });
 
   test('has a initial state for active route', () => {

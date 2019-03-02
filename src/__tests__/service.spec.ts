@@ -27,7 +27,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: '1' });
+    expect(SUT.params).toStrictEqual({ id: '1' });
   });
 
   test('do not match a parameter if route not active', () => {
@@ -37,7 +37,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(false);
-    expect(SUT.params).toEqual({});
+    expect(SUT.params).toStrictEqual({});
   });
 
   test('match a parameter and not after text', () => {
@@ -47,7 +47,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(false);
-    expect(SUT.params).toEqual({});
+    expect(SUT.params).toStrictEqual({});
   });
 
   test('match a parameter and after text', () => {
@@ -57,7 +57,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: '1' });
+    expect(SUT.params).toStrictEqual({ id: '1' });
   });
 
   test('match a more than one parameter', () => {
@@ -67,7 +67,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: '1', time: 'nov2017' });
+    expect(SUT.params).toStrictEqual({ id: '1', time: 'nov2017' });
   });
 
   test('match a starting parameter', () => {
@@ -77,7 +77,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: '1' });
+    expect(SUT.params).toStrictEqual({ id: '1' });
   });
 
   test('match an optional parameter without value', () => {
@@ -87,7 +87,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: '' });
+    expect(SUT.params).toStrictEqual({ id: '' });
   });
 
   test('match an optional parameter with value', () => {
@@ -97,7 +97,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: '1' });
+    expect(SUT.params).toStrictEqual({ id: '1' });
   });
 
   test('match more than one optional parameter without values', () => {
@@ -107,7 +107,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: '', time: '' });
+    expect(SUT.params).toStrictEqual({ id: '', time: '' });
   });
 
   test('match more than one optional parameter with one value', () => {
@@ -117,7 +117,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: '1', time: '' });
+    expect(SUT.params).toStrictEqual({ id: '1', time: '' });
   });
 
   test('match more than one optional parameter with all values', () => {
@@ -127,7 +127,7 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: '1', time: 'nov2017' });
+    expect(SUT.params).toStrictEqual({ id: '1', time: 'nov2017' });
   });
 
   test('check navigation pushes route to history', () => {
@@ -145,6 +145,6 @@ describe('Router Service', () => {
     const SUT = refreshRoute(route, activeRoute);
 
     expect(SUT.active).toBe(true);
-    expect(SUT.params).toEqual({ id: '1' });
+    expect(SUT.params).toStrictEqual({ id: '1' });
   });
 });

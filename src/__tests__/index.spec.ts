@@ -27,6 +27,6 @@ describe('Lit Redux Router', () => {
   });
 
   test('exports a navigate action', () => {
-    expect(navigate).toEqual(navigateAction);
+    expect(navigate).toStrictEqual(navigateAction);
   });
 });

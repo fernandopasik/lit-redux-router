@@ -18,7 +18,7 @@ describe('Router Selectors', () => {
           },
         },
       };
-      expect(getRoute(state, path)).toEqual(route);
+      expect(getRoute(state, path)).toStrictEqual(route);
     });
 
     test('return route object', () => {
@@ -28,7 +28,7 @@ describe('Router Selectors', () => {
           routes: {},
         },
       };
-      expect(getRoute(state, '/about')).toEqual({});
+      expect(getRoute(state, '/about')).toStrictEqual({});
     });
   });
 
@@ -40,7 +40,7 @@ describe('Router Selectors', () => {
           routes: {},
         },
       };
-      expect(noRouteActive(state)).toEqual(true);
+      expect(noRouteActive(state)).toBe(true);
     });
 
     test('when no route active present', () => {
@@ -53,7 +53,7 @@ describe('Router Selectors', () => {
           },
         },
       };
-      expect(noRouteActive(state)).toEqual(true);
+      expect(noRouteActive(state)).toBe(true);
     });
 
     test('when route active present', () => {
@@ -66,7 +66,7 @@ describe('Router Selectors', () => {
           },
         },
       };
-      expect(noRouteActive(state)).toEqual(false);
+      expect(noRouteActive(state)).toBe(false);
     });
   });
 
@@ -96,7 +96,7 @@ describe('Router Selectors', () => {
           },
         },
       };
-      expect(isRouteActive(state)).toEqual(true);
+      expect(isRouteActive(state)).toBe(true);
     });
 
     test('can be false', () => {
@@ -135,7 +135,7 @@ describe('Router Selectors', () => {
           routes: {},
         },
       };
-      expect(getRouteParams(state, path)).toEqual({});
+      expect(getRouteParams(state, path)).toStrictEqual({});
     });
 
     test('return params object', () => {
@@ -149,7 +149,7 @@ describe('Router Selectors', () => {
           },
         },
       };
-      expect(getRouteParams(state, path)).toEqual(route.params);
+      expect(getRouteParams(state, path)).toStrictEqual(route.params);
     });
   });
 });
