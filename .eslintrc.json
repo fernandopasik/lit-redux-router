@@ -20,7 +20,6 @@
       "src/**/__tests__/*.ts"
     ],
     "env": {
-      "browser": true,
       "jest": true
     }
   }],
