@@ -46,7 +46,7 @@
     "jest/prefer-called-with": "error",
     "jest/prefer-expect-assertions": "off",
     "jest/prefer-inline-snapshots": "error",
-    "jest/prefer-spy-on": "off",
+    "jest/prefer-spy-on": "error",
     "jest/prefer-strict-equal": "error",
     "jest/prefer-to-be-null": "error",
     "jest/prefer-to-be-undefined": "error",

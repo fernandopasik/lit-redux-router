@@ -214,6 +214,7 @@ describe('Route element', () => {
 
         expect(window.scrollTo).not.toHaveBeenCalled();
       });
+
       test('default', () => {
         const route = new Route();
         const state = { activeRoute: '/' };
@@ -224,18 +225,20 @@ describe('Route element', () => {
 
         expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
       });
+
       test('via scrollOpt', () => {
         const route = new Route();
         const state = { activeRoute: '/' };
         const path = '/';
-        route.scrollIntoView = jest.fn();
+        const scrollIntoView = jest.fn();
+        route.scrollIntoView = scrollIntoView;
         route.scrollOpt = { behavior: 'smooth', block: 'nearest', inline: 'nearest' };
         route.path = path;
 
         jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
         route.stateChanged(state);
 
-        expect(route.scrollIntoView).toHaveBeenCalledWith(route.scrollOpt);
+        expect(scrollIntoView).toHaveBeenCalledWith(route.scrollOpt);
       });
     });
 

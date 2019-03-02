@@ -14,14 +14,16 @@ const mockStore = configureStore([]);
 describe('Lit Redux Router', () => {
   test('connects router to reducer', () => {
     const store = mockStore({});
-    store.addReducers = jest.fn();
+    const addReducers = jest.fn();
+    store.addReducers = addReducers;
     connectRouter(store);
-    expect(store.addReducers).toHaveBeenCalledWith({ router: reducer });
+    expect(addReducers).toHaveBeenCalledWith({ router: reducer });
   });
 
   test('creates the route component connected to store', () => {
     const store = mockStore({});
-    store.addReducers = jest.fn();
+    const addReducers = jest.fn();
+    store.addReducers = addReducers;
     connectRouter(store);
     expect(Route).toHaveBeenCalledWith(store);
   });
