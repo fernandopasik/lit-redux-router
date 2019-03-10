@@ -1,7 +1,7 @@
 module.exports = {
-  collectCoverageFrom: ['src/**'],
-  transform: {
-    '^.+\\.ts?$': 'ts-jest',
-  },
+  collectCoverageFrom: ['src/**/*.ts'],
   testEnvironment: 'node',
+  transform: {
+    '^.+\\.ts$': 'ts-jest',
+  },
 };
