@@ -20,6 +20,7 @@ export default {
       warnings: true,
       mangle: {
         module: true,
+        properties: true,
       },
     }),
   ],
