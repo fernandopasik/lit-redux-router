@@ -1,5 +1,10 @@
-import { ADD_ROUTE, NAVIGATE, SET_ACTIVE_ROUTE } from './constants';
 import { checkNavigation } from './service';
+
+export enum ActionTypes {
+  ADD_ROUTE = 'ADD_ROUTE',
+  NAVIGATE = 'NAVIGATE',
+  SET_ACTIVE_ROUTE = 'SET_ACTIVE_ROUTE',
+}
 
 export interface Actions {
   readonly type: string;
@@ -7,19 +12,19 @@ export interface Actions {
 }
 
 export const addRoute = (path: string): Actions => ({
-  type: ADD_ROUTE,
+  type: ActionTypes.ADD_ROUTE,
   path,
 });
 
 export const navigate = (path: string): Actions => {
   checkNavigation(path);
   return {
-    type: NAVIGATE,
+    type: ActionTypes.NAVIGATE,
     path,
   };
 };
 
 export const setActiveRoute = (path: string): Actions => ({
-  type: SET_ACTIVE_ROUTE,
+  type: ActionTypes.SET_ACTIVE_ROUTE,
   path,
 });
