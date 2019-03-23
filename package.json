@@ -54,6 +54,7 @@
     "@webcomponents/webcomponentsjs": "^2.2.7",
     "bundlesize": "^0.17.1",
     "codecov": "^3.2.0",
+    "deep-freeze": "^0.0.1",
     "del-cli": "^1.1.0",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",

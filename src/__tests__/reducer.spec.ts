@@ -1,16 +1,17 @@
+import deepFreeze from 'deep-freeze';
 import reducer from '../reducer';
 
 describe('Router Reducer', () => {
   test('returns default state', () => {
-    const state = { activeRoute: '/about', routes: {} };
-    expect(reducer(state)).toStrictEqual(state);
+    const initialState = deepFreeze({ activeRoute: '/about', routes: {} });
+    expect(reducer(initialState)).toStrictEqual(initialState);
   });
 
-  test('has a initial state for active route', () => {
+  test('has a default initial state for active route', () => {
     expect(reducer()).toHaveProperty('activeRoute', '/');
   });
 
-  test('has a initial state for routes', () => {
+  test('has a default initial state for routes', () => {
     expect(reducer()).toHaveProperty('routes', {});
   });
 
@@ -25,7 +26,8 @@ describe('Router Reducer', () => {
     test('when adding a path the route can be active', () => {
       const path = '/contact';
       const action = { type: 'ADD_ROUTE', path };
-      const newState = reducer({ activeRoute: path, routes: {} }, action);
+      const initialState = deepFreeze({ activeRoute: path, routes: {} });
+      const newState = reducer(initialState, action);
       expect(newState.routes[path]).toHaveProperty('active', true);
     });
   });
@@ -41,12 +43,13 @@ describe('Router Reducer', () => {
     test('checks for active path', () => {
       const path = '/contact';
       const routes = {
-        '/home': {},
-        '/contact': {},
-        '/about': {},
+        '/home': { active: false, params: {} },
+        '/contact': { active: false, params: {} },
+        '/about': { active: false, params: {} },
       };
       const action = { type: 'SET_ACTIVE_ROUTE', path };
-      const newState = reducer({ activeRoute: '/', routes }, action);
+      const initialState = deepFreeze({ activeRoute: '/', routes });
+      const newState = reducer(initialState, action);
       expect(newState.routes[path]).toHaveProperty('active', true);
     });
 
@@ -54,11 +57,12 @@ describe('Router Reducer', () => {
       const activePath = '/products/shirt';
       const path = '/products/:id';
       const routes = {
-        '/products/:id': {},
-        '/about': {},
+        '/products/:id': { active: false, params: {} },
+        '/about': { active: false, params: {} },
       };
       const action = { type: 'SET_ACTIVE_ROUTE', path: activePath };
-      const newState = reducer({ activeRoute: '/', routes }, action);
+      const initialState = deepFreeze({ activeRoute: '/', routes });
+      const newState = reducer(initialState, action);
       expect(newState.routes[path]).toHaveProperty('active', true);
       expect(newState.routes[path]).toHaveProperty('params', { id: 'shirt' });
     });
@@ -67,11 +71,12 @@ describe('Router Reducer', () => {
       const activePath = '/about';
       const path = '/products/:id';
       const routes = {
-        '/products/:id': {},
-        '/about': {},
+        '/products/:id': { active: false, params: {} },
+        '/about': { active: false, params: {} },
       };
       const action = { type: 'SET_ACTIVE_ROUTE', path: activePath };
-      const newState = reducer({ activeRoute: '/', routes }, action);
+      const initialState = deepFreeze({ activeRoute: '/', routes });
+      const newState = reducer(initialState, action);
       expect(newState.routes[path]).toHaveProperty('active', false);
       expect(newState.routes[path]).toHaveProperty('params', {});
     });
@@ -88,12 +93,13 @@ describe('Router Reducer', () => {
     test('checks for active path', () => {
       const path = '/contact';
       const routes = {
-        '/home': {},
-        '/contact': {},
-        '/about': {},
+        '/home': { active: false, params: {} },
+        '/contact': { active: false, params: {} },
+        '/about': { active: false, params: {} },
       };
       const action = { type: 'NAVIGATE', path };
-      const newState = reducer({ activeRoute: '/', routes }, action);
+      const initialState = deepFreeze({ activeRoute: '/', routes });
+      const newState = reducer(initialState, action);
       expect(newState.routes[path]).toHaveProperty('active', true);
     });
 
@@ -101,11 +107,12 @@ describe('Router Reducer', () => {
       const activePath = '/products/shirt';
       const path = '/products/:id';
       const routes = {
-        '/products/:id': {},
-        '/about': {},
+        '/products/:id': { active: false, params: {} },
+        '/about': { active: false, params: {} },
       };
       const action = { type: 'NAVIGATE', path: activePath };
-      const newState = reducer({ activeRoute: '/', routes }, action);
+      const initialState = deepFreeze({ activeRoute: '/', routes });
+      const newState = reducer(initialState, action);
       expect(newState.routes[path]).toHaveProperty('active', true);
       expect(newState.routes[path]).toHaveProperty('params', { id: 'shirt' });
     });
@@ -114,11 +121,12 @@ describe('Router Reducer', () => {
       const activePath = '/about';
       const path = '/products/:id';
       const routes = {
-        '/products/:id': {},
-        '/about': {},
+        '/products/:id': { active: false, params: {} },
+        '/about': { active: false, params: {} },
       };
       const action = { type: 'NAVIGATE', path: activePath };
-      const newState = reducer({ activeRoute: '/', routes }, action);
+      const initialState = deepFreeze({ activeRoute: '/', routes });
+      const newState = reducer(initialState, action);
       expect(newState.routes[path]).toHaveProperty('active', false);
       expect(newState.routes[path]).toHaveProperty('params', {});
     });
