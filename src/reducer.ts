@@ -2,18 +2,18 @@ import { refreshRoute } from './service';
 import { Actions, ActionTypes } from './actions';
 
 export interface RouteParams {
-  [param: string]: string;
+  readonly [param: string]: string;
 }
 
 export interface Route {
-  active?: boolean;
-  params?: RouteParams;
+  readonly active?: boolean;
+  readonly params?: RouteParams;
 }
 
 export interface RouterState {
-  activeRoute: string;
-  routes: {
-    [path: string]: Route;
+  readonly activeRoute: string;
+  readonly routes: {
+    readonly [path: string]: Route;
   };
 }
 
