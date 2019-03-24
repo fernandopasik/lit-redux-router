@@ -40,7 +40,7 @@
     "regexparam": "^1.2.1"
   },
   "peerDependencies": {
-    "lit-element": "^2.0.1",
+    "lit-element": "^2.1.0",
     "lit-html": "^1.0.0",
     "pwa-helpers": "^0.9.1",
     "redux": "^4.0.1"
@@ -49,8 +49,8 @@
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
     "@types/jest": "^24.0.11",
-    "@typescript-eslint/eslint-plugin": "^1.4.2",
-    "@typescript-eslint/parser": "^1.4.2",
+    "@typescript-eslint/eslint-plugin": "^1.5.0",
+    "@typescript-eslint/parser": "^1.5.0",
     "@webcomponents/webcomponentsjs": "^2.2.7",
     "bundlesize": "^0.17.1",
     "codecov": "^3.2.0",
@@ -65,17 +65,17 @@
     "jest": "^24.5.0",
     "jest-junit": "^6.3.0",
     "lint-staged": "^8.1.5",
-    "lit-element": "^2.0.1",
+    "lit-element": "^2.1.0",
     "lit-html": "^1.0.0",
     "npm-run-all": "^4.1.5",
     "polyserve": "^0.27.15",
     "pwa-helpers": "^0.9.1",
     "redux": "^4.0.1",
     "redux-mock-store": "^1.5.3",
-    "rollup": "^1.6.0",
+    "rollup": "^1.7.2",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-terser": "^4.0.4",
     "ts-jest": "^24.0.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.4000"
   }
 }
