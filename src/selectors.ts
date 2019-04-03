@@ -15,7 +15,7 @@ export const noRouteActive = (
   Object
     .keys(routes)
     .reduce(
-      (noActive, route) => noActive && !routes[route].active,
+      (noActive: boolean, route: string): boolean => noActive && !routes[route].active,
       true,
     )
 );
