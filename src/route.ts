@@ -94,7 +94,7 @@ export default (store: Store<State> & LazyStore) => {
     }
 
     private getTemplate(component: string, attributesObject?: object): TemplateResult {
-      const tagName = component.replace(/[^A-Za-z-]/, '');
+      const tagName = component.replace(/[^A-Za-z0-9-]/, '');
       let attributes = '';
 
       if (attributesObject) {
