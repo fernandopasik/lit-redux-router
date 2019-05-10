@@ -20,7 +20,7 @@ let routerInstalled = false;
 // eslint-disable-next-line import/no-mutable-exports, @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
-export default (store: Store<State> & LazyStore) => {
+export default (store: Store<State> & LazyStore): void => {
   /**
    * Element that renders its content or a component
    * when browser route matches
@@ -58,9 +58,9 @@ export default (store: Store<State> & LazyStore) => {
 
     public firstUpdated(): void {
       if (!routerInstalled) {
-        installRouter(({ pathname, search, hash }) => {
+        installRouter(({ pathname, search, hash }): void => {
           const path = window.decodeURIComponent(pathname + search + hash);
-          return store.dispatch(setActiveRoute(path));
+          store.dispatch(setActiveRoute(path));
         });
         routerInstalled = true;
       }
@@ -77,10 +77,10 @@ export default (store: Store<State> & LazyStore) => {
       if (this.active && this.resolve) {
         this.isResolving = true;
         this.resolve()
-          .then(() => {
+          .then((): void => {
             this.isResolving = false;
           })
-          .catch(() => {
+          .catch((): void => {
             this.isResolving = false;
           });
       }
@@ -100,7 +100,7 @@ export default (store: Store<State> & LazyStore) => {
       if (attributesObject) {
         attributes = Object
           .keys(attributesObject)
-          .map(param => ` ${param}="${this.params[param]}"`)
+          .map((param: string): string => ` ${param}="${this.params[param]}"`)
           .join('');
       }
 

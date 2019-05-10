@@ -10,11 +10,13 @@ export interface Route {
   readonly params?: RouteParams;
 }
 
+export interface Routes {
+  readonly [path: string]: Route;
+}
+
 export interface RouterState {
   readonly activeRoute: string;
-  readonly routes: {
-    readonly [path: string]: Route;
-  };
+  readonly routes: Routes;
 }
 
 interface Action {
@@ -37,7 +39,7 @@ const reducer = (
       return {
         ...state,
         activeRoute: path,
-        routes: Object.keys(state.routes).reduce((routes, route) => ({
+        routes: Object.keys(state.routes).reduce((routes, route): Routes => ({
           ...routes,
           [route]: refreshRoute(route, path),
         }), {}),
