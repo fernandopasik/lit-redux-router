@@ -26,6 +26,7 @@
     "test": "jest",
     "lint": "eslint . --ext ts",
     "build": "tsc",
+    "check-types": "tsc --noEmit -p tsconfig.test.json",
     "prebuild": "del dist",
     "size": "rollup -c && bundlesize && del bundle.js",
     "preversion": "yarn lint && yarn test && yarn build && yarn size"
