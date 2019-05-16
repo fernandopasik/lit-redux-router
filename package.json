@@ -25,15 +25,15 @@
     "serve": "polyserve --npm --root demo --module-resolution node",
     "test": "jest",
     "lint": "eslint . --ext ts",
-    "build": "tsc",
+    "build": "tsc && rollup -c",
     "check-types": "tsc --noEmit -p tsconfig.test.json",
     "prebuild": "del dist",
-    "size": "rollup -c && bundlesize && del bundle.js",
+    "size": "bundlesize",
     "preversion": "yarn lint && yarn test && yarn build && yarn size"
   },
   "bundlesize": [
     {
-      "path": "bundle.js",
+      "path": "dist/lit-redux-router.min.js",
       "maxSize": "1.5 kB"
     }
   ],
