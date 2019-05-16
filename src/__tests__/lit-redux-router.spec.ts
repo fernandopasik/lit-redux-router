@@ -1,5 +1,5 @@
 import configureStore from 'redux-mock-store';
-import { connectRouter, navigate } from '../index';
+import { connectRouter, navigate } from '../lit-redux-router';
 
 import Route from '../route';
 import reducer from '../reducer';

@@ -19,7 +19,7 @@
     "type": "git",
     "url": "https://github.com/fernandopasik/lit-redux-router.git"
   },
-  "main": "dist/index.js",
+  "main": "dist/lit-redux-router.js",
   "scripts": {
     "start": "npm-run-all -p 'build --watch' 'serve'",
     "serve": "polyserve --npm --root demo --module-resolution node",
