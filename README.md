@@ -1,5 +1,6 @@
 # Lit Redux Router
 
+[![Gzip Bundle Size][badge-size]][url-size]
 [![Published on webcomponents.org][badge-wc]][url-wc]
 [![Build Status][badge-ci]][url-ci]
 [![Coverage Status][badge-cov]][url-cov]
@@ -10,6 +11,7 @@
 [![peerDependency Status][badge-deps-peer]][url-deps-peer]
 [![devDependency Status][badge-deps-dev]][url-deps-dev]
 
+[badge-size]: http://img.badgesize.io/https://unpkg.com/lit-redux-router/dist/lit-redux-router.min.js?compression=gzip
 [badge-wc]: https://img.shields.io/badge/webcomponents.org-published-blue.svg
 [badge-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router.svg?style=svg
 [badge-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router/branch/master/graph/badge.svg
@@ -19,6 +21,7 @@
 [badge-deps-peer]: https://david-dm.org/fernandopasik/lit-redux-router/peer-status.svg
 [badge-deps-dev]: https://david-dm.org/fernandopasik/lit-redux-router/dev-status.svg
 
+[url-size]: https://unpkg.com/lit-redux-router/dist/lit-redux-router.min.js "Gzip Bundle Size"
 [url-wc]: https://webcomponents.org/element/lit-redux-router
 [url-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router "Build Status"
 [url-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router "Coverage Status"
