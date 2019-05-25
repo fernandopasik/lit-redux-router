@@ -38,7 +38,7 @@ export default (store: Store<State> & LazyStore): void => {
     @property({ type: Object })
     private params: RouteParams = {};
 
-    @property({ type: String })
+    @property({ type: String, reflect: true })
     private path?: string;
 
     @property({ type: Boolean })
@@ -64,6 +64,21 @@ export default (store: Store<State> & LazyStore): void => {
         });
         routerInstalled = true;
       }
+
+      let current: Route | HTMLElement | null = this.parentElement;
+      let { path } = this;
+
+      while (current) {
+        const closestLitRoute = current.closest('lit-route');
+
+        if (closestLitRoute) {
+          path = `${closestLitRoute.path}${path}`;
+        }
+
+        current = closestLitRoute && closestLitRoute.parentElement;
+      }
+
+      this.path = path;
 
       if (this.path) {
         store.dispatch(addRoute(this.path));
