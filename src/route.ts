@@ -38,7 +38,7 @@ export default (store: Store<State> & LazyStore): void => {
     @property({ type: Object })
     private params: RouteParams = {};
 
-    @property({ type: String, reflect: true })
+    @property({ type: String })
     private path?: string;
 
     @property({ type: Boolean })
