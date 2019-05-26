@@ -21,11 +21,12 @@
   },
   "main": "dist/lit-redux-router.js",
   "scripts": {
-    "start": "npm-run-all -p 'build --watch' 'serve'",
+    "start": "npm-run-all -p 'build:watch' 'serve'",
     "serve": "polyserve --npm --root demo --module-resolution node",
     "test": "jest",
     "lint": "eslint . --ext ts",
     "build": "tsc && rollup -c",
+    "build:watch": "tsc --watch",
     "check-types": "tsc --noEmit -p tsconfig.test.json",
     "prebuild": "del dist",
     "size": "bundlesize",
