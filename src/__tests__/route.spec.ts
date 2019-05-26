@@ -23,11 +23,6 @@ jest.mock('pwa-helpers', () => ({
   installRouter: jest.fn(cb => cb),
 }));
 
-jest.mock('../actions', () => ({
-  setActiveRoute: jest.fn(() => ({ type: '' })),
-  addRoute: jest.fn(() => ({ type: '' })),
-}));
-
 jest.mock('../selectors', () => ({
   isRouteActive: jest.fn(() => false),
   getRouteParams: jest.fn(() => ({})),
@@ -316,6 +311,26 @@ describe('Route element', () => {
         const rendered = route.render();
         expect(rendered).toBe('<docs-page></docs-page>');
       });
+    });
+  });
+
+  describe('nested routes', () => {
+    test('composes and sets the path', () => {
+      connectRouter(mockStore({}));
+      const spy = jest.spyOn(actions, 'addRoute');
+      const route = new Route();
+      route.path = '/second';
+      route.parentElement = new Route();
+      route.parentElement.path = '/first';
+      route.parentElement.closest = () => {};
+      const spy2 = jest.spyOn(route.parentElement, 'closest').mockReturnValueOnce(route.parentElement);
+
+      route.firstUpdated();
+
+      expect(route).toHaveProperty('path', '/first/second');
+
+      spy.mockRestore();
+      spy2.mockRestore();
     });
   });
 });
