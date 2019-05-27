@@ -78,6 +78,12 @@ export default (store: Store<State> & LazyStore): void => {
         current = closestLitRoute && closestLitRoute.parentElement;
       }
 
+      const hasChildRoutes = Boolean(this.querySelector('lit-route'));
+
+      if (hasChildRoutes) {
+        path += '.*';
+      }
+
       this.path = path;
 
       if (this.path) {
