@@ -7,7 +7,11 @@ import * as actions from '../actions';
 import * as selectors from '../selectors';
 
 jest.mock('lit-element', () => ({
-  LitElement: class LitElement {},
+  LitElement: class LitElement {
+    public querySelector() {
+      return null;
+    }
+  },
   html: jest.fn((strings, ...values) => strings
     .map((string: string, index: number) => string + (values[index] || '')).join('')),
   customElement: jest.fn(),
@@ -21,11 +25,6 @@ jest.mock('lit-html/directives/unsafe-html.js', () => ({
 jest.mock('pwa-helpers', () => ({
   connect: jest.fn(() => jest.fn(elem => elem)),
   installRouter: jest.fn(cb => cb),
-}));
-
-jest.mock('../actions', () => ({
-  setActiveRoute: jest.fn(() => ({ type: '' })),
-  addRoute: jest.fn(() => ({ type: '' })),
 }));
 
 jest.mock('../selectors', () => ({
@@ -316,6 +315,60 @@ describe('Route element', () => {
         const rendered = route.render();
         expect(rendered).toBe('<docs-page></docs-page>');
       });
+    });
+  });
+
+  describe('nested routes', () => {
+    test('composes and sets the path', () => {
+      connectRouter(mockStore({}));
+      const spy = jest.spyOn(actions, 'addRoute');
+      const route = new Route();
+      route.path = '/second';
+      route.parentElement = new Route();
+      route.parentElement.path = '/first';
+      route.parentElement.closest = () => {};
+      const spy2 = jest.spyOn(route.parentElement, 'closest').mockReturnValueOnce(route.parentElement);
+
+      route.firstUpdated();
+
+      expect(route).toHaveProperty('path', '/first/second');
+
+      spy.mockRestore();
+      spy2.mockRestore();
+    });
+
+    test('does not compose and return its path when no child route', () => {
+      connectRouter(mockStore({}));
+      const spy = jest.spyOn(actions, 'addRoute');
+      const route = new Route();
+      route.path = '/second';
+      route.parentElement = {};
+      route.parentElement.closest = () => {};
+      const spy2 = jest.spyOn(route.parentElement, 'closest').mockReturnValueOnce(null);
+
+      route.firstUpdated();
+
+      expect(route).toHaveProperty('path', '/second');
+
+      spy.mockRestore();
+      spy2.mockRestore();
+    });
+
+    test('parent routes match with wildcard', () => {
+      connectRouter(mockStore({}));
+      const spy = jest.spyOn(actions, 'addRoute');
+      const route = new Route();
+      route.path = '/about';
+      const childRoute = new Route();
+      childRoute.path = '/me';
+      const spy2 = jest.spyOn(route, 'querySelector').mockReturnValueOnce(childRoute);
+
+      route.firstUpdated();
+
+      expect(route).toHaveProperty('path', '/about.*');
+
+      spy.mockRestore();
+      spy2.mockRestore();
     });
   });
 });

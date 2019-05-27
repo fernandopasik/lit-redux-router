@@ -65,6 +65,27 @@ export default (store: Store<State> & LazyStore): void => {
         routerInstalled = true;
       }
 
+      let current: Route | HTMLElement | null = this.parentElement;
+      let { path } = this;
+
+      while (current) {
+        const closestLitRoute = current.closest('lit-route');
+
+        if (closestLitRoute) {
+          path = `${closestLitRoute.path}${path}`;
+        }
+
+        current = closestLitRoute && closestLitRoute.parentElement;
+      }
+
+      const hasChildRoutes = Boolean(this.querySelector('lit-route'));
+
+      if (hasChildRoutes) {
+        path += '.*';
+      }
+
+      this.path = path;
+
       if (this.path) {
         store.dispatch(addRoute(this.path));
       }

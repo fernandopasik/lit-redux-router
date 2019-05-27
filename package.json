@@ -36,7 +36,7 @@
   "bundlesize": [
     {
       "path": "dist/lit-redux-router.min.js",
-      "maxSize": "1.5 kB"
+      "maxSize": "1.6 kB"
     }
   ],
   "dependencies": {
