@@ -1,6 +1,6 @@
 {
   "name": "lit-redux-router",
-  "version": "0.8.9",
+  "version": "0.9.0",
   "description": "Declarative way of routing for lit-html powered by pwa-helpers, redux and lit-element",
   "keywords": [
     "router",
