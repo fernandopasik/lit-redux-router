@@ -1,13 +1,14 @@
 {
   "extends": [
     "airbnb-base",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:lit/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true
   },
-  "plugins": [ "@typescript-eslint", "lit", "jest" ],
+  "plugins": [ "@typescript-eslint", "jest" ],
   "settings": {
     "import/resolver": {
       "node": {
@@ -60,12 +61,8 @@
     "jest/valid-describe": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-expect": "error",
-    "lit/attribute-value-entities": "error",
-    "lit/binding-positions": "error",
-    "lit/no-duplicate-template-bindings": "error",
-    "lit/no-invalid-html": "error",
-    "lit/no-legacy-template-syntax": "error",
-    "lit/no-property-change-update": "error",
+    "lit/no-private-properties": "error",
+    "lit/no-template-arrow": "error",
     "lit/no-template-bind": "error",
     "lit/no-template-map": "error",
     "lit/no-useless-template-literals": "error",
