@@ -265,7 +265,7 @@ yarn size
 
 ## Built with
 
-* [regexparam](https://github.com/lukeed/regexparam) - A tiny (299B) utility that converts route patterns into RegExp
+* [regexparam](https://github.com/lukeed/regexparam) - A tiny utility that converts route patterns into RegExp
 * [lit-html](https://github.com/Polymer/lit-html) - HTML template literals in JavaScript
 * [lit-element](https://github.com/Polymer/lit-element) - An ultra-light custom element base class with a simple but expressive API
 * [pwa-helpers](https://github.com/Polymer/pwa-helpers) - Small helper methods or mixins to help you build web apps
