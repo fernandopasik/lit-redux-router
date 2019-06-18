@@ -31,6 +31,7 @@
     "check-types": "tsc --noEmit -p tsconfig.test.json",
     "prebuild": "del dist",
     "size": "bundlesize",
+    "thanks": "credits . --reporter markdown > THANKS.md",
     "preversion": "yarn lint && yarn test && yarn build && yarn size"
   },
   "bundlesize": [
@@ -61,6 +62,7 @@
     "browser-sync": "^2.26.7",
     "bundlesize": "^0.17.2",
     "codecov": "^3.5.0",
+    "credits-cli": "^3.1.0",
     "deep-freeze": "^0.0.1",
     "del-cli": "^2.0.0",
     "eslint": "^5.16.0",
