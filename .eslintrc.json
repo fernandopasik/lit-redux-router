@@ -30,7 +30,7 @@
   "rules": {
     "@typescript-eslint/indent": ["error", 2],
     "class-methods-use-this": "off",
-    "import/extensions": [".js", ".jsx", ".json", ".ts", ".tsx"],
+    "import/extensions": ["error", "never"],
     "import/prefer-default-export": "off",
     "jest/consistent-test-it": ["error", {"fn": "test"}],
     "jest/expect-expect": "error",

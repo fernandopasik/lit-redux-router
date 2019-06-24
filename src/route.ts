@@ -5,11 +5,11 @@ import {
   customElement,
   TemplateResult,
 } from 'lit-element';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import { connect, installRouter } from 'pwa-helpers';
 
 import { Store } from 'redux';
-import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
+import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
 
 import { addRoute, setActiveRoute } from './actions';
 import { RouteParams } from './reducer';
