@@ -19,6 +19,7 @@
     "type": "git",
     "url": "https://github.com/fernandopasik/lit-redux-router.git"
   },
+  "module": "src/lit-redux-router.ts",
   "main": "dist/lit-redux-router.js",
   "scripts": {
     "start": "npm-run-all -p 'build:watch' 'serve' 'browser:watch'",
