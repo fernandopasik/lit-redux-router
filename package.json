@@ -3,55 +3,40 @@
   "version": "0.9.7",
   "description": "Declarative way of routing for lit-html powered by pwa-helpers, redux and lit-element",
   "keywords": [
-    "router",
-    "lit-html",
     "lit-element",
-    "redux"
+    "lit-html",
+    "redux",
+    "router"
   ],
   "homepage": "https://github.com/fernandopasik/lit-redux-router",
   "bugs": "https://github.com/fernandopasik/lit-redux-router/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fernandopasik/lit-redux-router.git"
+  },
   "license": "MIT",
   "author": "Fernando Pasik <fernando@pasik.com.ar> (https://fernandopasik.com)",
   "contributors": [
     "Grant Hutchinson <grant@hutchdev.ca>"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fernandopasik/lit-redux-router.git"
-  },
-  "module": "dist/lit-redux-router.js",
   "main": "dist/lit-redux-router.js",
+  "module": "dist/lit-redux-router.js",
   "scripts": {
-    "start": "npm-run-all -p 'build:watch' 'serve' 'browser:watch'",
-    "serve": "polyserve --npm --root demo --module-resolution node",
-    "test": "jest",
-    "lint": "eslint . --ext ts",
+    "browser:watch": "browser-sync start --proxy http://127.0.0.1:8081 --files demo",
+    "prebuild": "del dist",
     "build": "tsc && rollup -c",
     "build:watch": "tsc --watch",
-    "browser:watch": "browser-sync start --proxy http://127.0.0.1:8081 --files demo",
     "check-types": "tsc --noEmit -p tsconfig.test.json",
-    "prebuild": "del dist",
+    "lint": "eslint . --ext ts",
+    "serve": "polyserve --npm --root demo --module-resolution node",
     "size": "bundlesize",
+    "start": "npm-run-all -p 'build:watch' 'serve' 'browser:watch'",
+    "test": "jest",
     "thanks": "credits . --reporter markdown > THANKS.md",
     "preversion": "yarn lint && yarn test && yarn build && yarn size"
   },
-  "bundlesize": [
-    {
-      "path": "dist/lit-redux-router.min.js",
-      "maxSize": "1.6 kB"
-    }
-  ],
-  "resolutions": {
-    "axios": "^0.19.0"
-  },
   "dependencies": {
     "regexparam": "^1.3.0"
-  },
-  "peerDependencies": {
-    "lit-element": "2.x.x",
-    "lit-html": "1.x.x",
-    "pwa-helpers": "0.x.x",
-    "redux": "4.x.x"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
@@ -87,5 +72,20 @@
     "rollup-plugin-terser": "^5.1.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
-  }
+  },
+  "peerDependencies": {
+    "lit-element": "2.x.x",
+    "lit-html": "1.x.x",
+    "pwa-helpers": "0.x.x",
+    "redux": "4.x.x"
+  },
+  "resolutions": {
+    "axios": "^0.19.0"
+  },
+  "bundlesize": [
+    {
+      "path": "dist/lit-redux-router.min.js",
+      "maxSize": "1.6 kB"
+    }
+  ]
 }
