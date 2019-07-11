@@ -8,7 +8,15 @@ export default {
     format: 'esm',
   },
   onwarn(warning) {
-    if (warning.code !== 'CIRCULAR_DEPENDENCY') {
+    const ignored = (
+      warning.code === 'THIS_IS_UNDEFINED' || (
+        warning.code === 'UNRESOLVED_IMPORT' && (
+          warning.source === 'lit-html/directives/unsafe-html' || warning.source === 'lit-element' || warning.source === 'pwa-helpers'
+        )
+      )
+    );
+
+    if (!ignored) {
       console.error(`(!) ${warning.message}`); // eslint-disable-line no-console
     }
   },
