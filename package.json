@@ -27,7 +27,7 @@
     "build": "tsc && rollup -c",
     "build:watch": "tsc --watch",
     "check-types": "tsc --noEmit -p tsconfig.test.json",
-    "lint": "eslint . --ext ts",
+    "lint": "eslint . --ext ts,js",
     "serve": "polyserve --npm --root demo --module-resolution node",
     "size": "bundlesize",
     "start": "npm-run-all -p 'build:watch' 'serve' 'browser:watch'",
