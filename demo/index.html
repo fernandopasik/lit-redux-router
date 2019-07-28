@@ -1,12 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
+		/>
 
 		<title>Lit Redux Router</title>
-		<meta name="description" content="Declarative routing elements made with lit-html enabled by pwa-helpers and redux">
+		<meta
+			name="description"
+			content="Declarative routing elements made with lit-html enabled by pwa-helpers and redux"
+		/>
 
 		<style>
 			body {
@@ -27,11 +33,7 @@
 			import { LitElement, html } from '/node_modules/lit-element/lit-element.js';
 
 			import { connectRouter, navigate } from '/dist/lit-redux-router.js';
-			import {
-				createStore,
-				compose as origCompose,
-				combineReducers,
-			} from 'redux';
+			import { createStore, compose as origCompose, combineReducers } from 'redux';
 			import { lazyReducerEnhancer } from 'pwa-helpers/lazy-reducer-enhancer.js';
 
 			const compose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || origCompose;
@@ -92,7 +94,7 @@
 								padding: 16px;
 							}
 							.spacer {
-								height:1600px;
+								height: 1600px;
 							}
 
 							.scrollLink {
@@ -127,22 +129,19 @@
 									<h1>About Me</h1>
 								</lit-route>
 							</lit-route>
-							<lit-route
-								path="/contact"
-								component="my-contact"
-								scrollDisable
-							>
-							</lit-route>
+							<lit-route path="/contact" component="my-contact" scrollDisable> </lit-route>
 							<lit-route
 								path="/docs"
 								component="docs-page"
 								.resolve="${() => import('./docs')}"
-								.scrollOpt="${{behavior: 'smooth', block:'end', inline:'nearest'}}"
+								.scrollOpt="${{ behavior: 'smooth', block: 'end', inline: 'nearest' }}"
 								loading="my-loading"
 							></lit-route>
 							<div class="spacer"></div>
-							<a href="/contact" class="scrollLink">Scroll disabled</a><br>
-							<a href="/docs" class="scrollLink">Scroll to top smoothly and switch to docs component</a>
+							<a href="/contact" class="scrollLink">Scroll disabled</a><br />
+							<a href="/docs" class="scrollLink"
+								>Scroll to top smoothly and switch to docs component</a
+							>
 						</div>
 					`;
 				}
@@ -165,9 +164,9 @@
 				}
 
 				save(property) {
-					return (event) => {
+					return event => {
 						this[property] = event.target.value;
-					}
+					};
 				}
 
 				submit() {
@@ -245,7 +244,6 @@
 			}
 
 			customElements.define('my-loading', MyLoading);
-
 		</script>
 	</body>
 </html>
