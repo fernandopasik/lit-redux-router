@@ -246,7 +246,7 @@ describe('Route element', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = () => import('../../demo/docs.js');
+        route.resolve = () => import('../lit-redux-router');
         route.path = '/';
         const state = { activeRoute: route.path };
 
@@ -264,7 +264,7 @@ describe('Route element', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = () => import('../../demo/docs.js');
+        route.resolve = () => import('../lit-redux-router');
         route.path = '/';
         const state = { activeRoute: route.path };
         const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
@@ -281,7 +281,7 @@ describe('Route element', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = () => import('../../demo/docs.js');
+        route.resolve = () => import('../lit-redux-router');
         route.loading = 'my-loading';
         route.path = '/';
 
@@ -302,7 +302,7 @@ describe('Route element', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = () => import('../../demo/docs.js');
+        route.resolve = () => import('../lit-redux-router');
         route.loading = 'my-loading';
         route.path = '/';
 
