@@ -22,12 +22,6 @@
     "strictPropertyInitialization": true,
     "target": "es2017"
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/__tests__/**/*",
-    "**/?(*.)+(spec|test).(js|ts)?(x)"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/__tests__/**/*", "**/?(*.)+(spec|test).(js|ts)?(x)"]
 }
