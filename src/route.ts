@@ -1,10 +1,4 @@
-import {
-  LitElement,
-  html,
-  property,
-  customElement,
-  TemplateResult,
-} from 'lit-element';
+import { LitElement, html, property, customElement, TemplateResult } from 'lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import { connect, installRouter } from 'pwa-helpers';
 

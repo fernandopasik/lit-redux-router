@@ -26,6 +26,15 @@
   "rules": {
     "@typescript-eslint/indent": ["error", 2],
     "class-methods-use-this": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": { "multiline": true, "consistent": true },
+        "ObjectPattern": { "multiline": true, "consistent": true },
+        "ImportDeclaration": { "multiline": true, "consistent": true },
+        "ExportDeclaration": { "multiline": true, "consistent": true }
+      }
+    ],
     "import/extensions": ["error", "never"],
     "import/prefer-default-export": "off",
     "jest/consistent-test-it": ["error", { "fn": "test" }],
