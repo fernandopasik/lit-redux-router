@@ -3,3 +3,4 @@ node_modules
 /lit-redux-router.*
 coverage/**
 demo/dist/**
+docs/**

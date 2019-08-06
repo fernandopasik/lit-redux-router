@@ -33,6 +33,7 @@
   "scripts": {
     "prebuild": "del lib lit-redux-router.*",
     "build": "tsc && rollup -c",
+    "build:docs": "webpack",
     "check-types": "tsc --noEmit -p tsconfig.all.json",
     "lint": "lit-analyzer src --strict && eslint . --ext ts,js",
     "size": "bundlesize",

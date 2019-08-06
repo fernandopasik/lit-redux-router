@@ -6,7 +6,7 @@ const babelConfig = require('./babel.config');
 babelConfig.plugins.push('@babel/plugin-syntax-dynamic-import');
 
 module.exports = {
-  entry: './demo/app.ts',
+  entry: './site/app.ts',
   resolve: {
     extensions: ['.ts', '.js'],
   },
@@ -32,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'demo/index.html',
+      template: 'site/index.html',
     }),
   ],
 };

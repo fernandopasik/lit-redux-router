@@ -15,7 +15,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": ".",
-    "rootDirs": ["src", "demo"],
+    "rootDirs": ["src", "site"],
     "sourceMap": true,
     "strict": true,
     "strictBindCallApply": true,
