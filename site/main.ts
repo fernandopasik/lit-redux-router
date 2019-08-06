@@ -1,5 +1,5 @@
 import { LitElement, html, css, CSSResult, TemplateResult } from 'lit-element';
-import { connectRouter } from './src/lit-redux-router';
+import { connectRouter } from '../src/lit-redux-router';
 import store from './store';
 
 import './home';
