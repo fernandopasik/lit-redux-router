@@ -18,26 +18,22 @@ class ContentTable extends LitElement {
       }
 
       li {
-        margin: 10px 0;
+        margin: 16px 0;
       }
 
       ul ul {
-        margin-left: 20px;
+        margin-left: 16px;
       }
 
       ul ul li {
-        margin: 5px 0;
+        margin: 4px 0;
       }
     `;
   }
 
   public render(): TemplateResult {
     return html`
-      <style>
-        @import url(https://unpkg.com/@material/typography/dist/mdc.typography.min.css);
-      </style>
       <nav>
-        <h1 class="mdc-typography--headline5">Content table</h1>
         <ul>
           <li><a href="/getting-started">Getting Started</a></li>
           <li>

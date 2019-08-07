@@ -21,10 +21,6 @@ class AppFooter extends LitElement {
       .mdc-icon-button {
         display: block;
       }
-
-      footer {
-        max-width: 1268px;
-      }
     `;
   }
 
