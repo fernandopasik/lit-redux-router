@@ -7,11 +7,11 @@ class TriggerRoute extends LitElement {
       <style>
         @import url(https://unpkg.com/@material/typography/dist/mdc.typography.min.css);
       </style>
-      <h2 class="mdc-typography--headline3">Trigger a route</h2>
+      <h2 class="mdc-typography--headline4">Trigger a route</h2>
 
       <p></p>
 
-      <h3 id="text-path" class="mdc-typography--headline4">with links</h3>
+      <h3 id="text-path" class="mdc-typography--headline5">with links</h3>
 
       <p></p>
 
@@ -33,7 +33,7 @@ class TriggerRoute extends LitElement {
         customElements.define('my-app', MyApp);
       </code-example></pre>
 
-      <h3 id="text-path" class="mdc-typography--headline4">with a redux action</h3>
+      <h3 id="text-path" class="mdc-typography--headline5">with a redux action</h3>
 
       <p></p>
 

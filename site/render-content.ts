@@ -7,7 +7,7 @@ class RenderContent extends LitElement {
       <style>
         @import url(https://unpkg.com/@material/typography/dist/mdc.typography.min.css);
       </style>
-      <h2 class="mdc-typography--headline3">Render content for a route</h2>
+      <h2 class="mdc-typography--headline4">Render content for a route</h2>
 
       <p>
         The <code>lit-route</code> component renders when the <code>path</code> attribute matches
@@ -17,7 +17,7 @@ class RenderContent extends LitElement {
         <code>component</code> attribute.
       </p>
 
-      <h3 id="with-children-elements" class="mdc-typography--headline4">With children elements</h3>
+      <h3 id="with-children-elements" class="mdc-typography--headline5">With children elements</h3>
 
       <p>
         Just insert children elements inside the <code>lit-route</code> element and that's what will
@@ -37,7 +37,7 @@ class RenderContent extends LitElement {
         } customElements.define('my-app', MyApp);
       </code-example></pre>
 
-      <h3 id="with-a-component" class="mdc-typography--headline4">With a component</h3>
+      <h3 id="with-a-component" class="mdc-typography--headline5">With a component</h3>
 
       <p>
         Add a <code>component</code> attribute with the name of the element that holds the content

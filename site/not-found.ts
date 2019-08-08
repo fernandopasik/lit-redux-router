@@ -6,7 +6,7 @@ class NotFound extends LitElement {
       <style>
         @import url(https://unpkg.com/@material/typography/dist/mdc.typography.min.css);
       </style>
-      <h2 class="mdc-typography--headline3">Route not Found</h2>
+      <h2 class="mdc-typography--headline4">Route not Found</h2>
 
       <p>
         This route is active when 404 happens. To achieve this, a lit-route element must be present

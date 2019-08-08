@@ -7,11 +7,11 @@ class MatchingCases extends LitElement {
       <style>
         @import url(https://unpkg.com/@material/typography/dist/mdc.typography.min.css);
       </style>
-      <h2 class="mdc-typography--headline3">Matching cases for paths</h2>
+      <h2 class="mdc-typography--headline4">Matching cases for paths</h2>
 
       <p></p>
 
-      <h3 id="text-path" class="mdc-typography--headline4">Plain text</h3>
+      <h3 id="text-path" class="mdc-typography--headline5">Plain text</h3>
 
       <pre><code-example>
         class MyAbout extends LitElement {
@@ -27,7 +27,7 @@ class MatchingCases extends LitElement {
         customElements.define('my-app', MyAbout);
       </code-example></pre>
 
-      <h3 id="path-with-variables" class="mdc-typography--headline4">With variables</h3>
+      <h3 id="path-with-variables" class="mdc-typography--headline5">With variables</h3>
 
       <p>lit-route can **map path variables** and inject them in the provided component.</p>
 

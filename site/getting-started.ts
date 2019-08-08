@@ -7,7 +7,7 @@ class GettingStarted extends LitElement {
       <style>
         @import url(https://unpkg.com/@material/typography/dist/mdc.typography.min.css);
       </style>
-      <h2 class="mdc-typography--headline3">Getting Started</h2>
+      <h2 class="mdc-typography--headline4">Getting Started</h2>
 
       <p>Install this library and its peer dependencies</p>
 
