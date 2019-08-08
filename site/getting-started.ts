@@ -1,7 +1,7 @@
 import { LitElement, html, TemplateResult } from 'lit-element';
 import './code-example';
 
-class AppGettingStarted extends LitElement {
+class GettingStarted extends LitElement {
   public render(): TemplateResult {
     return html`
       <style>
@@ -43,4 +43,4 @@ class AppGettingStarted extends LitElement {
   }
 }
 
-customElements.define('app-getting-started', AppGettingStarted);
+customElements.define('app-getting-started', GettingStarted);

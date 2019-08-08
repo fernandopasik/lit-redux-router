@@ -1,7 +1,7 @@
 import { LitElement, html, TemplateResult } from 'lit-element';
 import './code-example';
 
-class AppRenderContent extends LitElement {
+class RenderContent extends LitElement {
   public render(): TemplateResult {
     return html`
       <style>
@@ -80,4 +80,4 @@ class AppRenderContent extends LitElement {
   }
 }
 
-customElements.define('app-render-content', AppRenderContent);
+customElements.define('app-render-content', RenderContent);
