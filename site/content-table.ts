@@ -60,10 +60,10 @@ class ContentTable extends LitElement {
           </li>
           <li><a href="/not-found-404">Not found path (404)</a></li>
           <li>
-            <a href="">Trigger a route path</a>
+            <a href="/trigger-a-route">Trigger a route</a>
             <ul>
-              <li><a href="#">with links</a></li>
-              <li><a href="#">with a redux action</a></li>
+              <li><a href="/trigger-a-route#with-links">with links</a></li>
+              <li><a href="/trigger-a-route#with-a-redux-action">with a redux action</a></li>
             </ul>
           </li>
           <li><a href="">Nesting routes</a></li>
