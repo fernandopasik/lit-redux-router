@@ -1,24 +1,33 @@
 import { LitElement, html, TemplateResult } from 'lit-element';
 
-class AppNotFound extends LitElement {
+class NotFound extends LitElement {
   public render(): TemplateResult {
     return html`
-      <h2>Route not Found</h2>
+      <style>
+        @import url(https://unpkg.com/@material/typography/dist/mdc.typography.min.css);
+      </style>
+      <h2 class="mdc-typography--headline3">Route not Found</h2>
+
       <p>
         This route is active when 404 happens. To achieve this, a lit-route element must be present
         without the path attribute
       </p>
 
-      <pre>
-        <code>
-          <main>
-            <lit-route path="/getting-started" component="app-getting-started"></lit-route>
-            <lit-route component="app-not-found"></lit-route>
-          </main>
-        </code>
-      </pre>
+      <pre><code-example>
+        class MyApp extends LitElement {
+          render() {
+            return html&#96;
+              <div class="app-content">
+                <lit-route path="/"><h1>Home</h1></lit-route>
+                <lit-route><h1>404 Not found</h1></lit-route>
+              </div>
+            &#96;;
+          }
+        }
+        customElements.define('my-app', MyApp);
+      </code-example></pre>
     `;
   }
 }
 
-customElements.define('app-not-found', AppNotFound);
+customElements.define('app-not-found', NotFound);

@@ -56,30 +56,6 @@ class MatchingCases extends LitElement {
         }
         customElements.define('my-app', MyApp);
       </code-example></pre>
-
-      <h3 id="not-found-path" class="mdc-typography--headline4">Not found path</h3>
-
-      <p>
-        When no path attribute is provided to lit-route, it will render when no route matches (404)
-      </p>
-
-      <pre><code-example>
-        class MyApp extends LitElement {
-          render() {
-            return html&#96;
-              <div class="app-content">
-                <lit-route path="/"><h1>Home</h1></lit-route>
-                <lit-route><h1>404 Not found</h1></lit-route>
-              </div>
-            &#96;;
-          }
-        }
-        customElements.define('my-app', MyApp);
-      </code-example></pre>
-
-      <h3 id="every-route-except-matching-route" class="mdc-typography--headline4">
-        Every route except matching route
-      </h3>
     `;
   }
 }

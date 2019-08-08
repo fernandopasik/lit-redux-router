@@ -56,14 +56,14 @@ class ContentTable extends LitElement {
               <li>
                 <a href="/matching-cases-for-route-paths#path-with-variables">with variables</a>
               </li>
-              <li><a href="/matching-cases-for-route-paths#not-found-path">not found path</a></li>
               <li>
-                <a href="/matching-cases-for-route-paths#every-route-except-matching-route">
-                  every route except matching route
+                <a href="/matching-cases-for-route-paths#everything-but-matching-route">
+                  everything but matching route
                 </a>
               </li>
             </ul>
           </li>
+          <li><a href="/not-found-404">Not found path (404)</a></li>
           <li>
             <a href="">Trigger a route path</a>
             <ul>
