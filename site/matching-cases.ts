@@ -1,15 +1,7 @@
-import { LitElement, html, css, CSSResult, TemplateResult } from 'lit-element';
+import { LitElement, html, TemplateResult } from 'lit-element';
 import './code-example';
 
 class MatchingCases extends LitElement {
-  public static get styles(): CSSResult {
-    return css`
-      pre {
-        margin: 0;
-      }
-    `;
-  }
-
   public render(): TemplateResult {
     return html`
       <style>
