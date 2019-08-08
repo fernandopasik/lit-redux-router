@@ -50,13 +50,11 @@ class ContentTable extends LitElement {
             </ul>
           </li>
           <li>
-            <a href="/matching-cases-for-route-paths">Matching cases for route paths</a>
+            <a href="/matching-cases-for-route-paths">Matching cases for paths</a>
             <ul>
-              <li><a href="/matching-cases-for-route-paths#text-path">text path</a></li>
+              <li><a href="/matching-cases-for-route-paths#text-path">plain text</a></li>
               <li>
-                <a href="/matching-cases-for-route-paths#path-with-variables">
-                  path with variables
-                </a>
+                <a href="/matching-cases-for-route-paths#path-with-variables">with variables</a>
               </li>
               <li><a href="/matching-cases-for-route-paths#not-found-path">not found path</a></li>
               <li>
