@@ -10,6 +10,7 @@ import './getting-started';
 import './render-content';
 import './matching-cases';
 import './trigger-a-route';
+import './scroll';
 
 connectRouter(store);
 
@@ -45,6 +46,7 @@ class AppMain extends LitElement {
             component="app-matching-cases"
           ></lit-route>
           <lit-route path="/trigger-a-route" component="app-trigger-route"></lit-route>
+          <lit-route path="/scroll" component="app-scroll"></lit-route>
         </main>
         <app-footer></app-footer>
       </div>

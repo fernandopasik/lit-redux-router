@@ -68,7 +68,7 @@ class ContentTable extends LitElement {
           </li>
           <li><a href="">Nesting routes</a></li>
           <li>
-            <a href="">Scroll</a>
+            <a href="/scroll">Scroll</a>
             <ul>
               <li><a href="#">Scroll into view</a></li>
               <li><a href="#">Smooth scrolling</a></li>
