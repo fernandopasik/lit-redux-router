@@ -24,7 +24,7 @@
   "scripts": {
     "build": "del dist && tsc && rollup -c",
     "check-types": "tsc --noEmit -p tsconfig.test.json",
-    "lint": "eslint . --ext ts,js",
+    "lint": "eslint . --ext ts,js && lit-analyzer src --strict",
     "size": "bundlesize",
     "start": "webpack-dev-server",
     "test": "jest",
@@ -63,6 +63,7 @@
     "jest": "^24.8.0",
     "jest-junit": "^7.0.0",
     "lint-staged": "^9.2.1",
+    "lit-analyzer": "^1.1.7",
     "lit-element": "^2.1.0",
     "lit-html": "^1.1.0",
     "pwa-helpers": "^0.9.1",
