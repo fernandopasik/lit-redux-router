@@ -19,12 +19,12 @@ jest.mock('lit-element', () => ({
 }));
 
 jest.mock('lit-html/directives/unsafe-html.js', () => ({
-  unsafeHTML: jest.fn(html => html),
+  unsafeHTML: jest.fn((html) => html),
 }));
 
 jest.mock('pwa-helpers', () => ({
-  connect: jest.fn(() => jest.fn(elem => elem)),
-  installRouter: jest.fn(cb => cb),
+  connect: jest.fn(() => jest.fn((elem) => elem)),
+  installRouter: jest.fn((cb) => cb),
 }));
 
 jest.mock('../selectors', () => ({
@@ -41,7 +41,7 @@ describe('Route element', () => {
         customElements: {
           define: jest.fn(),
         },
-        decodeURIComponent: jest.fn(val => val),
+        decodeURIComponent: jest.fn((val) => val),
         scrollTo: jest.fn(),
       },
     });
@@ -126,8 +126,7 @@ describe('Route element', () => {
       const route = new Route();
       const state = { activeRoute: '/' };
       const path = '/1';
-      const spy = jest.spyOn(selectors, 'isRouteActive')
-        .mockImplementationOnce(() => true);
+      const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
       route.path = path;
       route.scrollDisable = true;
       route.stateChanged(state);
@@ -145,8 +144,7 @@ describe('Route element', () => {
       const path = '/1';
       const params = { one: '1' };
       route.path = path;
-      const spy = jest.spyOn(selectors, 'getRouteParams')
-        .mockImplementationOnce(() => params);
+      const spy = jest.spyOn(selectors, 'getRouteParams').mockImplementationOnce(() => params);
 
       route.stateChanged(state);
 
@@ -250,8 +248,7 @@ describe('Route element', () => {
         route.path = '/';
         const state = { activeRoute: route.path };
 
-        jest.spyOn(selectors, 'isRouteActive')
-          .mockImplementationOnce(() => true);
+        jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
 
         route.stateChanged(state);
 
@@ -287,8 +284,7 @@ describe('Route element', () => {
 
         const state = { activeRoute: route.path };
 
-        const spy = jest.spyOn(selectors, 'isRouteActive')
-          .mockImplementationOnce(() => true);
+        const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
 
         route.stateChanged(state);
 
@@ -327,7 +323,9 @@ describe('Route element', () => {
       route.parentElement = new Route();
       route.parentElement.path = '/first';
       route.parentElement.closest = () => {};
-      const spy2 = jest.spyOn(route.parentElement, 'closest').mockReturnValueOnce(route.parentElement);
+      const spy2 = jest
+        .spyOn(route.parentElement, 'closest')
+        .mockReturnValueOnce(route.parentElement);
 
       route.firstUpdated();
 
