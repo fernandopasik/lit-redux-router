@@ -7,6 +7,7 @@ export default {
     file: 'dist/lit-redux-router.min.js',
     format: 'esm',
   },
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   onwarn(warning) {
     const ignored = (
       warning.code === 'THIS_IS_UNDEFINED' || (

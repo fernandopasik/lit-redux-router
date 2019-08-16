@@ -46,17 +46,19 @@ export default (store: Store<any> & LazyStore): void => {
     private loading?: string;
 
     @property({ type: Object })
-    private scrollOpt? = {};
+    private scrollOpt = {};
 
     @property({ type: Boolean })
-    private scrollDisable?: boolean = false;
+    private scrollDisable = false;
 
     public firstUpdated(): void {
       if (!routerInstalled) {
-        installRouter(({ pathname, search, hash }): void => {
-          const path = window.decodeURIComponent(pathname + search + hash);
-          store.dispatch(setActiveRoute(path));
-        });
+        installRouter(
+          ({ pathname, search, hash }): void => {
+            const path = window.decodeURIComponent(pathname + search + hash);
+            store.dispatch(setActiveRoute(path));
+          },
+        );
         routerInstalled = true;
       }
 
@@ -93,12 +95,16 @@ export default (store: Store<any> & LazyStore): void => {
       if (this.active && this.resolve) {
         this.isResolving = true;
         this.resolve()
-          .then((): void => {
-            this.isResolving = false;
-          })
-          .catch((): void => {
-            this.isResolving = false;
-          });
+          .then(
+            (): void => {
+              this.isResolving = false;
+            },
+          )
+          .catch(
+            (): void => {
+              this.isResolving = false;
+            },
+          );
       }
       if (this.active && !this.scrollDisable && this.scrollOpt) {
         if (Object.keys(this.scrollOpt).length !== 0) {
@@ -114,8 +120,7 @@ export default (store: Store<any> & LazyStore): void => {
       let attributes = '';
 
       if (attributesObject) {
-        attributes = Object
-          .keys(attributesObject)
+        attributes = Object.keys(attributesObject)
           .map((param: string): string => ` ${param}="${this.params[param]}"`)
           .join('');
       }
