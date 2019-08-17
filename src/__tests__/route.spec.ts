@@ -35,7 +35,7 @@ jest.mock('../selectors', () => ({
 
 const mockStore = configureStore([]);
 
-describe('Route element', () => {
+describe('route element', () => {
   beforeAll(() => {
     Object.defineProperty(global, 'window', {
       value: {

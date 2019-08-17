@@ -11,7 +11,7 @@ jest.mock('../actions', () => ({ navigate: jest.fn() }));
 
 const mockStore = configureStore([]);
 
-describe('Lit Redux Router', () => {
+describe('lit redux router', () => {
   it('connects router to reducer', () => {
     const store = mockStore({});
     const addReducers = jest.fn();

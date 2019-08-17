@@ -1,6 +1,6 @@
 import { checkNavigation, refreshRoute } from '../service';
 
-describe('Router Service', () => {
+describe('router service', () => {
   beforeAll(() => {
     Object.defineProperty(global, 'window', {
       value: {

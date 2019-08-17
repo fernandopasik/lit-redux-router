@@ -33,7 +33,6 @@
   "rules": {
     "@typescript-eslint/indent": ["error", 2],
     "class-methods-use-this": "off",
-    "jest/lowercase-name": ["error", { "ignore": ["describe"] }],
     "jest/no-hooks": "off",
     "jest/prefer-expect-assertions": "off"
   }

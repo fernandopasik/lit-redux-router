@@ -1,7 +1,7 @@
 import deepFreeze from 'deep-freeze';
 import reducer from '../reducer';
 
-describe('Router Reducer', () => {
+describe('router reducer', () => {
   it('returns default state', () => {
     const initialState = deepFreeze({ activeRoute: '/about', routes: {} });
     expect(reducer(initialState)).toStrictEqual(initialState);

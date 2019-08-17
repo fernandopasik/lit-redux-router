@@ -5,8 +5,8 @@ jest.mock('../service', () => ({
   checkNavigation: jest.fn(),
 }));
 
-describe('Router Actions', () => {
-  describe('Add Route', () => {
+describe('router actions', () => {
+  describe('add route', () => {
     it('has a type', () => {
       expect(addRoute('/')).toHaveProperty('type', 'ADD_ROUTE');
     });
@@ -17,7 +17,7 @@ describe('Router Actions', () => {
     });
   });
 
-  describe('Navigate to Route', () => {
+  describe('navigate to route', () => {
     it('has a type', () => {
       expect(navigate('')).toHaveProperty('type', 'NAVIGATE');
     });
@@ -34,7 +34,7 @@ describe('Router Actions', () => {
     });
   });
 
-  describe('Set Active Route', () => {
+  describe('set active route', () => {
     it('has a type', () => {
       expect(setActiveRoute('')).toHaveProperty('type', 'SET_ACTIVE_ROUTE');
     });

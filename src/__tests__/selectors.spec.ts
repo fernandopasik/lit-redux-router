@@ -1,6 +1,6 @@
 import { getRouteParams, getRoute, isRouteActive, noRouteActive } from '../selectors';
 
-describe('Router Selectors', () => {
+describe('router selectors', () => {
   describe('get route', () => {
     it('return empty object when not present', () => {
       const path = '/about';
