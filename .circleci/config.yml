@@ -83,7 +83,7 @@ workflows:
   version: 2
   all:
     jobs:
-      - install
+      - setup
       - lint:
           requires:
             - install
