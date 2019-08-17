@@ -8,6 +8,10 @@ aliases:
         - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
         - yarn-packages-v1-{{ .Branch }}-
         - yarn-packages-v1-
+  - &yarn_install
+    run:
+      name: Install dependencies
+      command: yarn --frozen-lockfile
 
 jobs:
   setup:
@@ -19,9 +23,7 @@ jobs:
           name: Nodejs Version
           command: node --version
       - *restore_yarn_cache
-      - run:
-          name: Install dependencies
-          command: yarn --frozen-lockfile
+      - *yarn_install
       - save_cache:
           name: Save yarn cache
           paths:
@@ -34,6 +36,7 @@ jobs:
     steps:
       - checkout
       - *restore_yarn_cache
+      - *yarn_install
       - run:
           name: Lint
           command: yarn lint --format junit -o reports/junit/js-lint-results.xml
@@ -46,6 +49,7 @@ jobs:
     steps:
       - checkout
       - *restore_yarn_cache
+      - *yarn_install
       - run:
           name: Unit Tests
           command: yarn test --coverage --ci --reporters=default --reporters=jest-junit
@@ -64,6 +68,7 @@ jobs:
     steps:
       - checkout
       - *restore_yarn_cache
+      - *yarn_install
       - run:
           name: Build
           command: yarn build
@@ -75,6 +80,7 @@ jobs:
     steps:
       - checkout
       - *restore_yarn_cache
+      - *yarn_install
       - run:
           name: Check filesize
           command: yarn size
