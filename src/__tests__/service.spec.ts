@@ -11,7 +11,7 @@ describe('Router Service', () => {
     });
   });
 
-  test('match static route', () => {
+  it('match static route', () => {
     const route = '/contact';
     const activeRoute = '/contact';
 
@@ -20,7 +20,7 @@ describe('Router Service', () => {
     expect(SUT.active).toBe(true);
   });
 
-  test('match a parameter', () => {
+  it('match a parameter', () => {
     const route = '/product/:id';
     const activeRoute = '/product/1';
 
@@ -30,7 +30,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({ id: '1' });
   });
 
-  test('do not match a parameter if route not active', () => {
+  it('do not match a parameter if route not active', () => {
     const route = '/product/:id';
     const activeRoute = '/other/1';
 
@@ -40,7 +40,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({});
   });
 
-  test('match a parameter and not after text', () => {
+  it('match a parameter and not after text', () => {
     const route = '/product/:id';
     const activeRoute = '/product/1/edit';
 
@@ -50,7 +50,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({});
   });
 
-  test('match a parameter and after text', () => {
+  it('match a parameter and after text', () => {
     const route = '/product/:id/edit';
     const activeRoute = '/product/1/edit';
 
@@ -60,7 +60,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({ id: '1' });
   });
 
-  test('match a more than one parameter', () => {
+  it('match a more than one parameter', () => {
     const route = '/product/:id/:time';
     const activeRoute = '/product/1/nov2017';
 
@@ -70,7 +70,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({ id: '1', time: 'nov2017' });
   });
 
-  test('match a starting parameter', () => {
+  it('match a starting parameter', () => {
     const route = '/:id/product';
     const activeRoute = '/1/product';
 
@@ -80,7 +80,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({ id: '1' });
   });
 
-  test('match an optional parameter without value', () => {
+  it('match an optional parameter without value', () => {
     const route = '/product/:id?';
     const activeRoute = '/product';
 
@@ -90,7 +90,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({ id: '' });
   });
 
-  test('match an optional parameter with value', () => {
+  it('match an optional parameter with value', () => {
     const route = '/product/:id?';
     const activeRoute = '/product/1';
 
@@ -100,7 +100,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({ id: '1' });
   });
 
-  test('match more than one optional parameter without values', () => {
+  it('match more than one optional parameter without values', () => {
     const route = '/product/:id?/:time?';
     const activeRoute = '/product';
 
@@ -110,7 +110,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({ id: '', time: '' });
   });
 
-  test('match more than one optional parameter with one value', () => {
+  it('match more than one optional parameter with one value', () => {
     const route = '/product/:id?/:time?';
     const activeRoute = '/product/1';
 
@@ -120,7 +120,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({ id: '1', time: '' });
   });
 
-  test('match more than one optional parameter with all values', () => {
+  it('match more than one optional parameter with all values', () => {
     const route = '/product/:id?/:time?';
     const activeRoute = '/product/1/nov2017';
 
@@ -130,7 +130,7 @@ describe('Router Service', () => {
     expect(SUT.params).toStrictEqual({ id: '1', time: 'nov2017' });
   });
 
-  test('check navigation pushes route to history', () => {
+  it('check navigation pushes route to history', () => {
     const route = '/about';
 
     checkNavigation(route);
@@ -138,7 +138,7 @@ describe('Router Service', () => {
     expect(window.history.pushState).toHaveBeenCalledWith({}, '', route);
   });
 
-  test('match routes with query string', () => {
+  it('match routes with query string', () => {
     const route = '/product/:id';
     const activeRoute = '/product/1?asdf=123';
 

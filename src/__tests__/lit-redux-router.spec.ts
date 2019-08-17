@@ -12,7 +12,7 @@ jest.mock('../actions', () => ({ navigate: jest.fn() }));
 const mockStore = configureStore([]);
 
 describe('Lit Redux Router', () => {
-  test('connects router to reducer', () => {
+  it('connects router to reducer', () => {
     const store = mockStore({});
     const addReducers = jest.fn();
     store.addReducers = addReducers;
@@ -20,7 +20,7 @@ describe('Lit Redux Router', () => {
     expect(addReducers).toHaveBeenCalledWith({ router: reducer });
   });
 
-  test('creates the route component connected to store', () => {
+  it('creates the route component connected to store', () => {
     const store = mockStore({});
     const addReducers = jest.fn();
     store.addReducers = addReducers;
@@ -28,7 +28,7 @@ describe('Lit Redux Router', () => {
     expect(Route).toHaveBeenCalledWith(store);
   });
 
-  test('exports a navigate action', () => {
+  it('exports a navigate action', () => {
     expect(navigate).toStrictEqual(navigateAction);
   });
 });

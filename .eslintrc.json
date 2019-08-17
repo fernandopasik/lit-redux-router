@@ -42,7 +42,6 @@
     ],
     "import/extensions": ["error", "never"],
     "import/prefer-default-export": "off",
-    "jest/consistent-test-it": ["error", { "fn": "test" }],
     "jest/lowercase-name": ["error", { "ignore": ["describe"] }],
     "jest/no-hooks": "off",
     "jest/prefer-expect-assertions": "off"

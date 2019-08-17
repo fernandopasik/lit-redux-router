@@ -47,14 +47,14 @@ describe('Route element', () => {
     });
   });
 
-  test('defines the custom element', () => {
+  it('defines the custom element', () => {
     connectRouter(mockStore({}));
 
     expect(customElement).toHaveBeenCalledWith('lit-route');
   });
 
   describe('first updated', () => {
-    test('installs router', () => {
+    it('installs router', () => {
       connectRouter(mockStore({}));
       const route = new Route();
 
@@ -63,7 +63,7 @@ describe('Route element', () => {
       expect(pwaHelpers.installRouter).toHaveBeenCalledTimes(1);
     });
 
-    test('installs router only once', () => {
+    it('installs router only once', () => {
       connectRouter(mockStore({}));
       const route = new Route();
       const route2 = new Route();
@@ -74,7 +74,7 @@ describe('Route element', () => {
       expect(pwaHelpers.installRouter).toHaveBeenCalledTimes(1);
     });
 
-    test('registers the route if path present', () => {
+    it('registers the route if path present', () => {
       connectRouter(mockStore({}));
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
@@ -88,7 +88,7 @@ describe('Route element', () => {
       spy.mockRestore();
     });
 
-    test('does not register the route if path not present', () => {
+    it('does not register the route if path not present', () => {
       connectRouter(mockStore({}));
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
@@ -100,7 +100,7 @@ describe('Route element', () => {
       spy.mockRestore();
     });
 
-    test('can set active route', () => {
+    it('can set active route', () => {
       connectRouter(mockStore({}));
       const route = new Route();
       const spy1 = jest.spyOn(pwaHelpers, 'installRouter');
@@ -121,7 +121,7 @@ describe('Route element', () => {
   });
 
   describe('state changed', () => {
-    test('can check if route active', () => {
+    it('can check if route active', () => {
       connectRouter(mockStore({}));
       const route = new Route();
       const state = { activeRoute: '/' };
@@ -137,7 +137,7 @@ describe('Route element', () => {
       spy.mockRestore();
     });
 
-    test('can get params', () => {
+    it('can get params', () => {
       connectRouter(mockStore({}));
       const route = new Route();
       const state = {};
@@ -160,7 +160,7 @@ describe('Route element', () => {
       connectRouter(mockStore({}));
     });
 
-    test('if not active returns empty', () => {
+    it('if not active returns empty', () => {
       const route = new Route();
       route.active = false;
 
@@ -169,7 +169,7 @@ describe('Route element', () => {
       expect(rendered).toBe('');
     });
 
-    test('with children elements', () => {
+    it('with children elements', () => {
       const route = new Route();
       route.active = true;
 
@@ -178,7 +178,7 @@ describe('Route element', () => {
       expect(rendered).toBe('<slot></slot>');
     });
 
-    test('with components', () => {
+    it('with components', () => {
       const route = new Route();
       route.active = true;
       route.component = 'example';
@@ -188,7 +188,7 @@ describe('Route element', () => {
       expect(rendered).toBe('<example></example>');
     });
 
-    test('with components with parameters', () => {
+    it('with components with parameters', () => {
       const route = new Route();
       route.active = true;
       route.component = 'example';
@@ -203,7 +203,7 @@ describe('Route element', () => {
     });
 
     describe('with component and scrolling', () => {
-      test('disabled', () => {
+      it('disabled', () => {
         const route = new Route();
         const state = { activeRoute: '/test2' };
         route.scrollDisable = true;
@@ -212,7 +212,7 @@ describe('Route element', () => {
         expect(window.scrollTo).not.toHaveBeenCalled();
       });
 
-      test('default', () => {
+      it('default', () => {
         const route = new Route();
         const state = { activeRoute: '/' };
         const path = '/';
@@ -223,7 +223,7 @@ describe('Route element', () => {
         expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
       });
 
-      test('via scrollOpt', () => {
+      it('via scrollOpt', () => {
         const route = new Route();
         const state = { activeRoute: '/' };
         const path = '/';
@@ -240,7 +240,7 @@ describe('Route element', () => {
     });
 
     describe('with dynamic imported components without loading component', () => {
-      test('before resolve completes', () => {
+      it('before resolve completes', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
@@ -257,7 +257,7 @@ describe('Route element', () => {
         expect(rendered).toBe('');
       });
 
-      test('after resolve completes', () => {
+      it('after resolve completes', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
@@ -274,7 +274,7 @@ describe('Route element', () => {
       });
     });
     describe('with dynamic imported components with loading component', () => {
-      test('before resolve completes', () => {
+      it('before resolve completes', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
@@ -294,7 +294,7 @@ describe('Route element', () => {
         expect(rendered).toBe('<my-loading></my-loading>');
       });
 
-      test('after resolve completes', () => {
+      it('after resolve completes', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
@@ -315,7 +315,7 @@ describe('Route element', () => {
   });
 
   describe('nested routes', () => {
-    test('composes and sets the path', () => {
+    it('composes and sets the path', () => {
       connectRouter(mockStore({}));
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
@@ -335,7 +335,7 @@ describe('Route element', () => {
       spy2.mockRestore();
     });
 
-    test('does not compose and return its path when no child route', () => {
+    it('does not compose and return its path when no child route', () => {
       connectRouter(mockStore({}));
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
@@ -352,7 +352,7 @@ describe('Route element', () => {
       spy2.mockRestore();
     });
 
-    test('parent routes match with wildcard', () => {
+    it('parent routes match with wildcard', () => {
       connectRouter(mockStore({}));
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
