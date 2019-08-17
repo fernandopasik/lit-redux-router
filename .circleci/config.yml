@@ -1,36 +1,98 @@
 version: 2
+
+aliases:
+  - &restore_yarn_cache
+    restore_cache:
+      name: Restore yarn cache
+      keys:
+        - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+        - yarn-packages-v1-{{ .Branch }}-
+        - yarn-packages-v1-
+
 jobs:
-  build:
+  setup:
     docker:
-      - image: circleci/node:lts-browsers
+      - image: circleci/node:lts
     steps:
       - checkout
       - run:
+          name: Nodejs Version
+          command: node --version
+      - *restore_yarn_cache
+      - run:
           name: Install dependencies
-          command: yarn
+          command: yarn --frozen-lockfile
+      - save_cache:
+          name: Save yarn cache
+          paths:
+            - ~/.cache/yarn
+          key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+  lint:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - *restore_yarn_cache
+      - run:
+          name: Lint
+          command: yarn lint --format junit -o reports/junit/js-lint-results.xml
+      - store_test_results:
+          path: reports/junit
+
+  test:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - *restore_yarn_cache
       - run:
           name: Unit Tests
           command: yarn test --coverage --ci --reporters=default --reporters=jest-junit
-          when: always
           environment:
-            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
+            JEST_JUNIT_OUTPUT: 'reports/junit/js-test-results.xml'
       - run:
           name: Send coverage
           command: yarn codecov
           when: always
-      - run:
-          name: Lint
-          command: yarn lint --format junit -o reports/junit/js-lint-results.xml
-          when: always
       - store_test_results:
           path: reports/junit
-      - store_artifacts:
-          path: reports/junit
+
+  build:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - *restore_yarn_cache
       - run:
           name: Build
           command: yarn build
           when: always
+
+  check-size:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - *restore_yarn_cache
       - run:
           name: Check filesize
           command: yarn size
-          when: always
+
+workflows:
+  version: 2
+  all:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      - test:
+          requires:
+            - install
+      - build:
+          requires:
+            - install
+      - check-size:
+          requires:
+            - build
