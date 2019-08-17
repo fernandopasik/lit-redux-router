@@ -3,7 +3,9 @@
     "airbnb-base",
     "plugin:@typescript-eslint/recommended",
     "plugin:lit/all",
-    "plugin:jest/all"
+    "plugin:jest/all",
+    "prettier",
+    "prettier/@typescript-eslint"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -40,7 +42,6 @@
   "rules": {
     "@typescript-eslint/indent": ["error", 2],
     "class-methods-use-this": "off",
-    "object-curly-newline": ["error", { "multiline": true, "consistent": true }],
     "jest/lowercase-name": ["error", { "ignore": ["describe"] }],
     "jest/no-hooks": "off",
     "jest/prefer-expect-assertions": "off"
