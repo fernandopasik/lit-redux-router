@@ -85,9 +85,6 @@
     "pwa-helpers": "0.x.x",
     "redux": "4.x.x"
   },
-  "resolutions": {
-    "axios": "^0.19.0"
-  },
   "bundlesize": [
     {
       "path": "dist/lit-redux-router.min.js",
