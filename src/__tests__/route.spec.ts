@@ -8,12 +8,13 @@ import * as selectors from '../selectors';
 
 jest.mock('lit-element', () => ({
   LitElement: class LitElement {
-    public querySelector() {
+    public querySelector(): null {
       return null;
     }
   },
-  html: jest.fn((strings, ...values) => strings
-    .map((string: string, index: number) => string + (values[index] || '')).join('')),
+  html: jest.fn((strings, ...values) =>
+    strings.map((string: string, index: number) => string + (values[index] || '')).join(''),
+  ),
   customElement: jest.fn(),
   property: jest.fn(),
 }));
@@ -240,11 +241,14 @@ describe('Route element', () => {
     });
 
     describe('with dynamic imported components without loading component', () => {
+      const importFile = (): Promise<typeof import('../lit-redux-router')> =>
+        import('../lit-redux-router');
+
       it('before resolve completes', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = () => import('../lit-redux-router');
+        route.resolve = importFile;
         route.path = '/';
         const state = { activeRoute: route.path };
 
@@ -261,7 +265,7 @@ describe('Route element', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = () => import('../lit-redux-router');
+        route.resolve = importFile;
         route.path = '/';
         const state = { activeRoute: route.path };
         const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
@@ -274,11 +278,14 @@ describe('Route element', () => {
       });
     });
     describe('with dynamic imported components with loading component', () => {
+      const importFile = (): Promise<typeof import('../lit-redux-router')> =>
+        import('../lit-redux-router');
+
       it('before resolve completes', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = () => import('../lit-redux-router');
+        route.resolve = importFile;
         route.loading = 'my-loading';
         route.path = '/';
 
@@ -298,7 +305,7 @@ describe('Route element', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = () => import('../lit-redux-router');
+        route.resolve = importFile;
         route.loading = 'my-loading';
         route.path = '/';
 
@@ -322,7 +329,7 @@ describe('Route element', () => {
       route.path = '/second';
       route.parentElement = new Route();
       route.parentElement.path = '/first';
-      route.parentElement.closest = () => {};
+      route.parentElement.closest = (): void => {};
       const spy2 = jest
         .spyOn(route.parentElement, 'closest')
         .mockReturnValueOnce(route.parentElement);
@@ -341,7 +348,7 @@ describe('Route element', () => {
       const route = new Route();
       route.path = '/second';
       route.parentElement = {};
-      route.parentElement.closest = () => {};
+      route.parentElement.closest = (): void => {};
       const spy2 = jest.spyOn(route.parentElement, 'closest').mockReturnValueOnce(null);
 
       route.firstUpdated();

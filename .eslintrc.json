@@ -24,15 +24,6 @@
   },
   "overrides": [
     {
-      "files": ["**/*.spec.ts", "**/__tests__/*.ts"],
-      "env": {
-        "jest": true
-      },
-      "rules": {
-        "@typescript-eslint/explicit-function-return-type": "off"
-      }
-    },
-    {
       "files": ["./*.js"],
       "rules": {
         "@typescript-eslint/no-require-imports": "off"
