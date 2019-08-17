@@ -6,6 +6,9 @@
     "plugin:jest/all"
   ],
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.all.json"
+  },
   "env": {
     "browser": true
   },
