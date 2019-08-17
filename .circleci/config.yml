@@ -86,13 +86,13 @@ workflows:
       - setup
       - lint:
           requires:
-            - install
+            - setup
       - test:
           requires:
-            - install
+            - setup
       - build:
           requires:
-            - install
+            - setup
       - check-size:
           requires:
             - build
