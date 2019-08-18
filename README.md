@@ -22,17 +22,16 @@
 [badge-deps]: https://david-dm.org/fernandopasik/lit-redux-router/status.svg
 [badge-deps-peer]: https://david-dm.org/fernandopasik/lit-redux-router/peer-status.svg
 [badge-deps-dev]: https://david-dm.org/fernandopasik/lit-redux-router/dev-status.svg
-
-[url-size]: https://unpkg.com/lit-redux-router/dist/lit-redux-router.min.js "Gzip Bundle Size"
-[url-wc]: https://webcomponents.org/element/lit-redux-router
-[url-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router "Build Status"
-[url-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router "Coverage Status"
-[url-sec]: https://snyk.io/test/github/fernandopasik/lit-redux-router?targetFile=package.json "Known Vulnerabilities"
-[url-version]: https://www.npmjs.com/package/lit-redux-router "npm version"
-[url-downloads]: https://www.npmjs.com/package/lit-redux-router "npm downloads"
-[url-deps]: https://david-dm.org/fernandopasik/lit-redux-router "Dependency Status"
-[url-deps-peer]: https://david-dm.org/fernandopasik/lit-redux-router?type=peer "Peer Dependency Status"
-[url-deps-dev]: https://david-dm.org/fernandopasik/lit-redux-router?type=dev "Dev Dependency Status"
+[url-size]: https://unpkg.com/lit-redux-router/dist/lit-redux-router.min.js 'Gzip Bundle Size'
+[url-wc]: https://webcomponents.org/element/lit-redux-router 'Webcomponents url'
+[url-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router 'Build Status'
+[url-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router 'Coverage Status'
+[url-sec]: https://snyk.io/test/github/fernandopasik/lit-redux-router?targetFile=package.json 'Known Vulnerabilities'
+[url-version]: https://www.npmjs.com/package/lit-redux-router 'npm version'
+[url-downloads]: https://www.npmjs.com/package/lit-redux-router 'npm downloads'
+[url-deps]: https://david-dm.org/fernandopasik/lit-redux-router 'Dependency Status'
+[url-deps-peer]: https://david-dm.org/fernandopasik/lit-redux-router?type=peer 'Peer Dependency Status'
+[url-deps-dev]: https://david-dm.org/fernandopasik/lit-redux-router?type=dev 'Dev Dependency Status'
 
 Declarative way of routing for [lit-html](https://github.com/Polymer/lit-html) powered by [pwa-helpers](https://github.com/Polymer/pwa-helpers), [redux](https://redux.js.org/) and [lit-element](https://github.com/Polymer/lit-element).
 
@@ -212,8 +211,6 @@ class MyLoading extends LitElement {
 customElements.define('my-loading', MyLoading);
 ```
 
-
-
 The window will scroll to top by default, to disable add the attribute `scrollDisable`
 
 ```html
@@ -265,11 +262,11 @@ yarn size
 
 ## Built with
 
-* [regexparam](https://github.com/lukeed/regexparam) - A tiny utility that converts route patterns into RegExp
-* [lit-html](https://github.com/Polymer/lit-html) - HTML template literals in JavaScript
-* [lit-element](https://github.com/Polymer/lit-element) - An ultra-light custom element base class with a simple but expressive API
-* [pwa-helpers](https://github.com/Polymer/pwa-helpers) - Small helper methods or mixins to help you build web apps
-* [Redux](https://redux.js.org/) - Predictable state container for JavaScript apps
+- [regexparam](https://github.com/lukeed/regexparam) - A tiny utility that converts route patterns into RegExp
+- [lit-html](https://github.com/Polymer/lit-html) - HTML template literals in JavaScript
+- [lit-element](https://github.com/Polymer/lit-element) - An ultra-light custom element base class with a simple but expressive API
+- [pwa-helpers](https://github.com/Polymer/pwa-helpers) - Small helper methods or mixins to help you build web apps
+- [Redux](https://redux.js.org/) - Predictable state container for JavaScript apps
 
 ## License
 
