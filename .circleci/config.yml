@@ -87,7 +87,7 @@ jobs:
 
 workflows:
   version: 2
-  all:
+  lint-test-build:
     jobs:
       - setup
       - lint:
