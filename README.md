@@ -1,5 +1,7 @@
 # Lit Redux Router
 
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+
 [![Gzip Bundle Size][badge-size]][url-size]
 [![Published on webcomponents.org][badge-wc]][url-wc]
 [![Build Status][badge-ci]][url-ci]
@@ -267,6 +269,27 @@ yarn size
 - [lit-element](https://github.com/Polymer/lit-element) - An ultra-light custom element base class with a simple but expressive API
 - [pwa-helpers](https://github.com/Polymer/pwa-helpers) - Small helper methods or mixins to help you build web apps
 - [Redux](https://redux.js.org/) - Predictable state container for JavaScript apps
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://fernandopasik.com"><img src="https://avatars1.githubusercontent.com/u/1301335?v=4" width="100px;" alt="Fernando Pasik"/><br /><sub><b>Fernando Pasik</b></sub></a><br /><a href="https://github.com/fernandopasik/lit-redux-router/issues?q=author%3Afernandopasik" title="Bug reports">🐛</a> <a href="https://github.com/fernandopasik/lit-redux-router/commits?author=fernandopasik" title="Code">💻</a> <a href="https://github.com/fernandopasik/lit-redux-router/commits?author=fernandopasik" title="Documentation">📖</a> <a href="#ideas-fernandopasik" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/hutchgrant"><img src="https://avatars3.githubusercontent.com/u/1429612?v=4" width="100px;" alt="Grant Hutchinson"/><br /><sub><b>Grant Hutchinson</b></sub></a><br /><a href="https://github.com/fernandopasik/lit-redux-router/issues?q=author%3Ahutchgrant" title="Bug reports">🐛</a> <a href="https://github.com/fernandopasik/lit-redux-router/commits?author=hutchgrant" title="Code">💻</a> <a href="https://github.com/fernandopasik/lit-redux-router/commits?author=hutchgrant" title="Documentation">📖</a> <a href="#ideas-hutchgrant" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/anoblet"><img src="https://avatars0.githubusercontent.com/u/7674171?v=4" width="100px;" alt="Andrew Noblet"/><br /><sub><b>Andrew Noblet</b></sub></a><br /><a href="https://github.com/fernandopasik/lit-redux-router/issues?q=author%3Aanoblet" title="Bug reports">🐛</a> <a href="https://github.com/fernandopasik/lit-redux-router/commits?author=anoblet" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 ## License
 
