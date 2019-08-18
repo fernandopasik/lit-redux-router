@@ -74,7 +74,7 @@ jobs:
           command: yarn build
           when: always
       - persist_to_workspace:
-          root: build
+          root: .
           paths:
             - dist
 
@@ -84,7 +84,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: build
+          at: .
       - *restore_yarn_cache
       - *yarn_install
       - run:
