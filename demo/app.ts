@@ -13,7 +13,7 @@ class MyApp extends LitElement {
     store.dispatch(navigate('/about'));
   }
 
-  public importDocs(): any {
+  public importDocs(): typeof import('./docs') {
     return import('./docs');
   }
 
