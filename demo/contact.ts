@@ -17,7 +17,7 @@ class MyContact extends LitElement {
   }
 
   public submit(): void {
-    const query = [];
+    const query: string[] = [];
     let queryString = '';
 
     if (this.name) {
