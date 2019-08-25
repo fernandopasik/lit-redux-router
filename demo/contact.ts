@@ -5,10 +5,10 @@ import store from './store';
 
 class MyContact extends LitElement {
   @property({ type: String })
-  private name = '';
+  private name: string = '';
 
   @property({ type: String })
-  private email = '';
+  private email: string = '';
 
   public save(prop: string): Function {
     return (event: any): void => {
