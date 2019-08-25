@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const babelConfig = require('./babel.config');
+
+babelConfig.plugins.push('@babel/plugin-syntax-dynamic-import');
 
 module.exports = {
   entry: './demo/app.ts',
@@ -11,7 +14,10 @@ module.exports = {
     rules: [
       {
         test: /\.m?(t|j)sx?$/,
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: babelConfig,
+        },
       },
     ],
   },
