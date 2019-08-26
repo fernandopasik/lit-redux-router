@@ -23,7 +23,6 @@
     }
   ],
   "rules": {
-    "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/no-inferrable-types": ["error", { "ignoreProperties": true }],
     "class-methods-use-this": "off",
     "jest/no-hooks": "off",
