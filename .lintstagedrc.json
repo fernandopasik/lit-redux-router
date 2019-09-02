@@ -1,5 +1,5 @@
 {
-  "src/**/*.ts": [
+  "*.{ts}": [
     "eslint",
     "jest --bail --findRelatedTests"
   ]
