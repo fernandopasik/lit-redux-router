@@ -14,14 +14,6 @@
   "env": {
     "browser": true
   },
-  "overrides": [
-    {
-      "files": ["./*.js"],
-      "rules": {
-        "@typescript-eslint/no-require-imports": "off"
-      }
-    }
-  ],
   "rules": {
     "@typescript-eslint/no-inferrable-types": ["error", { "ignoreProperties": true }],
     "class-methods-use-this": "off",
