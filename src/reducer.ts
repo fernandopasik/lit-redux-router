@@ -39,10 +39,13 @@ const reducer = (
       return {
         ...state,
         activeRoute: path,
-        routes: Object.keys(state.routes).reduce((routes, route): Routes => ({
-          ...routes,
-          [route]: refreshRoute(route, path),
-        }), {}),
+        routes: Object.keys(state.routes).reduce(
+          (routes: Routes, routeName: string): Routes => ({
+            ...routes,
+            [routeName]: refreshRoute(routeName, path),
+          }),
+          {},
+        ),
       };
     case ActionTypes.ADD_ROUTE:
       return {
