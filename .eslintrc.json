@@ -8,12 +8,8 @@
     "prettier",
     "prettier/@typescript-eslint"
   ],
-  "parserOptions": {
-    "project": "./tsconfig.all.json"
-  },
-  "env": {
-    "browser": true
-  },
+  "parserOptions": { "project": "./tsconfig.all.json" },
+  "env": { "browser": true },
   "rules": {
     "@typescript-eslint/no-inferrable-types": ["error", { "ignoreProperties": true }],
     "class-methods-use-this": "off",
