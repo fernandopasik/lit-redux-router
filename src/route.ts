@@ -53,12 +53,10 @@ export default (store: Store<any> & LazyStore): void => {
 
     public firstUpdated(): void {
       if (!routerInstalled) {
-        installRouter(
-          ({ pathname, search, hash }): void => {
-            const path = window.decodeURIComponent(pathname + search + hash);
-            store.dispatch(setActiveRoute(path));
-          },
-        );
+        installRouter(({ pathname, search, hash }): void => {
+          const path = window.decodeURIComponent(pathname + search + hash);
+          store.dispatch(setActiveRoute(path));
+        });
         routerInstalled = true;
       }
 
@@ -95,16 +93,12 @@ export default (store: Store<any> & LazyStore): void => {
       if (this.active && this.resolve) {
         this.isResolving = true;
         this.resolve()
-          .then(
-            (): void => {
-              this.isResolving = false;
-            },
-          )
-          .catch(
-            (): void => {
-              this.isResolving = false;
-            },
-          );
+          .then((): void => {
+            this.isResolving = false;
+          })
+          .catch((): void => {
+            this.isResolving = false;
+          });
       }
       if (this.active && !this.scrollDisable && this.scrollOpt) {
         if (Object.keys(this.scrollOpt).length !== 0) {

@@ -17,14 +17,15 @@ export const refreshRoute = (route: string, activeRoute: string): Route => {
 
   return {
     active,
-    params: !active ? {} : keys.reduce((
-      list: RouteParams,
-      item: string,
-      index: number,
-    ): RouteParams => ({
-      ...list,
-      [item]: (match && match[index + 1]) || '',
-    }), {}),
+    params: !active
+      ? {}
+      : keys.reduce(
+          (list: RouteParams, item: string, index: number): RouteParams => ({
+            ...list,
+            [item]: (match && match[index + 1]) || '',
+          }),
+          {},
+        ),
   };
 };
 
