@@ -5,7 +5,7 @@ import Route from './route';
 import reducer from './reducer';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const connectRouter = (store: Store<any> & LazyStore): void => {
+export const connectRouter = (store: Store & LazyStore): void => {
   store.addReducers({ router: reducer });
 
   Route(store);
