@@ -5,17 +5,15 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:lit/all",
     "plugin:jest/all",
-    "prettier",
+    "plugin:prettier/recommended",
     "prettier/@typescript-eslint"
   ],
-  "plugins": ["prettier"],
   "parserOptions": { "project": "./tsconfig.all.json" },
   "env": { "browser": true },
   "rules": {
     "@typescript-eslint/no-inferrable-types": ["error", { "ignoreProperties": true }],
     "class-methods-use-this": "off",
     "jest/no-hooks": "off",
-    "jest/prefer-expect-assertions": "off",
-    "prettier/prettier": "error"
+    "jest/prefer-expect-assertions": "off"
   }
 }
