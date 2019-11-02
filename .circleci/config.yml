@@ -76,7 +76,8 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - dist
+            - lib
+            - lit-redux-router.*
 
   check-size:
     docker:
