@@ -1,23 +1,23 @@
 # Lit Redux Router
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
-
 [![Gzip Bundle Size][badge-size]][url-size]
-[![Published on webcomponents.org][badge-wc]][url-wc]
 [![Build Status][badge-ci]][url-ci]
 [![Coverage Status][badge-cov]][url-cov]
 [![Known Vulnerabilities][badge-sec]][url-sec]
 
+[![All Contributors][badge-contributors]](#contributors-)
 [![npm version][badge-version]][url-version]
 [![npm downloads][badge-downloads]][url-downloads]
+[![Published on webcomponents.org][badge-wc]][url-wc]
 
 [badge-size]: http://img.badgesize.io/https://unpkg.com/lit-redux-router/dist/lit-redux-router.min.js?compression=gzip
-[badge-wc]: https://img.shields.io/badge/webcomponents.org-published-blue.svg
 [badge-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router.svg?style=svg
 [badge-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router/branch/master/graph/badge.svg
 [badge-sec]: https://snyk.io/test/github/fernandopasik/lit-redux-router/badge.svg?targetFile=package.json
+[badge-contributors]: https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square
 [badge-version]: https://img.shields.io/npm/v/lit-redux-router.svg
 [badge-downloads]: https://img.shields.io/npm/dm/lit-redux-router.svg
+[badge-wc]: https://img.shields.io/badge/webcomponents.org-published-blue.svg
 [url-size]: https://unpkg.com/lit-redux-router/dist/lit-redux-router.min.js 'Gzip Bundle Size'
 [url-wc]: https://webcomponents.org/element/lit-redux-router 'Webcomponents url'
 [url-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router 'Build Status'
@@ -74,14 +74,18 @@ Ideally all content would be in a component and can be passed to `lit-route` thr
 ```js
 class AppHome extends LitElement {
   render() {
-    return html`<h1>Home</h1>`;
+    return html`
+      <h1>Home</h1>
+    `;
   }
 }
 customElements.define('app-home', AppHome);
 
 class AppAbout extends LitElement {
   render() {
-    return html`<h1>About</h1>`;
+    return html`
+      <h1>About</h1>
+    `;
   }
 }
 customElements.define('app-about', AppAbout);
@@ -110,7 +114,9 @@ class AppProduct extends LitElement {
   }
 
   render() {
-    return html`<h1>Product with id: ${this.id}</h1>`;
+    return html`
+      <h1>Product with id: ${this.id}</h1>
+    `;
   }
 }
 customElements.define('app-product', AppProduct);
@@ -207,11 +213,7 @@ customElements.define('my-loading', MyLoading);
 The window will scroll to top by default, to disable add the attribute `scrollDisable`
 
 ```html
-<lit-route
-  path="/whatever"
-  component="my-whatever"
-  scrollDisable
-></lit-route>
+<lit-route path="/whatever" component="my-whatever" scrollDisable></lit-route>
 ```
 
 To scroll to the route element on load, you can set the [scrollIntoViewOptions](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Example) object in the attribute `.scrollOpt`
@@ -278,6 +280,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
