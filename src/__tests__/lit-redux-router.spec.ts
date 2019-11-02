@@ -1,13 +1,13 @@
 import configureStore from 'redux-mock-store';
 import { connectRouter, navigate } from '../lit-redux-router';
 
-import Route from '../route';
-import reducer from '../reducer';
-import { navigate as navigateAction } from '../actions';
+import Route from '../lib/route';
+import reducer from '../lib/reducer';
+import { navigate as navigateAction } from '../lib/actions';
 
-jest.mock('../route', () => jest.fn());
-jest.mock('../reducer', () => jest.fn());
-jest.mock('../actions', () => ({ navigate: jest.fn() }));
+jest.mock('../lib/route', () => jest.fn());
+jest.mock('../lib/reducer', () => jest.fn());
+jest.mock('../lib/actions', () => ({ navigate: jest.fn() }));
 
 const mockStore = configureStore([]);
 

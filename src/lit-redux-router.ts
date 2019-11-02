@@ -1,8 +1,8 @@
 import { Store } from 'redux';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
 
-import Route from './route';
-import reducer from './reducer';
+import Route from './lib/route';
+import reducer from './lib/reducer';
 
 export const connectRouter = (store: Store & LazyStore): void => {
   store.addReducers({ router: reducer });
@@ -10,4 +10,4 @@ export const connectRouter = (store: Store & LazyStore): void => {
   Route(store);
 };
 
-export { navigate } from './actions';
+export { navigate } from './lib/actions';
