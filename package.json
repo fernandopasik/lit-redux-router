@@ -19,8 +19,9 @@
   "contributors": [
     "Grant Hutchinson <grant@hutchdev.ca>"
   ],
-  "main": "dist/lit-redux-router.js",
-  "module": "dist/lit-redux-router.js",
+  "main": "lit-redux-router.js",
+  "module": "lit-redux-router.js",
+  "typings": "lit-redux-router.d.ts",
   "scripts": {
     "prebuild": "del lib lit-redux-router.*",
     "build": "tsc && rollup -c",
@@ -91,7 +92,7 @@
   },
   "bundlesize": [
     {
-      "path": "dist/lit-redux-router.min.js",
+      "path": "lit-redux-router.min.js",
       "maxSize": "1.6 kB"
     }
   ]

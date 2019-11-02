@@ -2,9 +2,9 @@ import { terser } from 'rollup-plugin-terser';
 import resolve from 'rollup-plugin-node-resolve';
 
 export default {
-  input: 'dist/lit-redux-router.js',
+  input: 'lit-redux-router.js',
   output: {
-    file: 'dist/lit-redux-router.min.js',
+    file: 'lit-redux-router.min.js',
     format: 'esm',
     sourcemap: true,
   },
