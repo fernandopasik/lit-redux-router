@@ -19,6 +19,12 @@
   "contributors": [
     "Grant Hutchinson <grant@hutchdev.ca>"
   ],
+  "files": [
+    "/lit-redux-router.*",
+    "/lib",
+    "/src",
+    "!*.spec.*"
+  ],
   "main": "lit-redux-router.js",
   "module": "lit-redux-router.js",
   "typings": "lit-redux-router.d.ts",
