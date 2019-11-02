@@ -6,6 +6,7 @@ export default {
   output: {
     file: 'dist/lit-redux-router.min.js',
     format: 'esm',
+    sourcemap: true,
   },
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, @typescript-eslint/typedef
   onwarn(warning) {
