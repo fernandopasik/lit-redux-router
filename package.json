@@ -82,7 +82,7 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-mock-store": "^1.5.3",
-    "rollup": "^1.26.2",
+    "rollup": "^1.26.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.1.2",
     "ts-jest": "^24.1.0",
