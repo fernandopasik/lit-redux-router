@@ -22,7 +22,8 @@
   "main": "dist/lit-redux-router.js",
   "module": "dist/lit-redux-router.js",
   "scripts": {
-    "build": "del dist && tsc && rollup -c",
+    "prebuild": "del lib lit-redux-router.*",
+    "build": "tsc && rollup -c",
     "check-types": "tsc --noEmit -p tsconfig.all.json",
     "lint": "lit-analyzer src --strict && eslint . --ext ts,js",
     "size": "bundlesize",
