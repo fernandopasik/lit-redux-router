@@ -10,9 +10,6 @@
 
 [![npm version][badge-version]][url-version]
 [![npm downloads][badge-downloads]][url-downloads]
-[![Dependency Status][badge-deps]][url-deps]
-[![peerDependency Status][badge-deps-peer]][url-deps-peer]
-[![devDependency Status][badge-deps-dev]][url-deps-dev]
 
 [badge-size]: http://img.badgesize.io/https://unpkg.com/lit-redux-router/dist/lit-redux-router.min.js?compression=gzip
 [badge-wc]: https://img.shields.io/badge/webcomponents.org-published-blue.svg
@@ -21,9 +18,6 @@
 [badge-sec]: https://snyk.io/test/github/fernandopasik/lit-redux-router/badge.svg?targetFile=package.json
 [badge-version]: https://img.shields.io/npm/v/lit-redux-router.svg
 [badge-downloads]: https://img.shields.io/npm/dm/lit-redux-router.svg
-[badge-deps]: https://david-dm.org/fernandopasik/lit-redux-router/status.svg
-[badge-deps-peer]: https://david-dm.org/fernandopasik/lit-redux-router/peer-status.svg
-[badge-deps-dev]: https://david-dm.org/fernandopasik/lit-redux-router/dev-status.svg
 [url-size]: https://unpkg.com/lit-redux-router/dist/lit-redux-router.min.js 'Gzip Bundle Size'
 [url-wc]: https://webcomponents.org/element/lit-redux-router 'Webcomponents url'
 [url-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router 'Build Status'
@@ -31,9 +25,6 @@
 [url-sec]: https://snyk.io/test/github/fernandopasik/lit-redux-router?targetFile=package.json 'Known Vulnerabilities'
 [url-version]: https://www.npmjs.com/package/lit-redux-router 'npm version'
 [url-downloads]: https://www.npmjs.com/package/lit-redux-router 'npm downloads'
-[url-deps]: https://david-dm.org/fernandopasik/lit-redux-router 'Dependency Status'
-[url-deps-peer]: https://david-dm.org/fernandopasik/lit-redux-router?type=peer 'Peer Dependency Status'
-[url-deps-dev]: https://david-dm.org/fernandopasik/lit-redux-router?type=dev 'Dev Dependency Status'
 
 Declarative way of routing for [lit-html](https://github.com/Polymer/lit-html) powered by [pwa-helpers](https://github.com/Polymer/pwa-helpers), [redux](https://redux.js.org/) and [lit-element](https://github.com/Polymer/lit-element).
 
