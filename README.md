@@ -2,7 +2,7 @@
 
 [![Gzip Bundle Size][badge-size]][url-size]
 [![Build Status][badge-ci]][url-ci]
-[![Coverage Status][badge-cov]][url-cov]
+[![Test Coverage Status][badge-cov]][url-cov]
 [![Known Vulnerabilities][badge-sec]][url-sec]
 
 [![All Contributors][badge-contributors]](#contributors-)
