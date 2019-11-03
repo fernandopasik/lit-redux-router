@@ -17,7 +17,8 @@
   "license": "MIT",
   "author": "Fernando Pasik <fernando@pasik.com.ar> (https://fernandopasik.com)",
   "contributors": [
-    "Grant Hutchinson <grant@hutchdev.ca>"
+    "Grant Hutchinson <grant@hutchdev.ca> (https://github.com/hutchgrant)",
+    "Andrew Noblet (https://github.com/anoblet)"
   ],
   "files": [
     "/lit-redux-router.*",
