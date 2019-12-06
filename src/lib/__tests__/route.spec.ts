@@ -329,7 +329,7 @@ describe('route element', () => {
       route.path = '/second';
       route.parentElement = new Route();
       route.parentElement.path = '/first';
-      route.parentElement.closest = (): void => {};
+      route.parentElement.closest = (): void => undefined;
       const spy2 = jest
         .spyOn(route.parentElement, 'closest')
         .mockReturnValueOnce(route.parentElement);
@@ -348,7 +348,7 @@ describe('route element', () => {
       const route = new Route();
       route.path = '/second';
       route.parentElement = {};
-      route.parentElement.closest = (): void => {};
+      route.parentElement.closest = (): void => undefined;
       const spy2 = jest.spyOn(route.parentElement, 'closest').mockReturnValueOnce(null);
 
       route.firstUpdated();
