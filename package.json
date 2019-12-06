@@ -98,6 +98,9 @@
     "pwa-helpers": "0.x.x",
     "redux": "4.x.x"
   },
+  "resolutions": {
+    "serialize-javascript": "^2.1.1"
+  },
   "bundlesize": [
     {
       "path": "lit-redux-router.min.js",
