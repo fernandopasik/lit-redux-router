@@ -21,10 +21,8 @@
     "Andrew Noblet (https://github.com/anoblet)"
   ],
   "files": [
-    "/lit-redux-router.*",
     "/lib",
-    "/src",
-    "!*.spec.*"
+    "/lit-redux-router.*"
   ],
   "main": "lit-redux-router.js",
   "module": "lit-redux-router.js",
