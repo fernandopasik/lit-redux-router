@@ -43,17 +43,7 @@ yarn add lit-html lit-element pwa-helpers redux
 
 ## Usage
 
-First the router needs to **connect to a redux store**.
-
-```js
-import { LitElement, html } from 'lit-element';
-import { connectRouter } from 'lit-redux-router';
-import store from './store.js';
-
-connectRouter(store);
-```
-
-Then ensure that the redux store has been created with the `lazyReducerEnhancer`, which allows for reducers to be installed lazily after initial store setup.
+Firstly ensure that the redux store has been created with the `lazyReducerEnhancer`, which allows for reducers to be installed lazily after initial store setup.
 
 ```js
 import { createStore, compose, combineReducers } from 'redux';
@@ -64,6 +54,16 @@ export const store = createStore(
   reducer,
   compose(lazyReducerEnhancer(combineReducers))
 );
+```
+
+Then the router needs to **connect to a redux store**.
+
+```js
+import { LitElement, html } from 'lit-element';
+import { connectRouter } from 'lit-redux-router';
+import store from './store.js';
+
+connectRouter(store);
 ```
 
 `lit-route` component can render the components when the **path attribute** matches. The corresponding active `lit-route` element will reflect the **active attribute**.
