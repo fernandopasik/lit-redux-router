@@ -43,7 +43,20 @@ yarn add lit-html lit-element pwa-helpers redux
 
 ## Usage
 
-First the router needs to **connect to a redux store**.
+Firstly ensure that the redux store has been created with the `lazyReducerEnhancer`, which allows for reducers to be installed lazily after initial store setup.
+
+```js
+import { createStore, compose, combineReducers } from 'redux';
+import { reducer } from './reducer';
+import { lazyReducerEnhancer } from 'pwa-helpers';
+
+export const store = createStore(
+  reducer,
+  compose(lazyReducerEnhancer(combineReducers))
+);
+```
+
+Then the router needs to **connect to a redux store**.
 
 ```js
 import { LitElement, html } from 'lit-element';
