@@ -102,5 +102,6 @@
       "path": "lit-redux-router.min.js",
       "maxSize": "1.65 kB"
     }
-  ]
+  ],
+  "type": "module"
 }
