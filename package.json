@@ -25,6 +25,7 @@
     "/lib",
     "/lit-redux-router.*"
   ],
+  "type": "module",
   "main": "lit-redux-router.js",
   "module": "lit-redux-router.js",
   "typings": "lit-redux-router.d.ts",
@@ -102,6 +103,5 @@
       "path": "lit-redux-router.min.js",
       "maxSize": "1.65 kB"
     }
-  ],
-  "type": "module"
+  ]
 }
