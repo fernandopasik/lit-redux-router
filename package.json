@@ -21,14 +21,14 @@
     "Andrew Noblet (https://github.com/anoblet)",
     "Zain Afzal (https://github.com/zainafzal08)"
   ],
-  "files": [
-    "/lib",
-    "/lit-redux-router.*"
-  ],
   "type": "module",
   "main": "lit-redux-router.js",
   "module": "lit-redux-router.js",
   "typings": "lit-redux-router.d.ts",
+  "files": [
+    "/lib",
+    "/lit-redux-router.*"
+  ],
   "scripts": {
     "prebuild": "del lib lit-redux-router.*",
     "build": "tsc && rollup -c",
