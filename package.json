@@ -21,6 +21,7 @@
     "Andrew Noblet (https://github.com/anoblet)",
     "Zain Afzal (https://github.com/zainafzal08)"
   ],
+  "sideEffects": false,
   "type": "module",
   "main": "lit-redux-router.js",
   "module": "lit-redux-router.js",
