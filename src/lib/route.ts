@@ -64,7 +64,7 @@ export default (store: Store<any> & LazyStore): void => {
       let { path } = this;
 
       while (current) {
-        const closestLitRoute = current.closest('lit-route');
+        const closestLitRoute = current.closest('lit-route') as Route;
 
         if (closestLitRoute) {
           path = `${closestLitRoute.path}${path}`;
