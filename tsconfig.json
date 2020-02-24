@@ -26,5 +26,5 @@
     "target": "es2017"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/__tests__/**/*", "**/?(*.)+(spec|test).(js|ts)?(x)"]
+  "exclude": ["node_modules", "**/__tests__/**/*", "**/?(*.)+(spec|test).(js|ts)"]
 }
