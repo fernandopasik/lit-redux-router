@@ -16,7 +16,6 @@
     "noUnusedParameters": true,
     "outDir": ".",
     "rootDirs": ["src", "demo"],
-    "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "strictBindCallApply": true,
