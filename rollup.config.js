@@ -8,18 +8,13 @@ export default {
     format: 'esm',
     sourcemap: true,
   },
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, @typescript-eslint/typedef
-  onwarn(warning) {
-    const ignored =
-      warning.code === 'THIS_IS_UNDEFINED' ||
-      (warning.code === 'UNRESOLVED_IMPORT' &&
-        (warning.source === 'lit-html/directives/unsafe-html' ||
-          warning.source === 'lit-element' ||
-          warning.source === 'pwa-helpers'));
-
-    if (!ignored) {
-      console.error(`(!) ${warning.message}`); // eslint-disable-line no-console
+  external: ['lit-element', 'lit-html', 'lit-html/directives/unsafe-html', 'pwa-helpers'],
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  onwarn(warning, warn) {
+    if (warning.code === 'THIS_IS_UNDEFINED') {
+      return;
     }
+    warn(warning);
   },
   plugins: [
     resolve({
