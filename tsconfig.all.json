@@ -4,6 +4,6 @@
     "allowJs": true,
     "noEmit": true
   },
-  "include": ["src/**/*", "demo/**/*", "*.js"],
+  "include": ["src/**/*", "demo/**/*", "./*.js"],
   "exclude": ["node_modules"]
 }
