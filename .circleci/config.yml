@@ -93,7 +93,7 @@ jobs:
           command: yarn size
 
 workflows:
-  lint-test-build:
+  default:
     jobs:
       - setup
       - lint:
