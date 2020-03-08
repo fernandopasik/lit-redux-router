@@ -26,11 +26,9 @@
   },
   "include": ["src/**/*"],
   "exclude": [
-    "node_modules",
-    "**/__tests__/**",
     "**/__mocks__/**",
+    "**/__tests__/**",
     "**/*.spec.*",
-    "**/*.e2e.*",
-    "**/*.test.*"
+    "node_modules"
   ]
 }
