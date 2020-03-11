@@ -38,8 +38,9 @@
     "size": "bundlesize",
     "start": "webpack-dev-server",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "thanks": "credits . --reporter markdown > THANKS.md",
-    "verify": "yarn lint && yarn check-types && yarn test && yarn build && yarn size",
+    "verify": "yarn lint && yarn check-types && yarn test:coverage && yarn build && yarn size",
     "preversion": "yarn verify"
   },
   "dependencies": {
