@@ -323,6 +323,44 @@ describe('route element', () => {
         const rendered = route.render();
         expect(rendered).toBe('<docs-page></docs-page>');
       });
+
+      it('before reject completes', () => {
+        const route = new Route();
+        route.active = true;
+        route.component = 'docs-page';
+        route.resolve = (): Promise<void> => Promise.reject();
+        route.loading = 'my-loading';
+        route.path = '/';
+
+        const state = { activeRoute: route.path };
+
+        const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
+
+        route.stateChanged(state);
+
+        expect(spy).toHaveBeenCalledWith(state, route.path);
+        expect(route.isResolving).toBe(true);
+        const rendered = route.render();
+        expect(rendered).toBe('<my-loading></my-loading>');
+      });
+
+      it('after reject completes', () => {
+        const route = new Route();
+        route.active = true;
+        route.component = 'docs-page';
+        route.resolve = (): Promise<void> => Promise.reject();
+        route.loading = 'my-loading';
+        route.path = '/';
+
+        const state = { activeRoute: route.path };
+        const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
+        route.stateChanged(state);
+
+        expect(spy).toHaveBeenCalledWith(state);
+        expect(route.isResolving).toBe(false);
+        const rendered = route.render();
+        expect(rendered).toBe('<docs-page></docs-page>');
+      });
     });
   });
 
