@@ -17,4 +17,4 @@ export const isRouteActive = (state: State, route?: string): boolean =>
   route ? !!getRoute(state, route).active : noRouteActive(state);
 
 export const getRouteParams = (state: State, route?: string): RouteParams =>
-  getRoute(state, route).params || {};
+  getRoute(state, route).params ?? {};
