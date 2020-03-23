@@ -24,6 +24,6 @@
     "strictPropertyInitialization": true,
     "target": "es2017"
   },
-  "exclude": ["**/__mocks__/**", "**/__tests__/**", "**/*.spec.*", "node_modules"],
+  "exclude": ["**/__mocks__/**", "**/__tests__/**", "**/*.spec.*"],
   "include": ["src/**/*"]
 }
