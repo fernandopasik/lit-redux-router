@@ -87,7 +87,9 @@ export default (store: Store<any> & LazyStore): void => {
     }
 
     public stateChanged(state: State): void {
-      this.active = isRouteActive(state, this.path);
+      const isActive = isRouteActive(state, this.path);
+      const hasBecomeActive = !this.active && isActive;
+      this.active = isActive;
       this.params = getRouteParams(state, this.path);
 
       if (this.active && this.resolve) {
@@ -102,7 +104,9 @@ export default (store: Store<any> & LazyStore): void => {
       }
       if (this.active && !this.scrollDisable && this.scrollOpt) {
         if (Object.keys(this.scrollOpt).length !== 0) {
-          this.scrollIntoView({ ...this.scrollOpt });
+          if (hasBecomeActive) {
+            this.scrollIntoView({ ...this.scrollOpt });
+          }
         } else {
           window.scrollTo(0, 0);
         }

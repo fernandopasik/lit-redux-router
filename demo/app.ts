@@ -8,9 +8,26 @@ import './product';
 
 connectRouter(store);
 
+const testReducer = (state = { test: true }, { type = '' }) => {
+  switch (type) {
+    case 'TEST_FALSE':
+      return { test: false };
+    case 'TEST_TRUE':
+      return { test: true };
+    default:
+      return state;
+  }
+};
+
+store.addReducers({ test: testReducer });
+
 class MyApp extends LitElement {
   public goToAbout(): void {
     store.dispatch(navigate('/about'));
+  }
+
+  public triggerStateChange(): void {
+    store.dispatch({ type: 'TEST_FALSE' });
   }
 
   public importDocs(): typeof import('./docs') {
@@ -105,6 +122,8 @@ class MyApp extends LitElement {
           loading="my-loading"
         ></lit-route>
         <div class="spacer"></div>
+        <button @click="${this.triggerStateChange}">trigger other state change</button>
+        <br />
         <a href="/contact" class="scrollLink">Scroll disabled</a><br />
         <a href="/docs" class="scrollLink">Scroll to top smoothly and switch to docs component</a>
       </div>
