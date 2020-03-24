@@ -8,7 +8,11 @@ import './product';
 
 connectRouter(store);
 
-const testReducer = (state = { test: true }, { type = '' }) => {
+interface TestState {
+  test: boolean;
+}
+
+const testReducer = (state = { test: true }, { type = '' }): TestState => {
   switch (type) {
     case 'TEST_FALSE':
       return { test: false };
