@@ -1,5 +1,5 @@
 import { terser } from 'rollup-plugin-terser';
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 
 export default {
   input: 'lit-redux-router.js',
@@ -17,9 +17,7 @@ export default {
     warn(warning);
   },
   plugins: [
-    resolve({
-      only: ['regexparam'],
-    }),
+    resolve(),
     terser({
       warnings: true,
       mangle: {
