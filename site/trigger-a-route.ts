@@ -49,7 +49,7 @@ class TriggerRoute extends LitElement {
           render() {
             return html&#96;
               <div class="app-nav">
-                <button @click="$\{this.goToCart\}">Open Cart</button>
+                <button @click="\${this.goToCart}">Open Cart</button>
               </div>
               <div class="app-content">
                 <lit-route path="/"><h1>Home</h1></lit-route>

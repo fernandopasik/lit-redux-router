@@ -151,16 +151,14 @@ class CodeExample extends LitElement {
   private parseCode = (children: Element[] = []): string => {
     const [firstChild] = children;
     const tabSpace = this.getTabSpace(this.getLineFromChild(firstChild));
-    const code = children.map(
-      (child: Element): string => {
-        const line = this.getLineFromChild(child).replace(
-          new RegExp(`${tabSpace}`, 'gm'),
-          tabSpace[0],
-        );
+    const code = children.map((child: Element): string => {
+      const line = this.getLineFromChild(child).replace(
+        new RegExp(`${tabSpace}`, 'gm'),
+        tabSpace[0],
+      );
 
-        return line;
-      },
-    );
+      return line;
+    });
 
     return code.join('').trim();
   };
