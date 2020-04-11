@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import minifyHTML from 'rollup-plugin-minify-html-literals';
 import { terser } from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 
@@ -9,7 +11,6 @@ export default {
     sourcemap: true,
   },
   external: ['lit-element', 'lit-html', 'lit-html/directives/unsafe-html', 'pwa-helpers'],
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   onwarn(warning, warn) {
     if (warning.code === 'THIS_IS_UNDEFINED') {
       return;
@@ -17,6 +18,7 @@ export default {
     warn(warning);
   },
   plugins: [
+    minifyHTML(),
     resolve(),
     terser({
       warnings: true,
