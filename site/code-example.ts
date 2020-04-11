@@ -142,7 +142,7 @@ class CodeExample extends LitElement {
 
   private getLineFromChild = (child: Element): string => {
     if (child.nodeType === Node.TEXT_NODE) {
-      return child.nodeValue;
+      return child.nodeValue || '';
     }
 
     return child.outerHTML;
@@ -164,8 +164,7 @@ class CodeExample extends LitElement {
   };
 
   public updated(): void {
-    const slot = this.shadowRoot.querySelector('slot');
-    const children = slot.assignedNodes();
+    const children = this.shadowRoot?.querySelector('slot')?.assignedNodes();
 
     const code = this.parseCode(children as Element[]);
     let example = code;
