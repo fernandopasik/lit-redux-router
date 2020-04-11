@@ -125,7 +125,6 @@ export default (store: Store<any> & LazyStore): void => {
 
       const template = `<${tagName}${attributes}></${tagName}>`;
 
-      // prettier-ignore
       return html`${unsafeHTML(template)}`;
     }
 
@@ -139,7 +138,6 @@ export default (store: Store<any> & LazyStore): void => {
       }
 
       if (!this.component) {
-        // prettier-ignore
         return html`<slot></slot>`;
       }
 
