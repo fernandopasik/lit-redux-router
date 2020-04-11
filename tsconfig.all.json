@@ -2,5 +2,5 @@
   "extends": "./tsconfig.json",
   "compilerOptions": { "allowJs": true, "noEmit": true },
   "exclude": [],
-  "include": ["./*.js", "src/**/*", "demo/**/*"]
+  "include": ["./*.js", "src/**/*", "demo/**/*", "site/**/*"]
 }
