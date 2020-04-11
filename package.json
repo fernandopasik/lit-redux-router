@@ -6,7 +6,9 @@
     "lit-element",
     "lit-html",
     "redux",
-    "router"
+    "router",
+    "routing",
+    "web-components"
   ],
   "homepage": "https://github.com/fernandopasik/lit-redux-router",
   "bugs": "https://github.com/fernandopasik/lit-redux-router/issues",
