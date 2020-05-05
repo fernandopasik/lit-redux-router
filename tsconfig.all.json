@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": { "allowJs": true, "noEmit": true },
+  "compilerOptions": { "allowJs": true, "noEmit": true, "outDir": "$$ts-jest" },
   "exclude": ["/lit-redux-router.*"],
   "include": ["./*.js", "src/**/*", "demo/**/*"]
 }
