@@ -19,6 +19,7 @@ yarn-error.log
 coverage
 
 # build and temp folders
+/docs
 /lib
 /lit-redux-router.*
 
