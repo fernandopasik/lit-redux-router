@@ -13,7 +13,7 @@ jest.mock('../lib/actions', () => ({ navigate: jest.fn() }));
 
 const mockStore = configureStore([]);
 
-type TestStore = Store<{}, AnyAction> & LazyStore;
+type TestStore = Store<Record<string, unknown>, AnyAction> & LazyStore;
 
 describe('lit redux router', () => {
   it('connects router to reducer', () => {

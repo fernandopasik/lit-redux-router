@@ -9,7 +9,7 @@ import connectRouter, { RouteClass as Route } from '../route';
 import * as actions from '../actions';
 import * as selectors from '../selectors';
 
-type TestStore = Store<{}, AnyAction> & LazyStore;
+type TestStore = Store<Record<string, unknown>, AnyAction> & LazyStore;
 
 jest.mock('lit-element', () => ({
   LitElement: class LitElement {
