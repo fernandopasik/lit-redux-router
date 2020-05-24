@@ -14,7 +14,6 @@
   ],
   "parserOptions": { "project": "./tsconfig.all.json" },
   "rules": {
-    "@typescript-eslint/no-base-to-string": ["error", { "ignoreTaggedTemplateExpressions": true }],
     "@typescript-eslint/no-inferrable-types": ["error", { "ignoreProperties": true }],
     "class-methods-use-this": "off",
     "@typescript-eslint/no-magic-numbers": ["error", { "ignore": [0, 1] }],
