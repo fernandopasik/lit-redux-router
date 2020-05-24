@@ -9,7 +9,7 @@ declare global {
 }
 
 // eslint-disable-next-line no-underscore-dangle
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ as typeof compose) || compose;
 
 const store = createStore(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
