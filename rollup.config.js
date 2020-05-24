@@ -1,31 +1,55 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import html from 'rollup-plugin-html2';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
+import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
+import serve from 'rollup-plugin-serve';
 import resolve from '@rollup/plugin-node-resolve';
 
-export default {
-  input: 'lit-redux-router.js',
-  output: {
-    file: 'lit-redux-router.min.js',
-    format: 'esm',
-    sourcemap: true,
-  },
-  external: ['lit-element', 'lit-html', 'lit-html/directives/unsafe-html', 'pwa-helpers'],
-  onwarn(warning, warn) {
-    if (warning.code === 'THIS_IS_UNDEFINED') {
-      return;
-    }
-    warn(warning);
-  },
-  plugins: [
-    minifyHTML(),
-    resolve(),
-    terser({
-      warnings: true,
-      mangle: {
-        module: true,
-        properties: true,
-      },
-    }),
-  ],
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+const onwarn = (warning, warn) => {
+  if (warning.code === 'THIS_IS_UNDEFINED') {
+    return;
+  }
+  warn(warning);
 };
+
+const isServe = process.env.npm_lifecycle_event === 'start';
+
+export default isServe
+  ? {
+      inlineDynamicImports: true,
+      input: './demo/app.ts',
+      output: {
+        dir: 'docs',
+        format: 'esm',
+      },
+      plugins: [
+        typescript({ tsconfig: 'tsconfig.all.json' }),
+        resolve(),
+        html({
+          template: './demo/index.html',
+        }),
+        serve({ contentBase: 'docs' }),
+      ],
+    }
+  : {
+      input: 'lit-redux-router.js',
+      output: {
+        file: 'lit-redux-router.min.js',
+        format: 'esm',
+        sourcemap: true,
+      },
+      external: ['lit-element', 'lit-html', 'lit-html/directives/unsafe-html', 'pwa-helpers'],
+      onwarn,
+      plugins: [
+        minifyHTML(),
+        resolve(),
+        terser({
+          warnings: true,
+          mangle: {
+            module: true,
+            properties: true,
+          },
+        }),
+      ],
+    };
