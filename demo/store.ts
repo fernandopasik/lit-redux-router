@@ -1,9 +1,15 @@
-import { createStore, combineReducers } from 'redux';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, combineReducers, compose } from 'redux';
 import { lazyReducerEnhancer } from 'pwa-helpers';
 
-const composeEnhancers = composeWithDevTools({});
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;
+  }
+}
+
+// eslint-disable-next-line no-underscore-dangle
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
