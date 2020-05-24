@@ -40,7 +40,7 @@ export default (store: Store<any> & LazyStore): void => {
     private isResolving = false;
 
     @property({ type: Function })
-    private resolve?: () => Promise<{}>;
+    private resolve?: () => Promise<void>;
 
     @property({ type: String })
     private loading?: string;
@@ -113,7 +113,10 @@ export default (store: Store<any> & LazyStore): void => {
       }
     }
 
-    private getTemplate(component: string, attributesObject?: object): TemplateResult {
+    private getTemplate(
+      component: string,
+      attributesObject?: Record<string, unknown>,
+    ): TemplateResult {
       const tagName = component.replace(/[^A-Za-z0-9-]/, '');
       let attributes = '';
 
