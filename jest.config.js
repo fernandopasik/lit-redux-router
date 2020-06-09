@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   collectCoverageFrom: ['src/**/*.ts'],
   globals: { 'ts-jest': { tsConfig: 'tsconfig.all.json' } },
   transform: { '^.+\\.[j|t]s$': 'ts-jest' },
