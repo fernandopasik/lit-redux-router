@@ -16,6 +16,7 @@
     "noUnusedParameters": true,
     "outDir": ".",
     "rootDirs": ["src", "demo"],
+    "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
     "strictBindCallApply": true,

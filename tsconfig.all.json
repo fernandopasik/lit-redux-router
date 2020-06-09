@@ -10,5 +10,5 @@
     "sourceMap": false
   },
   "exclude": ["/lit-redux-router.*"],
-  "include": ["./*.js", "src/**/*", "demo/**/*"]
+  "include": ["**/*"]
 }
