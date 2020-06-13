@@ -1,5 +1,5 @@
-import { createStore, combineReducers, compose } from 'redux';
 import { lazyReducerEnhancer } from 'pwa-helpers';
+import { combineReducers, compose, createStore } from 'redux';
 
 declare global {
   interface Window {

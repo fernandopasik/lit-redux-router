@@ -1,12 +1,10 @@
-import configureStore from 'redux-mock-store';
-import * as pwaHelpers from 'pwa-helpers';
 import { customElement } from 'lit-element';
-import { Store, AnyAction } from 'redux';
+import * as pwaHelpers from 'pwa-helpers';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
-
-import connectRouter, { RouteClass as Route } from '../route';
-
+import { AnyAction, Store } from 'redux';
+import configureStore from 'redux-mock-store';
 import * as actions from '../actions';
+import connectRouter, { RouteClass as Route } from '../route';
 import * as selectors from '../selectors';
 
 type TestStore = Store<Record<string, unknown>, AnyAction> & LazyStore;

@@ -1,11 +1,10 @@
-import configureStore from 'redux-mock-store';
-import { Store, AnyAction } from 'redux';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
-import { connectRouter, navigate } from '../lit-redux-router';
-
-import Route from '../lib/route';
-import reducer from '../lib/reducer';
+import { AnyAction, Store } from 'redux';
+import configureStore from 'redux-mock-store';
 import { navigate as navigateAction } from '../lib/actions';
+import reducer from '../lib/reducer';
+import Route from '../lib/route';
+import { connectRouter, navigate } from '../lit-redux-router';
 
 jest.mock('../lib/route', () => jest.fn());
 jest.mock('../lib/reducer', () => jest.fn());

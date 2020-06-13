@@ -1,4 +1,4 @@
-import { RouterState, Route, RouteParams } from './reducer';
+import { Route, RouteParams, RouterState } from './reducer';
 
 export interface State {
   router: RouterState;

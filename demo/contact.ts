@@ -1,5 +1,4 @@
-import { LitElement, html, property, TemplateResult } from 'lit-element';
-
+import { html, LitElement, property, TemplateResult } from 'lit-element';
 import { navigate } from '../src/lit-redux-router';
 import store from './store';
 

@@ -1,4 +1,4 @@
-import { getRouteParams, getRoute, isRouteActive, noRouteActive } from '../selectors';
+import { getRoute, getRouteParams, isRouteActive, noRouteActive } from '../selectors';
 
 describe('router selectors', () => {
   describe('get route', () => {

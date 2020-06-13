@@ -1,10 +1,8 @@
-import { LitElement, html, property, customElement, TemplateResult } from 'lit-element';
+import { customElement, html, LitElement, property, TemplateResult } from 'lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import { connect, installRouter } from 'pwa-helpers';
-
-import { Store } from 'redux';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
-
+import { Store } from 'redux';
 import { addRoute, setActiveRoute } from './actions';
 import { RouteParams } from './reducer';
 import { getRouteParams, isRouteActive, State } from './selectors';

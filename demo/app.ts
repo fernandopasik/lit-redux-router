@@ -1,10 +1,9 @@
-import { LitElement, html, TemplateResult } from 'lit-element';
-
+import { html, LitElement, TemplateResult } from 'lit-element';
 import { connectRouter, navigate } from '../src/lit-redux-router';
-import store from './store';
-import './loading';
 import './contact';
+import './loading';
 import './product';
+import store from './store';
 
 connectRouter(store);
 

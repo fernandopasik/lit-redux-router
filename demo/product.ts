@@ -1,4 +1,4 @@
-import { LitElement, html, property, TemplateResult } from 'lit-element';
+import { html, LitElement, property, TemplateResult } from 'lit-element';
 
 class MyProduct extends LitElement {
   @property({ type: String })

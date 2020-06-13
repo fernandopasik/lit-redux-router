@@ -1,4 +1,4 @@
-import { LitElement, html, TemplateResult } from 'lit-element';
+import { html, LitElement, TemplateResult } from 'lit-element';
 
 class DocsComponent extends LitElement {
   public render(): TemplateResult {
