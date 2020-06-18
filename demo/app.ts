@@ -1,4 +1,5 @@
 import { html, LitElement, TemplateResult } from 'lit-element';
+import type { Action } from 'redux';
 import { connectRouter, navigate } from '../src/lit-redux-router';
 import './contact';
 import './loading';
@@ -11,7 +12,14 @@ interface TestState {
   test: boolean;
 }
 
-const testReducer = (state = { test: true }, { type = '' }): TestState => {
+const defaultState = {
+  test: true,
+};
+
+const testReducer = (
+  state: Readonly<TestState> = defaultState,
+  { type }: Readonly<Action> = { type: '' },
+): TestState => {
   switch (type) {
     case 'TEST_FALSE':
       return { test: false };
