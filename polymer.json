@@ -1,17 +1,15 @@
 {
   "entrypoint": "demo/index.html",
-  "builds": [{
-    "name": "lit-redux-router",
-    "preset": "es5-unbundled"
-  }],
+  "builds": [
+    {
+      "name": "lit-redux-router",
+      "preset": "es5-unbundled"
+    }
+  ],
   "moduleResolution": "node",
   "npm": true,
   "lint": {
-    "rules": [
-      "polymer-3"
-    ],
-    "filesToIgnore": [
-      "dist/*"
-    ]
+    "rules": ["polymer-3"],
+    "filesToIgnore": ["dist/*"]
   }
 }
