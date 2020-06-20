@@ -19,7 +19,7 @@ export const noRouteActive = ({ router: { routes } }: ReadonlyDeep<State>): bool
   );
 
 export const isRouteActive = (state: ReadonlyDeep<State>, route?: string): boolean =>
-  typeof route !== 'undefined' ? !!getRoute(state, route)?.active : noRouteActive(state);
+  typeof route !== 'undefined' ? Boolean(getRoute(state, route)?.active) : noRouteActive(state);
 
 export const getRouteParams = (state: ReadonlyDeep<State>, route?: string): RouteParams =>
   getRoute(state, route)?.params ?? {};
