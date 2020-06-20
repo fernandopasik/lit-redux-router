@@ -12,7 +12,7 @@ let routerInstalled = false;
 // eslint-disable-next-line import/no-mutable-exports, @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
-export default (store: Store & LazyStore): void => {
+export default (store: Readonly<Store & LazyStore>): void => {
   /**
    * Element that renders its content or a component
    * when browser route matches
@@ -20,7 +20,7 @@ export default (store: Store & LazyStore): void => {
    * @demo ../demo/index.html
    */
   @customElement('lit-route')
-  class Route extends connect(store)(LitElement) {
+  class Route extends connect(store as Store & LazyStore)(LitElement) {
     @property({ type: Boolean, reflect: true })
     protected active: boolean = false;
 
