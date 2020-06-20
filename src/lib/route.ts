@@ -3,6 +3,8 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import { connect, installRouter } from 'pwa-helpers';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
 import { Store } from 'redux';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import type { ReadonlyDeep } from 'type-fest';
 import { addRoute, setActiveRoute } from './actions';
 import { RouteParams } from './reducer';
 import { getRouteParams, isRouteActive, State } from './selectors';
@@ -50,7 +52,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
 
     public firstUpdated(): void {
       if (!routerInstalled) {
-        installRouter(({ pathname, search, hash }): void => {
+        installRouter(({ pathname, search, hash }: ReadonlyDeep<Location>): void => {
           const path = window.decodeURIComponent(pathname + search + hash);
           store.dispatch(setActiveRoute(path));
         });
