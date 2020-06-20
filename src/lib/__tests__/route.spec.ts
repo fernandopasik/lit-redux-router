@@ -244,7 +244,7 @@ describe('route element', () => {
     });
 
     describe('with dynamic imported components without loading component', () => {
-      const importFile = (): Promise<typeof import('../../lit-redux-router')> =>
+      const importFile = async (): Promise<typeof import('../../lit-redux-router')> =>
         import('../../lit-redux-router');
 
       it('before resolve completes', () => {
@@ -281,7 +281,7 @@ describe('route element', () => {
       });
     });
     describe('with dynamic imported components with loading component', () => {
-      const importFile = (): Promise<typeof import('../../lit-redux-router')> =>
+      const importFile = async (): Promise<typeof import('../../lit-redux-router')> =>
         import('../../lit-redux-router');
 
       it('before resolve completes', () => {
@@ -326,7 +326,7 @@ describe('route element', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = (): Promise<void> => Promise.reject();
+        route.resolve = async (): Promise<void> => Promise.reject();
         route.loading = 'my-loading';
         route.path = '/';
 
@@ -346,7 +346,7 @@ describe('route element', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = (): Promise<void> => Promise.reject();
+        route.resolve = async (): Promise<void> => Promise.reject();
         route.loading = 'my-loading';
         route.path = '/';
 
