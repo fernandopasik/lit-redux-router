@@ -9,6 +9,6 @@
     "outDir": "docs",
     "sourceMap": false
   },
-  "exclude": ["/lit-redux-router.*"],
-  "include": ["**/*"]
+  "exclude": ["/lib", "/lit-redux-router.*"],
+  "include": [".**/**/*", "**/*"]
 }
