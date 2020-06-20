@@ -12,8 +12,7 @@ let routerInstalled = false;
 // eslint-disable-next-line import/no-mutable-exports, @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default (store: Store<any> & LazyStore): void => {
+export default (store: Store & LazyStore): void => {
   /**
    * Element that renders its content or a component
    * when browser route matches
