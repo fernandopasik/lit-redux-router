@@ -4,11 +4,11 @@ import { Actions, ActionTypes } from './actions';
 import { refreshRoute } from './service';
 
 export interface RouteParams {
-  readonly [param: string]: string;
+  [param: string]: string;
 }
 
 export interface Route {
-  active?: boolean;
+  active: boolean;
   params?: RouteParams;
 }
 

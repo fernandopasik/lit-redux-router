@@ -2,7 +2,7 @@ import { getRoute, getRouteParams, isRouteActive, noRouteActive } from '../selec
 
 describe('router selectors', () => {
   describe('get route', () => {
-    it('return empty object when not present', () => {
+    it('return route object', () => {
       const path = '/about';
       const route = { active: true, params: { id: '1' } };
       const state = {
@@ -16,14 +16,14 @@ describe('router selectors', () => {
       expect(getRoute(state, path)).toStrictEqual(route);
     });
 
-    it('return route object', () => {
+    it('return undefined when not present', () => {
       const state = {
         router: {
           activeRoute: '/',
           routes: {},
         },
       };
-      expect(getRoute(state, '/about')).toStrictEqual({});
+      expect(getRoute(state, '/about')).toBeUndefined();
     });
   });
 

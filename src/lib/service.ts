@@ -1,13 +1,5 @@
 import regexparam from 'regexparam';
-
-interface Route {
-  readonly active?: boolean;
-  readonly params?: RouteParams;
-}
-
-interface RouteParams {
-  readonly [param: string]: string;
-}
+import type { Route, RouteParams } from './reducer';
 
 export const refreshRoute = (route: string, activeRoute: string): Route => {
   const { pattern, keys } = regexparam(route);

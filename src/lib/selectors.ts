@@ -6,8 +6,11 @@ export interface State {
   router: RouterState;
 }
 
-export const getRoute = ({ router: { routes } }: ReadonlyDeep<State>, route?: string): Route =>
-  (routes && route && routes[route]) || {};
+export const getRoute = (
+  { router: { routes } }: ReadonlyDeep<State>,
+  route?: string,
+): Route | undefined =>
+  typeof route !== 'undefined' && route in routes ? routes[route] : undefined;
 
 export const noRouteActive = ({ router: { routes } }: ReadonlyDeep<State>): boolean =>
   Object.keys(routes).reduce(
@@ -16,7 +19,7 @@ export const noRouteActive = ({ router: { routes } }: ReadonlyDeep<State>): bool
   );
 
 export const isRouteActive = (state: ReadonlyDeep<State>, route?: string): boolean =>
-  route ? !!getRoute(state, route).active : noRouteActive(state);
+  typeof route !== 'undefined' ? !!getRoute(state, route)?.active : noRouteActive(state);
 
 export const getRouteParams = (state: ReadonlyDeep<State>, route?: string): RouteParams =>
-  getRoute(state, route).params ?? {};
+  getRoute(state, route)?.params ?? {};
