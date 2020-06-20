@@ -78,7 +78,7 @@ export default (store: Store & LazyStore): void => {
 
       this.path = path;
 
-      if (this.path) {
+      if (typeof this.path !== 'undefined') {
         store.dispatch(addRoute(this.path));
       }
     }
@@ -134,10 +134,10 @@ export default (store: Store & LazyStore): void => {
       }
 
       if (this.resolve && this.isResolving) {
-        return !this.loading ? html`` : this.getTemplate(this.loading);
+        return typeof this.loading === 'undefined' ? html`` : this.getTemplate(this.loading);
       }
 
-      if (!this.component) {
+      if (typeof this.component === 'undefined') {
         return html`<slot></slot>`;
       }
 
