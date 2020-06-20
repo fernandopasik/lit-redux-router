@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import type { ReadonlyDeep } from 'type-fest';
 import { Actions, ActionTypes } from './actions';
 import { refreshRoute } from './service';
 
@@ -6,17 +8,13 @@ export interface RouteParams {
 }
 
 export interface Route {
-  readonly active?: boolean;
-  readonly params?: RouteParams;
-}
-
-export interface Routes {
-  readonly [path: string]: Route;
+  active?: boolean;
+  params?: RouteParams;
 }
 
 export interface RouterState {
-  readonly activeRoute: string;
-  readonly routes: Routes;
+  activeRoute: string;
+  routes: Record<string, Route>;
 }
 
 interface Action {
@@ -30,7 +28,7 @@ const initialState = {
 };
 
 const reducer = (
-  state: RouterState = initialState,
+  state: ReadonlyDeep<RouterState> = initialState,
   { type = '', path = '' }: Action | Actions = {},
 ): RouterState => {
   switch (type) {
@@ -40,7 +38,7 @@ const reducer = (
         ...state,
         activeRoute: path,
         routes: Object.keys(state.routes).reduce(
-          (routes: Routes, routeName: string): Routes => ({
+          (routes: Readonly<Record<string, Route>>, routeName: string): Record<string, Route> => ({
             ...routes,
             [routeName]: refreshRoute(routeName, path),
           }),
