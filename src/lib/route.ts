@@ -85,7 +85,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
       }
     }
 
-    public stateChanged(state: Readonly<State>): void {
+    public stateChanged(state: ReadonlyDeep<State>): void {
       const isActive = isRouteActive(state, this.path);
       const hasBecomeActive = !this.active && isActive;
       this.active = isActive;
