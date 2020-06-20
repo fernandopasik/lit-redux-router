@@ -22,7 +22,7 @@ export default (store: Store & LazyStore): void => {
   @customElement('lit-route')
   class Route extends connect(store)(LitElement) {
     @property({ type: Boolean, reflect: true })
-    protected active = false;
+    protected active: boolean = false;
 
     @property({ type: String })
     protected component?: string;
@@ -34,7 +34,7 @@ export default (store: Store & LazyStore): void => {
     protected path?: string;
 
     @property({ type: Boolean })
-    protected isResolving = false;
+    protected isResolving: boolean = false;
 
     @property({ type: Function })
     protected resolve?: () => Promise<void>;
@@ -46,7 +46,7 @@ export default (store: Store & LazyStore): void => {
     protected scrollOpt = {};
 
     @property({ type: Boolean })
-    protected scrollDisable = false;
+    protected scrollDisable: boolean = false;
 
     public firstUpdated(): void {
       if (!routerInstalled) {
