@@ -43,7 +43,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
     protected loading?: string;
 
     @property({ type: Object })
-    protected scrollOpt = {};
+    protected scrollOpt?: boolean | ScrollIntoViewOptions;
 
     @property({ type: Boolean })
     protected scrollDisable: boolean = false;
@@ -99,10 +99,10 @@ export default (store: Readonly<Store & LazyStore>): void => {
             this.isResolving = false;
           });
       }
-      if (this.active && !this.scrollDisable && this.scrollOpt) {
-        if (Object.keys(this.scrollOpt).length !== 0) {
+      if (this.active && !this.scrollDisable) {
+        if (typeof this.scrollOpt !== 'undefined') {
           if (hasBecomeActive) {
-            this.scrollIntoView({ ...this.scrollOpt });
+            this.scrollIntoView(this.scrollOpt);
           }
         } else {
           window.scrollTo(0, 0);
