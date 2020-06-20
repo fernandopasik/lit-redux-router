@@ -12,7 +12,7 @@ export const refreshRoute = (route: string, activeRoute: string): Route => {
     params: !active
       ? {}
       : keys.reduce(
-          (list: RouteParams, item: string, index: number): RouteParams => ({
+          (list: Readonly<RouteParams>, item: string, index: number): RouteParams => ({
             ...list,
             [item]: (match && match[index + 1]) || '',
           }),
