@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import type { ReadonlyDeep } from 'type-fest';
 import { Route, RouteParams, RouterState } from './reducer';
 

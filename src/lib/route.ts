@@ -3,7 +3,6 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import { connect, installRouter } from 'pwa-helpers';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
 import { Store } from 'redux';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import type { ReadonlyDeep } from 'type-fest';
 import { addRoute, setActiveRoute } from './actions';
 import { RouteParams } from './reducer';

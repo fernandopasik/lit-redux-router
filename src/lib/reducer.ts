@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import type { ReadonlyDeep } from 'type-fest';
 import { Actions, ActionTypes } from './actions';
 import { refreshRoute } from './service';
