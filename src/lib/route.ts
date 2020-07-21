@@ -23,31 +23,31 @@ export default (store: Readonly<Store & LazyStore>): void => {
   @customElement('lit-route')
   class Route extends connect(store as Store & LazyStore)(LitElement) {
     @property({ type: Boolean, reflect: true })
-    protected active: boolean = false;
+    public active: boolean = false;
 
     @property({ type: String })
-    protected component?: string;
+    public component?: string;
 
     @property({ type: Object })
     protected params: RouteParams = {};
 
     @property({ type: String })
-    protected path?: string;
+    public path?: string;
 
     @property({ type: Boolean })
     protected isResolving: boolean = false;
 
     @property({ type: Function })
-    protected resolve?: () => Promise<void>;
+    public resolve?: () => Promise<void>;
 
     @property({ type: String })
-    protected loading?: string;
+    public loading?: string;
 
     @property({ type: Object })
-    protected scrollOpt?: boolean | ScrollIntoViewOptions;
+    public scrollOpt?: boolean | ScrollIntoViewOptions;
 
     @property({ type: Boolean })
-    protected scrollDisable: boolean = false;
+    public scrollDisable: boolean = false;
 
     public firstUpdated(): void {
       if (!routerInstalled) {
