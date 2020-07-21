@@ -1,4 +1,11 @@
-import { customElement, html, LitElement, property, TemplateResult } from 'lit-element';
+import {
+  customElement,
+  html,
+  internalProperty,
+  LitElement,
+  property,
+  TemplateResult,
+} from 'lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import { connect, installRouter } from 'pwa-helpers';
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
@@ -28,16 +35,16 @@ export default (store: Readonly<Store & LazyStore>): void => {
     @property({ type: String })
     public component?: string;
 
-    @property({ type: Object })
+    @internalProperty()
     protected params: RouteParams = {};
 
     @property({ type: String })
     public path?: string;
 
-    @property({ type: Boolean })
+    @internalProperty()
     protected isResolving: boolean = false;
 
-    @property({ type: Function })
+    @property()
     public resolve?: () => Promise<void>;
 
     @property({ type: String })
