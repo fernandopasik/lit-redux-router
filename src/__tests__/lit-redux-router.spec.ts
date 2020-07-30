@@ -1,5 +1,5 @@
 import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
-import { AnyAction, Store } from 'redux';
+import { Store } from 'redux';
 import configureStore from 'redux-mock-store';
 import { navigate as navigateAction } from '../lib/actions';
 import reducer from '../lib/reducer';
@@ -12,11 +12,9 @@ jest.mock('../lib/actions', () => ({ navigate: jest.fn() }));
 
 const mockStore = configureStore([]);
 
-type TestStore = Store<Record<string, unknown>, AnyAction> & LazyStore;
-
 describe('lit redux router', () => {
   it('connects router to reducer', () => {
-    const store = (mockStore({}) as unknown) as TestStore;
+    const store = (mockStore({}) as unknown) as Store<Record<string, unknown>> & LazyStore;
     const addReducers = jest.fn();
     store.addReducers = addReducers;
     connectRouter(store);
@@ -24,7 +22,7 @@ describe('lit redux router', () => {
   });
 
   it('creates the route component connected to store', () => {
-    const store = (mockStore({}) as unknown) as TestStore;
+    const store = (mockStore({}) as unknown) as Store<Record<string, unknown>> & LazyStore;
     const addReducers = jest.fn();
     store.addReducers = addReducers;
     connectRouter(store);
