@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/typedef, @typescript-eslint/explicit-function-return-type, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
 import html from 'rollup-plugin-html2';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
 import typescript from '@rollup/plugin-typescript';
@@ -5,7 +6,6 @@ import { terser } from 'rollup-plugin-terser';
 import serve from 'rollup-plugin-serve';
 import resolve from '@rollup/plugin-node-resolve';
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const onwarn = (warning, warn) => {
   if (warning.code === 'THIS_IS_UNDEFINED') {
     return;
