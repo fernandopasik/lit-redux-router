@@ -1,12 +1,10 @@
 import { checkNavigation } from './service';
 
-/* eslint-disable @typescript-eslint/naming-convention */
 export enum ActionTypes {
   ADD_ROUTE = 'ADD_ROUTE',
   NAVIGATE = 'NAVIGATE',
   SET_ACTIVE_ROUTE = 'SET_ACTIVE_ROUTE',
 }
-/* eslint-enable @typescript-eslint/naming-convention */
 
 export interface Actions {
   readonly type: string;
