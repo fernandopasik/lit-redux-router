@@ -1,5 +1,6 @@
 import { checkNavigation } from './service';
 
+// eslint-disable-next-line no-shadow
 export enum ActionTypes {
   ADD_ROUTE = 'ADD_ROUTE',
   NAVIGATE = 'NAVIGATE',
