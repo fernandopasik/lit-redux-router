@@ -87,18 +87,14 @@ Ideally all content would be in a component and can be passed to `lit-route` thr
 ```js
 class AppHome extends LitElement {
   render() {
-    return html`
-      <h1>Home</h1>
-    `;
+    return html`<h1>Home</h1>`;
   }
 }
 customElements.define('app-home', AppHome);
 
 class AppAbout extends LitElement {
   render() {
-    return html`
-      <h1>About</h1>
-    `;
+    return html`<h1>About</h1>`;
   }
 }
 customElements.define('app-about', AppAbout);
@@ -127,9 +123,7 @@ class AppProduct extends LitElement {
   }
 
   render() {
-    return html`
-      <h1>Product with id: ${this.id}</h1>
-    `;
+    return html`<h1>Product with id: ${this.id}</h1>`;
   }
 }
 customElements.define('app-product', AppProduct);
