@@ -36,7 +36,7 @@ The routing approach is based on the [PWA Starter Kit](https://github.com/polyme
 
 Install this library and its peer dependencies
 
-```
+```sh
 yarn add lit-redux-router
 yarn add lit-html lit-element pwa-helpers redux
 ```
@@ -239,26 +239,26 @@ Check a more comprehensive example in https://github.com/fernandopasik/lit-redux
 
 Start server with example and watch mode for building the library
 
-```
+```sh
 yarn start
 ```
 
 Run lint and test tasks
 
-```
+```sh
 yarn test
 yarn lint
 ```
 
 Build the library
 
-```
+```sh
 yarn build
 ```
 
 Check the full size of the library
 
-```
+```sh
 yarn size
 ```
 
