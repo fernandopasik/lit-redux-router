@@ -1,6 +1,6 @@
 # Credits for lit-redux-router
-## lit-redux-router relies on the work of 303 people:
 
+## lit-redux-router relies on the work of 303 people:
 
 ## npm
 
@@ -307,4 +307,3 @@
 - **Zoltan Kochan** (1 package)
 - **Dylan Greene** (1 package)
 - **Eemeli Aro** *eemeli@gmail.com* (1 package)
-
