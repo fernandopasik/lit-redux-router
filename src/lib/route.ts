@@ -56,6 +56,12 @@ export default (store: Readonly<Store & LazyStore>): void => {
     @property({ type: Boolean })
     public scrollDisable: boolean = false;
 
+    private setIsResolving(isResolving: boolean): void {
+      if (this.loading) {
+        this.isResolving = isResolving;
+      }
+    }
+
     public firstUpdated(): void {
       if (!routerInstalled) {
         installRouter(({ pathname, search, hash }: ReadonlyDeep<Location>): void => {
@@ -98,13 +104,13 @@ export default (store: Readonly<Store & LazyStore>): void => {
       this.params = getRouteParams(state, this.path);
 
       if (this.active && this.resolve) {
-        this.isResolving = true;
+        this.setIsResolving(true);
         this.resolve()
           .then((): void => {
-            this.isResolving = false;
+            this.setIsResolving(false);
           })
           .catch((): void => {
-            this.isResolving = false;
+            this.setIsResolving(false);
           });
       }
       if (this.active && !this.scrollDisable) {

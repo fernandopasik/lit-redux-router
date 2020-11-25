@@ -260,9 +260,9 @@ describe('route element', () => {
 
         route.stateChanged(state);
 
-        expect(route.isResolving).toBe(true);
+        expect(route.isResolving).toBe(false);
         const rendered = route.render();
-        expect(rendered).toBe('');
+        expect(rendered).toBe('<docs-page></docs-page>');
       });
 
       it('after resolve completes', () => {

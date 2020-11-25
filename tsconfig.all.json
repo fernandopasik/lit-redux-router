@@ -7,7 +7,8 @@
     "inlineSources": false,
     "noEmit": true,
     "outDir": "docs",
-    "sourceMap": false
+    "sourceMap": false,
+    "skipLibCheck": true
   },
   "exclude": ["/lib", "/lit-redux-router.*"],
   "include": [".**/**/*", "**/*"]
