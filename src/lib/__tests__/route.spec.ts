@@ -56,7 +56,7 @@ describe('route element', () => {
   });
 
   beforeEach(() => {
-    customElementsGet.mockReset();
+    customElementsGet.mockClear();
   });
 
   it('defines the custom element', () => {
@@ -282,7 +282,7 @@ describe('route element', () => {
         route.path = '/';
         const state = { activeRoute: route.path };
 
-        customElementsGet.mockReturnValue(() => ({}));
+        customElementsGet.mockReturnValue({});
 
         const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
         route.stateChanged(state);
@@ -327,7 +327,7 @@ describe('route element', () => {
         route.path = '/';
         const state = { activeRoute: route.path };
 
-        customElementsGet.mockReturnValue(() => ({}));
+        customElementsGet.mockReturnValue({});
 
         const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
         route.stateChanged(state);
@@ -345,8 +345,9 @@ describe('route element', () => {
         route.resolve = async (): Promise<void> => Promise.reject();
         route.loading = 'my-loading';
         route.path = '/';
-
         const state = { activeRoute: route.path };
+
+        customElementsGet.mockReturnValue(undefined);
 
         const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
 
