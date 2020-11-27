@@ -284,10 +284,9 @@ describe('route element', () => {
 
         customElementsGet.mockReturnValue({});
 
-        const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
+        jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
         route.stateChanged(state);
 
-        expect(spy).toHaveBeenCalledWith(state);
         expect(route.isResolving).toBe(false);
         const rendered = route.render();
         expect(rendered).toBe('<docs-page></docs-page>');
@@ -309,7 +308,6 @@ describe('route element', () => {
         customElementsGet.mockReturnValue(undefined);
 
         const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
-
         route.stateChanged(state);
 
         expect(spy).toHaveBeenCalledWith(state, route.path);
@@ -329,10 +327,10 @@ describe('route element', () => {
 
         customElementsGet.mockReturnValue({});
 
-        const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
+        const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
         route.stateChanged(state);
 
-        expect(spy).toHaveBeenCalledWith(state);
+        expect(spy).toHaveBeenCalledWith(state, route.path);
         expect(route.isResolving).toBe(false);
         const rendered = route.render();
         expect(rendered).toBe('<docs-page></docs-page>');
@@ -350,7 +348,6 @@ describe('route element', () => {
         customElementsGet.mockReturnValue(undefined);
 
         const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
-
         route.stateChanged(state);
 
         expect(spy).toHaveBeenCalledWith(state, route.path);
@@ -368,10 +365,13 @@ describe('route element', () => {
         route.path = '/';
 
         const state = { activeRoute: route.path };
-        const spy = jest.spyOn(route, 'stateChanged').mockImplementationOnce(() => true);
+
+        customElementsGet.mockReturnValue({});
+
+        const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
         route.stateChanged(state);
 
-        expect(spy).toHaveBeenCalledWith(state);
+        expect(spy).toHaveBeenCalledWith(state, route.path);
         expect(route.isResolving).toBe(false);
         const rendered = route.render();
         expect(rendered).toBe('<docs-page></docs-page>');
