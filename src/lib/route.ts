@@ -56,9 +56,15 @@ export default (store: Readonly<Store & LazyStore>): void => {
     @property({ type: Boolean })
     public scrollDisable: boolean = false;
 
-    private setIsResolving(isResolving: boolean): void {
-      if (this.loading) {
-        this.isResolving = isResolving;
+    private setResolving(): void {
+      if (this.component && !window.customElements.get(this.component)) {
+        this.isResolving = true;
+      }
+    }
+
+    private unsetResolving(): void {
+      if (this.component && window.customElements.get(this.component)) {
+        this.isResolving = false;
       }
     }
 
@@ -104,13 +110,13 @@ export default (store: Readonly<Store & LazyStore>): void => {
       this.params = getRouteParams(state, this.path);
 
       if (this.active && this.resolve) {
-        this.setIsResolving(true);
+        this.setResolving();
         this.resolve()
           .then((): void => {
-            this.setIsResolving(false);
+            this.unsetResolving();
           })
           .catch((): void => {
-            this.setIsResolving(false);
+            this.unsetResolving();
           });
       }
       if (this.active && !this.scrollDisable) {

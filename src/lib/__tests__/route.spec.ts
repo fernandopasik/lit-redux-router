@@ -45,6 +45,7 @@ describe('route element', () => {
       value: {
         customElements: {
           define: jest.fn(),
+          get: jest.fn(),
         },
         decodeURIComponent: jest.fn((val) => val),
         scrollTo: jest.fn(),
@@ -260,9 +261,9 @@ describe('route element', () => {
 
         route.stateChanged(state);
 
-        expect(route.isResolving).toBe(false);
+        expect(route.isResolving).toBe(true);
         const rendered = route.render();
-        expect(rendered).toBe('<docs-page></docs-page>');
+        expect(rendered).toBe('');
       });
 
       it('after resolve completes', () => {
