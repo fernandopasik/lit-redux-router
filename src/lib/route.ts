@@ -30,7 +30,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
   @customElement('lit-route')
   class Route extends connect(store as Store & LazyStore)(LitElement) {
     @property({ type: Boolean, reflect: true })
-    public active: boolean = false;
+    public active = false;
 
     @property({ type: String })
     public component?: string;
@@ -42,7 +42,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
     public path?: string;
 
     @internalProperty()
-    protected isResolving: boolean = false;
+    protected isResolving = false;
 
     @property()
     public resolve?: () => Promise<void>;
@@ -54,7 +54,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
     public scrollOpt?: boolean | ScrollIntoViewOptions;
 
     @property({ type: Boolean })
-    public scrollDisable: boolean = false;
+    public scrollDisable = false;
 
     private setResolving(): void {
       if (this.component && !window.customElements.get(this.component)) {
