@@ -4,10 +4,10 @@ import store from './store';
 
 class MyContact extends LitElement {
   @property({ type: String })
-  protected name: string = '';
+  protected name = '';
 
   @property({ type: String })
-  protected email: string = '';
+  protected email = '';
 
   public save(prop: 'name' | 'email'): (event: Readonly<Event>) => void {
     return (event: Readonly<Event>): void => {

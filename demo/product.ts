@@ -2,10 +2,10 @@ import { html, LitElement, property, TemplateResult } from 'lit-element';
 
 class MyProduct extends LitElement {
   @property({ type: String })
-  public id: string = '';
+  public id = '';
 
   @property({ type: String })
-  protected name: string = '';
+  protected name = '';
 
   public render(): TemplateResult {
     return html`
