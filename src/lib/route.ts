@@ -6,7 +6,6 @@ import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
 import type { Store } from 'redux';
 import type { ReadonlyDeep } from 'type-fest';
 import { addRoute, setActiveRoute } from './actions';
-import type { RouteParams } from './reducer';
 import type { State } from './selectors';
 import { getRouteParams, isRouteActive } from './selectors';
 
@@ -31,7 +30,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
     public component?: string;
 
     @internalProperty()
-    protected params: RouteParams = {};
+    protected params: Record<string, string> = {};
 
     @property({ type: String })
     public path?: string;
