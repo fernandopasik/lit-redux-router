@@ -42,7 +42,7 @@ class MyApp extends LitElement {
     store.dispatch({ type: 'TEST_FALSE' });
   }
 
-  public importDocs(): typeof import('./docs') {
+  public importDocs() {
     return import('./docs');
   }
 
