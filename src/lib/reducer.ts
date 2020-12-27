@@ -1,5 +1,6 @@
 import type { ReadonlyDeep } from 'type-fest';
-import { Actions, ActionTypes } from './actions';
+import type { Actions } from './actions';
+import { ActionTypes } from './actions';
 import { refreshRoute } from './service';
 
 export interface RouteParams {
