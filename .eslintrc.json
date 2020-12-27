@@ -4,6 +4,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript",
     "plugin:jest/all",
+    "plugin:lit-a11y/recommended",
     "plugin:lit/all",
     "plugin:prettier/recommended",
     "plugin:wc/best-practice",
