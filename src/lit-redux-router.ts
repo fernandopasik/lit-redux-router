@@ -1,5 +1,5 @@
-import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
-import { Store } from 'redux';
+import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
+import type { Store } from 'redux';
 import reducer from './lib/reducer';
 import Route from './lib/route';
 

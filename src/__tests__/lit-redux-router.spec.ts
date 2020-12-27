@@ -1,5 +1,5 @@
-import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
-import { Store } from 'redux';
+import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
+import type { Store } from 'redux';
 import configureStore from 'redux-mock-store';
 import { navigate as navigateAction } from '../lib/actions';
 import reducer from '../lib/reducer';
