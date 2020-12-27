@@ -15,9 +15,9 @@
   ],
   "parserOptions": { "project": "./tsconfig.all.json" },
   "rules": {
-    "class-methods-use-this": "off",
     "@typescript-eslint/no-magic-numbers": ["error", { "ignore": [0, 1] }],
     "@typescript-eslint/unbound-method": "off",
+    "class-methods-use-this": "off",
     "import/extensions": ["error", "never"],
     "jest/no-hooks": "off",
     "jest/prefer-expect-assertions": "off"
