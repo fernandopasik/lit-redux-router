@@ -16,7 +16,7 @@ jest.mock('lit-element', () => ({
     }
   },
   html: jest.fn((strings, ...values) =>
-    strings.map((string: string, index: number) => string + (values[index] || '')).join(''),
+    strings.map((string: string, index: number) => `${string}${values[index] ?? ''}`).join(''),
   ),
   customElement: jest.fn(),
   internalProperty: jest.fn(),

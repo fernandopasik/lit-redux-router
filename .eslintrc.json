@@ -1,7 +1,7 @@
 {
   "extends": [
     "airbnb-base",
-    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/all",
     "plugin:import/typescript",
     "plugin:jest/all",
     "plugin:lit-a11y/recommended",
@@ -17,6 +17,19 @@
   "parserOptions": { "project": "./tsconfig.all.json" },
   "rules": {
     "@typescript-eslint/no-magic-numbers": ["error", { "ignore": [0, 1] }],
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/member-ordering": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-type-alias": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-unnecessary-type-arguments": "off",
+    "@typescript-eslint/init-declarations": "off",
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
     "@typescript-eslint/unbound-method": "off",
     "class-methods-use-this": "off",
     "import/extensions": ["error", "never"],

@@ -107,7 +107,7 @@
   "bundlesize": [
     {
       "path": "lit-redux-router.min.js",
-      "maxSize": "1.71 kB"
+      "maxSize": "1.75 kB"
     }
   ]
 }
