@@ -1,7 +1,7 @@
 import { customElement } from 'lit-element';
 import * as pwaHelpers from 'pwa-helpers';
-import { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
-import { AnyAction, Store } from 'redux';
+import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
+import type { AnyAction, Store } from 'redux';
 import configureStore from 'redux-mock-store';
 import * as actions from '../actions';
 import connectRouter, { RouteClass as Route } from '../route';
