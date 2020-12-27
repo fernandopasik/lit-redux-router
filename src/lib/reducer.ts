@@ -3,13 +3,9 @@ import type { Actions } from './actions';
 import { ActionTypes } from './actions';
 import { refreshRoute } from './service';
 
-export interface RouteParams {
-  [param: string]: string;
-}
-
 export interface Route {
   active: boolean;
-  params?: RouteParams;
+  params?: Record<string, string>;
 }
 
 export interface RouterState {

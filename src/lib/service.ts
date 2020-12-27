@@ -1,5 +1,5 @@
 import regexparam from 'regexparam';
-import type { Route, RouteParams } from './reducer';
+import type { Route } from './reducer';
 
 export const refreshRoute = (route: string, activeRoute: string): Route => {
   const { pattern, keys } = regexparam(route);
@@ -12,7 +12,11 @@ export const refreshRoute = (route: string, activeRoute: string): Route => {
     params: !active
       ? {}
       : keys.reduce(
-          (list: Readonly<RouteParams>, item: string, index: number): RouteParams => ({
+          (
+            list: Readonly<NonNullable<Route['params']>>,
+            item: string,
+            index: number,
+          ): NonNullable<Route['params']> => ({
             ...list,
             [item]: (match && match[index + 1]) || '',
           }),

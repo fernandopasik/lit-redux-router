@@ -1,5 +1,5 @@
 import type { ReadonlyDeep } from 'type-fest';
-import type { Route, RouteParams, RouterState } from './reducer';
+import type { Route, RouterState } from './reducer';
 
 export interface State {
   router: RouterState;
@@ -20,5 +20,7 @@ export const noRouteActive = ({ router: { routes } }: ReadonlyDeep<State>): bool
 export const isRouteActive = (state: ReadonlyDeep<State>, route?: string): boolean =>
   typeof route !== 'undefined' ? Boolean(getRoute(state, route)?.active) : noRouteActive(state);
 
-export const getRouteParams = (state: ReadonlyDeep<State>, route?: string): RouteParams =>
-  getRoute(state, route)?.params ?? {};
+export const getRouteParams = (
+  state: ReadonlyDeep<State>,
+  route?: string,
+): NonNullable<Route['params']> => getRoute(state, route)?.params ?? {};
