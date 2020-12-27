@@ -81,7 +81,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
           path = `${closestLitRoute.path}${path}`;
         }
 
-        current = closestLitRoute && closestLitRoute.parentElement;
+        current = closestLitRoute?.parentElement ?? null;
       }
 
       const hasChildRoutes = Boolean(this.querySelector('lit-route'));
