@@ -78,7 +78,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
         const closestLitRoute: Route | null = current.closest('lit-route');
 
         if (closestLitRoute) {
-          path = `${closestLitRoute.path}${path}`;
+          path = `${closestLitRoute.path ?? ''}${path ?? ''}`;
         }
 
         current = closestLitRoute?.parentElement ?? null;
