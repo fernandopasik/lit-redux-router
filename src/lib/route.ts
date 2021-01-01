@@ -51,13 +51,19 @@ export default (store: Readonly<Store & LazyStore>): void => {
     public scrollDisable = false;
 
     private setResolving(): void {
-      if (this.component && !window.customElements.get(this.component)) {
+      if (
+        typeof this.component !== 'undefined' &&
+        typeof window.customElements.get(this.component) === 'undefined'
+      ) {
         this.isResolving = true;
       }
     }
 
     private unsetResolving(): void {
-      if (this.component && window.customElements.get(this.component)) {
+      if (
+        typeof this.component !== 'undefined' &&
+        typeof window.customElements.get(this.component) === 'undefined'
+      ) {
         this.isResolving = false;
       }
     }
