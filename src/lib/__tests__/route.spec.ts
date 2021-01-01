@@ -254,7 +254,7 @@ describe('route element', () => {
     });
 
     describe('with dynamic imported components without loading component', () => {
-      const importFile = async () => import('../../lit-redux-router');
+      const importFile = async (): Promise<unknown> => import('../../lit-redux-router');
 
       it('before resolve completes', () => {
         const route = new Route();
@@ -294,7 +294,7 @@ describe('route element', () => {
       });
     });
     describe('with dynamic imported components with loading component', () => {
-      const importFile = async () => import('../../lit-redux-router');
+      const importFile = async (): Promise<unknown> => import('../../lit-redux-router');
 
       it('before resolve completes', () => {
         const route = new Route();
