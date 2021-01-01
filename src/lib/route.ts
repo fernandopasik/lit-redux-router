@@ -11,7 +11,7 @@ import { getRouteParams, isRouteActive } from './selectors';
 
 let routerInstalled = false;
 
-// eslint-disable-next-line import/no-mutable-exports, @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/init-declarations, import/no-mutable-exports, @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
 export default (store: Readonly<Store & LazyStore>): void => {
