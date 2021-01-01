@@ -17,12 +17,8 @@
   "parserOptions": { "project": "./tsconfig.all.json" },
   "rules": {
     "@typescript-eslint/no-magic-numbers": ["error", { "ignore": [0, 1] }],
-    "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/member-ordering": "off",
     "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/no-unsafe-call": "off",
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/no-unsafe-return": "off",
     "@typescript-eslint/no-type-alias": "off",
     "@typescript-eslint/unbound-method": "off",
     "class-methods-use-this": "off",

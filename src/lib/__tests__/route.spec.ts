@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return */
 import { customElement } from 'lit-element';
 import * as pwaHelpers from 'pwa-helpers';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
