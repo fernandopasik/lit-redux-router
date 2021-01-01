@@ -29,14 +29,8 @@ export default (store: Readonly<Store & LazyStore>): void => {
     @property({ type: String })
     public component?: string;
 
-    @internalProperty()
-    protected params: Record<string, string> = {};
-
     @property({ type: String })
     public path?: string;
-
-    @internalProperty()
-    protected isResolving = false;
 
     @property()
     public resolve?: () => Promise<void>;
@@ -50,23 +44,11 @@ export default (store: Readonly<Store & LazyStore>): void => {
     @property({ type: Boolean })
     public scrollDisable = false;
 
-    private setResolving(): void {
-      if (
-        typeof this.component !== 'undefined' &&
-        typeof window.customElements.get(this.component) === 'undefined'
-      ) {
-        this.isResolving = true;
-      }
-    }
+    @internalProperty()
+    protected params: Record<string, string> = {};
 
-    private unsetResolving(): void {
-      if (
-        typeof this.component !== 'undefined' &&
-        typeof window.customElements.get(this.component) === 'undefined'
-      ) {
-        this.isResolving = false;
-      }
-    }
+    @internalProperty()
+    protected isResolving = false;
 
     public firstUpdated(): void {
       if (!routerInstalled) {
@@ -130,6 +112,22 @@ export default (store: Readonly<Store & LazyStore>): void => {
       }
     }
 
+    public render(): TemplateResult {
+      if (!this.active) {
+        return html``;
+      }
+
+      if (this.resolve && this.isResolving) {
+        return typeof this.loading === 'undefined' ? html`` : this.getTemplate(this.loading);
+      }
+
+      if (typeof this.component === 'undefined') {
+        return html`<slot></slot>`;
+      }
+
+      return this.getTemplate(this.component, this.params);
+    }
+
     private getTemplate(
       component: string,
       attributesObject?: Record<string, unknown>,
@@ -148,20 +146,22 @@ export default (store: Readonly<Store & LazyStore>): void => {
       return html`${unsafeHTML(template)}`;
     }
 
-    public render(): TemplateResult {
-      if (!this.active) {
-        return html``;
+    private setResolving(): void {
+      if (
+        typeof this.component !== 'undefined' &&
+        typeof window.customElements.get(this.component) === 'undefined'
+      ) {
+        this.isResolving = true;
       }
+    }
 
-      if (this.resolve && this.isResolving) {
-        return typeof this.loading === 'undefined' ? html`` : this.getTemplate(this.loading);
+    private unsetResolving(): void {
+      if (
+        typeof this.component !== 'undefined' &&
+        typeof window.customElements.get(this.component) === 'undefined'
+      ) {
+        this.isResolving = false;
       }
-
-      if (typeof this.component === 'undefined') {
-        return html`<slot></slot>`;
-      }
-
-      return this.getTemplate(this.component, this.params);
     }
   }
 
