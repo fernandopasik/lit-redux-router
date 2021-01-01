@@ -19,7 +19,6 @@
     "@typescript-eslint/no-magic-numbers": ["error", { "ignore": [0, 1] }],
     "@typescript-eslint/member-ordering": "off",
     "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/no-type-alias": "off",
     "@typescript-eslint/unbound-method": "off",
     "class-methods-use-this": "off",
     "import/extensions": ["error", "never"],
