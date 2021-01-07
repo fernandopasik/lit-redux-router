@@ -3,7 +3,7 @@ import type { Store } from 'redux';
 import reducer from './lib/reducer';
 import Route from './lib/route';
 
-export const connectRouter = (store: Readonly<Store & LazyStore>): void => {
+export const connectRouter = (store: Readonly<LazyStore & Store>): void => {
   store.addReducers({ router: reducer });
 
   Route(store);

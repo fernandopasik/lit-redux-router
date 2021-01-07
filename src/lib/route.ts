@@ -14,7 +14,7 @@ let routerInstalled = false;
 // eslint-disable-next-line @typescript-eslint/init-declarations, import/no-mutable-exports, @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
-export default (store: Readonly<Store & LazyStore>): void => {
+export default (store: Readonly<LazyStore & Store>): void => {
   /**
    * Element that renders its content or a component
    * when browser route matches
@@ -22,7 +22,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
    * @demo ../demo/index.html
    */
   @customElement('lit-route')
-  class Route extends connect(store as Store & LazyStore)(LitElement) {
+  class Route extends connect(store as LazyStore & Store)(LitElement) {
     @property({ type: Boolean, reflect: true })
     public active = false;
 
@@ -39,7 +39,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
     public loading?: string;
 
     @property({ type: Object })
-    public scrollOpt?: boolean | ScrollIntoViewOptions;
+    public scrollOpt?: ScrollIntoViewOptions | boolean;
 
     @property({ type: Boolean })
     public scrollDisable = false;
@@ -59,7 +59,7 @@ export default (store: Readonly<Store & LazyStore>): void => {
         routerInstalled = true;
       }
 
-      let current: Route | HTMLElement | null = this.parentElement;
+      let current: HTMLElement | Route | null = this.parentElement;
       let { path } = this;
 
       while (current) {

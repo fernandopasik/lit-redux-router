@@ -9,7 +9,7 @@ import connectRouter, { RouteClass as Route } from '../route';
 import * as selectors from '../selectors';
 
 // eslint-disable-next-line @typescript-eslint/no-type-alias
-type TestStore = Store<Record<string, unknown>> & LazyStore;
+type TestStore = LazyStore & Store<Record<string, unknown>>;
 
 jest.mock('lit-element', () => ({
   LitElement: class LitElement {

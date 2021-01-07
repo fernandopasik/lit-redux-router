@@ -10,7 +10,7 @@ class MyContact extends LitElement {
   @property({ type: String })
   protected email = '';
 
-  public save(prop: 'name' | 'email'): (event: Readonly<Event>) => void {
+  public save(prop: 'email' | 'name'): (event: Readonly<Event>) => void {
     return (event: Readonly<Event>): void => {
       this[prop] = (event.target as HTMLInputElement).value;
     };
