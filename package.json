@@ -30,8 +30,9 @@
     "/lit-redux-router.*"
   ],
   "scripts": {
+    "add-js-extension": "replace-in-files --regex=\"(import .* from '\\.[^']*)\" --replacement=\"$&.js\" lib/**/*.js lit-redux-router.js",
     "prebuild": "del lib lit-redux-router.*",
-    "build": "tsc && rollup -c",
+    "build": "tsc && yarn add-js-extension && rollup -c",
     "check-types": "tsc --noEmit -p tsconfig.all.json",
     "clean": "del coverage lib lit-redux-router.*",
     "format": "prettier --write ** ./* ./.??*",
@@ -94,6 +95,7 @@
     "pwa-helpers": "^0.9.1",
     "redux": "^4.0.5",
     "redux-mock-store": "^1.5.4",
+    "replace-in-files-cli": "^1.0.0",
     "rollup": "^2.39.1",
     "rollup-plugin-html2": "^2.0.0",
     "rollup-plugin-minify-html-literals": "^1.2.5",
