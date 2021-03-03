@@ -121,7 +121,7 @@ class MyApp extends LitElement {
             <h1>About Me</h1>
           </lit-route>
         </lit-route>
-        <lit-route path="/contact" component="my-contact" scrollDisable> </lit-route>
+        <lit-route path="/contact" component="my-contact" scrollDisable></lit-route>
         <lit-route
           path="/docs"
           component="docs-page"
