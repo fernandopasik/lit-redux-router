@@ -42,6 +42,10 @@ class MyApp extends LitElement {
     store.dispatch({ type: 'TEST_FALSE' });
   }
 
+  public async importDocs(): Promise<void> {
+    await import('./docs');
+  }
+
   public render(): TemplateResult {
     return html`
       <style>
@@ -125,7 +129,7 @@ class MyApp extends LitElement {
         <lit-route
           path="/docs"
           component="docs-page"
-          .resolve="${import('./docs')}"
+          .resolve="${this.importDocs}"
           .scrollOpt="${{ behavior: 'smooth', block: 'end', inline: 'nearest' }}"
           loading="my-loading"
         ></lit-route>

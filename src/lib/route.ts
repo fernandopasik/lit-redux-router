@@ -158,7 +158,7 @@ export default (store: Readonly<LazyStore & Store>): void => {
     private unsetResolving(): void {
       if (
         typeof this.component !== 'undefined' &&
-        typeof window.customElements.get(this.component) === 'undefined'
+        typeof window.customElements.get(this.component) !== 'undefined'
       ) {
         this.isResolving = false;
       }
