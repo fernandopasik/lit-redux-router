@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return */
 import { customElement } from 'lit-element';
 import * as pwaHelpers from 'pwa-helpers';
-import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
+import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import type { Store } from 'redux';
 import configureStore from 'redux-mock-store';
-import * as actions from '../actions';
-import connectRouter, { RouteClass as Route } from '../route';
-import * as selectors from '../selectors';
+import * as actions from '../actions.js';
+import connectRouter, { RouteClass as Route } from '../route.js';
+import * as selectors from '../selectors.js';
 
 // eslint-disable-next-line @typescript-eslint/no-type-alias
 type TestStore = LazyStore & Store<Record<string, unknown>>;

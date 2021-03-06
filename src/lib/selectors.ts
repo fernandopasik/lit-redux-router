@@ -1,5 +1,5 @@
 import type { ReadonlyDeep } from 'type-fest';
-import type { Route, RouterState } from './reducer';
+import type { Route, RouterState } from './reducer.js';
 
 export interface State {
   router: RouterState;

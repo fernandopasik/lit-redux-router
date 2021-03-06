@@ -19,7 +19,8 @@
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/unbound-method": "off",
     "class-methods-use-this": "off",
-    "import/extensions": ["error", "never"],
+    "import/extensions": ["error", "always"],
+    "import/no-unresolved": "off",
     "jest/no-hooks": "off",
     "jest/prefer-expect-assertions": "off"
   }

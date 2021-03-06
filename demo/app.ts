@@ -1,11 +1,11 @@
 import type { TemplateResult } from 'lit-element';
 import { html, LitElement } from 'lit-element';
 import type { Action } from 'redux';
-import { connectRouter, navigate } from '../src/lit-redux-router';
-import './contact';
-import './loading';
-import './product';
-import store from './store';
+import { connectRouter, navigate } from '../src/lit-redux-router.js';
+import './contact.js';
+import './loading.js';
+import './product.js';
+import store from './store.js';
 
 connectRouter(store);
 

@@ -1,5 +1,5 @@
 import regexparam from 'regexparam';
-import type { Route } from './reducer';
+import type { Route } from './reducer.js';
 
 export const refreshRoute = (route: string, activeRoute: string): Route => {
   const { pattern, keys } = regexparam(route);

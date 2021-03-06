@@ -1,7 +1,7 @@
 import type { ReadonlyDeep } from 'type-fest';
-import type { Actions } from './actions';
-import { ActionTypes } from './actions';
-import { refreshRoute } from './service';
+import type { Actions } from './actions.js';
+import { ActionTypes } from './actions.js';
+import { refreshRoute } from './service.js';
 
 export interface Route {
   active: boolean;

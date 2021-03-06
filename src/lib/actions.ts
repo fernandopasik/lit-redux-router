@@ -1,4 +1,4 @@
-import { checkNavigation } from './service';
+import { checkNavigation } from './service.js';
 
 export enum ActionTypes {
   ADD_ROUTE = 'ADD_ROUTE',

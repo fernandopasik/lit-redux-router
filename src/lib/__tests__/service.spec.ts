@@ -1,4 +1,4 @@
-import { checkNavigation, refreshRoute } from '../service';
+import { checkNavigation, refreshRoute } from '../service.js';
 
 describe('router service', () => {
   beforeAll(() => {

@@ -1,7 +1,7 @@
 import type { TemplateResult } from 'lit-element';
 import { html, LitElement, property } from 'lit-element';
-import { navigate } from '../src/lit-redux-router';
-import store from './store';
+import { navigate } from '../src/lit-redux-router.js';
+import store from './store.js';
 
 class MyContact extends LitElement {
   @property({ type: String })

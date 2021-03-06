@@ -1,5 +1,5 @@
-import { addRoute, navigate, setActiveRoute } from '../actions';
-import { checkNavigation } from '../service';
+import { addRoute, navigate, setActiveRoute } from '../actions.js';
+import { checkNavigation } from '../service.js';
 
 jest.mock('../service', () => ({
   checkNavigation: jest.fn(),

@@ -1,5 +1,5 @@
 import deepFreeze from 'deep-freeze';
-import reducer from '../reducer';
+import reducer from '../reducer.js';
 
 describe('router reducer', () => {
   it('returns default state', () => {

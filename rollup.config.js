@@ -39,7 +39,7 @@ export default isServe
         format: 'esm',
         sourcemap: true,
       },
-      external: ['lit-element', 'lit-html', 'lit-html/directives/unsafe-html', 'pwa-helpers'],
+      external: ['lit-element', 'lit-html', 'lit-html/directives/unsafe-html.js', 'pwa-helpers'],
       onwarn,
       plugins: [
         minifyHTML(),

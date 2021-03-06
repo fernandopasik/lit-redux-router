@@ -1,13 +1,13 @@
 import type { TemplateResult } from 'lit-element';
 import { customElement, html, internalProperty, LitElement, property } from 'lit-element';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
-import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer';
+import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import type { Store } from 'redux';
 import type { ReadonlyDeep } from 'type-fest';
-import { addRoute, setActiveRoute } from './actions';
-import type { State } from './selectors';
-import { getRouteParams, isRouteActive } from './selectors';
+import { addRoute, setActiveRoute } from './actions.js';
+import type { State } from './selectors.js';
+import { getRouteParams, isRouteActive } from './selectors.js';
 
 let routerInstalled = false;
 
