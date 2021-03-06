@@ -29,7 +29,7 @@ export default isServe
         html({
           template: './demo/index.html',
         }),
-        serve({ contentBase: 'docs' }),
+        serve({ contentBase: 'docs', historyApiFallback: true }),
       ],
     }
   : {
