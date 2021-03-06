@@ -18,7 +18,9 @@
   "contributors": [
     "Grant Hutchinson <grant@hutchdev.ca> (https://github.com/hutchgrant)",
     "Andrew Noblet (https://github.com/anoblet)",
-    "Zain Afzal (https://github.com/zainafzal08)"
+    "Zain Afzal (https://github.com/zainafzal08)",
+    "Waxolunist (https://github.com/Waxolunist)",
+    "bnf (https://github.com/bnf)"
   ],
   "sideEffects": false,
   "type": "module",
