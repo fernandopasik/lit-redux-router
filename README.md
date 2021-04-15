@@ -15,7 +15,7 @@
 [badge-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router/branch/master/graph/badge.svg
 [badge-sec]: https://snyk.io/test/github/fernandopasik/lit-redux-router/badge.svg?targetFile=package.json
 [badge-contributors]: https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square
-[badge-version]: https://img.shields.io/npm/v/lit-redux-router.svg
+[badge-version]: https://img.shields.io/npm/v/lit-redux-router.svg?logo=npm
 [badge-downloads]: https://img.shields.io/npm/dm/lit-redux-router.svg
 [badge-wc]: https://img.shields.io/badge/webcomponents.org-published-blue.svg
 [url-size]: https://unpkg.com/lit-redux-router/lit-redux-router.min.js 'Gzip Bundle Size'
