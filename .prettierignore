@@ -1,0 +1,12 @@
+node_modules
+yarn*.*
+.DS_Store
+.all-contributorsrc
+.editorconfig
+.gitattributes
+.husky
+.*ignore
+LICENSE
+/coverage
+/lib
+/lit-redux-router.*
