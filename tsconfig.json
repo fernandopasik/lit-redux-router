@@ -23,7 +23,7 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "target": "es2017"
+    "target": "es2019"
   },
   "exclude": ["**/__mocks__/**", "**/__tests__/**", "**/*.spec.*"],
   "include": ["src/**/*"]
