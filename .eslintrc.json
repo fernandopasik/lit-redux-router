@@ -7,7 +7,7 @@
     "plugin:lit-a11y/recommended",
     "plugin:lit/all",
     "plugin:wc/best-practice",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
   "env": { "browser": true },
   "overrides": [
