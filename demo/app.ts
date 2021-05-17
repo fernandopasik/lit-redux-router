@@ -43,7 +43,7 @@ class MyApp extends LitElement {
   }
 
   public async importDocs(): Promise<void> {
-    await import('./docs');
+    await import('./docs.js');
   }
 
   public render(): TemplateResult {
