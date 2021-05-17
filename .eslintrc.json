@@ -11,7 +11,13 @@
   ],
   "env": { "browser": true },
   "overrides": [
-    { "files": ["*.spec.*"], "rules": { "@typescript-eslint/no-magic-numbers": "off" } }
+    {
+      "files": ["*.spec.*"],
+      "rules": {
+        "@typescript-eslint/no-magic-numbers": "off",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+      }
+    }
   ],
   "parserOptions": { "project": "./tsconfig.all.json" },
   "rules": {
