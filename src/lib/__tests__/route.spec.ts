@@ -64,14 +64,14 @@ describe('route element', () => {
   });
 
   it('defines the custom element', () => {
-    connectRouter((mockStore({}) as unknown) as TestStore);
+    connectRouter(mockStore({}) as unknown as TestStore);
 
     expect(customElement).toHaveBeenCalledWith('lit-route');
   });
 
   describe('first updated', () => {
     it('installs router', () => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
 
       route.firstUpdated();
@@ -80,7 +80,7 @@ describe('route element', () => {
     });
 
     it('installs router only once', () => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
       const route2 = new Route();
 
@@ -91,7 +91,7 @@ describe('route element', () => {
     });
 
     it('registers the route if path present', () => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
       const path = '/1';
@@ -105,7 +105,7 @@ describe('route element', () => {
     });
 
     it('does not register the route if path not present', () => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
 
@@ -117,7 +117,7 @@ describe('route element', () => {
     });
 
     it('can set active route', () => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
       const spy1 = jest.spyOn(pwaHelpers, 'installRouter');
       const spy2 = jest.spyOn(actions, 'setActiveRoute');
@@ -138,7 +138,7 @@ describe('route element', () => {
 
   describe('state changed', () => {
     it('can check if route active', () => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
       const state = { activeRoute: '/' };
       const path = '/1';
@@ -154,7 +154,7 @@ describe('route element', () => {
     });
 
     it('can get params', () => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
       const state = {};
       const path = '/1';
@@ -173,7 +173,7 @@ describe('route element', () => {
 
   describe('render', () => {
     beforeAll(() => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
     });
 
     it('if not active returns empty', () => {
@@ -256,7 +256,7 @@ describe('route element', () => {
     });
 
     describe('with dynamic imported components without loading component', () => {
-      const importFile = async (): Promise<unknown> => import('../../lit-redux-router');
+      const importFile = async (): Promise<unknown> => import('../../lit-redux-router.js');
 
       it('before resolve completes', () => {
         const route = new Route();
@@ -296,7 +296,7 @@ describe('route element', () => {
       });
     });
     describe('with dynamic imported components with loading component', () => {
-      const importFile = async (): Promise<unknown> => import('../../lit-redux-router');
+      const importFile = async (): Promise<unknown> => import('../../lit-redux-router.js');
 
       it('before resolve completes', () => {
         const route = new Route();
@@ -383,7 +383,7 @@ describe('route element', () => {
 
   describe('nested routes', () => {
     it('composes and sets the path', () => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
       route.path = '/second';
@@ -403,7 +403,7 @@ describe('route element', () => {
     });
 
     it('does not compose and return its path when no child route', () => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
       route.path = '/second';
@@ -420,7 +420,7 @@ describe('route element', () => {
     });
 
     it('parent routes match with wildcard', () => {
-      connectRouter((mockStore({}) as unknown) as TestStore);
+      connectRouter(mockStore({}) as unknown as TestStore);
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
       route.path = '/about';
