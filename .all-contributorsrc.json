@@ -3,9 +3,7 @@
   "projectOwner": "fernandopasik",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": [
-    "README.md"
-  ],
+  "files": ["README.md"],
   "imageSize": 100,
   "commit": true,
   "commitConvention": "angular",
@@ -15,63 +13,42 @@
       "name": "Fernando Pasik",
       "avatar_url": "https://avatars1.githubusercontent.com/u/1301335?v=4",
       "profile": "https://fernandopasik.com",
-      "contributions": [
-        "bug",
-        "code",
-        "doc",
-        "ideas"
-      ]
+      "contributions": ["bug", "code", "doc", "ideas"]
     },
     {
       "login": "hutchgrant",
       "name": "Grant Hutchinson",
       "avatar_url": "https://avatars3.githubusercontent.com/u/1429612?v=4",
       "profile": "https://github.com/hutchgrant",
-      "contributions": [
-        "bug",
-        "code",
-        "doc",
-        "ideas"
-      ]
+      "contributions": ["bug", "code", "doc", "ideas"]
     },
     {
       "login": "anoblet",
       "name": "Andrew Noblet",
       "avatar_url": "https://avatars0.githubusercontent.com/u/7674171?v=4",
       "profile": "https://github.com/anoblet",
-      "contributions": [
-        "bug",
-        "code"
-      ]
+      "contributions": ["bug", "code"]
     },
     {
       "login": "zainafzal08",
       "name": "Zain Afzal",
       "avatar_url": "https://avatars3.githubusercontent.com/u/12245732?v=4",
       "profile": "http://www.zainafzal.com",
-      "contributions": [
-        "doc"
-      ]
+      "contributions": ["doc"]
     },
     {
       "login": "Waxolunist",
       "name": "Christian Sterzl",
       "avatar_url": "https://avatars2.githubusercontent.com/u/689270?v=4",
       "profile": "http://christian.sterzl.info",
-      "contributions": [
-        "bug",
-        "code"
-      ]
+      "contributions": ["bug", "code"]
     },
     {
       "login": "bnf",
       "name": "Benjamin Franzke",
       "avatar_url": "https://avatars.githubusercontent.com/u/473155?v=4",
       "profile": "https://bnf.dev",
-      "contributions": [
-        "bug",
-        "code"
-      ]
+      "contributions": ["bug", "code"]
     }
   ],
   "contributorsPerLine": 7

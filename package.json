@@ -32,6 +32,7 @@
     "/lit-redux-router.*"
   ],
   "scripts": {
+    "all-contributors": "all-contributors --config .all-contributorsrc.json",
     "prebuild": "del lib lit-redux-router.*",
     "build": "tsc && rollup -c",
     "check-types": "tsc --noEmit -p tsconfig.all.json",
