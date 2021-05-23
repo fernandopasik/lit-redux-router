@@ -1,14 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "allowJs": true,
-    "declaration": false,
-    "declarationMap": false,
-    "inlineSources": false,
-    "noEmit": true,
-    "outDir": "docs",
-    "sourceMap": false
-  },
+  "compilerOptions": { "allowJs": true, "noEmit": true, "outDir": "docs" },
   "exclude": ["/lib", "/lit-redux-router.*"],
   "include": [".**/**/*", "**/*"]
 }

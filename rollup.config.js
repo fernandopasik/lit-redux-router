@@ -22,6 +22,7 @@ export default isServe
       output: {
         dir: 'docs',
         format: 'esm',
+        sourcemap: true,
       },
       plugins: [
         typescript({ tsconfig: 'tsconfig.all.json' }),
