@@ -25,7 +25,16 @@ export default isServe
         sourcemap: true,
       },
       plugins: [
-        typescript({ tsconfig: 'tsconfig.all.json' }),
+        typescript({
+          tsconfig: 'tsconfig.all.json',
+          exclude: [
+            '/lib',
+            '/lit-redux-router.*',
+            '**/__mocks__/**',
+            '**/__tests__/**',
+            '**/*.spec.*',
+          ],
+        }),
         resolve(),
         html({
           template: './demo/index.html',
