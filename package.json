@@ -43,7 +43,7 @@
     "lit-analyze": "lit-analyzer src --strict",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "size": "bundlesize",
+    "size": "bundlewatch",
     "start": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -69,7 +69,7 @@
     "@typescript-eslint/parser": "^4.25.0",
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "all-contributors-cli": "^6.20.0",
-    "bundlesize": "^1.0.0-beta.2",
+    "bundlewatch": "^0.3.2",
     "codecov": "^3.8.2",
     "credits-cli": "^3.1.0",
     "deep-freeze": "^0.0.1",
@@ -112,10 +112,12 @@
     "pwa-helpers": "0.x.x",
     "redux": "4.x.x"
   },
-  "bundlesize": [
-    {
-      "path": "lit-redux-router.min.js",
-      "maxSize": "1.75 kB"
-    }
-  ]
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "lit-redux-router.min.js",
+        "maxSize": "1.75 kB"
+      }
+    ]
+  }
 }
