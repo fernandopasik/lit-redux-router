@@ -51,9 +51,6 @@
     "verify": "yarn lint && yarn lit-analyze && yarn check-types && yarn test:coverage && yarn build && yarn size",
     "preversion": "yarn verify"
   },
-  "resolutions": {
-    "axios": "^0.21.1"
-  },
   "dependencies": {
     "regexparam": "^2.0.0"
   },
