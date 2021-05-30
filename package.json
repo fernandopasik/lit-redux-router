@@ -16,11 +16,11 @@
   "license": "MIT",
   "author": "Fernando Pasik <fernando@pasik.com.ar> (https://fernandopasik.com)",
   "contributors": [
-    "Grant Hutchinson <grant@hutchdev.ca> (https://github.com/hutchgrant)",
     "Andrew Noblet (https://github.com/anoblet)",
-    "Zain Afzal (https://github.com/zainafzal08)",
+    "bnf (https://github.com/bnf)",
+    "Grant Hutchinson <grant@hutchdev.ca> (https://github.com/hutchgrant)",
     "Waxolunist (https://github.com/Waxolunist)",
-    "bnf (https://github.com/bnf)"
+    "Zain Afzal (https://github.com/zainafzal08)"
   ],
   "sideEffects": false,
   "type": "module",
@@ -38,18 +38,18 @@
     "check-types": "tsc --noEmit -p tsconfig.all.json",
     "clean": "del coverage lib lit-redux-router.*",
     "format": "prettier --no-error-on-unmatched-pattern --write ** ./* ./.??*",
-    "postinstall": "husky install",
     "lint": "eslint . --ext js,ts",
     "lit-analyze": "lit-analyzer src --strict",
-    "prepublishOnly": "pinst --disable",
+    "postinstall": "husky install",
     "postpublish": "pinst --enable",
+    "prepublishOnly": "pinst --disable",
+    "preversion": "yarn verify",
     "size": "bundlewatch",
     "start": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "thanks": "credits . --reporter markdown > THANKS.md",
-    "verify": "yarn lint && yarn lit-analyze && yarn check-types && yarn test:coverage && yarn build && yarn size",
-    "preversion": "yarn verify"
+    "verify": "yarn lint && yarn lit-analyze && yarn check-types && yarn test:coverage && yarn build && yarn size"
   },
   "dependencies": {
     "regexparam": "^2.0.0"
@@ -112,8 +112,8 @@
   "bundlewatch": {
     "files": [
       {
-        "path": "lit-redux-router.min.js",
-        "maxSize": "1.75 kB"
+        "maxSize": "1.75 kB",
+        "path": "lit-redux-router.min.js"
       }
     ]
   }
