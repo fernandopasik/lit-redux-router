@@ -48,7 +48,6 @@
     "start": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "thanks": "credits . --reporter markdown > THANKS.md",
     "verify": "yarn lint && yarn lit-analyze && yarn check-types && yarn test:coverage && yarn build && yarn size"
   },
   "dependencies": {
@@ -68,7 +67,6 @@
     "all-contributors-cli": "^6.20.0",
     "bundlewatch": "^0.3.2",
     "codecov": "^3.8.2",
-    "credits-cli": "^3.1.0",
     "deep-freeze": "^0.0.1",
     "del-cli": "^3.0.1",
     "eslint": "^7.27.0",
