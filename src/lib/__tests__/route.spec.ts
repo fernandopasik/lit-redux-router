@@ -61,6 +61,7 @@ describe('route element', () => {
 
   beforeEach(() => {
     customElementsGet.mockClear();
+    (pwaHelpers.installRouter as jest.MockedFunction<typeof pwaHelpers.installRouter>).mockClear();
   });
 
   it('defines the custom element', () => {
@@ -99,6 +100,7 @@ describe('route element', () => {
 
       route.firstUpdated();
 
+      expect(pwaHelpers.installRouter).toHaveBeenCalledTimes(1);
       expect(spy).toHaveBeenCalledWith(path);
 
       spy.mockRestore();
