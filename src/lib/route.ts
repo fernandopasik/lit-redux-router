@@ -9,8 +9,6 @@ import { addRoute, setActiveRoute } from './actions.js';
 import type { State } from './selectors.js';
 import { getRouteParams, isRouteActive } from './selectors.js';
 
-let routerInstalled = false;
-
 // eslint-disable-next-line @typescript-eslint/init-declarations, import/no-mutable-exports, @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
@@ -23,6 +21,8 @@ export default (store: Readonly<LazyStore & Store>): void => {
    */
   @customElement('lit-route')
   class Route extends connect(store as LazyStore & Store)(LitElement) {
+    private static routerInstalled = false;
+
     @property({ type: Boolean, reflect: true })
     public active = false;
 
@@ -51,12 +51,12 @@ export default (store: Readonly<LazyStore & Store>): void => {
     protected isResolving = false;
 
     public firstUpdated(): void {
-      if (!routerInstalled) {
+      if (!Route.routerInstalled) {
         installRouter(({ pathname, search, hash }: ReadonlyDeep<Location>): void => {
           const path = window.decodeURIComponent(pathname + search + hash);
           store.dispatch(setActiveRoute(path));
         });
-        routerInstalled = true;
+        Route.routerInstalled = true;
       }
 
       let current: HTMLElement | Route | null = this.parentElement;
