@@ -85,11 +85,11 @@ export default (store: Readonly<LazyStore & Store>): void => {
       }
     }
 
-    public stateChanged(state: ReadonlyDeep<State>): void {
-      const isActive = isRouteActive(state, this.path);
+    public stateChanged(newState: ReadonlyDeep<State>): void {
+      const isActive = isRouteActive(newState, this.path);
       const hasBecomeActive = !this.active && isActive;
       this.active = isActive;
-      this.params = getRouteParams(state, this.path);
+      this.params = getRouteParams(newState, this.path);
 
       if (this.active && this.resolve) {
         this.setResolving();
