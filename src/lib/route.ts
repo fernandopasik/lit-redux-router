@@ -1,6 +1,7 @@
-import type { TemplateResult } from 'lit-element';
-import { customElement, html, internalProperty, LitElement, property } from 'lit-element';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import type { TemplateResult } from 'lit';
+import { html, LitElement } from 'lit';
+import { customElement, property, state } from 'lit/decorators.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import type { Store } from 'redux';
@@ -44,10 +45,10 @@ export default (store: Readonly<LazyStore & Store>): void => {
     @property({ type: Boolean })
     public scrollDisable = false;
 
-    @internalProperty()
+    @state()
     protected params: Record<string, string> = {};
 
-    @internalProperty()
+    @state()
     protected isResolving = false;
 
     public firstUpdated(): void {

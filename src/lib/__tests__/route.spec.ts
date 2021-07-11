@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return */
-import { customElement } from 'lit-element';
+import { customElement } from 'lit/decorators.js';
 import * as pwaHelpers from 'pwa-helpers';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import type { Store } from 'redux';
@@ -11,7 +11,7 @@ import * as selectors from '../selectors.js';
 // eslint-disable-next-line @typescript-eslint/no-type-alias
 type TestStore = LazyStore & Store<Record<string, unknown>>;
 
-jest.mock('lit-element', () => ({
+jest.mock('lit', () => ({
   LitElement: class LitElement {
     public querySelector(): null {
       return null;
@@ -22,12 +22,15 @@ jest.mock('lit-element', () => ({
       .map((string: string, index: number) => `${string}${String(values[index] ?? '')}`)
       .join(''),
   ),
-  customElement: jest.fn(),
-  internalProperty: jest.fn(),
-  property: jest.fn(),
 }));
 
-jest.mock('lit-html/directives/unsafe-html.js', () => ({
+jest.mock('lit/decorators.js', () => ({
+  customElement: jest.fn(),
+  property: jest.fn(),
+  state: jest.fn(),
+}));
+
+jest.mock('lit/directives/unsafe-html.js', () => ({
   unsafeHTML: jest.fn((html) => html),
 }));
 
