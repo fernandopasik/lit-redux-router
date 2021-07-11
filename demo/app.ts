@@ -1,5 +1,5 @@
-import type { TemplateResult } from 'lit-element';
-import { html, LitElement } from 'lit-element';
+import type { TemplateResult } from 'lit';
+import { html, LitElement } from 'lit';
 import type { Action } from 'redux';
 import { connectRouter, navigate } from '../src/lit-redux-router.js';
 import './contact.js';
