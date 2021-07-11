@@ -50,6 +50,9 @@
     "test:coverage": "jest --coverage",
     "verify": "yarn lint && yarn lit-analyze && yarn check-types && yarn test:coverage && yarn build && yarn size"
   },
+  "resolutions": {
+    "glob-parent": "^5.1.2"
+  },
   "dependencies": {
     "regexparam": "^2.0.0"
   },
