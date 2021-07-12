@@ -38,7 +38,7 @@ Install this library and its peer dependencies
 
 ```sh
 yarn add lit-redux-router
-yarn add lit-html lit-element pwa-helpers redux
+yarn add lit pwa-helpers redux
 ```
 
 ## Usage
