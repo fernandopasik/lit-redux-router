@@ -56,7 +56,7 @@ export const store = createStore(reducer, compose(lazyReducerEnhancer(combineRed
 Then the router needs to **connect to a redux store**.
 
 ```js
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from 'lit';
 import { connectRouter } from 'lit-redux-router';
 import store from './store.js';
 
