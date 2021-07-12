@@ -1,5 +1,5 @@
 import type { TemplateResult } from 'lit';
-import { html, LitElement } from 'lit';
+import { css, html, LitElement } from 'lit';
 import type { Action } from 'redux';
 import { connectRouter, navigate } from '../src/lit-redux-router.js';
 import './contact.js';
@@ -34,6 +34,60 @@ const testReducer = (
 store.addReducers({ test: testReducer });
 
 class MyApp extends LitElement {
+  public static styles = css`
+    :host {
+      font-family: sans-serif;
+      font-weight: 300;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .app-bar {
+      color: white;
+      background-color: #2196f3;
+      font-size: 20px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .app-content {
+      padding: 16px;
+    }
+
+    .nav-bar {
+      background-color: white;
+      text-align: center;
+    }
+
+    .nav-bar a {
+      display: inline-block;
+      padding: 16px;
+    }
+    .spacer {
+      height: 1600px;
+    }
+
+    .scrollLink {
+      color: blue;
+    }
+
+    .scrollLink:hover {
+      color: red;
+    }
+  `;
+
   public goToAbout(): void {
     store.dispatch(navigate('/about'));
   }
@@ -48,59 +102,6 @@ class MyApp extends LitElement {
 
   public render(): TemplateResult {
     return html`
-      <style>
-        :host {
-          font-family: sans-serif;
-          font-weight: 300;
-        }
-
-        a {
-          text-decoration: none;
-          color: inherit;
-        }
-
-        a:hover {
-          text-decoration: underline;
-        }
-
-        h1 {
-          margin-top: 0;
-          margin-bottom: 16px;
-        }
-
-        .app-bar {
-          color: white;
-          background-color: #2196f3;
-          font-size: 20px;
-          padding: 16px;
-          text-align: center;
-        }
-
-        .app-content {
-          padding: 16px;
-        }
-
-        .nav-bar {
-          background-color: white;
-          text-align: center;
-        }
-
-        .nav-bar a {
-          display: inline-block;
-          padding: 16px;
-        }
-        .spacer {
-          height: 1600px;
-        }
-
-        .scrollLink {
-          color: blue;
-        }
-
-        .scrollLink:hover {
-          color: red;
-        }
-      </style>
       <div class="app-bar">Example App</div>
       <nav class="nav-bar">
         <a href="/">home</a>
