@@ -3,6 +3,7 @@
   "version": "0.18.1",
   "description": "Declarative way of routing for lit powered by pwa-helpers and redux",
   "keywords": [
+    "lit",
     "lit-element",
     "lit-html",
     "redux",
