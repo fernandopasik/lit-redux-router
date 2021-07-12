@@ -115,7 +115,7 @@ class MyApp extends LitElement {
         <lit-route><h1>404</h1></lit-route>
         <lit-route path="/">
           <h1>Home</h1>
-          <button @click="${this.goToAbout}">learn more about us</button>
+          <button @click=${this.goToAbout}>learn more about us</button>
         </lit-route>
         <lit-route path="/products/:id?/:name?" component="my-product"></lit-route>
         <lit-route path="/about">
@@ -129,12 +129,12 @@ class MyApp extends LitElement {
         <lit-route
           path="/docs"
           component="docs-page"
-          .resolve="${this.importDocs}"
-          .scrollOpt="${{ behavior: 'smooth', block: 'end', inline: 'nearest' }}"
+          .resolve=${this.importDocs}
+          .scrollOpt=${{ behavior: 'smooth', block: 'end', inline: 'nearest' }}
           loading="my-loading"
         ></lit-route>
         <div class="spacer"></div>
-        <button @click="${this.triggerStateChange}">trigger other state change</button>
+        <button @click=${this.triggerStateChange}>trigger other state change</button>
         <br />
         <a href="/contact" class="scrollLink">Scroll disabled</a><br />
         <a href="/docs" class="scrollLink">Scroll to top smoothly and switch to docs component</a>

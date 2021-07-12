@@ -41,13 +41,13 @@ class MyContact extends LitElement {
       <h1>Contact</h1>
       <p>
         <label for="name">name</label>
-        <input id="name" name="name" .value=${this.name} @input="${this.save('name')}" />
+        <input id="name" name="name" .value=${this.name} @input=${this.save('name')} />
       </p>
       <p>
         <label for="email">email</label>
-        <input id="email" name="email" .value=${this.email} @input="${this.save('email')}" />
+        <input id="email" name="email" .value=${this.email} @input=${this.save('email')} />
       </p>
-      <button @click="${this.submit}">submit</button>
+      <button @click=${this.submit}>submit</button>
     `;
   }
 }
