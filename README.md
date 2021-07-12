@@ -26,7 +26,7 @@
 [url-version]: https://www.npmjs.com/package/lit-redux-router 'npm version'
 [url-downloads]: https://www.npmjs.com/package/lit-redux-router 'npm downloads'
 
-Declarative way of routing for [lit-html](https://github.com/Polymer/lit-html) powered by [pwa-helpers](https://github.com/Polymer/pwa-helpers), [redux](https://redux.js.org/) and [lit-element](https://github.com/Polymer/lit-element).
+Declarative way of routing for [lit](https://github.com/lit/lit) powered by [pwa-helpers](https://github.com/Polymer/pwa-helpers) and [redux](https://redux.js.org/).
 
 A minimal router solution (~1.7 kb Gzipped) that consist in using `lit-route` elements and **connecting** them to the store.
 
