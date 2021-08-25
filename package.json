@@ -1,7 +1,27 @@
 {
   "name": "lit-redux-router",
   "version": "0.19.2",
+  "type": "module",
   "description": "Declarative way of routing for lit powered by pwa-helpers and redux",
+  "repository": "fernandopasik/lit-redux-router",
+  "homepage": "https://github.com/fernandopasik/lit-redux-router",
+  "bugs": "https://github.com/fernandopasik/lit-redux-router/issues",
+  "author": "Fernando Pasik <fernando@pasik.com.ar> (https://fernandopasik.com)",
+  "contributors": [
+    "Andrew Noblet (https://github.com/anoblet)",
+    "bnf (https://github.com/bnf)",
+    "Grant Hutchinson <grant@hutchdev.ca> (https://github.com/hutchgrant)",
+    "Waxolunist (https://github.com/Waxolunist)",
+    "Zain Afzal (https://github.com/zainafzal08)"
+  ],
+  "license": "MIT",
+  "main": "lit-redux-router.js",
+  "module": "lit-redux-router.js",
+  "typings": "lit-redux-router.d.ts",
+  "files": [
+    "/lib",
+    "/lit-redux-router.*"
+  ],
   "keywords": [
     "lit",
     "lit-element",
@@ -11,30 +31,8 @@
     "routing",
     "web-components"
   ],
-  "homepage": "https://github.com/fernandopasik/lit-redux-router",
-  "bugs": "https://github.com/fernandopasik/lit-redux-router/issues",
-  "repository": "fernandopasik/lit-redux-router",
-  "license": "MIT",
-  "author": "Fernando Pasik <fernando@pasik.com.ar> (https://fernandopasik.com)",
-  "contributors": [
-    "Andrew Noblet (https://github.com/anoblet)",
-    "bnf (https://github.com/bnf)",
-    "Grant Hutchinson <grant@hutchdev.ca> (https://github.com/hutchgrant)",
-    "Waxolunist (https://github.com/Waxolunist)",
-    "Zain Afzal (https://github.com/zainafzal08)"
-  ],
-  "sideEffects": false,
-  "type": "module",
-  "main": "lit-redux-router.js",
-  "module": "lit-redux-router.js",
-  "typings": "lit-redux-router.d.ts",
-  "files": [
-    "/lib",
-    "/lit-redux-router.*"
-  ],
   "scripts": {
     "all-contributors": "all-contributors --config .all-contributorsrc.json",
-    "prebuild": "del lib lit-redux-router.*",
     "build": "tsc && rollup -c",
     "check-types": "tsc --noEmit -p tsconfig.all.json",
     "clean": "del coverage lib lit-redux-router.*",
@@ -42,6 +40,7 @@
     "lint": "eslint . --ext js,ts",
     "lit-analyze": "lit-analyzer src --strict",
     "postpublish": "pinst --enable",
+    "prebuild": "del lib lit-redux-router.*",
     "prepare": "husky install",
     "prepublishOnly": "pinst --disable",
     "preversion": "yarn verify",
@@ -51,8 +50,10 @@
     "test:coverage": "jest --coverage",
     "verify": "yarn lint && yarn lit-analyze && yarn check-types && yarn test:coverage && yarn build && yarn size"
   },
-  "resolutions": {
-    "glob-parent": "^5.1.2"
+  "peerDependencies": {
+    "lit": "2.x.x",
+    "pwa-helpers": "0.x.x",
+    "redux": "4.x.x"
   },
   "dependencies": {
     "regexparam": "^2.0.0"
@@ -104,11 +105,10 @@
     "type-fest": "^2.0.0",
     "typescript": "^4.3.5"
   },
-  "peerDependencies": {
-    "lit": "2.x.x",
-    "pwa-helpers": "0.x.x",
-    "redux": "4.x.x"
+  "resolutions": {
+    "glob-parent": "^5.1.2"
   },
+  "sideEffects": false,
   "bundlewatch": {
     "files": [
       {
