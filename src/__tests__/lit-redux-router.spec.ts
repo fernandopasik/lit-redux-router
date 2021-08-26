@@ -14,7 +14,7 @@ const mockStore = configureStore([]);
 
 describe('lit redux router', () => {
   it('connects router to reducer', () => {
-    const store = (mockStore({}) as unknown) as LazyStore & Store<Record<string, unknown>>;
+    const store = mockStore({}) as unknown as LazyStore & Store<Record<string, unknown>>;
     const addReducers = jest.fn();
     store.addReducers = addReducers;
     connectRouter(store);
@@ -22,7 +22,7 @@ describe('lit redux router', () => {
   });
 
   it('creates the route component connected to store', () => {
-    const store = (mockStore({}) as unknown) as LazyStore & Store<Record<string, unknown>>;
+    const store = mockStore({}) as unknown as LazyStore & Store<Record<string, unknown>>;
     const addReducers = jest.fn();
     store.addReducers = addReducers;
     connectRouter(store);
