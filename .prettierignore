@@ -1,9 +1,5 @@
-.DS_Store
 node_modules
 yarn*.*
-.editorconfig
-.gitattributes
-.*ignore
 /LICENSE
 /coverage
 /lib
