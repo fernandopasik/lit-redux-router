@@ -93,6 +93,7 @@
     "prettier": "^2.3.2",
     "prettier-plugin-organize-imports": "^2.3.3",
     "prettier-plugin-pkg": "^0.10.0",
+    "prettier-plugin-sh": "^0.7.1",
     "pwa-helpers": "^0.9.1",
     "redux": "^4.1.0",
     "redux-mock-store": "^1.5.4",
