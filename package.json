@@ -37,6 +37,7 @@
     "check-types": "tsc --noEmit -p tsconfig.all.json",
     "clean": "del coverage lib lit-redux-router.*",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "eslint . --ext js,ts",
     "lit-analyze": "lit-analyzer src --strict",
     "postpublish": "pinst --enable",
