@@ -74,34 +74,34 @@ describe('route element', () => {
   });
 
   describe('first updated', () => {
-    it('installs router', () => {
+    it('installs router', async () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
 
-      route.firstUpdated();
+      await route.firstUpdated();
 
       expect(pwaHelpers.installRouter).toHaveBeenCalledTimes(1);
     });
 
-    it('installs router only once', () => {
+    it('installs router only once', async () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
       const route2 = new Route();
 
-      route.firstUpdated();
-      route2.firstUpdated();
+      await route.firstUpdated();
+      await route2.firstUpdated();
 
       expect(pwaHelpers.installRouter).toHaveBeenCalledTimes(1);
     });
 
-    it('registers the route if path present', () => {
+    it('registers the route if path present', async () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
       const path = '/1';
       route.path = path;
 
-      route.firstUpdated();
+      await route.firstUpdated();
 
       expect(pwaHelpers.installRouter).toHaveBeenCalledTimes(1);
       expect(spy).toHaveBeenCalledWith(path);
@@ -109,19 +109,19 @@ describe('route element', () => {
       spy.mockRestore();
     });
 
-    it('does not register the route if path not present', () => {
+    it('does not register the route if path not present', async () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
 
-      route.firstUpdated();
+      await route.firstUpdated();
 
       expect(spy).not.toHaveBeenCalled();
 
       spy.mockRestore();
     });
 
-    it('can set active route', () => {
+    it('can set active route', async () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
       const spy1 = jest.spyOn(pwaHelpers, 'installRouter');
@@ -130,7 +130,7 @@ describe('route element', () => {
       const search = '?test=testing';
       const hash = '#example';
 
-      route.firstUpdated();
+      await route.firstUpdated();
       const cb = spy1.mock.results[0].value;
       cb({ pathname, search, hash });
 
@@ -387,7 +387,7 @@ describe('route element', () => {
   });
 
   describe('nested routes', () => {
-    it('composes and sets the path', () => {
+    it('composes and sets the path', async () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
@@ -399,7 +399,7 @@ describe('route element', () => {
         .spyOn(route.parentElement, 'closest')
         .mockReturnValueOnce(route.parentElement);
 
-      route.firstUpdated();
+      await route.firstUpdated();
 
       expect(route).toHaveProperty('path', '/first/second');
 
@@ -407,7 +407,7 @@ describe('route element', () => {
       spy2.mockRestore();
     });
 
-    it('does not compose and return its path when no child route', () => {
+    it('does not compose and return its path when no child route', async () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
@@ -416,7 +416,7 @@ describe('route element', () => {
       route.parentElement.closest = (): void => undefined;
       const spy2 = jest.spyOn(route.parentElement, 'closest').mockReturnValueOnce(null);
 
-      route.firstUpdated();
+      await route.firstUpdated();
 
       expect(route).toHaveProperty('path', '/second');
 
@@ -424,7 +424,7 @@ describe('route element', () => {
       spy2.mockRestore();
     });
 
-    it('parent routes match with wildcard', () => {
+    it('parent routes match with wildcard', async () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const spy = jest.spyOn(actions, 'addRoute');
       const route = new Route();
@@ -433,7 +433,7 @@ describe('route element', () => {
       childRoute.path = '/me';
       const spy2 = jest.spyOn(route, 'querySelector').mockReturnValueOnce(childRoute);
 
-      route.firstUpdated();
+      await route.firstUpdated();
 
       expect(route).toHaveProperty('path', '/about.*');
 
