@@ -49,6 +49,13 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/473155?v=4",
       "profile": "https://bnf.dev",
       "contributions": ["bug", "code"]
+    },
+    {
+      "login": "ramykl",
+      "name": "Ramy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5079228?v=4",
+      "profile": "https://github.com/ramykl",
+      "contributions": ["bug", "code"]
     }
   ],
   "contributorsPerLine": 7
