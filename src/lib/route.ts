@@ -51,7 +51,8 @@ export default (store: Readonly<LazyStore & Store>): void => {
     @state()
     protected isResolving = false;
 
-    public firstUpdated(): void {
+    public async firstUpdated(): Promise<void> {
+      await this.updateComplete;
       if (!Route.routerInstalled) {
         installRouter(({ pathname, search, hash }: ReadonlyDeep<Location>): void => {
           const path = window.decodeURIComponent(pathname + search + hash);
