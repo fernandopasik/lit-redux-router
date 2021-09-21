@@ -1,30 +1,18 @@
 # Lit Redux Router
 
-[![Gzip Bundle Size][badge-size]][url-size]
-[![Build Status][badge-ci]][url-ci]
-[![Test Coverage Status][badge-cov]][url-cov]
-[![Known Vulnerabilities][badge-sec]][url-sec]
+<!-- BADGES - START -->
 
-[![All Contributors][badge-contributors]](#contributors-)
-[![npm version][badge-version]][url-version]
-[![npm downloads][badge-downloads]][url-downloads]
-[![Published on webcomponents.org][badge-wc]][url-wc]
+[![Gzip Bundle Size](https://img.badgesize.io/https://unpkg.com/lit-redux-router/lit-redux-router.min.js?compression=gzip)](https://unpkg.com/lit-redux-router/lit-redux-router.min.js 'Gzip Bundle Size')
+[![Build Status](https://github.com/fernandopasik/lit-redux-router/actions/workflows/main.yml/badge.svg)](https://github.com/fernandopasik/lit-redux-router/actions/workflows/main.yml 'Build Status')
+[![Coverage Status](https://codecov.io/gh/fernandopasik/lit-redux-router/branch/master/graph/badge.svg)](https://codecov.io/gh/fernandopasik/lit-redux-router 'Coverage Status')
+[![Known Vulnerabilities](https://snyk.io/test/github/fernandopasik/lit-redux-router/badge.svg?targetFile=package.json)](https://snyk.io/test/github/fernandopasik/lit-redux-router?targetFile=package.json 'Known Vulnerabilities')
 
-[badge-size]: http://img.badgesize.io/https://unpkg.com/lit-redux-router/lit-redux-router.min.js?compression=gzip
-[badge-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router.svg?style=svg
-[badge-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router/branch/master/graph/badge.svg
-[badge-sec]: https://snyk.io/test/github/fernandopasik/lit-redux-router/badge.svg?targetFile=package.json
-[badge-contributors]: https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square
-[badge-version]: https://img.shields.io/npm/v/lit-redux-router.svg?logo=npm
-[badge-downloads]: https://img.shields.io/npm/dm/lit-redux-router.svg
-[badge-wc]: https://img.shields.io/badge/webcomponents.org-published-blue.svg
-[url-size]: https://unpkg.com/lit-redux-router/lit-redux-router.min.js 'Gzip Bundle Size'
-[url-wc]: https://webcomponents.org/element/lit-redux-router 'Webcomponents url'
-[url-ci]: https://circleci.com/gh/fernandopasik/lit-redux-router 'Build Status'
-[url-cov]: https://codecov.io/gh/fernandopasik/lit-redux-router 'Coverage Status'
-[url-sec]: https://snyk.io/test/github/fernandopasik/lit-redux-router?targetFile=package.json 'Known Vulnerabilities'
-[url-version]: https://www.npmjs.com/package/lit-redux-router 'npm version'
-[url-downloads]: https://www.npmjs.com/package/lit-redux-router 'npm downloads'
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
+[![npm version](https://img.shields.io/npm/v/lit-redux-router.svg?logo=npm)](https://www.npmjs.com/package/lit-redux-router 'npm version')
+[![npm downloads](https://img.shields.io/npm/dm/lit-redux-router.svg)](https://www.npmjs.com/package/lit-redux-router 'npm downloads')
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://webcomponents.org/element/lit-redux-router 'Webcomponents url')
+
+<!-- BADGES - END -->
 
 Declarative way of routing for [lit](https://github.com/lit/lit) powered by [pwa-helpers](https://github.com/Polymer/pwa-helpers) and [redux](https://redux.js.org/).
 
