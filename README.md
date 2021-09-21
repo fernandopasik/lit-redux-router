@@ -4,7 +4,7 @@
 
 [![Gzip Bundle Size](https://img.badgesize.io/https://unpkg.com/lit-redux-router/lit-redux-router.min.js?compression=gzip)](https://unpkg.com/lit-redux-router/lit-redux-router.min.js 'Gzip Bundle Size')
 [![Build Status](https://github.com/fernandopasik/lit-redux-router/actions/workflows/main.yml/badge.svg)](https://github.com/fernandopasik/lit-redux-router/actions/workflows/main.yml 'Build Status')
-[![Coverage Status](https://codecov.io/gh/fernandopasik/lit-redux-router/branch/master/graph/badge.svg)](https://codecov.io/gh/fernandopasik/lit-redux-router 'Coverage Status')
+[![Coverage Status](https://codecov.io/gh/fernandopasik/lit-redux-router/branch/main/graph/badge.svg)](https://codecov.io/gh/fernandopasik/lit-redux-router 'Coverage Status')
 [![Known Vulnerabilities](https://snyk.io/test/github/fernandopasik/lit-redux-router/badge.svg?targetFile=package.json)](https://snyk.io/test/github/fernandopasik/lit-redux-router?targetFile=package.json 'Known Vulnerabilities')
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
@@ -218,7 +218,7 @@ To scroll to the route element on load, you can set the [scrollIntoViewOptions](
 ></lit-route>
 ```
 
-Check a more comprehensive example in https://github.com/fernandopasik/lit-redux-router/blob/master/demo/
+Check a more comprehensive example in https://github.com/fernandopasik/lit-redux-router/blob/main/demo/
 
 ## Development
 
