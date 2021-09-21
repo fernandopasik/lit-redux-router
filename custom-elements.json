@@ -1,0 +1,81 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "lit-route",
+      "path": "./src/lib/route.ts",
+      "description": "Element that renders its content or a component\nwhen browser route matches",
+      "attributes": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "component",
+          "type": "string | undefined"
+        },
+        {
+          "name": "path",
+          "type": "string | undefined"
+        },
+        {
+          "name": "resolve",
+          "type": "(() => Promise<void>) | undefined"
+        },
+        {
+          "name": "loading",
+          "type": "string | undefined"
+        },
+        {
+          "name": "scrollOpt",
+          "type": "boolean | ScrollIntoViewOptions | undefined"
+        },
+        {
+          "name": "scrollDisable",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "active",
+          "attribute": "active",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "component",
+          "attribute": "component",
+          "type": "string | undefined"
+        },
+        {
+          "name": "path",
+          "attribute": "path",
+          "type": "string | undefined"
+        },
+        {
+          "name": "resolve",
+          "attribute": "resolve",
+          "type": "(() => Promise<void>) | undefined"
+        },
+        {
+          "name": "loading",
+          "attribute": "loading",
+          "type": "string | undefined"
+        },
+        {
+          "name": "scrollOpt",
+          "attribute": "scrollOpt",
+          "type": "boolean | ScrollIntoViewOptions | undefined"
+        },
+        {
+          "name": "scrollDisable",
+          "attribute": "scrollDisable",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    }
+  ]
+}
