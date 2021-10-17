@@ -51,7 +51,7 @@
     "start": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "verify": "yarn lint && yarn lit-analyze && yarn check-types && yarn test:coverage && yarn build && yarn size"
+    "verify": "yarn format:check && yarn lint && yarn lit-analyze && yarn check-types && yarn test:coverage && yarn build && yarn size"
   },
   "peerDependencies": {
     "lit": "2.x.x",
