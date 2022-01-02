@@ -74,7 +74,6 @@
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "all-contributors-cli": "^6.20.0",
     "bundlewatch": "^0.3.3",
-    "codecov": "^3.8.3",
     "deep-freeze": "^0.0.1",
     "del-cli": "^4.0.1",
     "eslint": "^8.7.0",
