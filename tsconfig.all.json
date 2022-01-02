@@ -1,6 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": { "allowJs": true, "noEmit": true, "outDir": "docs" },
-  "exclude": ["/lib", "/lit-redux-router.*"],
-  "include": [".**/**/*", "**/*"]
-}

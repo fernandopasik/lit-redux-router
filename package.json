@@ -35,8 +35,8 @@
   "scripts": {
     "all-contributors": "all-contributors --config .all-contributorsrc.json",
     "analyze": "wca analyze src --format json --outFile custom-elements.json",
-    "build": "tsc && rollup -c",
-    "check-types": "tsc --noEmit -p tsconfig.all.json",
+    "build": "tsc -p tsconfig.build.json && rollup -c",
+    "check-types": "tsc --noEmit",
     "clean": "del coverage lib lit-redux-router.*",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

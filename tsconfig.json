@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
@@ -8,13 +9,13 @@
     "lib": ["dom", "dom.iterable", "es2021"],
     "module": "ESNext",
     "moduleResolution": "node",
+    "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": ".",
     "resolveJsonModule": true,
     "rootDirs": ["src", "demo"],
     "sourceMap": true,
@@ -25,6 +26,6 @@
     "strictPropertyInitialization": true,
     "target": "es2019"
   },
-  "exclude": ["**/__mocks__/**", "**/__tests__/**", "**/*.spec.*"],
-  "include": ["src/**/*"]
+  "exclude": ["/lib", "/lit-redux-router.*"],
+  "include": [".**/**/*", "**/*"]
 }
