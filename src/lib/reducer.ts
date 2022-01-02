@@ -25,7 +25,7 @@ const initialState = {
 
 const reducer = (
   state: ReadonlyDeep<RouterState> = initialState,
-  { type = '', path = '' }: Action | Actions = {},
+  { type = '', path = '' }: ReadonlyDeep<Action | Actions> = {},
 ): RouterState => {
   switch (type) {
     case ActionTypes.NAVIGATE:
@@ -34,7 +34,10 @@ const reducer = (
         ...state,
         activeRoute: path,
         routes: Object.keys(state.routes).reduce(
-          (routes: Readonly<Record<string, Route>>, routeName: string): Record<string, Route> => ({
+          (
+            routes: ReadonlyDeep<Record<string, Route>>,
+            routeName: string,
+          ): Record<string, Route> => ({
             ...routes,
             [routeName]: refreshRoute(routeName, path),
           }),

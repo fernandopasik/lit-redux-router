@@ -132,7 +132,7 @@ export default (store: Readonly<LazyStore & Store>): void => {
 
     private getTemplate(
       component: string,
-      attributesObject?: Record<string, unknown>,
+      attributesObject?: ReadonlyDeep<Record<string, unknown>>,
     ): TemplateResult {
       const tagName = component.replace(/[^A-Za-z0-9-]/, '');
       let attributes = '';

@@ -1,6 +1,7 @@
 import type { TemplateResult } from 'lit';
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
+import type { ReadonlyDeep } from 'type-fest';
 import { navigate } from '../src/lit-redux-router.js';
 import store from './store.js';
 
@@ -11,8 +12,8 @@ class MyContact extends LitElement {
   @property({ type: String })
   protected email = '';
 
-  public save(prop: 'email' | 'name'): (event: Readonly<Event>) => void {
-    return (event: Readonly<Event>): void => {
+  public save(prop: 'email' | 'name'): (event: ReadonlyDeep<Event>) => void {
+    return (event: ReadonlyDeep<Event>): void => {
       this[prop] = (event.target as HTMLInputElement).value;
     };
   }
