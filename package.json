@@ -109,6 +109,9 @@
     "typescript": "^4.6.3",
     "web-component-analyzer": "^2.0.0-next.3"
   },
+  "overrides": {
+    "glob-parent": "6.0.2"
+  },
   "sideEffects": false,
   "bundlewatch": {
     "files": [
@@ -117,8 +120,5 @@
         "path": "lit-redux-router.min.js"
       }
     ]
-  },
-  "overrides": {
-    "glob-parent": "6.0.2"
   }
 }
