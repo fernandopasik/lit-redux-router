@@ -59,7 +59,7 @@
     "redux": "4.x.x"
   },
   "dependencies": {
-    "regexparam": "^2.0.0"
+    "regexparam": "^2.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
@@ -71,7 +71,7 @@
     "@types/redux-mock-store": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
-    "@webcomponents/webcomponentsjs": "^2.6.0",
+    "@webcomponents/webcomponentsjs": "^2.7.0",
     "all-contributors-cli": "^6.20.0",
     "bundlewatch": "^0.3.3",
     "deep-freeze": "^0.0.1",
@@ -89,7 +89,7 @@
     "jest": "^27.5.1",
     "jest-junit": "^13.0.0",
     "lint-staged": "^12.3.7",
-    "lit": "^2.2.1",
+    "lit": "^2.4.1",
     "lit-analyzer": "^1.2.1",
     "pinst": "^3.0.0",
     "prettier": "^2.8.0",
@@ -97,7 +97,7 @@
     "prettier-plugin-pkg": "^0.17.1",
     "prettier-plugin-sh": "^0.12.8",
     "pwa-helpers": "^0.9.1",
-    "redux": "^4.1.2",
+    "redux": "^4.2.0",
     "redux-mock-store": "^1.5.4",
     "rollup": "^2.70.1",
     "rollup-plugin-html2": "^3.1.0",
