@@ -52,7 +52,7 @@ export default isServe
       external: ['lit', 'lit/decorators.js', 'lit/directives/unsafe-html.js', 'pwa-helpers'],
       onwarn,
       plugins: [
-        minifyHTML(),
+        minifyHTML.default(),
         resolve(),
         terser({
           warnings: true,
