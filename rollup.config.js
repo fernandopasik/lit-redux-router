@@ -17,16 +17,16 @@ const isServe = process.env.npm_lifecycle_event === 'start';
 
 export default isServe
   ? {
-      inlineDynamicImports: true,
       input: './demo/app.ts',
       output: {
         dir: 'docs',
         format: 'esm',
+        inlineDynamicImports: true,
         sourcemap: true,
       },
       plugins: [
         typescript({
-          tsconfig: 'tsconfig.all.json',
+          tsconfig: 'tsconfig.build.json',
           exclude: [
             '/lib',
             '/lit-redux-router.*',
