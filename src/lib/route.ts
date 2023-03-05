@@ -1,5 +1,5 @@
 import type { TemplateResult } from 'lit';
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
@@ -14,6 +14,7 @@ import { getRouteParams, isRouteActive } from './selectors.js';
 export let RouteClass: any;
 
 export default (store: Readonly<LazyStore & Store>): void => {
+  //
   /**
    * Element that renders its content or a component
    * when browser route matches
@@ -114,13 +115,13 @@ export default (store: Readonly<LazyStore & Store>): void => {
       }
     }
 
-    public render(): TemplateResult {
+    public render(): TemplateResult | typeof nothing {
       if (!this.active) {
-        return html``;
+        return nothing;
       }
 
       if (this.resolve && this.isResolving) {
-        return typeof this.loading === 'undefined' ? html`` : this.getTemplate(this.loading);
+        return typeof this.loading === 'undefined' ? nothing : this.getTemplate(this.loading);
       }
 
       if (typeof this.component === 'undefined') {

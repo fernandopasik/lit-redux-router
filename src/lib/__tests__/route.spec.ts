@@ -187,7 +187,7 @@ describe('route element', () => {
 
       const rendered = route.render();
 
-      expect(rendered).toBe('');
+      expect(rendered).toBeUndefined();
     });
 
     it('with children elements', () => {
@@ -279,7 +279,7 @@ describe('route element', () => {
 
         expect(route.isResolving).toBe(true);
         const rendered = route.render();
-        expect(rendered).toBe('');
+        expect(rendered).toBeUndefined();
       });
 
       it('after resolve completes', () => {
