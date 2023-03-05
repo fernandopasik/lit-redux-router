@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/typedef, @typescript-eslint/explicit-function-return-type, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
 import resolve from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import html from 'rollup-plugin-html2';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
 import serve from 'rollup-plugin-serve';
-import { terser } from 'rollup-plugin-terser';
 
 const onwarn = (warning, warn) => {
   if (warning.code === 'THIS_IS_UNDEFINED') {
