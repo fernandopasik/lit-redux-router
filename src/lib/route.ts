@@ -5,7 +5,6 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import type { Store } from 'redux';
-import type { ReadonlyDeep } from 'type-fest';
 import { addRoute, setActiveRoute } from './actions.js';
 import type { State } from './selectors.js';
 import { getRouteParams, isRouteActive } from './selectors.js';
@@ -55,7 +54,7 @@ export default (store: Readonly<LazyStore & Store>): void => {
     public async firstUpdated(): Promise<void> {
       await this.updateComplete;
       if (!Route.routerInstalled) {
-        installRouter(({ pathname, search, hash }: ReadonlyDeep<Location>): void => {
+        installRouter(({ pathname, search, hash }: Location): void => {
           const path = window.decodeURIComponent(pathname + search + hash);
           store.dispatch(setActiveRoute(path));
         });
@@ -88,7 +87,7 @@ export default (store: Readonly<LazyStore & Store>): void => {
       }
     }
 
-    public stateChanged(newState: ReadonlyDeep<State>): void {
+    public stateChanged(newState: State): void {
       const isActive = isRouteActive(newState, this.path);
       const hasBecomeActive = !this.active && isActive;
       this.active = isActive;
@@ -133,7 +132,7 @@ export default (store: Readonly<LazyStore & Store>): void => {
 
     private getTemplate(
       component: string,
-      attributesObject?: ReadonlyDeep<Record<string, unknown>>,
+      attributesObject?: Record<string, unknown>,
     ): TemplateResult {
       const tagName = component.replace(/[^A-Za-z0-9-]/, '');
       let attributes = '';
