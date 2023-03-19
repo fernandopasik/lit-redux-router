@@ -12,7 +12,7 @@ import { getRouteParams, isRouteActive } from './selectors.js';
 // eslint-disable-next-line @typescript-eslint/init-declarations, import/no-mutable-exports, @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
-export default (store: Readonly<LazyStore & Store>): void => {
+export default (store: LazyStore & Store): void => {
   //
   /**
    * Element that renders its content or a component
@@ -21,7 +21,7 @@ export default (store: Readonly<LazyStore & Store>): void => {
    * @demo ../demo/index.html
    */
   @customElement('lit-route')
-  class Route extends connect(store as LazyStore & Store)(LitElement) {
+  class Route extends connect(store)(LitElement) {
     private static routerInstalled = false;
 
     @property({ type: Boolean, reflect: true })
