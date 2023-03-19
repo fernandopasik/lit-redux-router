@@ -107,7 +107,6 @@
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-serve": "^2.0.2",
     "ts-jest": "^29.0.5",
-    "type-fest": "^3.6.1",
     "typescript": "^5.0.2",
     "web-component-analyzer": "^2.0.0-next.4"
   },
