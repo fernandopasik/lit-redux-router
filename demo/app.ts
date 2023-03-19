@@ -18,8 +18,8 @@ const defaultState = {
 };
 
 const testReducer = (
-  state: Readonly<TestState> = defaultState,
-  { type }: Readonly<Action> = { type: '' },
+  state: TestState = defaultState,
+  { type }: Action = { type: '' },
 ): TestState => {
   switch (type) {
     case 'TEST_FALSE':

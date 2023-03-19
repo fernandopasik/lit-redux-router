@@ -13,7 +13,7 @@ export const refreshRoute = (route: string, activeRoute: string): Route => {
       ? {}
       : keys.reduce(
           (
-            list: Readonly<NonNullable<Route['params']>>,
+            list: NonNullable<Route['params']>,
             item: string,
             index: number,
           ): NonNullable<Route['params']> => ({
