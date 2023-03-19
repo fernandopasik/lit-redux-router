@@ -1,4 +1,3 @@
-import type { ReadonlyDeep } from 'type-fest';
 import type { Actions } from './actions.js';
 import { ActionTypes } from './actions.js';
 import { refreshRoute } from './service.js';
@@ -24,8 +23,8 @@ const initialState = {
 };
 
 const reducer = (
-  state: ReadonlyDeep<RouterState> = initialState,
-  { type = '', path = '' }: ReadonlyDeep<Action | Actions> = {},
+  state: RouterState = initialState,
+  { type = '', path = '' }: Action | Actions = {},
 ): RouterState => {
   switch (type) {
     case ActionTypes.NAVIGATE:
@@ -34,10 +33,7 @@ const reducer = (
         ...state,
         activeRoute: path,
         routes: Object.keys(state.routes).reduce(
-          (
-            routes: ReadonlyDeep<Record<string, Route>>,
-            routeName: string,
-          ): Record<string, Route> => ({
+          (routes: Record<string, Route>, routeName: string): Record<string, Route> => ({
             ...routes,
             [routeName]: refreshRoute(routeName, path),
           }),
