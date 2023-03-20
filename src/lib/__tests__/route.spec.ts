@@ -17,7 +17,7 @@ jest.mock('lit', () => ({
       return null;
     }
   },
-  html: jest.fn((strings: readonly string[], ...values: readonly unknown[]) =>
+  html: jest.fn((strings: string[], ...values: unknown[]) =>
     strings
       .map((string: string, index: number) => `${string}${String(values[index] ?? '')}`)
       .join(''),

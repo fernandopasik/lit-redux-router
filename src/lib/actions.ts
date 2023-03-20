@@ -7,7 +7,7 @@ export enum ActionTypes {
 }
 
 export interface Actions {
-  readonly type: string;
+  type: string;
   path: string;
 }
 
