@@ -21,6 +21,7 @@
   ],
   "parserOptions": { "project": "./tsconfig.json" },
   "rules": {
+    "@typescript-eslint/class-methods-use-this": "off",
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-magic-numbers": ["error", { "ignore": [0, 1] }],
     "@typescript-eslint/prefer-readonly-parameter-types": "off",
