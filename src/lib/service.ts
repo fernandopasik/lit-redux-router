@@ -18,7 +18,7 @@ export const refreshRoute = (route: string, activeRoute: string): Route => {
             index: number,
           ): NonNullable<Route['params']> => ({
             ...list,
-            [item]: (match && match[index + 1]) || '',
+            [item]: match?.[index + 1] ?? '',
           }),
           {},
         ),
