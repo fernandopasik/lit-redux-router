@@ -91,7 +91,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-junit": "^16.0.0",
-    "lint-staged": "^14.0.1",
+    "lint-staged": "^15.0.1",
     "lit": "^3.0.0",
     "lit-analyzer": "^1.2.1",
     "pinst": "^3.0.0",
