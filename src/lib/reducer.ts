@@ -27,7 +27,9 @@ const reducer = (
   { type = '', path = '' }: Action | Actions = {},
 ): RouterState => {
   switch (type) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
     case ActionTypes.NAVIGATE:
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison, no-fallthrough
     case ActionTypes.SET_ACTIVE_ROUTE:
       return {
         ...state,
@@ -40,6 +42,7 @@ const reducer = (
           {},
         ),
       };
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
     case ActionTypes.ADD_ROUTE:
       return {
         ...state,
