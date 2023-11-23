@@ -55,7 +55,6 @@ export default isServe
         minifyHTML.default(),
         resolve(),
         terser({
-          warnings: true,
           mangle: {
             module: true,
             properties: true,
