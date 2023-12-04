@@ -57,7 +57,7 @@
     "redux": "4.x.x"
   },
   "dependencies": {
-    "regexparam": "^2.0.1"
+    "regexparam": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
