@@ -1,3 +1,4 @@
+import type { Action } from 'redux';
 import { checkNavigation } from './service.js';
 
 export enum ActionTypes {
@@ -6,7 +7,7 @@ export enum ActionTypes {
   SET_ACTIVE_ROUTE = 'SET_ACTIVE_ROUTE',
 }
 
-export interface Actions {
+export interface Actions extends Action {
   type: string;
   path: string;
 }
