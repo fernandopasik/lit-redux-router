@@ -97,7 +97,7 @@
     "prettier-plugin-pkg": "^0.18.0",
     "prettier-plugin-sh": "^0.13.1",
     "pwa-helpers": "^0.9.1",
-    "redux": "^4.2.1",
+    "redux": "^5.0.0",
     "redux-mock-store": "^1.5.4",
     "rollup": "^4.6.0",
     "rollup-plugin-html2": "^4.0.0",
