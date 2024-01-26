@@ -347,7 +347,7 @@ describe('route element', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = async (): Promise<void> => Promise.reject();
+        route.resolve = async (): Promise<void> => Promise.reject(new Error());
         route.loading = 'my-loading';
         route.path = '/';
         const state = { activeRoute: route.path };
@@ -367,7 +367,7 @@ describe('route element', () => {
         const route = new Route();
         route.active = true;
         route.component = 'docs-page';
-        route.resolve = async (): Promise<void> => Promise.reject();
+        route.resolve = async (): Promise<void> => Promise.reject(new Error());
         route.loading = 'my-loading';
         route.path = '/';
 
