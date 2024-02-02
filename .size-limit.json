@@ -1,0 +1,7 @@
+[
+  {
+    "gzip": true,
+    "limit": "2 kB",
+    "path": "lit-redux-router.min.js"
+  }
+]

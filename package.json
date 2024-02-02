@@ -45,7 +45,7 @@
     "prebuild": "del lib lit-redux-router.*",
     "prepare": "husky",
     "preversion": "npm run verify",
-    "size": "bundlewatch",
+    "size": "size-limit",
     "start": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -65,6 +65,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@size-limit/file": "^11.0.2",
     "@types/deep-freeze": "^0.1.5",
     "@types/jest": "^29.5.12",
     "@types/mime": "^3.0.4",
@@ -73,7 +74,6 @@
     "@typescript-eslint/parser": "^6.20.0",
     "@webcomponents/webcomponentsjs": "^2.8.0",
     "all-contributors-cli": "^6.26.1",
-    "bundlewatch": "^0.3.3",
     "deep-freeze": "^0.0.1",
     "del-cli": "^5.1.0",
     "eslint": "^8.56.0",
@@ -103,6 +103,7 @@
     "rollup-plugin-html2": "^4.0.0",
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-serve": "^2.0.2",
+    "size-limit": "^11.0.2",
     "ts-jest": "^29.1.2",
     "ts-lit-plugin": "^2.0.2",
     "typescript": "^5.3.3",
@@ -113,13 +114,5 @@
     "glob-parent": "6.0.2",
     "rollup": "^4.9.6"
   },
-  "sideEffects": false,
-  "bundlewatch": {
-    "files": [
-      {
-        "maxSize": "1.77 kB",
-        "path": "lit-redux-router.min.js"
-      }
-    ]
-  }
+  "sideEffects": false
 }
