@@ -110,7 +110,6 @@
     "web-component-analyzer": "^2.0.0"
   },
   "overrides": {
-    "axios": "^1.6.3",
     "glob-parent": "6.0.2",
     "rollup": "^4.9.6"
   },
