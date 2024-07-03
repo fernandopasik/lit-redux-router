@@ -93,7 +93,7 @@
     "lit": "^3.1.2",
     "lit-analyzer": "^2.0.3",
     "prettier": "^3.2.4",
-    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-organize-imports": "^4.0.0",
     "prettier-plugin-pkg": "^0.18.1",
     "prettier-plugin-sh": "^0.14.0",
     "pwa-helpers": "^0.9.1",
