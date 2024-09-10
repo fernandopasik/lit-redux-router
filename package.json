@@ -63,6 +63,8 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@jest/globals": "^29.7.0",
+    "@literals/rollup-plugin-html-css-minifier": "^3.0.0",
+    "@rollup/plugin-html": "^1.0.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
@@ -101,8 +103,6 @@
     "redux": "^4.2.1",
     "redux-mock-store": "^1.5.4",
     "rollup": "^4.9.6",
-    "rollup-plugin-html2": "^4.0.0",
-    "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-serve": "^2.0.2",
     "size-limit": "^11.1.5",
     "ts-jest": "^29.2.5",
@@ -111,8 +111,7 @@
     "web-component-analyzer": "^2.0.0"
   },
   "overrides": {
-    "glob-parent": "6.0.2",
-    "rollup": "^4.9.6"
+    "glob-parent": "6.0.2"
   },
   "sideEffects": false
 }
