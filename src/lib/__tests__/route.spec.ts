@@ -155,6 +155,7 @@ describe('route element', () => {
       expect(spy).toHaveBeenCalledWith(state, path);
       expect(route.active).toBe(true);
       expect(window.scrollTo).not.toHaveBeenCalled();
+
       spy.mockRestore();
     });
 
@@ -278,7 +279,9 @@ describe('route element', () => {
         route.stateChanged(state);
 
         expect(route.isResolving).toBe(true);
+
         const rendered = route.render();
+
         expect(rendered).toBeUndefined();
       });
 
@@ -296,10 +299,13 @@ describe('route element', () => {
         route.stateChanged(state);
 
         expect(route.isResolving).toBe(false);
+
         const rendered = route.render();
+
         expect(rendered).toBe('<docs-page></docs-page>');
       });
     });
+
     describe('with dynamic imported components with loading component', () => {
       const importFile = async (): Promise<unknown> => import('../../lit-redux-router.js');
 
@@ -319,7 +325,9 @@ describe('route element', () => {
 
         expect(spy).toHaveBeenCalledWith(state, route.path);
         expect(route.isResolving).toBe(true);
+
         const rendered = route.render();
+
         expect(rendered).toBe('<my-loading></my-loading>');
       });
 
@@ -339,7 +347,9 @@ describe('route element', () => {
 
         expect(spy).toHaveBeenCalledWith(state, route.path);
         expect(route.isResolving).toBe(false);
+
         const rendered = route.render();
+
         expect(rendered).toBe('<docs-page></docs-page>');
       });
 
@@ -359,7 +369,9 @@ describe('route element', () => {
 
         expect(spy).toHaveBeenCalledWith(state, route.path);
         expect(route.isResolving).toBe(true);
+
         const rendered = route.render();
+
         expect(rendered).toBe('<my-loading></my-loading>');
       });
 
@@ -380,7 +392,9 @@ describe('route element', () => {
 
         expect(spy).toHaveBeenCalledWith(state, route.path);
         expect(route.isResolving).toBe(false);
+
         const rendered = route.render();
+
         expect(rendered).toBe('<docs-page></docs-page>');
       });
     });

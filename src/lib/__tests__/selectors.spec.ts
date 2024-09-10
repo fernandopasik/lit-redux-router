@@ -13,6 +13,7 @@ describe('router selectors', () => {
           },
         },
       };
+
       expect(getRoute(state, path)).toStrictEqual(route);
     });
 
@@ -23,6 +24,7 @@ describe('router selectors', () => {
           routes: {},
         },
       };
+
       expect(getRoute(state, '/about')).toBeUndefined();
     });
   });
@@ -35,6 +37,7 @@ describe('router selectors', () => {
           routes: {},
         },
       };
+
       expect(noRouteActive(state)).toBe(true);
     });
 
@@ -48,6 +51,7 @@ describe('router selectors', () => {
           },
         },
       };
+
       expect(noRouteActive(state)).toBe(true);
     });
 
@@ -61,6 +65,7 @@ describe('router selectors', () => {
           },
         },
       };
+
       expect(noRouteActive(state)).toBe(false);
     });
   });
@@ -78,6 +83,7 @@ describe('router selectors', () => {
           },
         },
       };
+
       expect(isRouteActive(state, path)).toBe(true);
     });
 
@@ -91,6 +97,7 @@ describe('router selectors', () => {
           },
         },
       };
+
       expect(isRouteActive(state)).toBe(true);
     });
 
@@ -106,6 +113,7 @@ describe('router selectors', () => {
           },
         },
       };
+
       expect(isRouteActive(state, path)).toBe(false);
     });
 
@@ -117,6 +125,7 @@ describe('router selectors', () => {
           routes: {},
         },
       };
+
       expect(isRouteActive(state, path)).toBe(false);
     });
   });
@@ -130,6 +139,7 @@ describe('router selectors', () => {
           routes: {},
         },
       };
+
       expect(getRouteParams(state, path)).toStrictEqual({});
     });
 
@@ -144,6 +154,7 @@ describe('router selectors', () => {
           },
         },
       };
+
       expect(getRouteParams(state, path)).toStrictEqual(route.params);
     });
   });

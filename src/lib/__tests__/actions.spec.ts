@@ -13,6 +13,7 @@ describe('router actions', () => {
 
     it('adds a path', () => {
       const path = '/about';
+
       expect(addRoute(path)).toHaveProperty('path', path);
     });
   });
@@ -24,12 +25,14 @@ describe('router actions', () => {
 
     it('to a path', () => {
       const path = '/about';
+
       expect(navigate(path)).toHaveProperty('path', path);
     });
 
     it('call check navigation service', () => {
       const path = '/about';
       navigate(path);
+
       expect(checkNavigation).toHaveBeenCalledWith(path);
     });
   });
@@ -41,6 +44,7 @@ describe('router actions', () => {
 
     it('to a path', () => {
       const path = '/about';
+
       expect(setActiveRoute(path)).toHaveProperty('path', path);
     });
   });

@@ -4,6 +4,7 @@ import reducer from '../reducer.js';
 describe('router reducer', () => {
   it('returns default state', () => {
     const initialState = deepFreeze({ activeRoute: '/about', routes: {} });
+
     expect(reducer(initialState)).toStrictEqual(initialState);
   });
 
@@ -20,6 +21,7 @@ describe('router reducer', () => {
       const path = '/contact';
       const action = { type: 'ADD_ROUTE', path };
       const newState = reducer(undefined, action);
+
       expect(newState.routes).toHaveProperty(path);
     });
 
@@ -28,6 +30,7 @@ describe('router reducer', () => {
       const action = { type: 'ADD_ROUTE', path };
       const initialState = deepFreeze({ activeRoute: path, routes: {} });
       const newState = reducer(initialState, action);
+
       expect(newState.routes[path]).toHaveProperty('active', true);
     });
   });
@@ -37,6 +40,7 @@ describe('router reducer', () => {
       const path = '/contact';
       const action = { type: 'SET_ACTIVE_ROUTE', path };
       const newState = reducer(undefined, action);
+
       expect(newState).toHaveProperty('activeRoute', path);
     });
 
@@ -50,6 +54,7 @@ describe('router reducer', () => {
       const action = { type: 'SET_ACTIVE_ROUTE', path };
       const initialState = deepFreeze({ activeRoute: '/', routes });
       const newState = reducer(initialState, action);
+
       expect(newState.routes[path]).toHaveProperty('active', true);
     });
 
@@ -63,6 +68,7 @@ describe('router reducer', () => {
       const action = { type: 'SET_ACTIVE_ROUTE', path: activePath };
       const initialState = deepFreeze({ activeRoute: '/', routes });
       const newState = reducer(initialState, action);
+
       expect(newState.routes[path]).toHaveProperty('active', true);
       expect(newState.routes[path]).toHaveProperty('params', { id: 'shirt' });
     });
@@ -77,6 +83,7 @@ describe('router reducer', () => {
       const action = { type: 'SET_ACTIVE_ROUTE', path: activePath };
       const initialState = deepFreeze({ activeRoute: '/', routes });
       const newState = reducer(initialState, action);
+
       expect(newState.routes[path]).toHaveProperty('active', false);
       expect(newState.routes[path]).toHaveProperty('params', {});
     });
@@ -87,6 +94,7 @@ describe('router reducer', () => {
       const path = '/contact';
       const action = { type: 'NAVIGATE', path };
       const newState = reducer(undefined, action);
+
       expect(newState).toHaveProperty('activeRoute', path);
     });
 
@@ -100,6 +108,7 @@ describe('router reducer', () => {
       const action = { type: 'NAVIGATE', path };
       const initialState = deepFreeze({ activeRoute: '/', routes });
       const newState = reducer(initialState, action);
+
       expect(newState.routes[path]).toHaveProperty('active', true);
     });
 
@@ -113,6 +122,7 @@ describe('router reducer', () => {
       const action = { type: 'NAVIGATE', path: activePath };
       const initialState = deepFreeze({ activeRoute: '/', routes });
       const newState = reducer(initialState, action);
+
       expect(newState.routes[path]).toHaveProperty('active', true);
       expect(newState.routes[path]).toHaveProperty('params', { id: 'shirt' });
     });
@@ -127,6 +137,7 @@ describe('router reducer', () => {
       const action = { type: 'NAVIGATE', path: activePath };
       const initialState = deepFreeze({ activeRoute: '/', routes });
       const newState = reducer(initialState, action);
+
       expect(newState.routes[path]).toHaveProperty('active', false);
       expect(newState.routes[path]).toHaveProperty('params', {});
     });

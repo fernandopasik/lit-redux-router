@@ -18,6 +18,7 @@ describe('lit redux router', () => {
     const addReducers = jest.fn();
     store.addReducers = addReducers;
     connectRouter(store);
+
     expect(addReducers).toHaveBeenCalledWith({ router: reducer });
   });
 
@@ -26,6 +27,7 @@ describe('lit redux router', () => {
     const addReducers = jest.fn();
     store.addReducers = addReducers;
     connectRouter(store);
+
     expect(Route).toHaveBeenCalledWith(store);
   });
 
