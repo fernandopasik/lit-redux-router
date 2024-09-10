@@ -33,6 +33,7 @@
     "jest/no-untyped-mock-factory": "off",
     "jest/prefer-expect-assertions": "off",
     "jest/require-hook": "off",
-    "jest/unbound-method": "off"
+    "jest/unbound-method": "off",
+    "lit/attribute-names": "off"
   }
 }
