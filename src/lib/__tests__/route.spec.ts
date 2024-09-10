@@ -65,7 +65,7 @@ describe('route element', () => {
 
   beforeEach(() => {
     customElementsGet.mockClear();
-    (pwaHelpers.installRouter as jest.MockedFunction<typeof pwaHelpers.installRouter>).mockClear();
+    jest.mocked<typeof pwaHelpers.installRouter>(pwaHelpers.installRouter).mockClear();
   });
 
   it('defines the custom element', () => {
@@ -132,7 +132,7 @@ describe('route element', () => {
       const hash = '#example';
 
       await route.firstUpdated();
-      const cb = spy1.mock.results[0].value;
+      const cb = spy1.mock.results[0].value as typeof pwaHelpers.installRouter.arguments;
       cb({ pathname, search, hash });
 
       expect(spy2).toHaveBeenCalledWith(pathname + search + hash);
