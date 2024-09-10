@@ -51,6 +51,7 @@ export default (store: LazyStore & Store): void => {
     @state()
     protected isResolving = false;
 
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     public async firstUpdated(): Promise<void> {
       await this.updateComplete;
       if (!Route.routerInstalled) {
