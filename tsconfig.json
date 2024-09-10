@@ -17,6 +17,7 @@
     "plugins": [{ "name": "ts-lit-plugin", "strict": true }],
     "resolveJsonModule": true,
     "rootDirs": ["src", "demo"],
+    "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "es2019"
