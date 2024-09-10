@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { getRoute, getRouteParams, isRouteActive, noRouteActive } from '../selectors.js';
 
 describe('router selectors', () => {

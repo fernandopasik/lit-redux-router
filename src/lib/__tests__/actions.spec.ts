@@ -1,3 +1,4 @@
+import { describe, expect, it, jest } from '@jest/globals';
 import { addRoute, navigate, setActiveRoute } from '../actions.js';
 import { checkNavigation } from '../service.js';
 

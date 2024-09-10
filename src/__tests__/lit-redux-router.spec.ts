@@ -1,3 +1,4 @@
+import { describe, expect, it, jest } from '@jest/globals';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import type { Store } from 'redux';
 import configureStore from 'redux-mock-store';

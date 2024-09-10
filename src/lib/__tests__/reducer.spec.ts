@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import deepFreeze from 'deep-freeze';
 import reducer from '../reducer.js';
 
