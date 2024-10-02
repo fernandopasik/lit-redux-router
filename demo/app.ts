@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/unbound-method */
 import { css, html, LitElement, type TemplateResult } from 'lit';
 import type { Action } from 'redux';
 import { connectRouter, navigate } from '../src/lit-redux-router.js';
