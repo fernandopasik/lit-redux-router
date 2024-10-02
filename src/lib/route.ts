@@ -134,7 +134,7 @@ export default (store: LazyStore & Store): void => {
       component: string,
       attributesObject?: Record<string, unknown>,
     ): TemplateResult {
-      const tagName = component.replace(/[^A-Za-z0-9-]/, '');
+      const tagName = component.replace(/[^A-Za-z0-9-]/u, '');
       let attributes = '';
 
       if (attributesObject) {
