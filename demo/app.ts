@@ -99,6 +99,7 @@ class MyApp extends LitElement {
     await import('./docs.js');
   }
 
+  // eslint-disable-next-line max-lines-per-function
   public render(): TemplateResult {
     return html`
       <div class="app-bar">Example App</div>

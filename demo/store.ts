@@ -3,6 +3,7 @@ import { combineReducers, compose, createStore } from 'redux';
 
 declare global {
   interface Window {
+    // eslint-disable-next-line  @typescript-eslint/naming-convention
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
   }
 }
