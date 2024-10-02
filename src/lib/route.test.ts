@@ -13,6 +13,7 @@ import * as selectors from './selectors.js';
 type TestStore = LazyStore & Store<Record<string, unknown>>;
 
 jest.mock('lit', () => ({
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   LitElement: class LitElement {
     public querySelector(): null {
       return null;

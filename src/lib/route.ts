@@ -7,9 +7,10 @@ import type { Store } from 'redux';
 import { addRoute, setActiveRoute } from './actions.js';
 import { getRouteParams, isRouteActive, type State } from './selectors.js';
 
-// eslint-disable-next-line @typescript-eslint/init-declarations, import/no-mutable-exports, @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/init-declarations, @typescript-eslint/naming-convention, import/no-mutable-exports, @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
+// eslint-disable-next-line max-lines-per-function
 export default (store: LazyStore & Store): void => {
   //
   /**
