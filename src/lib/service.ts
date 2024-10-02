@@ -9,9 +9,8 @@ export const refreshRoute = (route: string, activeRoute: string): Route => {
 
   return {
     active,
-    params: !active
-      ? {}
-      : keys.reduce(
+    params: active
+      ? keys.reduce(
           (
             list: NonNullable<Route['params']>,
             item: string,
@@ -21,7 +20,8 @@ export const refreshRoute = (route: string, activeRoute: string): Route => {
             [item]: match?.[index + 1] ?? '',
           }),
           {},
-        ),
+        )
+      : {},
   };
 };
 
