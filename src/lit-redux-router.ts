@@ -6,6 +6,7 @@ import Route from './lib/route.js';
 export const connectRouter = (store: LazyStore & Store): void => {
   store.addReducers({ router: reducer });
 
+  // eslint-disable-next-line new-cap
   Route(store);
 };
 
