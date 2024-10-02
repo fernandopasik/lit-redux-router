@@ -24,7 +24,7 @@ export default (store: LazyStore & Store): void => {
   class Route extends connect(store)(LitElement) {
     private static routerInstalled = false;
 
-    @property({ type: Boolean, reflect: true })
+    @property({ reflect: true, type: Boolean })
     public active = false;
 
     @property({ type: String })

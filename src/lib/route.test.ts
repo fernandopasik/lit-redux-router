@@ -41,8 +41,8 @@ jest.mock('pwa-helpers', () => ({
 }));
 
 jest.mock('./selectors', () => ({
-  isRouteActive: jest.fn(() => false),
   getRouteParams: jest.fn(() => ({})),
+  isRouteActive: jest.fn(() => false),
 }));
 
 const mockStore = configureStore([]);
