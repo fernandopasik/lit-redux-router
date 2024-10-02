@@ -1,5 +1,4 @@
-import type { Actions } from './actions.js';
-import { ActionTypes } from './actions.js';
+import { ActionTypes, type Actions } from './actions.js';
 import { refreshRoute } from './service.js';
 
 export interface Route {
