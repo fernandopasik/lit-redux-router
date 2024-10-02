@@ -47,8 +47,8 @@ describe('router selectors', () => {
         router: {
           activeRoute: '/',
           routes: {
-            '/contact': { active: false },
             '/about': { active: false },
+            '/contact': { active: false },
           },
         },
       };
