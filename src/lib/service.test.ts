@@ -1,17 +1,7 @@
-import { beforeAll, describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, jest } from '@jest/globals';
 import { checkNavigation, refreshRoute } from './service.js';
 
 describe('router service', () => {
-  beforeAll(() => {
-    Object.defineProperty(global, 'window', {
-      value: {
-        history: {
-          pushState: jest.fn(),
-        },
-      },
-    });
-  });
-
   it('match static route', () => {
     const route = '/contact';
     const activeRoute = '/contact';
@@ -133,10 +123,11 @@ describe('router service', () => {
 
   it('check navigation pushes route to history', () => {
     const route = '/about';
+    const spy = jest.spyOn(window.history, 'pushState');
 
     checkNavigation(route);
 
-    expect(window.history.pushState).toHaveBeenCalledWith({}, '', route);
+    expect(spy).toHaveBeenCalledWith({}, '', route);
   });
 
   it('match routes with query string', () => {
