@@ -8,24 +8,24 @@ export enum ActionTypes {
 }
 
 export interface Actions extends Action {
-  type: string;
   path: string;
+  type: string;
 }
 
 export const addRoute = (path: string): Actions => ({
-  type: ActionTypes.ADD_ROUTE,
   path,
+  type: ActionTypes.ADD_ROUTE,
 });
 
 export const navigate = (path: string): Actions => {
   checkNavigation(path);
   return {
-    type: ActionTypes.NAVIGATE,
     path,
+    type: ActionTypes.NAVIGATE,
   };
 };
 
 export const setActiveRoute = (path: string): Actions => ({
-  type: ActionTypes.SET_ACTIVE_ROUTE,
   path,
+  type: ActionTypes.SET_ACTIVE_ROUTE,
 });
