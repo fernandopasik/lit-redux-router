@@ -5,9 +5,9 @@ import * as pwaHelpers from 'pwa-helpers';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import type { Store } from 'redux';
 import configureStore from 'redux-mock-store';
-import * as actions from '../actions.js';
-import connectRouter, { RouteClass as Route } from '../route.js';
-import * as selectors from '../selectors.js';
+import * as actions from './actions.js';
+import connectRouter, { RouteClass as Route } from './route.js';
+import * as selectors from './selectors.js';
 
 // eslint-disable-next-line @typescript-eslint/no-type-alias
 type TestStore = LazyStore & Store<Record<string, unknown>>;
@@ -40,7 +40,7 @@ jest.mock('pwa-helpers', () => ({
   installRouter: jest.fn((cb) => cb),
 }));
 
-jest.mock('../selectors', () => ({
+jest.mock('./selectors', () => ({
   isRouteActive: jest.fn(() => false),
   getRouteParams: jest.fn(() => ({})),
 }));
@@ -263,7 +263,7 @@ describe('route element', () => {
     });
 
     describe('with dynamic imported components without loading component', () => {
-      const importFile = async (): Promise<unknown> => import('../../lit-redux-router.js');
+      const importFile = async (): Promise<unknown> => import('../lit-redux-router.js');
 
       it('before resolve completes', () => {
         const route = new Route();
@@ -308,7 +308,7 @@ describe('route element', () => {
     });
 
     describe('with dynamic imported components with loading component', () => {
-      const importFile = async (): Promise<unknown> => import('../../lit-redux-router.js');
+      const importFile = async (): Promise<unknown> => import('../lit-redux-router.js');
 
       it('before resolve completes', () => {
         const route = new Route();

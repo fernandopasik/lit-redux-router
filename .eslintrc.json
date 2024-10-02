@@ -12,7 +12,7 @@
   "env": { "browser": true },
   "overrides": [
     {
-      "files": ["*.spec.*"],
+      "files": ["*.test.*"],
       "rules": {
         "@typescript-eslint/no-magic-numbers": "off",
         "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]

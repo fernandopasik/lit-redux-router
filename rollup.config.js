@@ -27,13 +27,7 @@ export default isServe
       plugins: [
         typescript({
           tsconfig: 'tsconfig.build.json',
-          exclude: [
-            '/lib',
-            '/lit-redux-router.*',
-            '**/__mocks__/**',
-            '**/__tests__/**',
-            '**/*.spec.*',
-          ],
+          exclude: ['/lib', '/lit-redux-router.*', '**/*.test.*'],
         }),
         resolve(),
         html({

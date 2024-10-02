@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 import deepFreeze from 'deep-freeze';
-import reducer from '../reducer.js';
+import reducer from './reducer.js';
 
 describe('router reducer', () => {
   it('returns default state', () => {

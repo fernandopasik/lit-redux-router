@@ -2,14 +2,14 @@ import { describe, expect, it, jest } from '@jest/globals';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import type { Store } from 'redux';
 import configureStore from 'redux-mock-store';
-import { navigate as navigateAction } from '../lib/actions.js';
-import reducer from '../lib/reducer.js';
-import Route from '../lib/route.js';
-import { connectRouter, navigate } from '../lit-redux-router.js';
+import { navigate as navigateAction } from './lib/actions.js';
+import reducer from './lib/reducer.js';
+import Route from './lib/route.js';
+import { connectRouter, navigate } from './lit-redux-router.js';
 
-jest.mock('../lib/route', () => jest.fn());
-jest.mock('../lib/reducer', () => jest.fn());
-jest.mock('../lib/actions', () => ({ navigate: jest.fn() }));
+jest.mock('./lib/route', () => jest.fn());
+jest.mock('./lib/reducer', () => jest.fn());
+jest.mock('./lib/actions', () => ({ navigate: jest.fn() }));
 
 const mockStore = configureStore([]);
 
