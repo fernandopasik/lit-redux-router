@@ -1,6 +1,0 @@
-node_modules
-coverage/**
-/docs/**
-/lib/**
-/lit-redux-router.*
-demo/dist/**
