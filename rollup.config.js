@@ -26,8 +26,8 @@ export default isServe
       },
       plugins: [
         typescript({
-          tsconfig: 'tsconfig.build.json',
           exclude: ['/lib', '/lit-redux-router.*', '**/*.test.*'],
+          tsconfig: 'tsconfig.build.json',
         }),
         resolve(),
         html({
@@ -37,14 +37,14 @@ export default isServe
       ],
     }
   : {
+      external: ['lit', 'lit/decorators.js', 'lit/directives/unsafe-html.js', 'pwa-helpers'],
       input: 'lit-redux-router.js',
+      onwarn,
       output: {
         file: 'lit-redux-router.min.js',
         format: 'esm',
         sourcemap: true,
       },
-      external: ['lit', 'lit/decorators.js', 'lit/directives/unsafe-html.js', 'pwa-helpers'],
-      onwarn,
       plugins: [
         literalsHtmlCssMinifier(),
         resolve(),
