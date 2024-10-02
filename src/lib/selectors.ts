@@ -5,6 +5,7 @@ export interface State {
 }
 
 export const getRoute = ({ router: { routes } }: State, route?: string): Route | undefined =>
+  // eslint-disable-next-line no-undefined
   typeof route !== 'undefined' && route in routes ? routes[route] : undefined;
 
 export const noRouteActive = ({ router: { routes } }: State): boolean =>

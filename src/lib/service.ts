@@ -3,6 +3,7 @@ import type { Route } from './reducer.js';
 
 export const refreshRoute = (route: string, activeRoute: string): Route => {
   const { pattern, keys } = parse(route);
+  // eslint-disable-next-line prefer-named-capture-group
   const noQueryRoute = activeRoute.replace(/(\?|#).*/u, '');
   const match = pattern.exec(noQueryRoute);
   const active = pattern.test(noQueryRoute);
