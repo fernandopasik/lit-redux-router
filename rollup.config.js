@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/typedef, @typescript-eslint/explicit-function-return-type, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
 import { literalsHtmlCssMinifier } from '@literals/rollup-plugin-html-css-minifier';
 import html from '@rollup/plugin-html';
 import resolve from '@rollup/plugin-node-resolve';

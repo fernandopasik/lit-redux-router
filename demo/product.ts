@@ -10,7 +10,6 @@ class MyProduct extends LitElement {
   `;
 
   @property({ type: String })
-  // eslint-disable-next-line lit/no-native-attributes
   public id = '';
 
   @property({ type: String })

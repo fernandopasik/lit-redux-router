@@ -13,7 +13,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?? compose;
 
 // eslint-disable-next-line @typescript-eslint/no-deprecated
 const store = createStore(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-return
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (state: any): any => state,
   composeEnhancers(lazyReducerEnhancer(combineReducers)),
 );
