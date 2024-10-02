@@ -14,7 +14,7 @@ export const noRouteActive = ({ router: { routes } }: State): boolean =>
   );
 
 export const isRouteActive = (state: State, route?: string): boolean =>
-  typeof route !== 'undefined' ? Boolean(getRoute(state, route)?.active) : noRouteActive(state);
+  typeof route === 'undefined' ? noRouteActive(state) : Boolean(getRoute(state, route)?.active);
 
 export const getRouteParams = (state: State, route?: string): NonNullable<Route['params']> =>
   getRoute(state, route)?.params ?? {};
