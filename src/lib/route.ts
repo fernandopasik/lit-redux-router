@@ -104,12 +104,10 @@ export default (store: LazyStore & Store): void => {
           });
       }
       if (this.active && !this.scrollDisable) {
-        if (typeof this.scrollOpt !== 'undefined') {
-          if (hasBecomeActive) {
-            this.scrollIntoView(this.scrollOpt);
-          }
-        } else {
+        if (typeof this.scrollOpt === 'undefined') {
           window.scrollTo(0, 0);
+        } else if (hasBecomeActive) {
+          this.scrollIntoView(this.scrollOpt);
         }
       }
     }
