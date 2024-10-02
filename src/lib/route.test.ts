@@ -134,7 +134,7 @@ describe('route element', () => {
 
       await route.firstUpdated();
       const cb = spy1.mock.results[0].value as typeof pwaHelpers.installRouter.arguments;
-      cb({ pathname, search, hash });
+      cb({ hash, pathname, search });
 
       expect(spy2).toHaveBeenCalledWith(pathname + search + hash);
 
