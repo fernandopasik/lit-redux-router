@@ -79,7 +79,7 @@
     "@webcomponents/webcomponentsjs": "^2.8.0",
     "all-contributors-cli": "^6.26.1",
     "deep-freeze": "^0.0.1",
-    "del-cli": "^5.1.0",
+    "del-cli": "^6.0.0",
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.3",
