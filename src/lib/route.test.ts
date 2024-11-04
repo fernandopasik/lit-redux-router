@@ -4,6 +4,7 @@ import { customElement } from 'lit/decorators.js';
 import * as pwaHelpers from 'pwa-helpers';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
 import type { Store } from 'redux';
+// eslint-disable-next-line import/no-named-as-default
 import configureStore from 'redux-mock-store';
 import * as actions from './actions.js';
 import connectRouter, { RouteClass as Route } from './route.js';
@@ -20,6 +21,7 @@ jest.mock('lit', () => ({
   },
   html: jest.fn((strings: string[], ...values: unknown[]) =>
     strings
+      // eslint-disable-next-line @typescript-eslint/no-base-to-string
       .map((string: string, index: number) => `${string}${String(values[index] ?? '')}`)
       .join(''),
   ),
