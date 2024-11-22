@@ -11,9 +11,9 @@ class MyContact extends LitElement {
   @property({ type: String })
   protected email = '';
 
-  public save(prop: 'email' | 'name'): (event: Event) => void {
-    return (event: Event): void => {
-      this[prop] = (event.target as HTMLInputElement).value;
+  public save(prop: 'email' | 'name'): (event: InputEvent) => void {
+    return (event: InputEvent): void => {
+      this[prop] = event.data ?? '';
     };
   }
 
