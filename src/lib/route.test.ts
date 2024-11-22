@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, no-undefined */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-type-assertion, no-undefined */
 import { beforeAll, beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { customElement } from 'lit/decorators.js';
 import * as pwaHelpers from 'pwa-helpers';
