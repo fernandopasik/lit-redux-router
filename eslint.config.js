@@ -1,8 +1,8 @@
 import eslint from '@eslint/js';
 import prettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
-import lit from 'eslint-plugin-lit';
-import wc from 'eslint-plugin-wc';
+import { configs as lit } from 'eslint-plugin-lit';
+import { configs as wc } from 'eslint-plugin-wc';
 import ymlPlugin from 'eslint-plugin-yml';
 import globals from 'globals';
 import ts from 'typescript-eslint';
@@ -14,8 +14,8 @@ export default ts.config(
   eslint.configs.all,
   importPlugin.flatConfigs.recommended,
   importPlugin.configs.typescript,
-  lit.configs['flat/recommended'],
-  wc.configs['flat/recommended'],
+  lit['flat/recommended'],
+  wc['flat/recommended'],
   ...ymlPlugin.configs['flat/recommended'],
   ...ymlPlugin.configs['flat/prettier'],
   {
