@@ -36,7 +36,7 @@ class MyContact extends LitElement {
     store.dispatch(navigate(`/contact${queryString}`));
   }
 
-  public render(): TemplateResult {
+  public override render(): TemplateResult {
     return html`
       <h1>Contact</h1>
       <p>

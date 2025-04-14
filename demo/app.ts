@@ -34,7 +34,7 @@ const testReducer = (
 store.addReducers({ test: testReducer });
 
 class MyApp extends LitElement {
-  public static styles = css`
+  public static override styles = css`
     :host {
       font-family: sans-serif;
       font-weight: 300;
@@ -101,7 +101,7 @@ class MyApp extends LitElement {
   }
 
   // eslint-disable-next-line max-lines-per-function
-  public render(): TemplateResult {
+  public override render(): TemplateResult {
     return html`
       <div class="app-bar">Example App</div>
       <nav class="nav-bar">

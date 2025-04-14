@@ -51,7 +51,7 @@ export default (store: LazyStore & Store): void => {
     protected isResolving = false;
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    public async firstUpdated(): Promise<void> {
+    public override async firstUpdated(): Promise<void> {
       await this.updateComplete;
       if (!Route.routerInstalled) {
         installRouter(({ pathname, search, hash }: Location): void => {
@@ -87,7 +87,7 @@ export default (store: LazyStore & Store): void => {
       }
     }
 
-    public stateChanged(newState: State): void {
+    public override stateChanged(newState: State): void {
       const isActive = isRouteActive(newState, this.path);
       const hasBecomeActive = !this.active && isActive;
       this.active = isActive;
@@ -112,7 +112,7 @@ export default (store: LazyStore & Store): void => {
       }
     }
 
-    public render(): TemplateResult | typeof nothing {
+    public override render(): TemplateResult | typeof nothing {
       if (!this.active) {
         return nothing;
       }
