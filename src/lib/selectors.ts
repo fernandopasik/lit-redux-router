@@ -1,4 +1,4 @@
-import type { Route, RouterState } from './reducer.js';
+import type { Route, RouterState } from './reducer.ts';
 
 export interface State {
   router: RouterState;

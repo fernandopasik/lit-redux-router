@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import { css, html, LitElement, type TemplateResult } from 'lit';
 import type { Action } from 'redux';
-import { connectRouter, navigate } from '../src/lit-redux-router.js';
-import './contact.js';
-import './loading.js';
-import './product.js';
-import store from './store.js';
+import { connectRouter, navigate } from '../src/lit-redux-router.ts';
+import './contact.ts';
+import './loading.ts';
+import './product.ts';
+import store from './store.ts';
 
 connectRouter(store);
 

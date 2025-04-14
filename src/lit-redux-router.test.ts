@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-type-assertion, @typescript-eslint/no-deprecated */
 import { describe, expect, it, jest } from '@jest/globals';
-import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
+import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.ts';
 import type { Store } from 'redux';
 // eslint-disable-next-line import/no-named-as-default
 import configureStore from 'redux-mock-store';
-import { navigate as navigateAction } from './lib/actions.js';
-import reducer from './lib/reducer.js';
-import Route from './lib/route.js';
-import { connectRouter, navigate } from './lit-redux-router.js';
+import { navigate as navigateAction } from './lib/actions.ts';
+import reducer from './lib/reducer.ts';
+import Route from './lib/route.ts';
+import { connectRouter, navigate } from './lit-redux-router.ts';
 
 jest.mock('./lib/route', () => jest.fn());
 jest.mock('./lib/reducer', () => jest.fn());

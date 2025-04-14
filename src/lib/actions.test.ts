@@ -1,6 +1,6 @@
 import { describe, expect, it, jest } from '@jest/globals';
-import { addRoute, navigate, setActiveRoute } from './actions.js';
-import { checkNavigation } from './service.js';
+import { addRoute, navigate, setActiveRoute } from './actions.ts';
+import { checkNavigation } from './service.ts';
 
 jest.mock('./service', () => ({
   checkNavigation: jest.fn(),

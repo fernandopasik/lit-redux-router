@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import { html, LitElement, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
-import { navigate } from '../src/lit-redux-router.js';
-import store from './store.js';
+import { navigate } from '../src/lit-redux-router.ts';
+import store from './store.ts';
 
 class MyContact extends LitElement {
   @property({ type: String })

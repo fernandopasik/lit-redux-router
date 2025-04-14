@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { Action } from 'redux';
-import { checkNavigation } from './service.js';
+import { checkNavigation } from './service.ts';
 
 export enum ActionTypes {
   ADD_ROUTE = 'ADD_ROUTE',

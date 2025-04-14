@@ -1,5 +1,5 @@
-import { ActionTypes, type Actions } from './actions.js';
-import { refreshRoute } from './service.js';
+import { ActionTypes, type Actions } from './actions.ts';
+import { refreshRoute } from './service.ts';
 
 export interface Route {
   active: boolean;

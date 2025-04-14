@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention, no-undefined */
 import { describe, expect, it } from '@jest/globals';
 import deepFreeze from 'deep-freeze';
-import reducer from './reducer.js';
+import reducer from './reducer.ts';
 
 describe('router reducer', () => {
   it('returns default state', () => {

@@ -1,5 +1,5 @@
 import { parse } from 'regexparam';
-import type { Route } from './reducer.js';
+import type { Route } from './reducer.ts';
 
 export const refreshRoute = (route: string, activeRoute: string): Route => {
   const { pattern, keys } = parse(route);

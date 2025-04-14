@@ -2,10 +2,10 @@ import { html, LitElement, nothing, type TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { connect, installRouter } from 'pwa-helpers';
-import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
+import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.ts';
 import type { Store } from 'redux';
-import { addRoute, setActiveRoute } from './actions.js';
-import { getRouteParams, isRouteActive, type State } from './selectors.js';
+import { addRoute, setActiveRoute } from './actions.ts';
+import { getRouteParams, isRouteActive, type State } from './selectors.ts';
 
 // eslint-disable-next-line @typescript-eslint/init-declarations, @typescript-eslint/naming-convention, @typescript-eslint/no-explicit-any
 export let RouteClass: any;

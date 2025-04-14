@@ -25,7 +25,7 @@ export default isServe
       },
       plugins: [
         typescript({
-          exclude: ['/lib', '/lit-redux-router.*', '**/*.test.*'],
+          exclude: ['lib', 'lit-redux-router.*', '**/*.test.*'],
           tsconfig: 'tsconfig.build.json',
         }),
         resolve(),

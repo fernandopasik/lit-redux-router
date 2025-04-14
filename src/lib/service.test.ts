@@ -1,5 +1,5 @@
 import { describe, expect, it, jest } from '@jest/globals';
-import { checkNavigation, refreshRoute } from './service.js';
+import { checkNavigation, refreshRoute } from './service.ts';
 
 describe('router service', () => {
   it('match static route', () => {

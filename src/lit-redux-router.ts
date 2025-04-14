@@ -1,7 +1,7 @@
-import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.js';
+import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.ts';
 import type { Store } from 'redux';
-import reducer from './lib/reducer.js';
-import Route from './lib/route.js';
+import reducer from './lib/reducer.ts';
+import Route from './lib/route.ts';
 
 export const connectRouter = (store: LazyStore & Store): void => {
   store.addReducers({ router: reducer });
