@@ -1,27 +1,21 @@
 {
+  "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
-    "allowJs": true,
     "declaration": true,
     "declarationMap": true,
-    "esModuleInterop": true,
     "experimentalDecorators": true,
     "inlineSources": true,
     "lib": ["dom", "dom.iterable", "es2021"],
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": false,
     "plugins": [{ "name": "ts-lit-plugin", "strict": true }],
     "resolveJsonModule": true,
     "rootDirs": ["src", "demo"],
-    "skipLibCheck": true,
     "sourceMap": true,
-    "strict": true,
     "target": "es2019"
   },
-  "exclude": ["/lib", "/lit-redux-router.*"],
+  "exclude": ["*.config.js", "coverage", "lib", "lit-redux-router.*"],
   "include": [".**/**/*", "**/*"]
 }
