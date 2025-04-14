@@ -30,7 +30,7 @@ export default (store: LazyStore & Store): void => {
     public component?: string;
 
     @property({ type: String })
-    public path?: string;
+    public path?: string | undefined;
 
     @property()
     public resolve?: () => Promise<void>;
