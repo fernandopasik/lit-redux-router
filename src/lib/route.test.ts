@@ -59,7 +59,7 @@ describe('route element', () => {
           define: jest.fn(),
           get: customElementsGet,
         },
-        decodeURIComponent: jest.fn((val) => val),
+        decodeURIComponent,
         scrollTo: jest.fn(),
       },
     });
