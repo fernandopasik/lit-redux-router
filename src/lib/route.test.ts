@@ -142,6 +142,25 @@ describe('route element', () => {
 
       spy.mockRestore();
     });
+
+    it('does not decode URLs again', async () => {
+      connectRouter(mockStore({}) as unknown as TestStore);
+      const route = new Route();
+      const installRouter = jest.mocked(pwaHelpers.installRouter);
+      const spy = jest.spyOn(actions, 'setActiveRoute');
+      const pathname = '/component%2Fone/component_two';
+      const search = '?hash=%23';
+      const hash = '#example';
+
+      await route.firstUpdated();
+
+      const cb = installRouter.mock.results[0].value as typeof pwaHelpers.installRouter.arguments;
+      cb({ hash, pathname, search });
+
+      expect(spy).toHaveBeenCalledWith(pathname + search + hash);
+
+      spy.mockRestore();
+    });
   });
 
   describe('state changed', () => {
