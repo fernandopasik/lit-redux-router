@@ -139,4 +139,14 @@ describe('router service', () => {
     expect(SUT.active).toBe(true);
     expect(SUT.params).toStrictEqual({ id: '1' });
   });
+
+  it('does not escape parameters', () => {
+    const route = '/product/:id';
+    const activeRoute = '/product/before%2Fafter';
+
+    const SUT = refreshRoute(route, activeRoute);
+
+    expect(SUT.active).toBe(true);
+    expect(SUT.params).toStrictEqual({ id: 'before%2Fafter' });
+  });
 });
