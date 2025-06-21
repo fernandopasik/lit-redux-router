@@ -59,7 +59,7 @@ describe('route element', () => {
           define: jest.fn(),
           get: customElementsGet,
         },
-        decodeURIComponent: jest.fn((val) => val),
+        decodeURIComponent,
         scrollTo: jest.fn(),
       },
     });
@@ -127,20 +127,39 @@ describe('route element', () => {
     it('can set active route', async () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
-      const spy1 = jest.spyOn(pwaHelpers, 'installRouter');
-      const spy2 = jest.spyOn(actions, 'setActiveRoute');
+      const installRouter = jest.mocked(pwaHelpers.installRouter);
+      const spy = jest.spyOn(actions, 'setActiveRoute');
+
       const pathname = '/example';
       const search = '?test=testing';
       const hash = '#example';
 
       await route.firstUpdated();
-      const cb = spy1.mock.results[0].value as typeof pwaHelpers.installRouter.arguments;
+      const cb = installRouter.mock.results[0].value as typeof pwaHelpers.installRouter.arguments;
       cb({ hash, pathname, search });
 
-      expect(spy2).toHaveBeenCalledWith(pathname + search + hash);
+      expect(spy).toHaveBeenCalledWith(pathname + search + hash);
 
-      spy1.mockRestore();
-      spy2.mockRestore();
+      spy.mockRestore();
+    });
+
+    it('does not decode URLs again', async () => {
+      connectRouter(mockStore({}) as unknown as TestStore);
+      const route = new Route();
+      const installRouter = jest.mocked(pwaHelpers.installRouter);
+      const spy = jest.spyOn(actions, 'setActiveRoute');
+      const pathname = '/component%2Fone/component_two';
+      const search = '?hash=%23';
+      const hash = '#example';
+
+      await route.firstUpdated();
+
+      const cb = installRouter.mock.results[0].value as typeof pwaHelpers.installRouter.arguments;
+      cb({ hash, pathname, search });
+
+      expect(spy).toHaveBeenCalledWith(pathname + search + hash);
+
+      spy.mockRestore();
     });
   });
 
