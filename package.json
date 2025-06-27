@@ -92,7 +92,7 @@
     "globals": "^16.2.0",
     "husky": "^9.1.7",
     "jest": "^30.0.0",
-    "jest-environment-jsdom": "^29.7.0",
+    "jest-environment-jsdom": "^30.0.2",
     "jest-junit": "^16.0.0",
     "lint-staged": "^16.1.2",
     "lit": "^3.3.0",
