@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-type-assertion, no-undefined, @typescript-eslint/no-deprecated */
+/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-type-assertion, no-undefined, @typescript-eslint/no-deprecated, max-classes-per-file */
 import { beforeAll, beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { customElement } from 'lit/decorators.js';
 import * as pwaHelpers from 'pwa-helpers';
@@ -50,19 +50,13 @@ jest.mock('./selectors', () => ({
 const mockStore = configureStore([]);
 
 describe('route element', () => {
-  const customElementsGet = jest.fn();
+  const customElementsGet = jest.fn<typeof window.customElements.get>();
 
   beforeAll(() => {
-    Object.defineProperty(global, 'window', {
-      value: {
-        customElements: {
-          define: jest.fn(),
-          get: customElementsGet,
-        },
-        decodeURIComponent,
-        scrollTo: jest.fn(),
-      },
-    });
+    window.customElements.define = jest.fn();
+    window.customElements.get = customElementsGet;
+    window.scrollTo = jest.fn();
+    window.decodeURIComponent = decodeURIComponent;
   });
 
   beforeEach(() => {
@@ -167,7 +161,7 @@ describe('route element', () => {
     it('can check if route active', () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
-      const state = { activeRoute: '/' };
+      const state = { router: { activeRoute: '/', routes: {} } };
       const path = '/1';
       const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
       route.path = path;
@@ -184,7 +178,7 @@ describe('route element', () => {
     it('can get params', () => {
       connectRouter(mockStore({}) as unknown as TestStore);
       const route = new Route();
-      const state = {};
+      const state = { router: { activeRoute: '', routes: {} } };
       const path = '/1';
       const params = { one: '1' };
       route.path = path;
@@ -315,7 +309,7 @@ describe('route element', () => {
         route.path = '/';
         const state = { activeRoute: route.path };
 
-        customElementsGet.mockReturnValue({});
+        customElementsGet.mockReturnValue(class extends HTMLElement {});
 
         jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
         route.stateChanged(state);
@@ -338,7 +332,7 @@ describe('route element', () => {
         route.resolve = importFile;
         route.loading = 'my-loading';
         route.path = '/';
-        const state = { activeRoute: route.path };
+        const state = { router: { activeRoute: route.path, routes: {} } };
 
         customElementsGet.mockReturnValue(undefined);
 
@@ -360,9 +354,9 @@ describe('route element', () => {
         route.resolve = importFile;
         route.loading = 'my-loading';
         route.path = '/';
-        const state = { activeRoute: route.path };
+        const state = { router: { activeRoute: route.path, routes: {} } };
 
-        customElementsGet.mockReturnValue({});
+        customElementsGet.mockReturnValue(class extends HTMLElement {});
 
         const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
         route.stateChanged(state);
@@ -382,7 +376,7 @@ describe('route element', () => {
         route.resolve = async (): Promise<void> => Promise.reject(new Error());
         route.loading = 'my-loading';
         route.path = '/';
-        const state = { activeRoute: route.path };
+        const state = { router: { activeRoute: route.path, routes: {} } };
 
         customElementsGet.mockReturnValue(undefined);
 
@@ -405,9 +399,9 @@ describe('route element', () => {
         route.loading = 'my-loading';
         route.path = '/';
 
-        const state = { activeRoute: route.path };
+        const state = { router: { activeRoute: route.path, routes: {} } };
 
-        customElementsGet.mockReturnValue({});
+        customElementsGet.mockReturnValue(class extends HTMLElement {});
 
         const spy = jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
         route.stateChanged(state);
