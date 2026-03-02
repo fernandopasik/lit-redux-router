@@ -46,6 +46,7 @@ export default ts.config(
       // eslint-disable-next-line no-magic-numbers
       '@typescript-eslint/no-magic-numbers': ['error', { ignore: [0, 1, 2] }],
       '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+      '@typescript-eslint/strict-void-return': 'off',
     },
   },
   {
