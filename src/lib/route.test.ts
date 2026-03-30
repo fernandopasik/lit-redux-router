@@ -61,7 +61,7 @@ describe('route element', () => {
 
   beforeEach(() => {
     customElementsGet.mockClear();
-    jest.mocked<typeof pwaHelpers.installRouter>(pwaHelpers.installRouter).mockClear();
+    jest.mocked(pwaHelpers.installRouter).mockClear();
   });
 
   it('defines the custom element', () => {

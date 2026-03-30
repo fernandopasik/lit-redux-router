@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { Action } from 'redux';
+import type { UnknownAction } from 'redux';
 import { checkNavigation } from './service.ts';
 
 export enum ActionTypes {
@@ -8,7 +8,7 @@ export enum ActionTypes {
   SET_ACTIVE_ROUTE = 'SET_ACTIVE_ROUTE',
 }
 
-export interface Actions extends Action {
+export interface Actions extends UnknownAction {
   path: string;
   type: string;
 }
