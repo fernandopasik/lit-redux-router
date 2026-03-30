@@ -4,7 +4,6 @@ import { customElement } from 'lit/decorators.js';
 import * as pwaHelpers from 'pwa-helpers';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.ts';
 import type { Store } from 'redux';
-// eslint-disable-next-line import/no-named-as-default
 import configureStore from 'redux-mock-store';
 import * as actions from './actions.ts';
 import connectRouter, { RouteClass as Route } from './route.ts';
@@ -129,7 +128,7 @@ describe('route element', () => {
       const hash = '#example';
 
       await route.firstUpdated();
-      const cb = installRouter.mock.results[0].value as typeof pwaHelpers.installRouter.arguments;
+      const cb = installRouter.mock.results[0]?.value as typeof pwaHelpers.installRouter.arguments;
       cb({ hash, pathname, search });
 
       expect(spy).toHaveBeenCalledWith(pathname + search + hash);
@@ -148,7 +147,7 @@ describe('route element', () => {
 
       await route.firstUpdated();
 
-      const cb = installRouter.mock.results[0].value as typeof pwaHelpers.installRouter.arguments;
+      const cb = installRouter.mock.results[0]?.value as typeof pwaHelpers.installRouter.arguments;
       cb({ hash, pathname, search });
 
       expect(spy).toHaveBeenCalledWith(pathname + search + hash);
