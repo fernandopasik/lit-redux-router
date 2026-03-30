@@ -10,7 +10,8 @@ export const getRoute = ({ router: { routes } }: State, route?: string): Route |
 
 export const noRouteActive = ({ router: { routes } }: State): boolean =>
   Object.keys(routes).reduce(
-    (noActive: boolean, route: string): boolean => noActive && !routes[route].active,
+    (noActive: boolean, route: string): boolean =>
+      noActive && typeof routes[route] !== 'undefined' && !routes[route].active,
     true,
   );
 
