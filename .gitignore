@@ -26,6 +26,9 @@ yarn.lock
 # test files
 /coverage
 
+# TypeScript cache
+*.tsbuildinfo
+
 # build and temp folders
 /docs
 /lib
