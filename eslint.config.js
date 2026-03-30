@@ -4,10 +4,11 @@ import importPlugin from 'eslint-plugin-import';
 import { configs as lit } from 'eslint-plugin-lit';
 import { configs as wc } from 'eslint-plugin-wc';
 import { configs as ymlConfigs } from 'eslint-plugin-yml';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import ts from 'typescript-eslint';
 
-export default ts.config(
+export default defineConfig([
   {
     ignores: ['coverage/', 'docs/', 'demo/dist/', 'lib/', 'lit-redux-router.*'],
   },
@@ -59,4 +60,4 @@ export default ts.config(
     },
   },
   prettier,
-);
+]);
