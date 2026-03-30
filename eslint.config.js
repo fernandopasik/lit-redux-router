@@ -31,10 +31,13 @@ export default defineConfig([
       sourceType: 'module',
     },
     rules: {
-      'import/no-unresolved': 'off',
+      'class-methods-use-this': 'off',
+      'init-declarations': 'off',
       'max-lines': ['error', { max: 133, skipBlankLines: true, skipComments: true }],
       'max-lines-per-function': ['error', { max: 30, skipBlankLines: true, skipComments: true }],
       'max-statements': ['error', { max: 35 }],
+      'no-magic-numbers': ['error', { ignore: [-1, 0, 1, 2] }],
+      'no-plusplus': 'off',
       'no-ternary': 'off',
       'one-var': 'off',
       'sort-imports': 'off',
@@ -44,13 +47,11 @@ export default defineConfig([
     },
   },
   {
-    // eslint-disable-next-line import/no-named-as-default-member
-    extends: [...ts.configs.all],
+    extends: [...tsConfigs.all],
     files: ['**/*.ts'],
     rules: {
       '@typescript-eslint/class-methods-use-this': 'off',
-      // eslint-disable-next-line no-magic-numbers
-      '@typescript-eslint/no-magic-numbers': ['error', { ignore: [0, 1, 2] }],
+      '@typescript-eslint/no-magic-numbers': ['error', { ignore: [-1, 0, 1, 2] }],
       '@typescript-eslint/prefer-readonly-parameter-types': 'off',
       '@typescript-eslint/strict-void-return': 'off',
     },
