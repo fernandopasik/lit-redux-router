@@ -17,8 +17,10 @@ export default defineConfig([
   importPlugin.configs.typescript,
   lit['flat/recommended'],
   wc['flat/recommended'],
-  ...ymlConfigs['flat/recommended'],
-  ...ymlConfigs['flat/prettier'],
+  {
+    extends: [ymlConfigs['flat/standard'], ymlConfigs['flat/prettier']],
+    files: ['*.yaml', '*.yml'],
+  },
   {
     files: ['**/*.js', '**/*.ts'],
     languageOptions: {
