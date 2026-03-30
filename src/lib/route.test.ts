@@ -4,7 +4,7 @@ import { customElement } from 'lit/decorators.js';
 import * as pwaHelpers from 'pwa-helpers';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.ts';
 import type { Store } from 'redux';
-import configureStore from 'redux-mock-store';
+import { configureStore } from 'redux-mock-store';
 import * as actions from './actions.ts';
 import connectRouter, { RouteClass as Route } from './route.ts';
 import * as selectors from './selectors.ts';

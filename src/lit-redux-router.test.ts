@@ -2,7 +2,7 @@
 import { describe, expect, it, jest } from '@jest/globals';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.ts';
 import type { Store } from 'redux';
-import configureStore from 'redux-mock-store';
+import { configureStore } from 'redux-mock-store';
 import { navigate as navigateAction } from './lib/actions.ts';
 import reducer from './lib/reducer.ts';
 import Route from './lib/route.ts';
