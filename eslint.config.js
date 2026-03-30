@@ -6,7 +6,7 @@ import { configs as wc } from 'eslint-plugin-wc';
 import { configs as ymlConfigs } from 'eslint-plugin-yml';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
-import ts from 'typescript-eslint';
+import { configs as tsConfigs } from 'typescript-eslint';
 
 export default defineConfig([
   {
@@ -54,12 +54,21 @@ export default defineConfig([
   },
   {
     files: ['**/*.test.*'],
+    rules: { '@typescript-eslint/no-floating-promises': 'off' },
+  },
+  {
+    files: ['**/*.test.*', '*.config.@(js|ts)'],
     rules: {
-      '@typescript-eslint/no-floating-promises': 'off',
       '@typescript-eslint/no-magic-numbers': 'off',
       'max-lines': 'off',
       'max-lines-per-function': 'off',
+      'no-magic-numbers': 'off',
+      'no-undefined': 'off',
     },
+  },
+  {
+    extends: [tsConfigs.disableTypeChecked],
+    files: ['*.config.js'],
   },
   prettier,
 ]);
