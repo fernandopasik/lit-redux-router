@@ -1,6 +1,7 @@
 import eslint from '@eslint/js';
 import prettier from 'eslint-config-prettier';
-import importPlugin from 'eslint-plugin-import';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import { createNodeResolver, flatConfigs as importConfigs } from 'eslint-plugin-import-x';
 import { configs as lit } from 'eslint-plugin-lit';
 import { configs as wc } from 'eslint-plugin-wc';
 import { configs as ymlConfigs } from 'eslint-plugin-yml';
@@ -13,8 +14,8 @@ export default defineConfig([
     ignores: ['coverage/', 'docs/', 'demo/dist/', 'lib/', 'lit-redux-router.*'],
   },
   eslint.configs.all,
-  importPlugin.flatConfigs.recommended,
-  importPlugin.configs.typescript,
+  importConfigs.recommended,
+  importConfigs.typescript,
   lit['flat/recommended'],
   wc['flat/recommended'],
   {
@@ -38,7 +39,9 @@ export default defineConfig([
       'one-var': 'off',
       'sort-imports': 'off',
     },
-    settings: { 'import/resolver': { typescript: {} } },
+    settings: {
+      'import-x/resolver-next': [createTypeScriptImportResolver(), createNodeResolver()],
+    },
   },
   {
     // eslint-disable-next-line import/no-named-as-default-member
