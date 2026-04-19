@@ -14,6 +14,8 @@ export default defineConfig([
     ignores: ['coverage/', 'docs/', 'demo/dist/', 'lib/', 'lit-redux-router.*'],
   },
   eslint.configs.all,
+  tsConfigs.strictTypeChecked,
+  tsConfigs.stylisticTypeChecked,
   importConfigs.recommended,
   importConfigs.typescript,
   lit['flat/recommended'],
@@ -47,13 +49,10 @@ export default defineConfig([
     },
   },
   {
-    extends: [...tsConfigs.all],
     files: ['**/*.ts'],
     rules: {
-      '@typescript-eslint/class-methods-use-this': 'off',
       '@typescript-eslint/no-magic-numbers': ['error', { ignore: [-1, 0, 1, 2] }],
       '@typescript-eslint/prefer-readonly-parameter-types': 'off',
-      '@typescript-eslint/strict-void-return': 'off',
     },
   },
   {
