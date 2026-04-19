@@ -19,7 +19,7 @@ export default defineConfig([
   lit['flat/recommended'],
   wc['flat/recommended'],
   {
-    extends: [ymlConfigs['flat/standard'], ymlConfigs['flat/prettier']],
+    extends: [ymlConfigs.standard, ymlConfigs.prettier],
     files: ['*.yaml', '*.yml'],
   },
   {
