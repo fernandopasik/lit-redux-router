@@ -11,12 +11,11 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "noEmit": true,
-    "noUncheckedIndexedAccess": false,
     "plugins": [{ "name": "ts-lit-plugin", "strict": true }],
     "resolveJsonModule": true,
-    "rootDirs": ["src", "demo"],
     "sourceMap": true,
-    "target": "es2022"
+    "target": "es2022",
+    "types": ["node"]
   },
   "exclude": ["*.config.js", "coverage", "lib", "lit-redux-router.*"],
   "include": [".**/**/*", "**/*"]
