@@ -77,7 +77,7 @@ export default (store: LazyStore & Store): void => {
       const hasChildRoutes = Boolean(this.querySelector('lit-route'));
 
       if (hasChildRoutes) {
-        path += '.*';
+        path = `${path ?? ''}.*`;
       }
 
       this.path = path;
@@ -137,7 +137,7 @@ export default (store: LazyStore & Store): void => {
 
       if (attributesObject) {
         attributes = Object.keys(attributesObject)
-          .map((param: string): string => ` ${param}="${this.params[param]}"`)
+          .map((param: string): string => ` ${param}="${this.params[param] ?? ''}"`)
           .join('');
       }
 
