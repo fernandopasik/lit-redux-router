@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-type-assertion, @typescript-eslint/no-deprecated, max-classes-per-file */
+/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-deprecated, max-classes-per-file */
 import { beforeAll, beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { customElement } from 'lit/decorators.js';
 import * as pwaHelpers from 'pwa-helpers';
@@ -12,7 +12,6 @@ import * as selectors from './selectors.ts';
 type TestStore = LazyStore & Store<Record<string, unknown>>;
 
 jest.mock('lit', () => ({
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   LitElement: class LitElement {
     public querySelector(): null {
       return null;

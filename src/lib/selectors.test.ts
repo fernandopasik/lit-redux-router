@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { describe, expect, it } from '@jest/globals';
 import { getRoute, getRouteParams, isRouteActive, noRouteActive } from './selectors.ts';
 

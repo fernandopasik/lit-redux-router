@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-type-assertion, @typescript-eslint/no-deprecated */
+/* eslint-disable @typescript-eslint/no-deprecated */
 import { describe, expect, it, jest } from '@jest/globals';
 import type { LazyStore } from 'pwa-helpers/lazy-reducer-enhancer.ts';
 import type { Store } from 'redux';

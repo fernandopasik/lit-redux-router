@@ -7,7 +7,7 @@ import type { Store } from 'redux';
 import { addRoute, setActiveRoute } from './actions.ts';
 import { getRouteParams, isRouteActive, type State } from './selectors.ts';
 
-// eslint-disable-next-line @typescript-eslint/init-declarations, @typescript-eslint/naming-convention, @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export let RouteClass: any;
 
 // eslint-disable-next-line max-lines-per-function

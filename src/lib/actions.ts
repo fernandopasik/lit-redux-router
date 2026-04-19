@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import type { UnknownAction } from 'redux';
 import { checkNavigation } from './service.ts';
 
