@@ -168,6 +168,7 @@ describe('route element', () => {
 
       expect(spy).toHaveBeenCalledWith(state, path);
       expect(route.active).toBe(true);
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(window.scrollTo).not.toHaveBeenCalled();
 
       spy.mockRestore();
@@ -244,7 +245,7 @@ describe('route element', () => {
         const state = { activeRoute: '/test2' };
         route.scrollDisable = true;
         route.stateChanged(state);
-
+        // eslint-disable-next-line @typescript-eslint/unbound-method
         expect(window.scrollTo).not.toHaveBeenCalled();
       });
 
@@ -255,7 +256,7 @@ describe('route element', () => {
         route.path = path;
         jest.spyOn(selectors, 'isRouteActive').mockImplementationOnce(() => true);
         route.stateChanged(state);
-
+        // eslint-disable-next-line @typescript-eslint/unbound-method
         expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
       });
 
